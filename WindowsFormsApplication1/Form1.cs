@@ -40,7 +40,7 @@ namespace WindowsFormsApplication1
             {
                 Console.WriteLine("You fucking idiot");
             }
-            ans = num1Parse + num2Parse;
+            ans = num1Parse + num2Parse + num1Parse;
             ansTxt.Text = ans.ToString();
         }
 
@@ -63,6 +63,16 @@ namespace WindowsFormsApplication1
             double ans;
             ans = (double.Parse(num1txt.Text)) / (double.Parse(num2txt.Text));
             ansTxt.Text = ans.ToString();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void num2txt_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
