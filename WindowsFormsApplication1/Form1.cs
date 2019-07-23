@@ -54,7 +54,7 @@ namespace WindowsFormsApplication1
         private void MultiplyButton_Click(object sender, EventArgs e)
         {
             double ans;
-            ans = (double.Parse(num1txt.Text)) * (double.Parse(num2txt.Text));
+            ans = (double.Parse(num1txt.Text)) * (double.Parse(num2txt.Text) * 2);
             ansTxt.Text = ans.ToString();
         }
 
