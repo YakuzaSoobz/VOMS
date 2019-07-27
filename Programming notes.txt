@@ -1,0 +1,2 @@
+- need to work on create a supplier quote, can't edit one without items
+- getTotal() not working in supplier quote
