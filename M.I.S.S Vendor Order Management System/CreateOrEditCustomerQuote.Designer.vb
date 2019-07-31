@@ -47,7 +47,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.DateIssuedDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.CaclulateTotalButton = New System.Windows.Forms.Button()
+        Me.CalculateTotalButton = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TotalPriceTextBox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -378,7 +378,7 @@ Partial Class CreateOrEditCustomerQuote
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox4.Controls.Add(Me.CaclulateTotalButton)
+        Me.GroupBox4.Controls.Add(Me.CalculateTotalButton)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.TotalPriceTextBox)
         Me.GroupBox4.Location = New System.Drawing.Point(11, 512)
@@ -390,21 +390,21 @@ Partial Class CreateOrEditCustomerQuote
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "TOTAL AMOUNT in Rands:"
         '
-        'CaclulateTotalButton
+        'CalculateTotalButton
         '
-        Me.CaclulateTotalButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CaclulateTotalButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.CaclulateTotalButton.FlatAppearance.BorderSize = 3
-        Me.CaclulateTotalButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.CaclulateTotalButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.CaclulateTotalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CaclulateTotalButton.Location = New System.Drawing.Point(251, 17)
-        Me.CaclulateTotalButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.CaclulateTotalButton.Name = "CaclulateTotalButton"
-        Me.CaclulateTotalButton.Size = New System.Drawing.Size(90, 34)
-        Me.CaclulateTotalButton.TabIndex = 55
-        Me.CaclulateTotalButton.Text = "CALCULATE"
-        Me.CaclulateTotalButton.UseVisualStyleBackColor = False
+        Me.CalculateTotalButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CalculateTotalButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.CalculateTotalButton.FlatAppearance.BorderSize = 3
+        Me.CalculateTotalButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.CalculateTotalButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.CalculateTotalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.CalculateTotalButton.Location = New System.Drawing.Point(251, 17)
+        Me.CalculateTotalButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.CalculateTotalButton.Name = "CalculateTotalButton"
+        Me.CalculateTotalButton.Size = New System.Drawing.Size(90, 34)
+        Me.CalculateTotalButton.TabIndex = 55
+        Me.CalculateTotalButton.Text = "CALCULATE"
+        Me.CalculateTotalButton.UseVisualStyleBackColor = False
         '
         'Label6
         '
@@ -725,7 +725,7 @@ Partial Class CreateOrEditCustomerQuote
     Friend WithEvents CustLineItemSaleinclVATDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustLineItemQuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SupplierNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CaclulateTotalButton As Button
+    Friend WithEvents CalculateTotalButton As Button
     Friend WithEvents CreateOrEditCustomerQuoteTip As ToolTip
     Friend WithEvents RefreshButton As Button
 End Class

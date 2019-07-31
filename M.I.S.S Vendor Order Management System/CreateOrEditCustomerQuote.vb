@@ -270,7 +270,7 @@ Public Class CreateOrEditCustomerQuote
 
     End Sub
 
-    Private Sub CaclulateTotalButton_Click(sender As Object, e As EventArgs) Handles CaclulateTotalButton.Click
+    Private Sub CaclulateTotalButton_Click(sender As Object, e As EventArgs) Handles CalculateTotalButton.Click
 
         Try
             Me.getTotal()
@@ -304,8 +304,8 @@ Public Class CreateOrEditCustomerQuote
         CreateOrEditCustomerQuoteTip.SetToolTip(DeleteQuoteButton, "Click to delete customer quote")
     End Sub
 
-    Private Sub CaclulateTotalButton_MouseHover(sender As Object, e As EventArgs) Handles CaclulateTotalButton.MouseHover
-        CreateOrEditCustomerQuoteTip.SetToolTip(CaclulateTotalButton, "Click to calculate total amount")
+    Private Sub CaclulateTotalButton_MouseHover(sender As Object, e As EventArgs) Handles CalculateTotalButton.MouseHover
+        CreateOrEditCustomerQuoteTip.SetToolTip(CalculateTotalButton, "Click to calculate total amount")
     End Sub
 
     Private Sub EditLineItemsButton_MouseHover(sender As Object, e As EventArgs) Handles EditLineItemsButton.MouseHover
