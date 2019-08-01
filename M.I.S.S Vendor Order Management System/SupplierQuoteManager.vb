@@ -3,8 +3,8 @@
 
 Public Class SupplierQuoteManager
 
-    Public SupplierQuoteReferenceID As String
-
+    Public SupplierQuoteReferenceID As Integer
+    Public NewSupplierQuoteReferenceID As Integer
     Public EditStatus As Boolean
     Public CreateStatus As Boolean
     Public SortStatus As Boolean
@@ -61,8 +61,12 @@ Public Class SupplierQuoteManager
             EditStatus = False
             CreateStatus = True
             CreateOrEditSupplierQuote.Show()
-            CreateOrEditSupplierQuote.Text = "Supplier Quote ReferenceID : " & SupplierQuoteReferenceID
 
+            SupplierQuoteJoinSupplierBindingSource.MoveLast()
+            NewSupplierQuoteReferenceID = Integer.Parse(SupplierQuoteJoinSupplierDataGridView.CurrentRow.Cells(0).Value.ToString) + 1
+
+            CreateOrEditSupplierQuote.Text = "Supplier Quote ReferenceID : " & SupplierQuoteReferenceID
+            CreateOrEditSupplierQuote.SupplierQuoteID = NewSupplierQuoteReferenceID
             Me.Hide()
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
@@ -107,6 +111,7 @@ Public Class SupplierQuoteManager
                 CreateOrEditSupplierQuote.SuppLineItemJoinProductBindingSource.Filter = "Supp_Quote_Reference_ID = '" & SupplierQuoteReferenceID & "'"
 
                 CreateOrEditSupplierQuote.Text = "Supplier Quote Editor: Reference ID = " & SupplierQuoteReferenceID
+                CreateOrEditSupplierQuote.SupplierQuoteID = SupplierQuoteReferenceID
 
                 Me.Hide()
             Else

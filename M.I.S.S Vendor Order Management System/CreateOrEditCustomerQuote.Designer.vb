@@ -47,13 +47,11 @@ Partial Class CreateOrEditCustomerQuote
         Me.DateIssuedDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.CalculateTotalButton = New System.Windows.Forms.Button()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TotalPriceTextBox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.CustomerQuoteIDTextBox = New System.Windows.Forms.TextBox()
         Me.ItemGroupBox = New System.Windows.Forms.GroupBox()
-        Me.RefreshButton = New System.Windows.Forms.Button()
         Me.NotificationLabel = New System.Windows.Forms.Label()
         Me.EditLineItemsButton = New System.Windows.Forms.Button()
         Me.ItemsListGroupBox = New System.Windows.Forms.GroupBox()
@@ -74,6 +72,8 @@ Partial Class CreateOrEditCustomerQuote
         Me.EmployeeTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.EmployeeTableAdapter()
         Me.CustLineItemJoinProductsTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustLineItemJoinProductsTableAdapter()
         Me.CreateOrEditCustomerQuoteTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Customer_Quote_Line_ItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Customer_Quote_Line_ItemTableAdapter()
+        Me.RefreshButton = New System.Windows.Forms.Button()
         Me.QuoteDetailsGroupBox.SuspendLayout()
         Me.OptionsGroupBox1.SuspendLayout()
         CType(Me.CustomerQuoteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -378,7 +378,6 @@ Partial Class CreateOrEditCustomerQuote
         '
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox4.Controls.Add(Me.CalculateTotalButton)
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.TotalPriceTextBox)
         Me.GroupBox4.Location = New System.Drawing.Point(11, 512)
@@ -390,27 +389,11 @@ Partial Class CreateOrEditCustomerQuote
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "TOTAL AMOUNT in Rands:"
         '
-        'CalculateTotalButton
-        '
-        Me.CalculateTotalButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CalculateTotalButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.CalculateTotalButton.FlatAppearance.BorderSize = 3
-        Me.CalculateTotalButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.CalculateTotalButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.CalculateTotalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CalculateTotalButton.Location = New System.Drawing.Point(251, 17)
-        Me.CalculateTotalButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.CalculateTotalButton.Name = "CalculateTotalButton"
-        Me.CalculateTotalButton.Size = New System.Drawing.Size(90, 34)
-        Me.CalculateTotalButton.TabIndex = 55
-        Me.CalculateTotalButton.Text = "CALCULATE"
-        Me.CalculateTotalButton.UseVisualStyleBackColor = False
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(48, 28)
+        Me.Label6.Location = New System.Drawing.Point(85, 28)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(15, 13)
@@ -421,7 +404,7 @@ Partial Class CreateOrEditCustomerQuote
         'TotalPriceTextBox
         '
         Me.TotalPriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerQuoteBindingSource, "Cust__Quote_Total_Price", True))
-        Me.TotalPriceTextBox.Location = New System.Drawing.Point(67, 25)
+        Me.TotalPriceTextBox.Location = New System.Drawing.Point(104, 25)
         Me.TotalPriceTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.TotalPriceTextBox.Name = "TotalPriceTextBox"
         Me.TotalPriceTextBox.Size = New System.Drawing.Size(172, 20)
@@ -467,28 +450,13 @@ Partial Class CreateOrEditCustomerQuote
         Me.ItemGroupBox.TabStop = False
         Me.ItemGroupBox.Text = "QUOTED ITEMS"
         '
-        'RefreshButton
-        '
-        Me.RefreshButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.RefreshButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.RefreshButton.FlatAppearance.BorderSize = 3
-        Me.RefreshButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.RefreshButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RefreshButton.Location = New System.Drawing.Point(765, 484)
-        Me.RefreshButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.RefreshButton.Name = "RefreshButton"
-        Me.RefreshButton.Size = New System.Drawing.Size(77, 36)
-        Me.RefreshButton.TabIndex = 79
-        Me.RefreshButton.Text = "REFRESH"
-        Me.RefreshButton.UseVisualStyleBackColor = False
-        '
         'NotificationLabel
         '
         Me.NotificationLabel.AutoSize = True
         Me.NotificationLabel.BackColor = System.Drawing.Color.Transparent
         Me.NotificationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NotificationLabel.Location = New System.Drawing.Point(264, 529)
+        Me.NotificationLabel.ForeColor = System.Drawing.SystemColors.Control
+        Me.NotificationLabel.Location = New System.Drawing.Point(291, 531)
         Me.NotificationLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.NotificationLabel.Name = "NotificationLabel"
         Me.NotificationLabel.Size = New System.Drawing.Size(329, 20)
@@ -503,7 +471,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.EditLineItemsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.EditLineItemsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.EditLineItemsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.EditLineItemsButton.Location = New System.Drawing.Point(278, 484)
+        Me.EditLineItemsButton.Location = New System.Drawing.Point(305, 483)
         Me.EditLineItemsButton.Margin = New System.Windows.Forms.Padding(2)
         Me.EditLineItemsButton.Name = "EditLineItemsButton"
         Me.EditLineItemsButton.Size = New System.Drawing.Size(302, 46)
@@ -642,6 +610,26 @@ Partial Class CreateOrEditCustomerQuote
         '
         Me.CustLineItemJoinProductsTableAdapter.ClearBeforeFill = True
         '
+        'Customer_Quote_Line_ItemTableAdapter
+        '
+        Me.Customer_Quote_Line_ItemTableAdapter.ClearBeforeFill = True
+        '
+        'RefreshButton
+        '
+        Me.RefreshButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RefreshButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.RefreshButton.FlatAppearance.BorderSize = 3
+        Me.RefreshButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.RefreshButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RefreshButton.Location = New System.Drawing.Point(765, 484)
+        Me.RefreshButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.RefreshButton.Name = "RefreshButton"
+        Me.RefreshButton.Size = New System.Drawing.Size(77, 36)
+        Me.RefreshButton.TabIndex = 80
+        Me.RefreshButton.Text = "REFRESH"
+        Me.RefreshButton.UseVisualStyleBackColor = False
+        '
         'CreateOrEditCustomerQuote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -725,7 +713,7 @@ Partial Class CreateOrEditCustomerQuote
     Friend WithEvents CustLineItemSaleinclVATDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CustLineItemQuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SupplierNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CalculateTotalButton As Button
     Friend WithEvents CreateOrEditCustomerQuoteTip As ToolTip
+    Friend WithEvents Customer_Quote_Line_ItemTableAdapter As group16DataSetTableAdapters.Customer_Quote_Line_ItemTableAdapter
     Friend WithEvents RefreshButton As Button
 End Class

@@ -29,25 +29,24 @@ Partial Class CreateOrEditSupplierQuote
         Me.SupplierQuoteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
         Me.CreateSupplierButton = New System.Windows.Forms.Button()
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.TotalPriceTextBox = New System.Windows.Forms.TextBox()
         Me.OptionsGroupBox1 = New System.Windows.Forms.GroupBox()
         Me.UpdateSupplierQuoteButton = New System.Windows.Forms.Button()
         Me.DeleteSupplierQuoteButton = New System.Windows.Forms.Button()
         Me.SupplierInfoButton = New System.Windows.Forms.Button()
         Me.QuoteAcceptanceStatusComboBox = New System.Windows.Forms.ComboBox()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.SupplierIDComboBox = New System.Windows.Forms.ComboBox()
         Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DateRecievedDateTimePicker = New System.Windows.Forms.DateTimePicker()
         Me.Label7 = New System.Windows.Forms.Label()
-        Me.SupplierQuoteIDTextBox = New System.Windows.Forms.TextBox()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.Label3 = New System.Windows.Forms.Label()
+        Me.TotalPriceTextBox = New System.Windows.Forms.TextBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.SupplierQuoteIDTextBox = New System.Windows.Forms.TextBox()
         Me.ItemGroupBox = New System.Windows.Forms.GroupBox()
-        Me.RefreshButton = New System.Windows.Forms.Button()
         Me.NotificationLabel = New System.Windows.Forms.Label()
         Me.EditLineItemsButton = New System.Windows.Forms.Button()
         Me.ItemsListGroupBox = New System.Windows.Forms.GroupBox()
@@ -66,13 +65,14 @@ Partial Class CreateOrEditSupplierQuote
         Me.SuppLineItemJoinProductTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SuppLineItemJoinProductTableAdapter()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.CreateOrEditSupplierQuoteTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.CaclulateTotalButton = New System.Windows.Forms.Button()
+        Me.RefreshButton = New System.Windows.Forms.Button()
+        Me.Supplier_Quote_Line_ItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Supplier_Quote_Line_ItemTableAdapter()
         Me.QuoteDetailsGroupBox.SuspendLayout()
         CType(Me.SupplierQuoteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.GroupBox4.SuspendLayout()
         Me.OptionsGroupBox1.SuspendLayout()
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.GroupBox4.SuspendLayout()
         Me.ItemGroupBox.SuspendLayout()
         Me.ItemsListGroupBox.SuspendLayout()
         CType(Me.SuppLineItemJoinProductDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -120,7 +120,7 @@ Partial Class CreateOrEditSupplierQuote
         '
         Me.DateAcceptedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.DateAcceptedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteBindingSource, "Supp_Quote_Date_Acceptance", True))
-        Me.DateAcceptedTextBox.Location = New System.Drawing.Point(254, 269)
+        Me.DateAcceptedTextBox.Location = New System.Drawing.Point(241, 265)
         Me.DateAcceptedTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.DateAcceptedTextBox.Name = "DateAcceptedTextBox"
         Me.DateAcceptedTextBox.ReadOnly = True
@@ -146,51 +146,13 @@ Partial Class CreateOrEditSupplierQuote
         Me.CreateSupplierButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.CreateSupplierButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.CreateSupplierButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CreateSupplierButton.Location = New System.Drawing.Point(201, 53)
+        Me.CreateSupplierButton.Location = New System.Drawing.Point(201, 66)
         Me.CreateSupplierButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CreateSupplierButton.Name = "CreateSupplierButton"
         Me.CreateSupplierButton.Size = New System.Drawing.Size(131, 28)
         Me.CreateSupplierButton.TabIndex = 75
         Me.CreateSupplierButton.Text = "CREATE SUPPLIER"
         Me.CreateSupplierButton.UseVisualStyleBackColor = False
-        '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox4.Controls.Add(Me.CaclulateTotalButton)
-        Me.GroupBox4.Controls.Add(Me.Label3)
-        Me.GroupBox4.Controls.Add(Me.TotalPriceTextBox)
-        Me.GroupBox4.Location = New System.Drawing.Point(11, 457)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox4.Size = New System.Drawing.Size(404, 64)
-        Me.GroupBox4.TabIndex = 72
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "TOTAL AMOUNT in Rands:"
-        '
-        'Label3
-        '
-        Me.Label3.AutoSize = True
-        Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(71, 29)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(15, 13)
-        Me.Label3.TabIndex = 54
-        Me.Label3.Text = "R"
-        Me.Label3.UseMnemonic = False
-        '
-        'TotalPriceTextBox
-        '
-        Me.TotalPriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteBindingSource, "Supp_Quote_Total_Price", True))
-        Me.TotalPriceTextBox.Location = New System.Drawing.Point(90, 26)
-        Me.TotalPriceTextBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.TotalPriceTextBox.Name = "TotalPriceTextBox"
-        Me.TotalPriceTextBox.Size = New System.Drawing.Size(172, 20)
-        Me.TotalPriceTextBox.TabIndex = 53
-        Me.TotalPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'OptionsGroupBox1
         '
@@ -246,7 +208,7 @@ Partial Class CreateOrEditSupplierQuote
         Me.SupplierInfoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SupplierInfoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SupplierInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SupplierInfoButton.Location = New System.Drawing.Point(347, 19)
+        Me.SupplierInfoButton.Location = New System.Drawing.Point(347, 32)
         Me.SupplierInfoButton.Margin = New System.Windows.Forms.Padding(2)
         Me.SupplierInfoButton.Name = "SupplierInfoButton"
         Me.SupplierInfoButton.Size = New System.Drawing.Size(53, 36)
@@ -260,7 +222,7 @@ Partial Class CreateOrEditSupplierQuote
         Me.QuoteAcceptanceStatusComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.QuoteAcceptanceStatusComboBox.FormattingEnabled = True
         Me.QuoteAcceptanceStatusComboBox.Items.AddRange(New Object() {"N", "Y"})
-        Me.QuoteAcceptanceStatusComboBox.Location = New System.Drawing.Point(203, 230)
+        Me.QuoteAcceptanceStatusComboBox.Location = New System.Drawing.Point(189, 230)
         Me.QuoteAcceptanceStatusComboBox.Margin = New System.Windows.Forms.Padding(2)
         Me.QuoteAcceptanceStatusComboBox.MaxDropDownItems = 100
         Me.QuoteAcceptanceStatusComboBox.Name = "QuoteAcceptanceStatusComboBox"
@@ -271,23 +233,12 @@ Partial Class CreateOrEditSupplierQuote
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(25, 36)
+        Me.Label1.Location = New System.Drawing.Point(25, 49)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "- Supplier ID:"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(80, 13)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(112, 13)
-        Me.Label2.TabIndex = 24
-        Me.Label2.Text = "- Quote Reference ID:"
         '
         'SupplierIDComboBox
         '
@@ -296,7 +247,7 @@ Partial Class CreateOrEditSupplierQuote
         Me.SupplierIDComboBox.DisplayMember = "Supplier_ID"
         Me.SupplierIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SupplierIDComboBox.FormattingEnabled = True
-        Me.SupplierIDComboBox.Location = New System.Drawing.Point(189, 28)
+        Me.SupplierIDComboBox.Location = New System.Drawing.Point(189, 41)
         Me.SupplierIDComboBox.Margin = New System.Windows.Forms.Padding(2)
         Me.SupplierIDComboBox.MaxDropDownItems = 100
         Me.SupplierIDComboBox.Name = "SupplierIDComboBox"
@@ -312,7 +263,7 @@ Partial Class CreateOrEditSupplierQuote
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(16, 152)
+        Me.Label4.Location = New System.Drawing.Point(16, 160)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(88, 13)
@@ -322,7 +273,7 @@ Partial Class CreateOrEditSupplierQuote
         'DateRecievedDateTimePicker
         '
         Me.DateRecievedDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.SupplierQuoteBindingSource, "Supp_Quote_Date_Recieved", True))
-        Me.DateRecievedDateTimePicker.Location = New System.Drawing.Point(192, 146)
+        Me.DateRecievedDateTimePicker.Location = New System.Drawing.Point(189, 153)
         Me.DateRecievedDateTimePicker.Name = "DateRecievedDateTimePicker"
         Me.DateRecievedDateTimePicker.Size = New System.Drawing.Size(199, 20)
         Me.DateRecievedDateTimePicker.TabIndex = 58
@@ -339,28 +290,76 @@ Partial Class CreateOrEditSupplierQuote
         Me.Label7.Text = "- Quote Accepted as Order? :"
         Me.Label7.UseMnemonic = False
         '
-        'SupplierQuoteIDTextBox
-        '
-        Me.SupplierQuoteIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.SupplierQuoteIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteBindingSource, "Supp_Quote_Reference_ID", True))
-        Me.SupplierQuoteIDTextBox.Location = New System.Drawing.Point(200, 11)
-        Me.SupplierQuoteIDTextBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.SupplierQuoteIDTextBox.Name = "SupplierQuoteIDTextBox"
-        Me.SupplierQuoteIDTextBox.ReadOnly = True
-        Me.SupplierQuoteIDTextBox.Size = New System.Drawing.Size(154, 20)
-        Me.SupplierQuoteIDTextBox.TabIndex = 39
-        Me.SupplierQuoteIDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
         'Label6
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(81, 271)
+        Me.Label6.Location = New System.Drawing.Point(68, 267)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(169, 13)
         Me.Label6.TabIndex = 48
         Me.Label6.Text = "- Date Accepted (YYYY/MM/DD):"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox4.Controls.Add(Me.Label3)
+        Me.GroupBox4.Controls.Add(Me.TotalPriceTextBox)
+        Me.GroupBox4.Location = New System.Drawing.Point(11, 457)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Size = New System.Drawing.Size(404, 64)
+        Me.GroupBox4.TabIndex = 72
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "TOTAL AMOUNT in Rands:"
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Location = New System.Drawing.Point(99, 28)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(15, 13)
+        Me.Label3.TabIndex = 54
+        Me.Label3.Text = "R"
+        Me.Label3.UseMnemonic = False
+        '
+        'TotalPriceTextBox
+        '
+        Me.TotalPriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteBindingSource, "Supp_Quote_Total_Price", True))
+        Me.TotalPriceTextBox.Location = New System.Drawing.Point(118, 25)
+        Me.TotalPriceTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.TotalPriceTextBox.Name = "TotalPriceTextBox"
+        Me.TotalPriceTextBox.Size = New System.Drawing.Size(172, 20)
+        Me.TotalPriceTextBox.TabIndex = 53
+        Me.TotalPriceTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Location = New System.Drawing.Point(92, 13)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(112, 13)
+        Me.Label2.TabIndex = 24
+        Me.Label2.Text = "- Quote Reference ID:"
+        '
+        'SupplierQuoteIDTextBox
+        '
+        Me.SupplierQuoteIDTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.SupplierQuoteIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteBindingSource, "Supp_Quote_Reference_ID", True))
+        Me.SupplierQuoteIDTextBox.Location = New System.Drawing.Point(212, 11)
+        Me.SupplierQuoteIDTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.SupplierQuoteIDTextBox.Name = "SupplierQuoteIDTextBox"
+        Me.SupplierQuoteIDTextBox.ReadOnly = True
+        Me.SupplierQuoteIDTextBox.Size = New System.Drawing.Size(69, 20)
+        Me.SupplierQuoteIDTextBox.TabIndex = 39
+        Me.SupplierQuoteIDTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'ItemGroupBox
         '
@@ -379,28 +378,12 @@ Partial Class CreateOrEditSupplierQuote
         Me.ItemGroupBox.TabStop = False
         Me.ItemGroupBox.Text = "QUOTED ITEMS"
         '
-        'RefreshButton
-        '
-        Me.RefreshButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.RefreshButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.RefreshButton.FlatAppearance.BorderSize = 3
-        Me.RefreshButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.RefreshButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RefreshButton.Location = New System.Drawing.Point(741, 442)
-        Me.RefreshButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.RefreshButton.Name = "RefreshButton"
-        Me.RefreshButton.Size = New System.Drawing.Size(77, 36)
-        Me.RefreshButton.TabIndex = 78
-        Me.RefreshButton.Text = "REFRESH"
-        Me.RefreshButton.UseVisualStyleBackColor = False
-        '
         'NotificationLabel
         '
         Me.NotificationLabel.AutoSize = True
         Me.NotificationLabel.BackColor = System.Drawing.Color.Transparent
         Me.NotificationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.NotificationLabel.Location = New System.Drawing.Point(247, 480)
+        Me.NotificationLabel.Location = New System.Drawing.Point(266, 481)
         Me.NotificationLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.NotificationLabel.Name = "NotificationLabel"
         Me.NotificationLabel.Size = New System.Drawing.Size(324, 20)
@@ -415,7 +398,7 @@ Partial Class CreateOrEditSupplierQuote
         Me.EditLineItemsButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.EditLineItemsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.EditLineItemsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.EditLineItemsButton.Location = New System.Drawing.Point(267, 432)
+        Me.EditLineItemsButton.Location = New System.Drawing.Point(287, 433)
         Me.EditLineItemsButton.Margin = New System.Windows.Forms.Padding(2)
         Me.EditLineItemsButton.Name = "EditLineItemsButton"
         Me.EditLineItemsButton.Size = New System.Drawing.Size(284, 46)
@@ -565,21 +548,25 @@ Partial Class CreateOrEditSupplierQuote
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
         '
-        'CaclulateTotalButton
+        'RefreshButton
         '
-        Me.CaclulateTotalButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CaclulateTotalButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.CaclulateTotalButton.FlatAppearance.BorderSize = 3
-        Me.CaclulateTotalButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.CaclulateTotalButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.CaclulateTotalButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CaclulateTotalButton.Location = New System.Drawing.Point(270, 18)
-        Me.CaclulateTotalButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.CaclulateTotalButton.Name = "CaclulateTotalButton"
-        Me.CaclulateTotalButton.Size = New System.Drawing.Size(90, 34)
-        Me.CaclulateTotalButton.TabIndex = 56
-        Me.CaclulateTotalButton.Text = "CALCULATE"
-        Me.CaclulateTotalButton.UseVisualStyleBackColor = False
+        Me.RefreshButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RefreshButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.RefreshButton.FlatAppearance.BorderSize = 3
+        Me.RefreshButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.RefreshButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RefreshButton.Location = New System.Drawing.Point(741, 442)
+        Me.RefreshButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.RefreshButton.Name = "RefreshButton"
+        Me.RefreshButton.Size = New System.Drawing.Size(77, 36)
+        Me.RefreshButton.TabIndex = 78
+        Me.RefreshButton.Text = "REFRESH"
+        Me.RefreshButton.UseVisualStyleBackColor = False
+        '
+        'Supplier_Quote_Line_ItemTableAdapter
+        '
+        Me.Supplier_Quote_Line_ItemTableAdapter.ClearBeforeFill = True
         '
         'CreateOrEditSupplierQuote
         '
@@ -604,10 +591,10 @@ Partial Class CreateOrEditSupplierQuote
         Me.QuoteDetailsGroupBox.PerformLayout()
         CType(Me.SupplierQuoteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.GroupBox4.ResumeLayout(False)
-        Me.GroupBox4.PerformLayout()
         Me.OptionsGroupBox1.ResumeLayout(False)
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ItemGroupBox.ResumeLayout(False)
         Me.ItemGroupBox.PerformLayout()
         Me.ItemsListGroupBox.ResumeLayout(False)
@@ -661,5 +648,5 @@ Partial Class CreateOrEditSupplierQuote
     Friend WithEvents Label8 As Label
     Friend WithEvents CreateOrEditSupplierQuoteTip As ToolTip
     Friend WithEvents RefreshButton As Button
-    Friend WithEvents CaclulateTotalButton As Button
+    Friend WithEvents Supplier_Quote_Line_ItemTableAdapter As group16DataSetTableAdapters.Supplier_Quote_Line_ItemTableAdapter
 End Class
