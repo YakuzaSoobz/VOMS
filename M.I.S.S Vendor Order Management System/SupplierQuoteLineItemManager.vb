@@ -59,11 +59,19 @@ Public Class SupplierQuoteLineItemManager
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
 
         Try
-            SupplierQuoteManager.SupplierQuoteJoinSupplierTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SupplierQuoteJoinSupplier)
-            SupplierQuoteManager.SuppLineItemJoinProductTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SuppLineItemJoinProduct)
-            Call CreateOrEditSupplierQuote.RefreshButton_Click(sender, e)
 
-            Me.Close()
+            If ((SupplierQuoteLineItemDataGridView.RowCount > 0)) Then
+
+                SupplierQuoteManager.SupplierQuoteJoinSupplierTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SupplierQuoteJoinSupplier)
+                SupplierQuoteManager.SuppLineItemJoinProductTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SuppLineItemJoinProduct)
+                Call CreateOrEditSupplierQuote.RefreshButton_Click(sender, e)
+
+                Me.Close()
+
+            Else
+                MsgBox("You need to add at least one item to the quote first before leaving!", MsgBoxStyle.YesNo)
+            End If
+
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try

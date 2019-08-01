@@ -3,6 +3,7 @@
 Public Class CreateOrEditSupplierQuote
 
     Public CreateSupplierStatus As Boolean = False
+    Public ActiveQuoteStatus As Boolean = False
     Public SupplierQuoteID As Integer
 
 
@@ -137,8 +138,10 @@ Public Class CreateOrEditSupplierQuote
                         QuoteDetailsGroupBox.Enabled = False
                         EditLineItemsButton.Enabled = True
                         NotificationLabel.Visible = False
+                        ActiveQuoteStatus = True
                         SuppLineItemJoinProductDataGridView.Visible = True
                         SuppLineItemJoinProductDataGridView.Enabled = True
+
 
                     End If
                 Catch ex As SqlException
@@ -176,11 +179,29 @@ Public Class CreateOrEditSupplierQuote
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
 
-        Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
-        If answer = MsgBoxResult.Yes Then
-            SupplierQuoteManager.Show()
-            Me.Close()
+        If (ActiveQuoteStatus = False) Then
+            Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
+            If answer = MsgBoxResult.Yes Then
+                SupplierQuoteManager.Show()
+                Me.Close()
+            End If
+        ElseIf (ActiveQuoteStatus = True) Then 'save button has been clicked
+            If ((SuppLineItemJoinProductDataGridView.RowCount > 0)) Then
+
+                Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
+                If answer = MsgBoxResult.Yes Then
+                    SupplierQuoteManager.Show()
+                    Me.Close()
+                End If
+
+            ElseIf ((SuppLineItemJoinProductDataGridView.RowCount < 1)) Then
+                MsgBox("You need to add atleast one item to the quote first before leaving!", MsgBoxStyle.YesNo)
+            End If
         End If
+
+        Call SupplierQuoteManager.RefreshButton_Click(sender, e)
+
+
     End Sub
 
     Private Sub DeleteSupplierQuoteButton_Click(sender As Object, e As EventArgs) Handles DeleteSupplierQuoteButton.Click

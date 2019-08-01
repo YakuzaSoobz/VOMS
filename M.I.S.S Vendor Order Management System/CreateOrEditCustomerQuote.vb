@@ -4,6 +4,7 @@ Public Class CreateOrEditCustomerQuote
 
     Public CreateCustomerStatus As Boolean = False
     Public CustomerQuoteID As Integer
+    Public ActiveQuoteStatus As Boolean = False
     Private Sub CreateOrEditCustomerQuote_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
@@ -67,12 +68,30 @@ Public Class CreateOrEditCustomerQuote
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
-        Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
-        If answer = MsgBoxResult.Yes Then
-            CustomerQuoteManager.Show()
-            Call CustomerQuoteManager.RefreshButton_Click(sender, e)
-            Me.Close()
+
+        If (ActiveQuoteStatus = False) Then
+            Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
+            If answer = MsgBoxResult.Yes Then
+                CustomerQuoteManager.Show()
+                Me.Close()
+            End If
+        ElseIf (ActiveQuoteStatus = True) Then 'save button has been clicked
+            If ((CustLineItemJoinProductDataGridView.RowCount > 0)) Then
+
+                Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
+                If answer = MsgBoxResult.Yes Then
+                    CustomerQuoteManager.Show()
+                    Me.Close()
+                End If
+
+            ElseIf ((CustLineItemJoinProductDataGridView.RowCount < 1)) Then
+                MsgBox("You need to add atleast one item to the quote first before leaving!", MsgBoxStyle.YesNo)
+            End If
         End If
+
+        Call CustomerQuoteManager.RefreshButton_Click(sender, e)
+
+
     End Sub
 
     Public Sub UpdateQuoteButton_Click(sender As Object, e As EventArgs) Handles UpdateQuoteButton.Click
@@ -149,6 +168,7 @@ Public Class CreateOrEditCustomerQuote
                         TotalPriceTextBox.Enabled = True
                         EditLineItemsButton.Enabled = True
                         NotificationLabel.Visible = False
+                        ActiveQuoteStatus = True
                         CustLineItemJoinProductDataGridView.Visible = True
                         CustLineItemJoinProductDataGridView.Enabled = True
 
@@ -290,6 +310,20 @@ Public Class CreateOrEditCustomerQuote
     End Sub
 
     Private Sub CustomerInfoButton_Click(sender As Object, e As EventArgs) Handles CustomerInfoButton.Click
+
+        Try
+            CustomerInfoPopUp.Show()
+            CustomerInfoPopUp.CustomerBindingSource.Filter = "Customer_ID = '" & CustomerIDComboBox.Text & "'"
+            CustomerInfoPopUp.Text = "Employee Information: " & CustomerIDComboBox.Text
+
+        Catch ex As SqlException
+            MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
+        Catch ex As NoNullAllowedException
+            MsgBox("Cannot compute Total Price!", vbExclamation, "Incorrect Input!")
+        Catch ex As Exception
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+        End Try
+
         CustomerInfoPopUp.Show()
     End Sub
 

@@ -17,10 +17,14 @@ Lorenzo's tasks:
 	- fix get total = #
 	- fix date = #
 	- remove errors with try and catches = #
-	- add functionality to customer info page = *
+	- add functionality to customer info page = #
   	- add type checking to quote and line item creation pages = *
 	- fix CustLineItemEditor table error = *
-	- 
+
+2)Supplier Quote Manager:
+	- disable back button while creating quote - #
+	- fix table total price - #
+	- add better UI for the line item editor
 _______________________________________________________________________________
 Yashin' tasks:
 

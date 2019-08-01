@@ -40,7 +40,7 @@ Public Class SupplierQuoteManager
         End Try
     End Sub
 
-    Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
+    Public Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
         Try
             Call SupplierQuoteManager_Load(sender, e)
 
@@ -65,7 +65,7 @@ Public Class SupplierQuoteManager
             SupplierQuoteJoinSupplierBindingSource.MoveLast()
             NewSupplierQuoteReferenceID = Integer.Parse(SupplierQuoteJoinSupplierDataGridView.CurrentRow.Cells(0).Value.ToString) + 1
 
-            CreateOrEditSupplierQuote.Text = "Supplier Quote ReferenceID : " & SupplierQuoteReferenceID
+            CreateOrEditSupplierQuote.Text = "Supplier Quote ReferenceID : " & NewSupplierQuoteReferenceID
             CreateOrEditSupplierQuote.SupplierQuoteID = NewSupplierQuoteReferenceID
             Me.Hide()
         Catch exe As SqlException

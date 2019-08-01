@@ -58,41 +58,65 @@ Public Class LineItemDetailsPopUp
     End Sub
 
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
-
-
         Try
-            Dim ret As Integer = MsgBox("Save new Customer Line Item to Customer Quote " & CustomerQuoteLineItemManager.CustomerQuoteReferenceID & " ?", vbYesNo)
 
-            If ret = 6 Then 'if user clicks yes to add item'
+            If Not (IsNumeric(QuantityComboBox.Text)) Then
+                MsgBox("Only positive integers can be entered into the quanity field", vbOK)
 
-                SupplierID = Integer.Parse(SupplierIDTextBox.Text)
+            ElseIf ((Integer.Parse(QuantityComboBox.Text) < 1) Or (Integer.Parse(QuantityComboBox.Text) > 1000)) Then
 
-                CostPrice = Decimal.Parse(CostPriceTextBox.Text)
-                MarkupPercentage = Decimal.Parse(MarkupComboBox.Text)
-                DiscountPercentage = Decimal.Parse(DiscountComboBox.Text)
-                Quantity = Integer.Parse(QuantityComboBox.Text)
+                MsgBox("Enter an integer between 1 and 1000 for quantity!", vbOK)
+                QuantityComboBox.ResetText()
 
-                Dim MarkupAmount As Decimal = (MarkupPercentage / 100) * CostPrice
-                Dim DiscountAmount As Decimal = (CostPrice + MarkupAmount) * (DiscountPercentage / 100)
-                SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))
-                SaleInclVat = SaleExclVat + (SaleExclVat * VATPercentage)
+            ElseIf Not ((Decimal.Parse(QuantityComboBox.Text)) = (Int(Decimal.Parse(QuantityComboBox.Text)))) Then
+                MsgBox("Only positive integers can be entered into the quanity field", vbOK)
+                QuantityComboBox.ResetText()
 
-                SaleExclVATTextBox.Text = SaleExclVat
-                SaleInclVATTextBox.Text = SaleInclVat
+            ElseIf (QuantityComboBox.Text = Nothing) Then
+                MsgBox("The quanity field is blank!", vbOK)
 
-                CustomerQuoteLineItemManager.Customer_Quote_Line_ItemTableAdapter.Insert(ProductID, CustomerQuoteLineItemManager.CustomerQuoteReferenceID, SupplierID, CostPrice, SaleInclVat, SaleExclVat, MarkupPercentage, DiscountPercentage, Quantity)
-                CustomerQuoteLineItemManager.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
-                CustomerQuoteLineItemManager.Customer_Quote_Line_ItemTableAdapter.Fill(Me.Group16DataSet.Customer_Quote_Line_Item)
+            Else
+
+                Try
+                    Dim ret As Integer = MsgBox("Save new Customer Line Item to Customer Quote " & CustomerQuoteLineItemManager.CustomerQuoteReferenceID & " ?", vbYesNo)
+
+                    If ret = 6 Then 'if user clicks yes to add item'
+
+                        SupplierID = Integer.Parse(SupplierIDTextBox.Text)
+
+                        CostPrice = Decimal.Parse(CostPriceTextBox.Text)
+                        MarkupPercentage = Decimal.Parse(MarkupComboBox.Text)
+                        DiscountPercentage = Decimal.Parse(DiscountComboBox.Text)
+                        Quantity = Integer.Parse(QuantityComboBox.Text)
+
+                        Dim MarkupAmount As Decimal = (MarkupPercentage / 100) * CostPrice
+                        Dim DiscountAmount As Decimal = (CostPrice + MarkupAmount) * (DiscountPercentage / 100)
+                        SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))
+                        SaleInclVat = SaleExclVat + (SaleExclVat * VATPercentage)
+
+                        SaleExclVATTextBox.Text = SaleExclVat
+                        SaleInclVATTextBox.Text = SaleInclVat
+
+                        CustomerQuoteLineItemManager.Customer_Quote_Line_ItemTableAdapter.Insert(ProductID, CustomerQuoteLineItemManager.CustomerQuoteReferenceID, SupplierID, CostPrice, SaleInclVat, SaleExclVat, MarkupPercentage, DiscountPercentage, Quantity)
+                        CustomerQuoteLineItemManager.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
+                        CustomerQuoteLineItemManager.Customer_Quote_Line_ItemTableAdapter.Fill(Me.Group16DataSet.Customer_Quote_Line_Item)
+
+                    End If
+
+                Catch ex As SqlException
+                    MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
+                Catch ex As EvaluateException
+                    MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+                Catch ex As FormatException
+                    MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+                End Try
 
             End If
-
-        Catch ex As SqlException
+        Catch ex As FormatException
             MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
-        Catch ex As EvaluateException
-            MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
-        Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
+
+
     End Sub
 
     Private Sub SupplierDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles SupplierDataGridView.CellClick

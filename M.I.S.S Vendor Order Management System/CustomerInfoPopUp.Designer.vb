@@ -29,6 +29,7 @@ Partial Class CustomerInfoPopUp
         Me.DetailsGroupBox = New System.Windows.Forms.GroupBox()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label19 = New System.Windows.Forms.Label()
         Me.CustomerIDTextBox = New System.Windows.Forms.TextBox()
         Me.ActiveStatusComboBox = New System.Windows.Forms.ComboBox()
@@ -58,7 +59,6 @@ Partial Class CustomerInfoPopUp
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.DetailsGroupBox.SuspendLayout()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,6 +155,11 @@ Partial Class CustomerInfoPopUp
         Me.PasswordTextBox.Size = New System.Drawing.Size(162, 20)
         Me.PasswordTextBox.TabIndex = 81
         Me.PasswordTextBox.UseSystemPasswordChar = True
+        '
+        'CustomerBindingSource
+        '
+        Me.CustomerBindingSource.DataMember = "Customer"
+        Me.CustomerBindingSource.DataSource = Me.Group16DataSet
         '
         'Label19
         '
@@ -454,11 +459,6 @@ Partial Class CustomerInfoPopUp
         Me.Label1.Size = New System.Drawing.Size(67, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "* First Name:"
-        '
-        'CustomerBindingSource
-        '
-        Me.CustomerBindingSource.DataMember = "Customer"
-        Me.CustomerBindingSource.DataSource = Me.Group16DataSet
         '
         'CustomerInfoPopUp
         '

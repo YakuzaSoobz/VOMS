@@ -47,6 +47,7 @@ Partial Class CreateOrEditSupplierQuote
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SupplierQuoteIDTextBox = New System.Windows.Forms.TextBox()
         Me.ItemGroupBox = New System.Windows.Forms.GroupBox()
+        Me.RefreshButton = New System.Windows.Forms.Button()
         Me.NotificationLabel = New System.Windows.Forms.Label()
         Me.EditLineItemsButton = New System.Windows.Forms.Button()
         Me.ItemsListGroupBox = New System.Windows.Forms.GroupBox()
@@ -65,7 +66,6 @@ Partial Class CreateOrEditSupplierQuote
         Me.SuppLineItemJoinProductTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SuppLineItemJoinProductTableAdapter()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.CreateOrEditSupplierQuoteTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.RefreshButton = New System.Windows.Forms.Button()
         Me.Supplier_Quote_Line_ItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Supplier_Quote_Line_ItemTableAdapter()
         Me.QuoteDetailsGroupBox.SuspendLayout()
         CType(Me.SupplierQuoteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -378,17 +378,34 @@ Partial Class CreateOrEditSupplierQuote
         Me.ItemGroupBox.TabStop = False
         Me.ItemGroupBox.Text = "QUOTED ITEMS"
         '
+        'RefreshButton
+        '
+        Me.RefreshButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RefreshButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.RefreshButton.FlatAppearance.BorderSize = 3
+        Me.RefreshButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.RefreshButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RefreshButton.Location = New System.Drawing.Point(741, 442)
+        Me.RefreshButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.RefreshButton.Name = "RefreshButton"
+        Me.RefreshButton.Size = New System.Drawing.Size(77, 36)
+        Me.RefreshButton.TabIndex = 78
+        Me.RefreshButton.Text = "REFRESH"
+        Me.RefreshButton.UseVisualStyleBackColor = False
+        '
         'NotificationLabel
         '
         Me.NotificationLabel.AutoSize = True
         Me.NotificationLabel.BackColor = System.Drawing.Color.Transparent
         Me.NotificationLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.NotificationLabel.ForeColor = System.Drawing.SystemColors.ControlLight
         Me.NotificationLabel.Location = New System.Drawing.Point(266, 481)
         Me.NotificationLabel.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.NotificationLabel.Name = "NotificationLabel"
-        Me.NotificationLabel.Size = New System.Drawing.Size(324, 20)
+        Me.NotificationLabel.Size = New System.Drawing.Size(329, 20)
         Me.NotificationLabel.TabIndex = 77
-        Me.NotificationLabel.Text = "Save a Quote in order to add items to it"
+        Me.NotificationLabel.Text = "Save a Quote in order to add items to it!"
         '
         'EditLineItemsButton
         '
@@ -547,22 +564,6 @@ Partial Class CreateOrEditSupplierQuote
         Me.HelpBtn.TabIndex = 79
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
-        '
-        'RefreshButton
-        '
-        Me.RefreshButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.RefreshButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.RefreshButton.FlatAppearance.BorderSize = 3
-        Me.RefreshButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.RefreshButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.RefreshButton.Location = New System.Drawing.Point(741, 442)
-        Me.RefreshButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.RefreshButton.Name = "RefreshButton"
-        Me.RefreshButton.Size = New System.Drawing.Size(77, 36)
-        Me.RefreshButton.TabIndex = 78
-        Me.RefreshButton.Text = "REFRESH"
-        Me.RefreshButton.UseVisualStyleBackColor = False
         '
         'Supplier_Quote_Line_ItemTableAdapter
         '
