@@ -59,23 +59,64 @@ Public Class LineItemDetailsPopUp
 
     Private Sub SaveButton_Click(sender As Object, e As EventArgs) Handles SaveButton.Click
         Try
+            QuantityComboBox.BackColor = Color.White
+            MarkupComboBox.BackColor = Color.White
+            DiscountComboBox.BackColor = Color.White
 
-            If Not (IsNumeric(QuantityComboBox.Text)) Then
-                MsgBox("Only positive integers can be entered into the quanity field", vbOK)
-
-            ElseIf ((Integer.Parse(QuantityComboBox.Text) < 1) Or (Integer.Parse(QuantityComboBox.Text) > 1000)) Then
-
-                MsgBox("Enter an integer between 1 and 1000 for quantity!", vbOK)
-                QuantityComboBox.ResetText()
-
-            ElseIf Not ((Decimal.Parse(QuantityComboBox.Text)) = (Int(Decimal.Parse(QuantityComboBox.Text)))) Then
-                MsgBox("Only positive integers can be entered into the quanity field", vbOK)
-                QuantityComboBox.ResetText()
-
-            ElseIf (QuantityComboBox.Text = Nothing) Then
+            'QUANTITY------------------------------------------------------------------
+            If String.IsNullOrWhiteSpace(QuantityComboBox.Text) Then 'quantity is blank
                 MsgBox("The quanity field is blank!", vbOK)
+                QuantityComboBox.BackColor = Color.MistyRose
 
-            Else
+            ElseIf Not (IsNumeric(QuantityComboBox.Text)) Then 'quantity is not numeric
+                MsgBox("Only positive integers can be entered into the quanity field", vbOK, "Invalid entry")
+                QuantityComboBox.ResetText()
+                QuantityComboBox.BackColor = Color.MistyRose
+
+            ElseIf ((Integer.Parse(QuantityComboBox.Text) < 1) Or (Integer.Parse(QuantityComboBox.Text) > 1000)) Then 'quantity is <1 and >1000
+                MsgBox("Enter an integer between 1 and 1000 for quantity!", vbOK, "Invalid entry")
+                QuantityComboBox.ResetText()
+                QuantityComboBox.BackColor = Color.MistyRose
+
+            ElseIf Not ((Decimal.Parse(QuantityComboBox.Text)) = (Int(Decimal.Parse(QuantityComboBox.Text)))) Then ' check if it's decimal
+                MsgBox("Only positive integers can be entered into the quanity field and not decimals!", vbOK, "Invalid entry")
+                QuantityComboBox.ResetText()
+                QuantityComboBox.BackColor = Color.MistyRose
+
+                'MARKUP------------------------------------------------------------------
+            ElseIf String.IsNullOrWhiteSpace(MarkupComboBox.Text) Then ' is blank
+                MsgBox("The Markup field is blank!", vbOK, "Invalid entry")
+                MarkupComboBox.BackColor = Color.MistyRose
+            ElseIf Not (IsNumeric(MarkupComboBox.Text)) Then ' is not numeric
+                MsgBox("Only positive integers can be entered into the markup % field", vbOK, "Invalid entry")
+                MarkupComboBox.ResetText()
+                MarkupComboBox.BackColor = Color.MistyRose
+            ElseIf ((Integer.Parse(MarkupComboBox.Text) < 1) Or (Integer.Parse(MarkupComboBox.Text) > 1000)) Then 'is <1 and >1000
+                MsgBox("Enter a % markup between 1 and 1000!", vbOK, "Invalid entry")
+                MarkupComboBox.ResetText()
+                MarkupComboBox.BackColor = Color.MistyRose
+            ElseIf Not ((Decimal.Parse(MarkupComboBox.Text)) = (Int(Decimal.Parse(MarkupComboBox.Text)))) Then ' check if it's decimal
+                MsgBox("Only positive integers can be entered into the markup % field and not decimals!", vbOK, "Invalid entry")
+                MarkupComboBox.ResetText()
+                MarkupComboBox.BackColor = Color.MistyRose
+
+                'DISCOUNT------------------------------------------------------------------
+            ElseIf String.IsNullOrWhiteSpace(DiscountComboBox.Text) Then ' is blank
+                MsgBox("The discount field is blank!", vbOK, "Invalid entry")
+                DiscountComboBox.BackColor = Color.MistyRose
+            ElseIf Not (IsNumeric(DiscountComboBox.Text)) Then ' is not numeric
+                MsgBox("Only positive integers can be entered into the discount % field", vbOK, "Invalid entry")
+                DiscountComboBox.ResetText()
+                DiscountComboBox.BackColor = Color.MistyRose
+            ElseIf ((Integer.Parse(DiscountComboBox.Text) < 0) Or (Integer.Parse(DiscountComboBox.Text) > 100)) Then ' is <0 and >100
+                MsgBox("Enter a % discount between ,and including, 0 and 100!", vbOK, "Invalid entry")
+                DiscountComboBox.ResetText()
+                DiscountComboBox.BackColor = Color.MistyRose
+            ElseIf Not ((Decimal.Parse(DiscountComboBox.Text)) = (Int(Decimal.Parse(DiscountComboBox.Text)))) Then ' check if it's decimal
+                MsgBox("Only positive integers can be entered into the discount % field and not decimals!", vbOK, "Invalid entry")
+                DiscountComboBox.ResetText()
+                DiscountComboBox.BackColor = Color.MistyRose
+            Else 'if everything is valid
 
                 Try
                     Dim ret As Integer = MsgBox("Save new Customer Line Item to Customer Quote " & CustomerQuoteLineItemManager.CustomerQuoteReferenceID & " ?", vbYesNo)
@@ -155,5 +196,92 @@ Public Class LineItemDetailsPopUp
 
     Private Sub SaveButton_MouseHover(sender As Object, e As EventArgs) Handles SaveButton.MouseHover
         LineItemDetailsPopUpTip.SetToolTip(SaveButton, "Click to save line item to the quote")
+    End Sub
+
+    Private Sub QuantityComboBox_TextChanged(sender As Object, e As EventArgs) Handles QuantityComboBox.TextChanged
+
+        Try
+            If String.IsNullOrWhiteSpace(QuantityComboBox.Text) Then 'quantity is blank
+
+                QuantityComboBox.BackColor = Color.MistyRose
+
+            ElseIf Not (IsNumeric(QuantityComboBox.Text)) Then 'quantity is not numeric
+
+                QuantityComboBox.BackColor = Color.MistyRose
+
+            ElseIf ((Integer.Parse(QuantityComboBox.Text) < 1) Or (Integer.Parse(QuantityComboBox.Text) > 1000)) Then 'quantity is <1 and >1000
+
+                QuantityComboBox.BackColor = Color.MistyRose
+
+            ElseIf Not ((Decimal.Parse(QuantityComboBox.Text)) = (Int(Decimal.Parse(QuantityComboBox.Text)))) Then ' check if it's decimal
+
+                QuantityComboBox.BackColor = Color.MistyRose
+            Else
+                QuantityComboBox.BackColor = Color.White
+            End If
+
+        Catch ex As SqlException
+            MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
+        Catch ex As EvaluateException
+            MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+        Catch ex As FormatException
+            MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+        End Try
+    End Sub
+
+    Private Sub MarkupComboBox_TextChanged(sender As Object, e As EventArgs) Handles MarkupComboBox.TextChanged
+
+        Try
+            'MARKUP------------------------------------------------------------------
+            If String.IsNullOrWhiteSpace(MarkupComboBox.Text) Then ' is blank
+
+                MarkupComboBox.BackColor = Color.MistyRose
+            ElseIf Not (IsNumeric(MarkupComboBox.Text)) Then ' is not numeric
+
+                MarkupComboBox.BackColor = Color.MistyRose
+            ElseIf ((Integer.Parse(MarkupComboBox.Text) < 1) Or (Integer.Parse(MarkupComboBox.Text) > 1000)) Then 'is <1 and >1000
+
+                MarkupComboBox.BackColor = Color.MistyRose
+            ElseIf Not ((Decimal.Parse(MarkupComboBox.Text)) = (Int(Decimal.Parse(MarkupComboBox.Text)))) Then ' check if it's decimal
+
+                MarkupComboBox.BackColor = Color.MistyRose
+            Else
+                MarkupComboBox.BackColor = Color.White
+            End If
+
+        Catch ex As SqlException
+            MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
+        Catch ex As EvaluateException
+            MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+        Catch ex As FormatException
+            MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+        End Try
+    End Sub
+
+    Private Sub DiscountComboBox_TextChanged(sender As Object, e As EventArgs) Handles DiscountComboBox.TextChanged
+
+        Try
+            If String.IsNullOrWhiteSpace(DiscountComboBox.Text) Then ' is blank
+
+                DiscountComboBox.BackColor = Color.MistyRose
+            ElseIf Not (IsNumeric(DiscountComboBox.Text)) Then ' is not numeric
+
+                DiscountComboBox.BackColor = Color.MistyRose
+            ElseIf ((Integer.Parse(DiscountComboBox.Text) < 0) Or (Integer.Parse(DiscountComboBox.Text) > 100)) Then ' is <1 and >1000
+
+                DiscountComboBox.BackColor = Color.MistyRose
+            ElseIf Not ((Decimal.Parse(DiscountComboBox.Text)) = (Int(Decimal.Parse(DiscountComboBox.Text)))) Then ' check if it's decimal
+
+                DiscountComboBox.BackColor = Color.MistyRose
+            Else 'if everything is valid
+                DiscountComboBox.BackColor = Color.White
+            End If
+        Catch ex As SqlException
+            MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
+        Catch ex As EvaluateException
+            MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+        Catch ex As FormatException
+            MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+        End Try
     End Sub
 End Class
