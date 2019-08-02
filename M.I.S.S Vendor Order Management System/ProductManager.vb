@@ -355,4 +355,38 @@ Public Class ProductManager
         End Try
 
     End Sub
+
+    Private Sub ProductNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProductNameTextBox.TextChanged
+        If (ProductNameTextBox.Text.Trim = Nothing) Then
+            ProductNameTextBox.BackColor = Color.Red
+        Else
+            ProductNameTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub BrandNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles BrandNameTextBox.TextChanged
+        If (BrandNameTextBox.Text.Trim = Nothing) Then
+            BrandNameTextBox.BackColor = Color.Red
+        Else
+            BrandNameTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub ProductDescriptionTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProductDescriptionTextBox.TextChanged
+        If (ProductDescriptionTextBox.Text.Trim = Nothing) Then
+            ProductDescriptionTextBox.BackColor = Color.Red
+        Else
+            ProductDescriptionTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub ActiveStatusComboBox_TextChanged(sender As Object, e As EventArgs) Handles ActiveStatusComboBox.TextChanged
+        If (ActiveStatusComboBox.Text = Nothing) Then
+            ActiveStatusComboBox.BackColor = Color.Red
+        ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
+            ActiveStatusComboBox.BackColor = Color.Red
+        Else
+            ActiveStatusComboBox.BackColor = Color.White
+        End If
+    End Sub
 End Class
