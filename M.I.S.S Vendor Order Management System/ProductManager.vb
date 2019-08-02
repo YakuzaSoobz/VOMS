@@ -358,7 +358,7 @@ Public Class ProductManager
 
     Private Sub ProductNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProductNameTextBox.TextChanged
         If (ProductNameTextBox.Text.Trim = Nothing) Then
-            ProductNameTextBox.BackColor = Color.Red
+            ProductNameTextBox.BackColor = Color.MistyRose
         Else
             ProductNameTextBox.BackColor = Color.White
         End If
@@ -366,7 +366,7 @@ Public Class ProductManager
 
     Private Sub BrandNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles BrandNameTextBox.TextChanged
         If (BrandNameTextBox.Text.Trim = Nothing) Then
-            BrandNameTextBox.BackColor = Color.Red
+            BrandNameTextBox.BackColor = Color.MistyRose
         Else
             BrandNameTextBox.BackColor = Color.White
         End If
@@ -374,7 +374,7 @@ Public Class ProductManager
 
     Private Sub ProductDescriptionTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProductDescriptionTextBox.TextChanged
         If (ProductDescriptionTextBox.Text.Trim = Nothing) Then
-            ProductDescriptionTextBox.BackColor = Color.Red
+            ProductDescriptionTextBox.BackColor = Color.MistyRose
         Else
             ProductDescriptionTextBox.BackColor = Color.White
         End If
@@ -382,9 +382,9 @@ Public Class ProductManager
 
     Private Sub ActiveStatusComboBox_TextChanged(sender As Object, e As EventArgs) Handles ActiveStatusComboBox.TextChanged
         If (ActiveStatusComboBox.Text = Nothing) Then
-            ActiveStatusComboBox.BackColor = Color.Red
+            ActiveStatusComboBox.BackColor = Color.MistyRose
         ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
-            ActiveStatusComboBox.BackColor = Color.Red
+            ActiveStatusComboBox.BackColor = Color.MistyRose
         Else
             ActiveStatusComboBox.BackColor = Color.White
         End If
