@@ -3,6 +3,9 @@
 Public Class CreateOrEditSupplierQuote
 
     Public CreateSupplierStatus As Boolean = False
+    Public ActiveQuoteStatus As Boolean = False
+    Public SupplierQuoteID As Integer
+
 
     Private Sub CreateSupplierButton_Click(sender As Object, e As EventArgs)
         SupplierManager.Show()
@@ -54,9 +57,9 @@ Public Class CreateOrEditSupplierQuote
 
         Try
             SupplierQuoteLineItemManager.Show()
-            SupplierQuoteLineItemManager.SupplierQuoteLineItemBindingSource.Filter = "Supp_Quote_Reference_ID = '" & SupplierQuoteIDTextBox.Text & "'"
-            SupplierQuoteLineItemManager.Text = "Supplier Quote Line Item Manager: Reference ID: " & SupplierQuoteIDTextBox.Text
-            SupplierQuoteLineItemManager.SupplierQuoteReferenceID = Integer.Parse(SupplierQuoteIDTextBox.Text)
+            SupplierQuoteLineItemManager.SupplierQuoteLineItemBindingSource.Filter = "Supp_Quote_Reference_ID = '" & SupplierQuoteID & "'"
+            SupplierQuoteLineItemManager.Text = "Supplier Quote Line Item Manager: Reference ID: " & SupplierQuoteID
+            SupplierQuoteLineItemManager.SupplierQuoteReferenceID = SupplierQuoteID
         Catch ex As SqlException
             MsgBox("Oops... Page failed too load correctly!", vbExclamation, "Error!")
         Catch ex As NoNullAllowedException
@@ -72,20 +75,20 @@ Public Class CreateOrEditSupplierQuote
 
                 Try
                     Me.getTotal()
-                    Dim ret As Integer = MsgBox("Confirm changes to Supplier Quote " & SupplierQuoteIDTextBox.Text & " ?", vbYesNo)
+                    Dim ret As Integer = MsgBox("Confirm changes to Supplier Quote " & SupplierQuoteID & " ?", vbYesNo)
                     If ret = 6 Then 'if user clicks yes to update'
 
-                        If (DateAcceptedTextBox.Text = "") Then 'if date is empTy then make it 1111/11/11
+                        If (QuoteAcceptanceStatusComboBox.SelectedItem = "N") Then 'if date is empTy then make it 1111/11/11
                             DateAcceptedTextBox.Text = "1111/11/11"
                         End If
 
                         SupplierQuoteBindingSource.EndEdit()
                         Supplier_QuoteTableAdapter.Update(Me.Group16DataSet.Supplier_Quote)
 
-                        If (DateAcceptedTextBox.Text = "1111/11/11") Then 'if date is 1111/11/1111 then make it null
+                        If (QuoteAcceptanceStatusComboBox.SelectedItem = "N") Then 'if date is 1111/11/1111 then make it null
                             DateAcceptedTextBox.Text = ""
                             SupplierQuoteBindingSource.EndEdit()
-                            Supplier_QuoteTableAdapter.UpdateDateAcceptedNullQuery(Integer.Parse(SupplierQuoteIDTextBox.Text))
+                            Supplier_QuoteTableAdapter.UpdateDateAcceptedNullQuery(SupplierQuoteID)
                             MsgBox("Update successful!")
                         End If
                     End If
@@ -107,7 +110,7 @@ Public Class CreateOrEditSupplierQuote
                     If ret = 6 Then 'if user clicks yes to update'
 
 
-                        If (DateAcceptedTextBox.Text = "") Then 'if date is empTy then make it 1111/11/11
+                        If (QuoteAcceptanceStatusComboBox.SelectedItem = "N") Then 'if date is empTy then make it 1111/11/11
                             DateAcceptedTextBox.Text = "1111/11/11"
                         End If
 
@@ -124,20 +127,21 @@ Public Class CreateOrEditSupplierQuote
                         Me.Supplier_QuoteTableAdapter.Fill(Me.Group16DataSet.Supplier_Quote)
                         Me.SupplierQuoteBindingSource.MoveLast()
 
-                        If (DateAcceptedTextBox.Text = "1111/11/11") Then 'if date is 1111/11/1111 then make it null
+                        If (QuoteAcceptanceStatusComboBox.SelectedItem = "N") Then 'if date is 1111/11/1111 then make it null
                             DateAcceptedTextBox.Text = ""
 
                             SupplierQuoteBindingSource.EndEdit()
-                            Supplier_QuoteTableAdapter.UpdateDateAcceptedNullQuery(Integer.Parse(SupplierQuoteIDTextBox.Text))
-                            MsgBox("Supplier Quote " & SupplierQuoteIDTextBox.Text & " was successfully added to the database!")
+                            Supplier_QuoteTableAdapter.UpdateDateAcceptedNullQuery(SupplierQuoteID)
+                            MsgBox("Supplier Quote " & SupplierQuoteID & " was successfully added to the database!")
                         End If
-
 
                         QuoteDetailsGroupBox.Enabled = False
                         EditLineItemsButton.Enabled = True
                         NotificationLabel.Visible = False
+                        ActiveQuoteStatus = True
                         SuppLineItemJoinProductDataGridView.Visible = True
                         SuppLineItemJoinProductDataGridView.Enabled = True
+
 
                     End If
                 Catch ex As SqlException
@@ -175,11 +179,29 @@ Public Class CreateOrEditSupplierQuote
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
 
-        Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
-        If answer = MsgBoxResult.Yes Then
-            SupplierQuoteManager.Show()
-            Me.Close()
+        If (ActiveQuoteStatus = False) Then
+            Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
+            If answer = MsgBoxResult.Yes Then
+                SupplierQuoteManager.Show()
+                Me.Close()
+            End If
+        ElseIf (ActiveQuoteStatus = True) Then 'save button has been clicked
+            If ((SuppLineItemJoinProductDataGridView.RowCount > 0)) Then
+
+                Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
+                If answer = MsgBoxResult.Yes Then
+                    SupplierQuoteManager.Show()
+                    Me.Close()
+                End If
+
+            ElseIf ((SuppLineItemJoinProductDataGridView.RowCount < 1)) Then
+                MsgBox("You need to add atleast one item to the quote first before leaving!", MsgBoxStyle.YesNo)
+            End If
         End If
+
+        Call SupplierQuoteManager.RefreshButton_Click(sender, e)
+
+
     End Sub
 
     Private Sub DeleteSupplierQuoteButton_Click(sender As Object, e As EventArgs) Handles DeleteSupplierQuoteButton.Click
@@ -193,13 +215,13 @@ Public Class CreateOrEditSupplierQuote
 
             Dim READER As SqlDataReader
             Try
-                Dim ret As Integer = MsgBox("Are you sure you want to delete this Supplier Quote(" & SupplierQuoteIDTextBox.Text & ") permanently?", vbYesNo, "Confirm Delete?")
+                Dim ret As Integer = MsgBox("Are you sure you want to delete this Supplier Quote(" & SupplierQuoteID & ") permanently?", vbYesNo, "Confirm Delete?")
 
                 If ret = 6 Then 'if user clicks yes to delete'
 
                     SQLcon.Open()
                     Dim Query As String
-                    Query = "DELETE FROM Supplier_Quote WHERE Supp_Quote_Reference_ID = '" & SupplierQuoteIDTextBox.Text & "'"
+                    Query = "DELETE FROM Supplier_Quote WHERE Supp_Quote_Reference_ID = '" & SupplierQuoteID & "'"
                     SQLcomm = New SqlCommand(Query, SQLcon)
                     READER = SQLcomm.ExecuteReader
                     SQLcon.Close()
@@ -234,18 +256,9 @@ Public Class CreateOrEditSupplierQuote
     End Sub
 
     Public Function getTotal() As Decimal 'gets total of quote
-        Dim sum As Decimal = 0
+        Dim sum As Decimal = Supplier_Quote_Line_ItemTableAdapter.TotalSuppQuotePriceQuery(SupplierQuoteID)
         Try
-            For i As Integer = 0 To Me.Group16DataSet.SuppLineItemJoinProduct.Rows.Count - 1
-
-                If ((Me.Group16DataSet.SuppLineItemJoinProduct.Rows(i)("Supp_Quote_Reference_ID")) = SupplierQuoteManager.SupplierQuoteReferenceID) Then
-
-                    sum = sum + Decimal.Parse((Me.Group16DataSet.SuppLineItemJoinProduct.Rows(i)("Supp_Line_Item_Cost_Price")) * (Me.Group16DataSet.SuppLineItemJoinProduct.Rows(i)("Supp_Line_Item_Quantity")))
-
-                End If
-            Next
-
-            TotalPriceTextBox.Text = sum
+            TotalPriceTextBox.Text = Supplier_Quote_Line_ItemTableAdapter.TotalSuppQuotePriceQuery(SupplierQuoteID)
         Catch ex As SqlException
             MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
         Catch ex As NoNullAllowedException
@@ -289,9 +302,9 @@ Public Class CreateOrEditSupplierQuote
 
         Try
             SuppLineItemJoinProductTableAdapter.Fill(Me.Group16DataSet.SuppLineItemJoinProduct)
-            SuppLineItemJoinProductBindingSource.Filter = "Supp_Quote_Reference_ID = '" & SupplierQuoteIDTextBox.Text & "'"
+            SuppLineItemJoinProductBindingSource.Filter = "Supp_Quote_Reference_ID = '" & SupplierQuoteID & "'"
             TotalPriceTextBox.Text = Me.getTotal()
-            Supplier_QuoteTableAdapter.TotalPriceUpdateQuery(getTotal, Integer.Parse(SupplierQuoteIDTextBox.Text))
+            Supplier_QuoteTableAdapter.TotalPriceUpdateQuery(getTotal, SupplierQuoteID)
         Catch ex As SqlException
             MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
         Catch ex As NoNullAllowedException
@@ -301,16 +314,4 @@ Public Class CreateOrEditSupplierQuote
         End Try
     End Sub
 
-    Private Sub CaclulateTotalButton_Click(sender As Object, e As EventArgs) Handles CaclulateTotalButton.Click
-        Try
-            Me.getTotal()
-            Supplier_QuoteTableAdapter.TotalPriceUpdateQuery(getTotal, Integer.Parse(SupplierQuoteIDTextBox.Text))
-        Catch ex As SqlException
-            MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
-        Catch ex As NoNullAllowedException
-            MsgBox("Cannot compute Total Price!", vbExclamation, "Incorrect Input!")
-        Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
-        End Try
-    End Sub
 End Class

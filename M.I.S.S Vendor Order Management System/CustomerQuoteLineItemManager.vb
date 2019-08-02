@@ -156,13 +156,17 @@ Public Class CustomerQuoteLineItemManager
 
         Try
 
-            CustomerQuoteManager.CustomerQuoteJoinCustomerTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustomerQuoteJoinCustomer)
-            CustomerQuoteManager.CustLineItemJoinProductsTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustLineItemJoinProducts)
+            If ((CustomerQuoteLineItemDataGridView.RowCount > 0)) Then
 
+                CustomerQuoteManager.CustomerQuoteJoinCustomerTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustomerQuoteJoinCustomer)
+                CustomerQuoteManager.CustLineItemJoinProductsTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustLineItemJoinProducts)
+                Call CreateOrEditCustomerQuote.RefreshButton_Click(sender, e)
+                Me.Close()
 
-            Call CreateOrEditCustomerQuote.RefreshButton_Click(sender, e)
+            Else
+                MsgBox("You need to add atleast one item to the quote first before leaving!", MsgBoxStyle.YesNo)
+            End If
 
-            Me.Close()
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try

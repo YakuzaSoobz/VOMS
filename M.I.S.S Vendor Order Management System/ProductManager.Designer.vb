@@ -29,6 +29,15 @@ Partial Class ProductManager
         Me.CreateButton = New System.Windows.Forms.Button()
         Me.UpdateButton = New System.Windows.Forms.Button()
         Me.NavigationGroupBox = New System.Windows.Forms.GroupBox()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
+        Me.ProductDataGridView = New System.Windows.Forms.DataGridView()
+        Me.ProductIDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductBrandDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductActiveStatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.SearchComboBox = New System.Windows.Forms.ComboBox()
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
@@ -40,8 +49,6 @@ Partial Class ProductManager
         Me.BackButton = New System.Windows.Forms.Button()
         Me.DetailsGroupBox = New System.Windows.Forms.GroupBox()
         Me.ActiveStatusComboBox = New System.Windows.Forms.ComboBox()
-        Me.ProductBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.ProductIDTextBox = New System.Windows.Forms.TextBox()
         Me.Label18 = New System.Windows.Forms.Label()
@@ -56,20 +63,13 @@ Partial Class ProductManager
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.ProductManagerTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
-        Me.ProductDataGridView = New System.Windows.Forms.DataGridView()
-        Me.ProductIDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductBrandDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductDescriptionDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ProductActiveStatusDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.OptionsGroupBox1.SuspendLayout()
         Me.NavigationGroupBox.SuspendLayout()
-        Me.DetailsGroupBox.SuspendLayout()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         CType(Me.ProductDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.DetailsGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
         'OptionsGroupBox1
@@ -172,6 +172,86 @@ Partial Class ProductManager
         Me.NavigationGroupBox.TabIndex = 75
         Me.NavigationGroupBox.TabStop = False
         Me.NavigationGroupBox.Text = "NAVIGATION"
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox4.Controls.Add(Me.ProductDataGridView)
+        Me.GroupBox4.Location = New System.Drawing.Point(4, 103)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Size = New System.Drawing.Size(792, 209)
+        Me.GroupBox4.TabIndex = 96
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "ALL PRODUCTS"
+        '
+        'ProductDataGridView
+        '
+        Me.ProductDataGridView.AllowUserToAddRows = False
+        Me.ProductDataGridView.AllowUserToDeleteRows = False
+        Me.ProductDataGridView.AutoGenerateColumns = False
+        Me.ProductDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ProductDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.ProductDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductIDDataGridViewTextBoxColumn1, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductBrandDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.ProductActiveStatusDataGridViewTextBoxColumn})
+        Me.ProductDataGridView.DataSource = Me.ProductBindingSource
+        Me.ProductDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.ProductDataGridView.Location = New System.Drawing.Point(2, 15)
+        Me.ProductDataGridView.Name = "ProductDataGridView"
+        Me.ProductDataGridView.ReadOnly = True
+        Me.ProductDataGridView.Size = New System.Drawing.Size(788, 192)
+        Me.ProductDataGridView.TabIndex = 0
+        '
+        'ProductIDDataGridViewTextBoxColumn1
+        '
+        Me.ProductIDDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ProductIDDataGridViewTextBoxColumn1.DataPropertyName = "Product_ID"
+        Me.ProductIDDataGridViewTextBoxColumn1.HeaderText = "Product ID"
+        Me.ProductIDDataGridViewTextBoxColumn1.Name = "ProductIDDataGridViewTextBoxColumn1"
+        Me.ProductIDDataGridViewTextBoxColumn1.ReadOnly = True
+        '
+        'ProductNameDataGridViewTextBoxColumn
+        '
+        Me.ProductNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name"
+        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
+        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
+        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProductBrandDataGridViewTextBoxColumn
+        '
+        Me.ProductBrandDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ProductBrandDataGridViewTextBoxColumn.DataPropertyName = "Product_Brand"
+        Me.ProductBrandDataGridViewTextBoxColumn.HeaderText = "Brand"
+        Me.ProductBrandDataGridViewTextBoxColumn.Name = "ProductBrandDataGridViewTextBoxColumn"
+        Me.ProductBrandDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProductDescriptionDataGridViewTextBoxColumn
+        '
+        Me.ProductDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ProductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Product_Description"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.Name = "ProductDescriptionDataGridViewTextBoxColumn"
+        Me.ProductDescriptionDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProductActiveStatusDataGridViewTextBoxColumn
+        '
+        Me.ProductActiveStatusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.ProductActiveStatusDataGridViewTextBoxColumn.DataPropertyName = "Product_Active_Status"
+        Me.ProductActiveStatusDataGridViewTextBoxColumn.HeaderText = "Active Status"
+        Me.ProductActiveStatusDataGridViewTextBoxColumn.Name = "ProductActiveStatusDataGridViewTextBoxColumn"
+        Me.ProductActiveStatusDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'ProductBindingSource
+        '
+        Me.ProductBindingSource.DataMember = "Product"
+        Me.ProductBindingSource.DataSource = Me.Group16DataSet
+        '
+        'Group16DataSet
+        '
+        Me.Group16DataSet.DataSetName = "group16DataSet"
+        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'SearchButton
         '
@@ -339,16 +419,6 @@ Partial Class ProductManager
         Me.ActiveStatusComboBox.Size = New System.Drawing.Size(121, 21)
         Me.ActiveStatusComboBox.TabIndex = 79
         '
-        'ProductBindingSource
-        '
-        Me.ProductBindingSource.DataMember = "Product"
-        Me.ProductBindingSource.DataSource = Me.Group16DataSet
-        '
-        'Group16DataSet
-        '
-        Me.Group16DataSet.DataSetName = "group16DataSet"
-        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'Label4
         '
         Me.Label4.AutoSize = True
@@ -481,76 +551,6 @@ Partial Class ProductManager
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
         '
-        'GroupBox4
-        '
-        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.GroupBox4.Controls.Add(Me.ProductDataGridView)
-        Me.GroupBox4.Location = New System.Drawing.Point(4, 103)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
-        Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox4.Size = New System.Drawing.Size(792, 209)
-        Me.GroupBox4.TabIndex = 96
-        Me.GroupBox4.TabStop = False
-        Me.GroupBox4.Text = "ALL PRODUCTS"
-        '
-        'ProductDataGridView
-        '
-        Me.ProductDataGridView.AllowUserToAddRows = False
-        Me.ProductDataGridView.AllowUserToDeleteRows = False
-        Me.ProductDataGridView.AutoGenerateColumns = False
-        Me.ProductDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ProductDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.ProductDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductIDDataGridViewTextBoxColumn1, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductBrandDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.ProductActiveStatusDataGridViewTextBoxColumn})
-        Me.ProductDataGridView.DataSource = Me.ProductBindingSource
-        Me.ProductDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ProductDataGridView.Location = New System.Drawing.Point(2, 15)
-        Me.ProductDataGridView.Name = "ProductDataGridView"
-        Me.ProductDataGridView.ReadOnly = True
-        Me.ProductDataGridView.Size = New System.Drawing.Size(788, 192)
-        Me.ProductDataGridView.TabIndex = 0
-        '
-        'ProductIDDataGridViewTextBoxColumn1
-        '
-        Me.ProductIDDataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ProductIDDataGridViewTextBoxColumn1.DataPropertyName = "Product_ID"
-        Me.ProductIDDataGridViewTextBoxColumn1.HeaderText = "Product ID"
-        Me.ProductIDDataGridViewTextBoxColumn1.Name = "ProductIDDataGridViewTextBoxColumn1"
-        Me.ProductIDDataGridViewTextBoxColumn1.ReadOnly = True
-        '
-        'ProductNameDataGridViewTextBoxColumn
-        '
-        Me.ProductNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ProductNameDataGridViewTextBoxColumn.DataPropertyName = "Product_Name"
-        Me.ProductNameDataGridViewTextBoxColumn.HeaderText = "Product Name"
-        Me.ProductNameDataGridViewTextBoxColumn.Name = "ProductNameDataGridViewTextBoxColumn"
-        Me.ProductNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ProductBrandDataGridViewTextBoxColumn
-        '
-        Me.ProductBrandDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ProductBrandDataGridViewTextBoxColumn.DataPropertyName = "Product_Brand"
-        Me.ProductBrandDataGridViewTextBoxColumn.HeaderText = "Brand"
-        Me.ProductBrandDataGridViewTextBoxColumn.Name = "ProductBrandDataGridViewTextBoxColumn"
-        Me.ProductBrandDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ProductDescriptionDataGridViewTextBoxColumn
-        '
-        Me.ProductDescriptionDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ProductDescriptionDataGridViewTextBoxColumn.DataPropertyName = "Product_Description"
-        Me.ProductDescriptionDataGridViewTextBoxColumn.HeaderText = "Description"
-        Me.ProductDescriptionDataGridViewTextBoxColumn.Name = "ProductDescriptionDataGridViewTextBoxColumn"
-        Me.ProductDescriptionDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'ProductActiveStatusDataGridViewTextBoxColumn
-        '
-        Me.ProductActiveStatusDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.ProductActiveStatusDataGridViewTextBoxColumn.DataPropertyName = "Product_Active_Status"
-        Me.ProductActiveStatusDataGridViewTextBoxColumn.HeaderText = "Active Status"
-        Me.ProductActiveStatusDataGridViewTextBoxColumn.Name = "ProductActiveStatusDataGridViewTextBoxColumn"
-        Me.ProductActiveStatusDataGridViewTextBoxColumn.ReadOnly = True
-        '
         'ProductManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -572,12 +572,12 @@ Partial Class ProductManager
         Me.OptionsGroupBox1.ResumeLayout(False)
         Me.NavigationGroupBox.ResumeLayout(False)
         Me.NavigationGroupBox.PerformLayout()
-        Me.DetailsGroupBox.ResumeLayout(False)
-        Me.DetailsGroupBox.PerformLayout()
-        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         CType(Me.ProductDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ProductBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.DetailsGroupBox.ResumeLayout(False)
+        Me.DetailsGroupBox.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub

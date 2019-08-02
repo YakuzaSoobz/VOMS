@@ -151,6 +151,7 @@ Public Class CustomerQuoteManager
 
             CreateOrEditCustomerQuote.Show()
             CreateOrEditCustomerQuote.Text = "Customer Quote ReferenceID : " & NewCustomerQuoteReferenceID
+            CreateOrEditCustomerQuote.CustomerQuoteID = NewCustomerQuoteReferenceID
 
             Me.Hide()
         Catch exe As SqlException
@@ -172,6 +173,7 @@ Public Class CustomerQuoteManager
                 CreateOrEditCustomerQuote.CustLineItemJoinProductsBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteReferenceID & "'"
 
                 CreateOrEditCustomerQuote.Text = "Customer Quote Editor: Reference ID = " & CustomerQuoteReferenceID
+                CreateOrEditCustomerQuote.CustomerQuoteID = CustomerQuoteReferenceID
 
                 Me.Hide()
             Else

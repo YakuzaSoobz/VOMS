@@ -1,2 +1,43 @@
-- need to work on create a supplier quote, can't edit one without items
-- getTotal() not working in supplier quote
+<Normalisers42 VOMS FES checklist: (keep track of your tasks here, add reminder)>
+_______________________________________________________________________________
+*******************************************************************************
+<IMPORTANT REMINDERS>
+* FES needs to be completed by Sunday
+
+*******************************************************************************
+<TEAM REMINDERS>
+*Shankar and Sharad work on reporting 
+
+*******************************************************************************
+
+<Individual Tasks> (*= incomplete , # = done)
+_______________________________________________________________________________
+Lorenzo's tasks:
+1) Customer Quote Manager:
+	- fix get total = #
+	- fix date = #
+	- remove errors with try and catches = #
+	- add functionality to customer info page = #
+  	- add type checking to quote and line item creation pages = *
+	- fix CustLineItemEditor table error = *
+
+2)Supplier Quote Manager:
+	- disable back button while creating quote - #
+	- fix table total price - #
+	- add better UI for the line item editor
+_______________________________________________________________________________
+Yashin' tasks:
+
+_______________________________________________________________________________
+Warren's tasks:
+
+_______________________________________________________________________________
+Praveer's tasks:
+
+_______________________________________________________________________________
+Sharad's tasks:
+
+_______________________________________________________________________________
+Shankar's tasks:
+
+_______________________________________________________________________________
