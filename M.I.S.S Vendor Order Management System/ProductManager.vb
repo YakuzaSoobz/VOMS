@@ -182,22 +182,44 @@ Public Class ProductManager
     End Sub
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
-
         Try
-            Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
+            If (ProductNameTextBox.Text.Trim = Nothing) Then
+                MsgBox("Product Name field cannot be left blank!", vbOK)
+                ProductNameTextBox.ResetText()
+            ElseIf (BrandNameTextBox.Text.Trim = Nothing) Then
+                MsgBox("Brand Name field cannot be left blank!", vbOK)
+                BrandNameTextBox.ResetText()
+            ElseIf (ProductDescriptionTextBox.Text = Nothing) Then
+                MsgBox("Product Description field cannot be left blank!", vbOK)
+                ProductDescriptionTextBox.ResetText()
+            ElseIf (ActiveStatusComboBox.Text = Nothing) Then
+                MsgBox("Active Status field cannot be left blank!", vbOK)
+                ActiveStatusComboBox.ResetText()
+            ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
+                MsgBox("Active Status field must be either T or F!", vbOK)
+                ActiveStatusComboBox.ResetText()
 
-            If ret = 6 Then 'if user clicks yes to update'
-                ProductBindingSource.EndEdit()
-                ProductTableAdapter.Update(Group16DataSet)
-                MsgBox("Update successful!")
-                Call ButtonRefresh_Click(sender, e)
+            Else
+
+                Try
+                Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
+
+                If ret = 6 Then 'if user clicks yes to update'
+                    ProductBindingSource.EndEdit()
+                    ProductTableAdapter.Update(Group16DataSet)
+                    MsgBox("Update successful!")
+                    Call ButtonRefresh_Click(sender, e)
+                End If
+            Catch ex As SqlException
+                MsgBox("Cannot Update!", vbExclamation, "Network Error!")
+            Catch ex As NoNullAllowedException
+                MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
+            Catch ex As Exception
+                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            End Try
             End If
-        Catch ex As SqlException
-            MsgBox("Cannot Update!", vbExclamation, "Network Error!")
-        Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
-        Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+        Catch ex As FormatException
+            MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
         End Try
     End Sub
 
