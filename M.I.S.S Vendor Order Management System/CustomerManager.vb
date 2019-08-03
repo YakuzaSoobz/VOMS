@@ -91,85 +91,91 @@ Public Class CustomerManager
     End Function
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
-        If (FNameTextBox.Text = Nothing) Then
-            MsgBox("First Name field cannot be left blank!", vbOK)
-            FNameTextBox.ResetText()
-        ElseIf (SNameTextBox.Text = Nothing) Then
-            MsgBox("Surname field cannot be left blank!", vbOK)
-            SNameTextBox.ResetText()
-        ElseIf (DOBDateTimePicker.Text = Nothing) Then
-            MsgBox("DOB field cannot be left blank!", vbOK)
-            DOBDateTimePicker.ResetText()
-        ElseIf (ContactNumberMaskedTextBox.Text = "(   )") Then
-            MsgBox("Contact Number field cannot be left blank!", vbOK)
-            ContactNumberMaskedTextBox.ResetText()
-        ElseIf (EmailTextBox.Text = Nothing) Then
-            MsgBox("Email field cannot be left blank!", vbOK)
-            EmailTextBox.ResetText()
-        ElseIf (PasswordTextBox.Text = Nothing) Then
-            MsgBox("Password field cannot be left blank!", vbOK)
-            PasswordTextBox.ResetText()
-        ElseIf (StreetAddress1TextBox.Text = Nothing) Then
-            MsgBox("Street Address 1 field cannot be left blank!", vbOK)
-            StreetAddress1TextBox.ResetText()
-        ElseIf (SuburbTextBox.Text = Nothing) Then
-            MsgBox("Suburb field cannot be left blank!", vbOK)
-            SuburbTextBox.ResetText()
-        ElseIf (CityTextBox.Text = Nothing) Then
-            MsgBox("City field cannot be left blank!", vbOK)
-            CityTextBox.ResetText()
-        ElseIf (ProvinceTextBox.Text = Nothing) Then
-            MsgBox("Province field cannot be left blank!", vbOK)
-            ProvinceTextBox.ResetText()
-        ElseIf (PostalCodeMaskedTextBox.Text.Contains(" ")) Then
-            MsgBox("Postal Code field cannot be left blank!", vbOK)
-            PostalCodeMaskedTextBox.ResetText()
-        ElseIf (ActiveStatusComboBox.Text = Nothing) Then
-            MsgBox("Active Status field cannot be left blank!", vbOK)
-            ActiveStatusComboBox.ResetText()
+        Try
+            If (FNameTextBox.Text = Nothing) Then
+                MsgBox("First Name field cannot be left blank!", vbOK)
+                FNameTextBox.ResetText()
+            ElseIf (SNameTextBox.Text = Nothing) Then
+                MsgBox("Surname field cannot be left blank!", vbOK)
+                SNameTextBox.ResetText()
+            ElseIf (DOBDateTimePicker.Text = Nothing) Then
+                MsgBox("DOB field cannot be left blank!", vbOK)
+                DOBDateTimePicker.ResetText()
+            ElseIf (ContactNumberMaskedTextBox.Text = "(   )") Then
+                MsgBox("Contact Number field cannot be left blank!", vbOK)
+                ContactNumberMaskedTextBox.ResetText()
+            ElseIf (EmailTextBox.Text = Nothing) Then
+                MsgBox("Email field cannot be left blank!", vbOK)
+                EmailTextBox.ResetText()
+            ElseIf (PasswordTextBox.Text = Nothing) Then
+                MsgBox("Password field cannot be left blank!", vbOK)
+                PasswordTextBox.ResetText()
+            ElseIf (StreetAddress1TextBox.Text = Nothing) Then
+                MsgBox("Street Address 1 field cannot be left blank!", vbOK)
+                StreetAddress1TextBox.ResetText()
+            ElseIf (SuburbTextBox.Text = Nothing) Then
+                MsgBox("Suburb field cannot be left blank!", vbOK)
+                SuburbTextBox.ResetText()
+            ElseIf (CityTextBox.Text = Nothing) Then
+                MsgBox("City field cannot be left blank!", vbOK)
+                CityTextBox.ResetText()
+            ElseIf (ProvinceTextBox.Text = Nothing) Then
+                MsgBox("Province field cannot be left blank!", vbOK)
+                ProvinceTextBox.ResetText()
+            ElseIf (PostalCodeMaskedTextBox.Text.Contains(" ")) Then
+                MsgBox("Postal Code field cannot be left blank!", vbOK)
+                PostalCodeMaskedTextBox.ResetText()
+            ElseIf (ActiveStatusComboBox.Text = Nothing) Then
+                MsgBox("Active Status field cannot be left blank!", vbOK)
+                ActiveStatusComboBox.ResetText()
 
-            'Above is a full check for blanks , contact num code is tweaked abit for masking'
+                'Above is a full check for blanks , contact num code is tweaked abit for masking'
 
-        ElseIf Not (ValidateEmail(EmailTextBox.Text)) Then
-            MsgBox("Email format is invalid! , Follow this format eg.starplatinum@example.com", vbOK)
-            EmailTextBox.ResetText() 'Email validator which calls function'
-        ElseIf (PasswordTextBox.Text.Length > 10 Or PasswordTextBox.Text.Length < 0) Then
-            MsgBox("Password length invalid!", vbOK)
-            PasswordTextBox.ResetText() 'Password length checker'
-        ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
-            MsgBox("Active Status field must be either T or F!", vbOK)
-            ActiveStatusComboBox.ResetText() 'Active Status checker'
+            ElseIf Not (ValidateEmail(EmailTextBox.Text)) Then
+                MsgBox("Email format is invalid! , Follow this format eg.starplatinum@example.com", vbOK)
+                EmailTextBox.ResetText() 'Email validator which calls function'
+            ElseIf (PasswordTextBox.Text.Length > 10 Or PasswordTextBox.Text.Length < 0) Then
+                MsgBox("Password length invalid!", vbOK)
+                PasswordTextBox.ResetText() 'Password length checker'
+            ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
+                MsgBox("Active Status field must be either T or F!", vbOK)
+                ActiveStatusComboBox.ResetText() 'Active Status checker'
 
 
-        Else
-            FNameTextBox.Text = FNameTextBox.Text.Trim
-            SNameTextBox.Text = SNameTextBox.Text.Trim
-            ContactNumberMaskedTextBox.Text = ContactNumberMaskedTextBox.Text.Trim
-            EmailTextBox.Text = EmailTextBox.Text.Trim
-            PasswordTextBox.Text = PasswordTextBox.Text.Trim
-            StreetAddress1TextBox.Text = StreetAddress1TextBox.Text.Trim
-            SuburbTextBox.Text = SuburbTextBox.Text.Trim
-            CityTextBox.Text = CityTextBox.Text.Trim
+            Else
+                FNameTextBox.Text = FNameTextBox.Text.Trim
+                SNameTextBox.Text = SNameTextBox.Text.Trim
+                ContactNumberMaskedTextBox.Text = ContactNumberMaskedTextBox.Text.Trim
+                EmailTextBox.Text = EmailTextBox.Text.Trim
+                PasswordTextBox.Text = PasswordTextBox.Text.Trim
+                StreetAddress1TextBox.Text = StreetAddress1TextBox.Text.Trim
+                SuburbTextBox.Text = SuburbTextBox.Text.Trim
+                CityTextBox.Text = CityTextBox.Text.Trim
 
-            'Removes white spaces before and after certain fields to avoid invalids'
+                'Removes white spaces before and after certain fields to avoid invalids'
 
-            Try
-                Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
+                Try
+                    Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
 
-                If ret = 6 Then 'if user clicks yes to update'
-                    CustomerBindingSource.EndEdit()
-                    CustomerTableAdapter.Update(Group16DataSet)
-                    MsgBox("Update successful!")
-                    Call ButtonRefresh_Click(sender, e)
-                End If
-            Catch ex As SqlException
-                MsgBox("Cannot Update!", vbExclamation, "Cannot Update!")
-            Catch ex As NoNullAllowedException
-                MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
-            Catch ex As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
-            End Try
-        End If
+                    If ret = 6 Then 'if user clicks yes to update'
+                        CustomerBindingSource.EndEdit()
+                        CustomerTableAdapter.Update(Group16DataSet)
+                        MsgBox("Update successful!")
+                        Call ButtonRefresh_Click(sender, e)
+                    End If
+                Catch ex As SqlException
+                    MsgBox("Cannot Update!", vbExclamation, "Cannot Update!")
+                Catch ex As NoNullAllowedException
+                    MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
+                Catch ex As Exception
+                    MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                End Try
+            End If
+        Catch ex As FormatException
+            MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
+        Catch ex As Exception
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+        End Try
     End Sub
 
 
