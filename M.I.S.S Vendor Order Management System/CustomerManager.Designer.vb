@@ -29,6 +29,8 @@ Partial Class CustomerManager
         Me.CreateButton = New System.Windows.Forms.Button()
         Me.UpdateButton = New System.Windows.Forms.Button()
         Me.NavigationGroupBox = New System.Windows.Forms.GroupBox()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.SearchComboBox = New System.Windows.Forms.ComboBox()
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
@@ -76,8 +78,6 @@ Partial Class CustomerManager
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.CustomerManagerTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Label15 = New System.Windows.Forms.Label()
-        Me.Label16 = New System.Windows.Forms.Label()
         Me.OptionsGroupBox1.SuspendLayout()
         Me.NavigationGroupBox.SuspendLayout()
         Me.DetailsGroupBox.SuspendLayout()
@@ -186,6 +186,28 @@ Partial Class CustomerManager
         Me.NavigationGroupBox.TabIndex = 70
         Me.NavigationGroupBox.TabStop = False
         Me.NavigationGroupBox.Text = "NAVIGATION"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.BackColor = System.Drawing.Color.Transparent
+        Me.Label16.Location = New System.Drawing.Point(457, 10)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(76, 13)
+        Me.Label16.TabIndex = 103
+        Me.Label16.Text = "Search Criteria"
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.BackColor = System.Drawing.Color.Transparent
+        Me.Label15.Location = New System.Drawing.Point(244, 10)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(129, 13)
+        Me.Label15.TabIndex = 102
+        Me.Label15.Text = "Enter text to be searched:"
         '
         'SearchButton
         '
@@ -712,28 +734,6 @@ Partial Class CustomerManager
         Me.HelpBtn.TabIndex = 134
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.BackColor = System.Drawing.Color.Transparent
-        Me.Label15.Location = New System.Drawing.Point(244, 10)
-        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(129, 13)
-        Me.Label15.TabIndex = 102
-        Me.Label15.Text = "Enter text to be searched:"
-        '
-        'Label16
-        '
-        Me.Label16.AutoSize = True
-        Me.Label16.BackColor = System.Drawing.Color.Transparent
-        Me.Label16.Location = New System.Drawing.Point(457, 10)
-        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(76, 13)
-        Me.Label16.TabIndex = 103
-        Me.Label16.Text = "Search Criteria"
         '
         'CustomerManager
         '
