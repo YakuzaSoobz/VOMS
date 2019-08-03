@@ -57,6 +57,8 @@ Partial Class LineItemDetailsPopUp
         Me.SuppQuoteJoinSuppLineItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SuppQuoteJoinSuppLineItemTableAdapter()
         Me.BackButton = New System.Windows.Forms.Button()
         Me.LineItemDetailsPopUpTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Supp_Quote_Date_Recieved = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.QuoteDetailsGroupBox.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
@@ -67,26 +69,21 @@ Partial Class LineItemDetailsPopUp
         CType(Me.SupplierDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OptionsGroupBox1.SuspendLayout()
+        Me.GroupBox4.SuspendLayout()
         Me.SuspendLayout()
         '
         'QuoteDetailsGroupBox
         '
         Me.QuoteDetailsGroupBox.BackColor = System.Drawing.Color.Transparent
         Me.QuoteDetailsGroupBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.QuoteDetailsGroupBox.Controls.Add(Me.GroupBox3)
-        Me.QuoteDetailsGroupBox.Controls.Add(Me.Label5)
-        Me.QuoteDetailsGroupBox.Controls.Add(Me.MarkupComboBox)
-        Me.QuoteDetailsGroupBox.Controls.Add(Me.Label4)
-        Me.QuoteDetailsGroupBox.Controls.Add(Me.DiscountComboBox)
-        Me.QuoteDetailsGroupBox.Controls.Add(Me.Label3)
-        Me.QuoteDetailsGroupBox.Controls.Add(Me.QuantityComboBox)
+        Me.QuoteDetailsGroupBox.Controls.Add(Me.GroupBox4)
         Me.QuoteDetailsGroupBox.Controls.Add(Me.GroupBox2)
         Me.QuoteDetailsGroupBox.Controls.Add(Me.GroupBox1)
         Me.QuoteDetailsGroupBox.Location = New System.Drawing.Point(11, 11)
         Me.QuoteDetailsGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.QuoteDetailsGroupBox.Name = "QuoteDetailsGroupBox"
         Me.QuoteDetailsGroupBox.Padding = New System.Windows.Forms.Padding(2)
-        Me.QuoteDetailsGroupBox.Size = New System.Drawing.Size(641, 320)
+        Me.QuoteDetailsGroupBox.Size = New System.Drawing.Size(651, 361)
         Me.QuoteDetailsGroupBox.TabIndex = 69
         Me.QuoteDetailsGroupBox.TabStop = False
         Me.QuoteDetailsGroupBox.Text = "CUSTOMER QUOTE DETAILS"
@@ -98,11 +95,11 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox3.Controls.Add(Me.SaleExclVATTextBox)
         Me.GroupBox3.Controls.Add(Me.Label6)
         Me.GroupBox3.Controls.Add(Me.SaleInclVATTextBox)
-        Me.GroupBox3.Location = New System.Drawing.Point(16, 249)
+        Me.GroupBox3.Location = New System.Drawing.Point(376, 385)
         Me.GroupBox3.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox3.Name = "GroupBox3"
         Me.GroupBox3.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox3.Size = New System.Drawing.Size(607, 67)
+        Me.GroupBox3.Size = New System.Drawing.Size(165, 121)
         Me.GroupBox3.TabIndex = 91
         Me.GroupBox3.TabStop = False
         Me.GroupBox3.Text = "SALE PRICE"
@@ -111,7 +108,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.Label7.AutoSize = True
         Me.Label7.BackColor = System.Drawing.Color.Transparent
-        Me.Label7.Location = New System.Drawing.Point(400, 16)
+        Me.Label7.Location = New System.Drawing.Point(12, 20)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
         Me.Label7.Size = New System.Drawing.Size(83, 13)
@@ -120,7 +117,7 @@ Partial Class LineItemDetailsPopUp
         '
         'SaleExclVATTextBox
         '
-        Me.SaleExclVATTextBox.Location = New System.Drawing.Point(398, 32)
+        Me.SaleExclVATTextBox.Location = New System.Drawing.Point(15, 38)
         Me.SaleExclVATTextBox.Name = "SaleExclVATTextBox"
         Me.SaleExclVATTextBox.ReadOnly = True
         Me.SaleExclVATTextBox.Size = New System.Drawing.Size(108, 20)
@@ -130,7 +127,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.Label6.AutoSize = True
         Me.Label6.BackColor = System.Drawing.Color.Transparent
-        Me.Label6.Location = New System.Drawing.Point(130, 15)
+        Me.Label6.Location = New System.Drawing.Point(14, 68)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(81, 13)
@@ -139,7 +136,7 @@ Partial Class LineItemDetailsPopUp
         '
         'SaleInclVATTextBox
         '
-        Me.SaleInclVATTextBox.Location = New System.Drawing.Point(120, 32)
+        Me.SaleInclVATTextBox.Location = New System.Drawing.Point(15, 84)
         Me.SaleInclVATTextBox.Name = "SaleInclVATTextBox"
         Me.SaleInclVATTextBox.ReadOnly = True
         Me.SaleInclVATTextBox.Size = New System.Drawing.Size(108, 20)
@@ -149,7 +146,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
-        Me.Label5.Location = New System.Drawing.Point(285, 194)
+        Me.Label5.Location = New System.Drawing.Point(11, 70)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(108, 13)
@@ -160,7 +157,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.MarkupComboBox.FormattingEnabled = True
         Me.MarkupComboBox.Items.AddRange(New Object() {"10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70"})
-        Me.MarkupComboBox.Location = New System.Drawing.Point(274, 210)
+        Me.MarkupComboBox.Location = New System.Drawing.Point(14, 86)
         Me.MarkupComboBox.Name = "MarkupComboBox"
         Me.MarkupComboBox.Size = New System.Drawing.Size(121, 21)
         Me.MarkupComboBox.TabIndex = 89
@@ -169,7 +166,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(504, 194)
+        Me.Label4.Location = New System.Drawing.Point(11, 123)
         Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(114, 13)
@@ -180,7 +177,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.DiscountComboBox.FormattingEnabled = True
         Me.DiscountComboBox.Items.AddRange(New Object() {"5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70"})
-        Me.DiscountComboBox.Location = New System.Drawing.Point(497, 210)
+        Me.DiscountComboBox.Location = New System.Drawing.Point(14, 139)
         Me.DiscountComboBox.Name = "DiscountComboBox"
         Me.DiscountComboBox.Size = New System.Drawing.Size(121, 21)
         Me.DiscountComboBox.TabIndex = 87
@@ -189,7 +186,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Location = New System.Drawing.Point(33, 194)
+        Me.Label3.Location = New System.Drawing.Point(11, 19)
         Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
         Me.Label3.Size = New System.Drawing.Size(97, 13)
@@ -200,7 +197,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.QuantityComboBox.FormattingEnabled = True
         Me.QuantityComboBox.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
-        Me.QuantityComboBox.Location = New System.Drawing.Point(22, 210)
+        Me.QuantityComboBox.Location = New System.Drawing.Point(14, 35)
         Me.QuantityComboBox.Name = "QuantityComboBox"
         Me.QuantityComboBox.Size = New System.Drawing.Size(121, 21)
         Me.QuantityComboBox.TabIndex = 85
@@ -211,11 +208,11 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.SuppQuoteJoinSuppLineItemDataGridView)
         Me.GroupBox2.Controls.Add(Me.CostPriceTextBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(310, 26)
+        Me.GroupBox2.Location = New System.Drawing.Point(16, 176)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox2.Size = New System.Drawing.Size(313, 155)
+        Me.GroupBox2.Size = New System.Drawing.Size(460, 172)
         Me.GroupBox2.TabIndex = 84
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "SELECT COST PRICE"
@@ -224,7 +221,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(78, 126)
+        Me.Label2.Location = New System.Drawing.Point(8, 143)
         Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(64, 13)
@@ -238,12 +235,12 @@ Partial Class LineItemDetailsPopUp
         Me.SuppQuoteJoinSuppLineItemDataGridView.AutoGenerateColumns = False
         Me.SuppQuoteJoinSuppLineItemDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.SuppQuoteJoinSuppLineItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.SuppQuoteJoinSuppLineItemDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Product_ID, Me.SupplierIDDataGridViewTextBoxColumn1, Me.SuppLineItemCostPriceDataGridViewTextBoxColumn})
+        Me.SuppQuoteJoinSuppLineItemDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Product_ID, Me.SupplierIDDataGridViewTextBoxColumn1, Me.SuppLineItemCostPriceDataGridViewTextBoxColumn, Me.Supp_Quote_Date_Recieved})
         Me.SuppQuoteJoinSuppLineItemDataGridView.DataSource = Me.SuppQuoteJoinSuppLineItemBindingSource
         Me.SuppQuoteJoinSuppLineItemDataGridView.Location = New System.Drawing.Point(6, 19)
         Me.SuppQuoteJoinSuppLineItemDataGridView.Name = "SuppQuoteJoinSuppLineItemDataGridView"
         Me.SuppQuoteJoinSuppLineItemDataGridView.ReadOnly = True
-        Me.SuppQuoteJoinSuppLineItemDataGridView.Size = New System.Drawing.Size(302, 99)
+        Me.SuppQuoteJoinSuppLineItemDataGridView.Size = New System.Drawing.Size(449, 115)
         Me.SuppQuoteJoinSuppLineItemDataGridView.TabIndex = 0
         '
         'Product_ID
@@ -282,7 +279,7 @@ Partial Class LineItemDetailsPopUp
         '
         'CostPriceTextBox
         '
-        Me.CostPriceTextBox.Location = New System.Drawing.Point(151, 123)
+        Me.CostPriceTextBox.Location = New System.Drawing.Point(81, 140)
         Me.CostPriceTextBox.Name = "CostPriceTextBox"
         Me.CostPriceTextBox.ReadOnly = True
         Me.CostPriceTextBox.Size = New System.Drawing.Size(96, 20)
@@ -294,11 +291,11 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.SupplierDataGridView)
         Me.GroupBox1.Controls.Add(Me.SupplierIDTextBox)
-        Me.GroupBox1.Location = New System.Drawing.Point(16, 26)
+        Me.GroupBox1.Location = New System.Drawing.Point(16, 17)
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(290, 155)
+        Me.GroupBox1.Size = New System.Drawing.Size(618, 155)
         Me.GroupBox1.TabIndex = 83
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "SELECT SUPPLIER"
@@ -307,7 +304,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(82, 130)
+        Me.Label1.Location = New System.Drawing.Point(8, 129)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(68, 13)
@@ -326,7 +323,7 @@ Partial Class LineItemDetailsPopUp
         Me.SupplierDataGridView.Location = New System.Drawing.Point(6, 19)
         Me.SupplierDataGridView.Name = "SupplierDataGridView"
         Me.SupplierDataGridView.ReadOnly = True
-        Me.SupplierDataGridView.Size = New System.Drawing.Size(279, 99)
+        Me.SupplierDataGridView.Size = New System.Drawing.Size(599, 99)
         Me.SupplierDataGridView.TabIndex = 0
         '
         'SupplierIDDataGridViewTextBoxColumn
@@ -352,21 +349,21 @@ Partial Class LineItemDetailsPopUp
         '
         'SupplierIDTextBox
         '
-        Me.SupplierIDTextBox.Location = New System.Drawing.Point(155, 127)
+        Me.SupplierIDTextBox.Location = New System.Drawing.Point(81, 126)
         Me.SupplierIDTextBox.Name = "SupplierIDTextBox"
         Me.SupplierIDTextBox.ReadOnly = True
-        Me.SupplierIDTextBox.Size = New System.Drawing.Size(46, 20)
+        Me.SupplierIDTextBox.Size = New System.Drawing.Size(99, 20)
         Me.SupplierIDTextBox.TabIndex = 84
         '
         'OptionsGroupBox1
         '
         Me.OptionsGroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.OptionsGroupBox1.Controls.Add(Me.SaveButton)
-        Me.OptionsGroupBox1.Location = New System.Drawing.Point(11, 335)
+        Me.OptionsGroupBox1.Location = New System.Drawing.Point(125, 385)
         Me.OptionsGroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.OptionsGroupBox1.Name = "OptionsGroupBox1"
         Me.OptionsGroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.OptionsGroupBox1.Size = New System.Drawing.Size(643, 78)
+        Me.OptionsGroupBox1.Size = New System.Drawing.Size(238, 121)
         Me.OptionsGroupBox1.TabIndex = 82
         Me.OptionsGroupBox1.TabStop = False
         Me.OptionsGroupBox1.Text = "OPTIONS"
@@ -379,10 +376,10 @@ Partial Class LineItemDetailsPopUp
         Me.SaveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SaveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SaveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SaveButton.Location = New System.Drawing.Point(122, 17)
+        Me.SaveButton.Location = New System.Drawing.Point(8, 17)
         Me.SaveButton.Margin = New System.Windows.Forms.Padding(2)
         Me.SaveButton.Name = "SaveButton"
-        Me.SaveButton.Size = New System.Drawing.Size(368, 50)
+        Me.SaveButton.Size = New System.Drawing.Size(214, 87)
         Me.SaveButton.TabIndex = 1
         Me.SaveButton.Text = "SAVE"
         Me.SaveButton.UseVisualStyleBackColor = False
@@ -403,7 +400,7 @@ Partial Class LineItemDetailsPopUp
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Location = New System.Drawing.Point(590, 417)
+        Me.BackButton.Location = New System.Drawing.Point(599, 515)
         Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(64, 36)
@@ -411,23 +408,48 @@ Partial Class LineItemDetailsPopUp
         Me.BackButton.Text = "BACK"
         Me.BackButton.UseVisualStyleBackColor = False
         '
+        'Supp_Quote_Date_Recieved
+        '
+        Me.Supp_Quote_Date_Recieved.DataPropertyName = "Supp_Quote_Date_Recieved"
+        Me.Supp_Quote_Date_Recieved.HeaderText = "Date Recieved"
+        Me.Supp_Quote_Date_Recieved.Name = "Supp_Quote_Date_Recieved"
+        Me.Supp_Quote_Date_Recieved.ReadOnly = True
+        '
+        'GroupBox4
+        '
+        Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
+        Me.GroupBox4.Controls.Add(Me.Label3)
+        Me.GroupBox4.Controls.Add(Me.Label5)
+        Me.GroupBox4.Controls.Add(Me.QuantityComboBox)
+        Me.GroupBox4.Controls.Add(Me.MarkupComboBox)
+        Me.GroupBox4.Controls.Add(Me.DiscountComboBox)
+        Me.GroupBox4.Controls.Add(Me.Label4)
+        Me.GroupBox4.Location = New System.Drawing.Point(486, 176)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Name = "GroupBox4"
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Size = New System.Drawing.Size(148, 172)
+        Me.GroupBox4.TabIndex = 91
+        Me.GroupBox4.TabStop = False
+        Me.GroupBox4.Text = "ITEM DETAILS"
+        '
         'LineItemDetailsPopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(665, 462)
+        Me.ClientSize = New System.Drawing.Size(674, 562)
+        Me.Controls.Add(Me.GroupBox3)
+        Me.Controls.Add(Me.OptionsGroupBox1)
         Me.Controls.Add(Me.BackButton)
         Me.Controls.Add(Me.QuoteDetailsGroupBox)
-        Me.Controls.Add(Me.OptionsGroupBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Name = "LineItemDetailsPopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Customer Line Item Details"
         Me.QuoteDetailsGroupBox.ResumeLayout(False)
-        Me.QuoteDetailsGroupBox.PerformLayout()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -440,6 +462,8 @@ Partial Class LineItemDetailsPopUp
         CType(Me.SupplierDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OptionsGroupBox1.ResumeLayout(False)
+        Me.GroupBox4.ResumeLayout(False)
+        Me.GroupBox4.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -478,4 +502,6 @@ Partial Class LineItemDetailsPopUp
     Friend WithEvents SuppLineItemCostPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BackButton As Button
     Friend WithEvents LineItemDetailsPopUpTip As ToolTip
+    Friend WithEvents Supp_Quote_Date_Recieved As DataGridViewTextBoxColumn
+    Friend WithEvents GroupBox4 As GroupBox
 End Class

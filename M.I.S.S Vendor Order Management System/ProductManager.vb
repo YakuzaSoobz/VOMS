@@ -360,6 +360,7 @@ Public Class ProductManager
 
     End Sub
 
+
     Private Sub ProductNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProductNameTextBox.TextChanged
         If (ProductNameTextBox.Text.Trim = Nothing) Then
             ProductNameTextBox.BackColor = Color.MistyRose
