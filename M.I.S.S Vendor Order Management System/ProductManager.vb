@@ -183,10 +183,10 @@ Public Class ProductManager
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
         Try
-            If (ProductNameTextBox.Text.Trim = Nothing) Then
+            If (ProductNameTextBox.Text = Nothing) Then
                 MsgBox("Product Name field cannot be left blank!", vbOK)
                 ProductNameTextBox.ResetText()
-            ElseIf (BrandNameTextBox.Text.Trim = Nothing) Then
+            ElseIf (BrandNameTextBox.Text = Nothing) Then
                 MsgBox("Brand Name field cannot be left blank!", vbOK)
                 BrandNameTextBox.ResetText()
             ElseIf (ProductDescriptionTextBox.Text = Nothing) Then
@@ -200,6 +200,10 @@ Public Class ProductManager
                 ActiveStatusComboBox.ResetText()
 
             Else
+                ProductNameTextBox.Text = ProductNameTextBox.Text.Trim() 'prevents having spaces before text'
+                BrandNameTextBox.Text = BrandNameTextBox.Text.Trim()
+                ProductDescriptionTextBox.Text = ProductDescriptionTextBox.Text.Trim()
+
 
                 Try
                 Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
