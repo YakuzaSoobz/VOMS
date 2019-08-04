@@ -35,9 +35,9 @@ Public Class ProductManager
         Try
             ProductBindingSource.MoveFirst()
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         Finally
 
             Try
@@ -45,7 +45,7 @@ Public Class ProductManager
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         End Try
     End Sub
@@ -60,16 +60,16 @@ Public Class ProductManager
         Try
             ProductBindingSource.MovePrevious()
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
             Try
                 Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -83,16 +83,16 @@ Public Class ProductManager
         Try
             ProductBindingSource.MoveNext()
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
             Try
                 Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -108,10 +108,10 @@ Public Class ProductManager
             ProductBindingSource.MoveLast()
 
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
             Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product) 'refreshes records'
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -141,14 +141,14 @@ Public Class ProductManager
             ButtonRefresh.Enabled = False
             ArchiveButton.Enabled = False
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
     Private Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
 
         Try
-            Dim ret As Integer = MsgBox("Enter new values , then click the SAVE button!", vbYesNo, "Create new product?")
+            Dim ret As Integer = MsgBox("Enter new values then click the SAVE button!", vbYesNo, "Create new product?")
 
             If ret = 6 Then 'if user clicks yes to update'
 
@@ -168,62 +168,36 @@ Public Class ProductManager
         Catch ex As SqlException
             MsgBox("Cannot Add!", vbExclamation, "Cannot Add!")
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
             Try
                 Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
+
         Try
-            If (ProductNameTextBox.Text = Nothing) Then
-                MsgBox("Product Name field cannot be left blank!", vbOK)
-                ProductNameTextBox.ResetText()
-            ElseIf (BrandNameTextBox.Text = Nothing) Then
-                MsgBox("Brand Name field cannot be left blank!", vbOK)
-                BrandNameTextBox.ResetText()
-            ElseIf (ProductDescriptionTextBox.Text = Nothing) Then
-                MsgBox("Product Description field cannot be left blank!", vbOK)
-                ProductDescriptionTextBox.ResetText()
-            ElseIf (ActiveStatusComboBox.Text = Nothing) Then
-                MsgBox("Active Status field cannot be left blank!", vbOK)
-                ActiveStatusComboBox.ResetText()
-            ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
-                MsgBox("Active Status field must be either T or F!", vbOK)
-                ActiveStatusComboBox.ResetText()
+            Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
 
-            Else
-                ProductNameTextBox.Text = ProductNameTextBox.Text.Trim() 'prevents having spaces before text'
-                BrandNameTextBox.Text = BrandNameTextBox.Text.Trim()
-                ProductDescriptionTextBox.Text = ProductDescriptionTextBox.Text.Trim()
-
-
-                Try
-                Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
-
-                If ret = 6 Then 'if user clicks yes to update'
-                    ProductBindingSource.EndEdit()
-                    ProductTableAdapter.Update(Group16DataSet)
-                    MsgBox("Update successful!")
-                    Call ButtonRefresh_Click(sender, e)
-                End If
-            Catch ex As SqlException
-                MsgBox("Cannot Update!", vbExclamation, "Network Error!")
-            Catch ex As NoNullAllowedException
-                MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
-            Catch ex As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
-            End Try
+            If ret = 6 Then 'if user clicks yes to update'
+                ProductBindingSource.EndEdit()
+                ProductTableAdapter.Update(Group16DataSet)
+                MsgBox("Update successful!")
+                Call ButtonRefresh_Click(sender, e)
             End If
-        Catch ex As FormatException
-            MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
+        Catch ex As SqlException
+            MsgBox("Cannot Update!", vbExclamation, "Network Error!")
+        Catch ex As NoNullAllowedException
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input")
+        Catch ex As Exception
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -246,9 +220,9 @@ Public Class ProductManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -277,9 +251,9 @@ Public Class ProductManager
         Catch ex As SqlException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -328,7 +302,7 @@ Public Class ProductManager
     End Sub
 
     Private Sub HelpBtn_MouseHover(sender As Object, e As EventArgs) Handles HelpBtn.MouseHover
-        ProductManagerTip.SetToolTip(HelpBtn, "Click to get help")
+        ProductManagerTip.SetToolTip(HelpBtn, "Click to view additional help")
     End Sub
 
     Private Sub BackButton_MouseHover(sender As Object, e As EventArgs) Handles BackButton.MouseHover
@@ -353,45 +327,10 @@ Public Class ProductManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
 
-    End Sub
-
-
-    Private Sub ProductNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProductNameTextBox.TextChanged
-        If (ProductNameTextBox.Text.Trim = Nothing) Then
-            ProductNameTextBox.BackColor = Color.MistyRose
-        Else
-            ProductNameTextBox.BackColor = Color.White
-        End If
-    End Sub
-
-    Private Sub BrandNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles BrandNameTextBox.TextChanged
-        If (BrandNameTextBox.Text.Trim = Nothing) Then
-            BrandNameTextBox.BackColor = Color.MistyRose
-        Else
-            BrandNameTextBox.BackColor = Color.White
-        End If
-    End Sub
-
-    Private Sub ProductDescriptionTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProductDescriptionTextBox.TextChanged
-        If (ProductDescriptionTextBox.Text.Trim = Nothing) Then
-            ProductDescriptionTextBox.BackColor = Color.MistyRose
-        Else
-            ProductDescriptionTextBox.BackColor = Color.White
-        End If
-    End Sub
-
-    Private Sub ActiveStatusComboBox_TextChanged(sender As Object, e As EventArgs) Handles ActiveStatusComboBox.TextChanged
-        If (ActiveStatusComboBox.Text = Nothing) Then
-            ActiveStatusComboBox.BackColor = Color.MistyRose
-        ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
-            ActiveStatusComboBox.BackColor = Color.MistyRose
-        Else
-            ActiveStatusComboBox.BackColor = Color.White
-        End If
     End Sub
 End Class

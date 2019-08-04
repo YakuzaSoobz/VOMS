@@ -26,7 +26,7 @@ Public Class ViewCustomerQuotePopUp
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
 
     End Sub
@@ -46,7 +46,7 @@ Public Class ViewCustomerQuotePopUp
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 

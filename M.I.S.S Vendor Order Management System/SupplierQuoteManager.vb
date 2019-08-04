@@ -3,8 +3,8 @@
 
 Public Class SupplierQuoteManager
 
-    Public SupplierQuoteReferenceID As Integer
-    Public NewSupplierQuoteReferenceID As Integer
+    Public SupplierQuoteReferenceID As String
+
     Public EditStatus As Boolean
     Public CreateStatus As Boolean
     Public SortStatus As Boolean
@@ -36,11 +36,11 @@ Public Class SupplierQuoteManager
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
-    Public Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
+    Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
         Try
             Call SupplierQuoteManager_Load(sender, e)
 
@@ -52,7 +52,7 @@ Public Class SupplierQuoteManager
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -61,17 +61,13 @@ Public Class SupplierQuoteManager
             EditStatus = False
             CreateStatus = True
             CreateOrEditSupplierQuote.Show()
+            CreateOrEditSupplierQuote.Text = "Supplier Quote Reference ID : " & SupplierQuoteReferenceID
 
-            SupplierQuoteJoinSupplierBindingSource.MoveLast()
-            NewSupplierQuoteReferenceID = Integer.Parse(SupplierQuoteJoinSupplierDataGridView.CurrentRow.Cells(0).Value.ToString) + 1
-
-            CreateOrEditSupplierQuote.Text = "Supplier Quote ReferenceID : " & NewSupplierQuoteReferenceID
-            CreateOrEditSupplierQuote.SupplierQuoteID = NewSupplierQuoteReferenceID
             Me.Hide()
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -94,7 +90,7 @@ Public Class SupplierQuoteManager
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -111,7 +107,6 @@ Public Class SupplierQuoteManager
                 CreateOrEditSupplierQuote.SuppLineItemJoinProductBindingSource.Filter = "Supp_Quote_Reference_ID = '" & SupplierQuoteReferenceID & "'"
 
                 CreateOrEditSupplierQuote.Text = "Supplier Quote Editor: Reference ID = " & SupplierQuoteReferenceID
-                CreateOrEditSupplierQuote.SupplierQuoteID = SupplierQuoteReferenceID
 
                 Me.Hide()
             Else
@@ -121,7 +116,7 @@ Public Class SupplierQuoteManager
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -140,9 +135,9 @@ Public Class SupplierQuoteManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -168,7 +163,7 @@ Public Class SupplierQuoteManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
@@ -209,9 +204,9 @@ Public Class SupplierQuoteManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
