@@ -75,11 +75,11 @@ Partial Class ViewSupplierQuotePopUp
         Me.NavigationGroupBox.Controls.Add(Me.Label3)
         Me.NavigationGroupBox.Controls.Add(Me.Label1)
         Me.NavigationGroupBox.Controls.Add(Me.QuoteRichTextBox)
-        Me.NavigationGroupBox.Location = New System.Drawing.Point(15, 14)
-        Me.NavigationGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NavigationGroupBox.Location = New System.Drawing.Point(11, 11)
+        Me.NavigationGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.NavigationGroupBox.Name = "NavigationGroupBox"
-        Me.NavigationGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.NavigationGroupBox.Size = New System.Drawing.Size(728, 442)
+        Me.NavigationGroupBox.Padding = New System.Windows.Forms.Padding(2)
+        Me.NavigationGroupBox.Size = New System.Drawing.Size(546, 359)
         Me.NavigationGroupBox.TabIndex = 21
         Me.NavigationGroupBox.TabStop = False
         Me.NavigationGroupBox.Text = "QUOTE"
@@ -90,10 +90,9 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label10.BackColor = System.Drawing.Color.White
         Me.Label10.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteJoinSupplierBindingSource, "Supp_Quote_Date_Acceptance", True))
         Me.Label10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label10.Location = New System.Drawing.Point(639, 65)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label10.Location = New System.Drawing.Point(479, 53)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(73, 17)
+        Me.Label10.Size = New System.Drawing.Size(58, 13)
         Me.Label10.TabIndex = 16
         Me.Label10.Text = "Date/Time"
         '
@@ -112,10 +111,9 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label9.AutoSize = True
         Me.Label9.BackColor = System.Drawing.Color.White
         Me.Label9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(516, 65)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(387, 53)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(105, 17)
+        Me.Label9.Size = New System.Drawing.Size(82, 13)
         Me.Label9.TabIndex = 15
         Me.Label9.Text = "Date Accepted:"
         '
@@ -125,10 +123,9 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label8.BackColor = System.Drawing.Color.White
         Me.Label8.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteJoinSupplierBindingSource, "Supp_Quote_Date_Recieved", True))
         Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(639, 37)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label8.Location = New System.Drawing.Point(479, 30)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(73, 17)
+        Me.Label8.Size = New System.Drawing.Size(58, 13)
         Me.Label8.TabIndex = 14
         Me.Label8.Text = "Date/Time"
         '
@@ -138,10 +135,9 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label7.BackColor = System.Drawing.Color.White
         Me.Label7.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteJoinSupplierBindingSource, "Supplier_Name", True))
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(357, 37)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label7.Location = New System.Drawing.Point(268, 30)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(101, 17)
+        Me.Label7.Size = New System.Drawing.Size(76, 13)
         Me.Label7.TabIndex = 13
         Me.Label7.Text = "Supplier Name"
         '
@@ -151,10 +147,9 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label6.BackColor = System.Drawing.Color.White
         Me.Label6.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteJoinSupplierBindingSource, "Supp_Quote_Reference_ID", True))
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(116, 37)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(87, 30)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(64, 17)
+        Me.Label6.Size = New System.Drawing.Size(50, 13)
         Me.Label6.TabIndex = 12
         Me.Label6.Text = "Quote ID"
         '
@@ -163,10 +158,9 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.White
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(37, 37)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(28, 30)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(68, 17)
+        Me.Label5.Size = New System.Drawing.Size(53, 13)
         Me.Label5.TabIndex = 11
         Me.Label5.Text = "Quote ID:"
         '
@@ -179,11 +173,10 @@ Partial Class ViewSupplierQuotePopUp
         Me.SuppLineItemJoinProductDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SuppLineItemJoinProductDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductIDDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.SuppLineItemCostPriceDataGridViewTextBoxColumn, Me.SuppLineItemQuantityDataGridViewTextBoxColumn})
         Me.SuppLineItemJoinProductDataGridView.DataSource = Me.SuppLineItemJoinProductBindingSource
-        Me.SuppLineItemJoinProductDataGridView.Location = New System.Drawing.Point(41, 101)
-        Me.SuppLineItemJoinProductDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SuppLineItemJoinProductDataGridView.Location = New System.Drawing.Point(31, 82)
         Me.SuppLineItemJoinProductDataGridView.Name = "SuppLineItemJoinProductDataGridView"
         Me.SuppLineItemJoinProductDataGridView.ReadOnly = True
-        Me.SuppLineItemJoinProductDataGridView.Size = New System.Drawing.Size(651, 282)
+        Me.SuppLineItemJoinProductDataGridView.Size = New System.Drawing.Size(488, 229)
         Me.SuppLineItemJoinProductDataGridView.TabIndex = 10
         '
         'ProductIDDataGridViewTextBoxColumn
@@ -251,10 +244,9 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label2.BackColor = System.Drawing.Color.White
         Me.Label2.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SupplierQuoteJoinSupplierBindingSource, "Supp_Quote_Total_Price", True))
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(395, 398)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(296, 323)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(40, 17)
+        Me.Label2.Size = New System.Drawing.Size(31, 13)
         Me.Label2.TabIndex = 9
         Me.Label2.Text = "Price"
         '
@@ -263,10 +255,9 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.White
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(244, 37)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(183, 30)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(105, 17)
+        Me.Label4.Size = New System.Drawing.Size(79, 13)
         Me.Label4.TabIndex = 8
         Me.Label4.Text = "Supplier Name:"
         '
@@ -275,10 +266,9 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.White
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(516, 37)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(387, 30)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(87, 17)
+        Me.Label3.Size = New System.Drawing.Size(67, 13)
         Me.Label3.TabIndex = 7
         Me.Label3.Text = "Date Issued:"
         '
@@ -287,36 +277,33 @@ Partial Class ViewSupplierQuotePopUp
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.White
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(273, 398)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(205, 323)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(126, 17)
+        Me.Label1.Size = New System.Drawing.Size(96, 13)
         Me.Label1.TabIndex = 4
         Me.Label1.Text = "Total Price:         R"
         '
         'QuoteRichTextBox
         '
         Me.QuoteRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.QuoteRichTextBox.Location = New System.Drawing.Point(3, 17)
-        Me.QuoteRichTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.QuoteRichTextBox.Location = New System.Drawing.Point(2, 15)
         Me.QuoteRichTextBox.Name = "QuoteRichTextBox"
-        Me.QuoteRichTextBox.Size = New System.Drawing.Size(722, 423)
+        Me.QuoteRichTextBox.Size = New System.Drawing.Size(542, 342)
         Me.QuoteRichTextBox.TabIndex = 0
         Me.QuoteRichTextBox.Text = ""
         '
         'PrintQuoteButton
         '
         Me.PrintQuoteButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PrintQuoteButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PrintQuoteButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.PrintQuoteButton.FlatAppearance.BorderSize = 3
         Me.PrintQuoteButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.PrintQuoteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.PrintQuoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PrintQuoteButton.Location = New System.Drawing.Point(212, 505)
-        Me.PrintQuoteButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PrintQuoteButton.Location = New System.Drawing.Point(163, 386)
+        Me.PrintQuoteButton.Margin = New System.Windows.Forms.Padding(2)
         Me.PrintQuoteButton.Name = "PrintQuoteButton"
-        Me.PrintQuoteButton.Size = New System.Drawing.Size(335, 41)
+        Me.PrintQuoteButton.Size = New System.Drawing.Size(251, 33)
         Me.PrintQuoteButton.TabIndex = 52
         Me.PrintQuoteButton.Text = "PRINT QUOTE"
         Me.PrintQuoteButton.UseVisualStyleBackColor = False
@@ -324,16 +311,15 @@ Partial Class ViewSupplierQuotePopUp
         'BackButton
         '
         Me.BackButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BackButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BackButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.BackButton.FlatAppearance.BorderSize = 3
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Location = New System.Drawing.Point(657, 505)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Location = New System.Drawing.Point(493, 410)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(85, 44)
+        Me.BackButton.Size = New System.Drawing.Size(64, 36)
         Me.BackButton.TabIndex = 53
         Me.BackButton.Text = "BACK"
         Me.BackButton.UseVisualStyleBackColor = False
@@ -370,16 +356,15 @@ Partial Class ViewSupplierQuotePopUp
         '
         'ViewSupplierQuotePopUp
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(757, 562)
+        Me.ClientSize = New System.Drawing.Size(568, 457)
         Me.Controls.Add(Me.BackButton)
         Me.Controls.Add(Me.PrintQuoteButton)
         Me.Controls.Add(Me.NavigationGroupBox)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "ViewSupplierQuotePopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "View Supplier Quote"

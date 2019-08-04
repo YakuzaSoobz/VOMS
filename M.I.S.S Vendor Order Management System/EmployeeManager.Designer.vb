@@ -24,8 +24,6 @@ Partial Class EmployeeManager
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.NavigationGroupBox = New System.Windows.Forms.GroupBox()
-        Me.Label23 = New System.Windows.Forms.Label()
-        Me.Label22 = New System.Windows.Forms.Label()
         Me.SearchButton = New System.Windows.Forms.Button()
         Me.SearchComboBox = New System.Windows.Forms.ComboBox()
         Me.SearchTextBox = New System.Windows.Forms.TextBox()
@@ -87,6 +85,8 @@ Partial Class EmployeeManager
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.EmployeeManagerTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Label22 = New System.Windows.Forms.Label()
+        Me.Label23 = New System.Windows.Forms.Label()
         Me.NavigationGroupBox.SuspendLayout()
         Me.DetailsGroupBox.SuspendLayout()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,86 +107,63 @@ Partial Class EmployeeManager
         Me.NavigationGroupBox.Controls.Add(Me.LastButton)
         Me.NavigationGroupBox.Controls.Add(Me.PreviousButton)
         Me.NavigationGroupBox.Controls.Add(Me.FirstButton)
-        Me.NavigationGroupBox.Location = New System.Drawing.Point(15, 14)
-        Me.NavigationGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NavigationGroupBox.Location = New System.Drawing.Point(11, 11)
+        Me.NavigationGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.NavigationGroupBox.Name = "NavigationGroupBox"
-        Me.NavigationGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.NavigationGroupBox.Size = New System.Drawing.Size(1079, 140)
+        Me.NavigationGroupBox.Padding = New System.Windows.Forms.Padding(2)
+        Me.NavigationGroupBox.Size = New System.Drawing.Size(809, 114)
         Me.NavigationGroupBox.TabIndex = 19
         Me.NavigationGroupBox.TabStop = False
         Me.NavigationGroupBox.Text = "NAVIGATION"
         '
-        'Label23
-        '
-        Me.Label23.AutoSize = True
-        Me.Label23.BackColor = System.Drawing.Color.Transparent
-        Me.Label23.Location = New System.Drawing.Point(291, 10)
-        Me.Label23.Name = "Label23"
-        Me.Label23.Size = New System.Drawing.Size(171, 17)
-        Me.Label23.TabIndex = 103
-        Me.Label23.Text = "Enter text to be searched:"
-        '
-        'Label22
-        '
-        Me.Label22.AutoSize = True
-        Me.Label22.BackColor = System.Drawing.Color.Transparent
-        Me.Label22.Location = New System.Drawing.Point(563, 10)
-        Me.Label22.Name = "Label22"
-        Me.Label22.Size = New System.Drawing.Size(102, 17)
-        Me.Label22.TabIndex = 101
-        Me.Label22.Text = "Search Criteria"
-        '
         'SearchButton
         '
         Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.SearchButton.FlatAppearance.BorderSize = 3
         Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SearchButton.Location = New System.Drawing.Point(725, 21)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SearchButton.Location = New System.Drawing.Point(544, 17)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(135, 41)
+        Me.SearchButton.Size = New System.Drawing.Size(92, 33)
         Me.SearchButton.TabIndex = 98
         Me.SearchButton.Text = "SEARCH"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'SearchComboBox
         '
-        Me.SearchComboBox.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SearchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SearchComboBox.FormattingEnabled = True
         Me.SearchComboBox.Items.AddRange(New Object() {"Employee ID", "Employee Name", "Employee City"})
-        Me.SearchComboBox.Location = New System.Drawing.Point(528, 28)
-        Me.SearchComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SearchComboBox.Location = New System.Drawing.Point(396, 23)
+        Me.SearchComboBox.Margin = New System.Windows.Forms.Padding(2)
         Me.SearchComboBox.MaxDropDownItems = 100
         Me.SearchComboBox.Name = "SearchComboBox"
-        Me.SearchComboBox.Size = New System.Drawing.Size(180, 24)
+        Me.SearchComboBox.Size = New System.Drawing.Size(136, 21)
         Me.SearchComboBox.TabIndex = 97
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(224, 30)
-        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SearchTextBox.Location = New System.Drawing.Point(168, 24)
+        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(287, 22)
+        Me.SearchTextBox.Size = New System.Drawing.Size(216, 20)
         Me.SearchTextBox.TabIndex = 96
         '
         'NextButton
         '
         Me.NextButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.NextButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.NextButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.NextButton.FlatAppearance.BorderSize = 3
         Me.NextButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.NextButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NextButton.Location = New System.Drawing.Point(389, 84)
-        Me.NextButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NextButton.Location = New System.Drawing.Point(290, 68)
+        Me.NextButton.Margin = New System.Windows.Forms.Padding(2)
         Me.NextButton.Name = "NextButton"
-        Me.NextButton.Size = New System.Drawing.Size(135, 41)
+        Me.NextButton.Size = New System.Drawing.Size(101, 33)
         Me.NextButton.TabIndex = 41
         Me.NextButton.Text = "NEXT"
         Me.NextButton.UseVisualStyleBackColor = False
@@ -194,16 +171,15 @@ Partial Class EmployeeManager
         'LastButton
         '
         Me.LastButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.LastButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LastButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.LastButton.FlatAppearance.BorderSize = 3
         Me.LastButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.LastButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.LastButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.LastButton.Location = New System.Drawing.Point(725, 84)
-        Me.LastButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.LastButton.Location = New System.Drawing.Point(535, 68)
+        Me.LastButton.Margin = New System.Windows.Forms.Padding(2)
         Me.LastButton.Name = "LastButton"
-        Me.LastButton.Size = New System.Drawing.Size(135, 41)
+        Me.LastButton.Size = New System.Drawing.Size(101, 33)
         Me.LastButton.TabIndex = 43
         Me.LastButton.Text = "LAST"
         Me.LastButton.UseVisualStyleBackColor = False
@@ -211,16 +187,15 @@ Partial Class EmployeeManager
         'PreviousButton
         '
         Me.PreviousButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.PreviousButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.PreviousButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.PreviousButton.FlatAppearance.BorderSize = 3
         Me.PreviousButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.PreviousButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.PreviousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PreviousButton.Location = New System.Drawing.Point(556, 84)
-        Me.PreviousButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PreviousButton.Location = New System.Drawing.Point(412, 68)
+        Me.PreviousButton.Margin = New System.Windows.Forms.Padding(2)
         Me.PreviousButton.Name = "PreviousButton"
-        Me.PreviousButton.Size = New System.Drawing.Size(135, 41)
+        Me.PreviousButton.Size = New System.Drawing.Size(101, 33)
         Me.PreviousButton.TabIndex = 42
         Me.PreviousButton.Text = "PREVIOUS"
         Me.PreviousButton.UseVisualStyleBackColor = False
@@ -228,16 +203,15 @@ Partial Class EmployeeManager
         'FirstButton
         '
         Me.FirstButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.FirstButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FirstButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.FirstButton.FlatAppearance.BorderSize = 3
         Me.FirstButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.FirstButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.FirstButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.FirstButton.Location = New System.Drawing.Point(224, 84)
-        Me.FirstButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.FirstButton.Location = New System.Drawing.Point(168, 68)
+        Me.FirstButton.Margin = New System.Windows.Forms.Padding(2)
         Me.FirstButton.Name = "FirstButton"
-        Me.FirstButton.Size = New System.Drawing.Size(135, 41)
+        Me.FirstButton.Size = New System.Drawing.Size(101, 33)
         Me.FirstButton.TabIndex = 40
         Me.FirstButton.Text = "FIRST"
         Me.FirstButton.UseVisualStyleBackColor = False
@@ -245,16 +219,15 @@ Partial Class EmployeeManager
         'LogOutButton
         '
         Me.LogOutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.LogOutButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LogOutButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.LogOutButton.FlatAppearance.BorderSize = 3
         Me.LogOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.LogOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.LogOutButton.Location = New System.Drawing.Point(13, 727)
-        Me.LogOutButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.LogOutButton.Location = New System.Drawing.Point(10, 591)
+        Me.LogOutButton.Margin = New System.Windows.Forms.Padding(2)
         Me.LogOutButton.Name = "LogOutButton"
-        Me.LogOutButton.Size = New System.Drawing.Size(105, 44)
+        Me.LogOutButton.Size = New System.Drawing.Size(73, 36)
         Me.LogOutButton.TabIndex = 18
         Me.LogOutButton.Text = "LOG OUT"
         Me.LogOutButton.UseVisualStyleBackColor = False
@@ -262,16 +235,15 @@ Partial Class EmployeeManager
         'BackButton
         '
         Me.BackButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BackButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BackButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.BackButton.FlatAppearance.BorderSize = 3
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Location = New System.Drawing.Point(1008, 727)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Location = New System.Drawing.Point(756, 591)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(85, 44)
+        Me.BackButton.Size = New System.Drawing.Size(64, 36)
         Me.BackButton.TabIndex = 17
         Me.BackButton.Text = "BACK"
         Me.BackButton.UseVisualStyleBackColor = False
@@ -320,11 +292,11 @@ Partial Class EmployeeManager
         Me.DetailsGroupBox.Controls.Add(Me.Label4)
         Me.DetailsGroupBox.Controls.Add(Me.Label2)
         Me.DetailsGroupBox.Controls.Add(Me.Label1)
-        Me.DetailsGroupBox.Location = New System.Drawing.Point(15, 159)
-        Me.DetailsGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DetailsGroupBox.Location = New System.Drawing.Point(11, 129)
+        Me.DetailsGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.DetailsGroupBox.Name = "DetailsGroupBox"
-        Me.DetailsGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.DetailsGroupBox.Size = New System.Drawing.Size(1079, 485)
+        Me.DetailsGroupBox.Padding = New System.Windows.Forms.Padding(2)
+        Me.DetailsGroupBox.Size = New System.Drawing.Size(809, 394)
         Me.DetailsGroupBox.TabIndex = 16
         Me.DetailsGroupBox.TabStop = False
         Me.DetailsGroupBox.Text = "EMPLOYEE DETAILS"
@@ -332,29 +304,31 @@ Partial Class EmployeeManager
         'Label21
         '
         Me.Label21.AutoSize = True
-        Me.Label21.Location = New System.Drawing.Point(911, 357)
+        Me.Label21.Location = New System.Drawing.Point(683, 290)
+        Me.Label21.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label21.Name = "Label21"
-        Me.Label21.Size = New System.Drawing.Size(150, 34)
+        Me.Label21.Size = New System.Drawing.Size(117, 26)
         Me.Label21.TabIndex = 81
         Me.Label21.Text = "- ""1"" = Employee" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- ""2"" = Manager/Admin"
         '
         'Label20
         '
         Me.Label20.AutoSize = True
-        Me.Label20.Location = New System.Drawing.Point(911, 439)
+        Me.Label20.Location = New System.Drawing.Point(683, 357)
+        Me.Label20.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label20.Name = "Label20"
-        Me.Label20.Size = New System.Drawing.Size(158, 34)
+        Me.Label20.Size = New System.Drawing.Size(122, 26)
         Me.Label20.TabIndex = 80
         Me.Label20.Text = "- ""T"" for True = Active" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- ""F"" for False = Inactive"
         '
         'PasswordTextBox
         '
         Me.PasswordTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Password", True))
-        Me.PasswordTextBox.Location = New System.Drawing.Point(295, 452)
-        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PasswordTextBox.Location = New System.Drawing.Point(221, 367)
+        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.PasswordTextBox.MaxLength = 10
         Me.PasswordTextBox.Name = "PasswordTextBox"
-        Me.PasswordTextBox.Size = New System.Drawing.Size(207, 22)
+        Me.PasswordTextBox.Size = New System.Drawing.Size(156, 20)
         Me.PasswordTextBox.TabIndex = 79
         '
         'EmployeeBindingSource
@@ -370,338 +344,350 @@ Partial Class EmployeeManager
         'Label19
         '
         Me.Label19.AutoSize = True
-        Me.Label19.Location = New System.Drawing.Point(37, 455)
+        Me.Label19.Location = New System.Drawing.Point(28, 370)
+        Me.Label19.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label19.Name = "Label19"
-        Me.Label19.Size = New System.Drawing.Size(208, 17)
+        Me.Label19.Size = New System.Drawing.Size(157, 13)
         Me.Label19.TabIndex = 78
         Me.Label19.Text = "* Password(Max 10 characters):"
         '
         'EmployeeIDTextBox
         '
         Me.EmployeeIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_ID", True))
-        Me.EmployeeIDTextBox.Location = New System.Drawing.Point(295, 27)
-        Me.EmployeeIDTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.EmployeeIDTextBox.Location = New System.Drawing.Point(221, 22)
+        Me.EmployeeIDTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.EmployeeIDTextBox.Name = "EmployeeIDTextBox"
         Me.EmployeeIDTextBox.ReadOnly = True
-        Me.EmployeeIDTextBox.Size = New System.Drawing.Size(117, 22)
+        Me.EmployeeIDTextBox.Size = New System.Drawing.Size(89, 20)
         Me.EmployeeIDTextBox.TabIndex = 77
         '
         'GenderComboBox
         '
-        Me.GenderComboBox.Cursor = System.Windows.Forms.Cursors.Hand
         Me.GenderComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Gender", True))
         Me.GenderComboBox.FormattingEnabled = True
         Me.GenderComboBox.Items.AddRange(New Object() {"M", "F", "O"})
-        Me.GenderComboBox.Location = New System.Drawing.Point(295, 265)
-        Me.GenderComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GenderComboBox.Location = New System.Drawing.Point(221, 215)
+        Me.GenderComboBox.Margin = New System.Windows.Forms.Padding(2)
         Me.GenderComboBox.MaxDropDownItems = 100
         Me.GenderComboBox.Name = "GenderComboBox"
-        Me.GenderComboBox.Size = New System.Drawing.Size(63, 24)
+        Me.GenderComboBox.Size = New System.Drawing.Size(48, 21)
         Me.GenderComboBox.TabIndex = 76
         '
         'ActiveStatusComboBox
         '
-        Me.ActiveStatusComboBox.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ActiveStatusComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Active_Status", True))
         Me.ActiveStatusComboBox.FormattingEnabled = True
         Me.ActiveStatusComboBox.Items.AddRange(New Object() {"T", "F"})
-        Me.ActiveStatusComboBox.Location = New System.Drawing.Point(840, 446)
-        Me.ActiveStatusComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ActiveStatusComboBox.Location = New System.Drawing.Point(630, 362)
+        Me.ActiveStatusComboBox.Margin = New System.Windows.Forms.Padding(2)
         Me.ActiveStatusComboBox.MaxDropDownItems = 100
         Me.ActiveStatusComboBox.Name = "ActiveStatusComboBox"
-        Me.ActiveStatusComboBox.Size = New System.Drawing.Size(64, 24)
+        Me.ActiveStatusComboBox.Size = New System.Drawing.Size(49, 21)
         Me.ActiveStatusComboBox.TabIndex = 75
         '
         'AdminComboBox
         '
-        Me.AdminComboBox.Cursor = System.Windows.Forms.Cursors.Hand
         Me.AdminComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Admin_Level", True))
         Me.AdminComboBox.FormattingEnabled = True
         Me.AdminComboBox.Items.AddRange(New Object() {"1", "2"})
-        Me.AdminComboBox.Location = New System.Drawing.Point(840, 363)
-        Me.AdminComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.AdminComboBox.Location = New System.Drawing.Point(630, 295)
+        Me.AdminComboBox.Margin = New System.Windows.Forms.Padding(2)
         Me.AdminComboBox.MaxDropDownItems = 100
         Me.AdminComboBox.Name = "AdminComboBox"
-        Me.AdminComboBox.Size = New System.Drawing.Size(64, 24)
+        Me.AdminComboBox.Size = New System.Drawing.Size(49, 21)
         Me.AdminComboBox.TabIndex = 74
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(635, 446)
+        Me.Label18.Location = New System.Drawing.Point(476, 362)
+        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(103, 17)
+        Me.Label18.Size = New System.Drawing.Size(80, 13)
         Me.Label18.TabIndex = 73
         Me.Label18.Text = "* Active Status:"
         '
         'Label17
         '
         Me.Label17.AutoSize = True
-        Me.Label17.Location = New System.Drawing.Point(633, 363)
+        Me.Label17.Location = New System.Drawing.Point(475, 295)
+        Me.Label17.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label17.Name = "Label17"
-        Me.Label17.Size = New System.Drawing.Size(98, 17)
+        Me.Label17.Size = New System.Drawing.Size(75, 13)
         Me.Label17.TabIndex = 71
         Me.Label17.Text = "* Admin Level:"
         '
         'PositionTextBox
         '
         Me.PositionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Position", True))
-        Me.PositionTextBox.Location = New System.Drawing.Point(840, 306)
-        Me.PositionTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PositionTextBox.Location = New System.Drawing.Point(630, 249)
+        Me.PositionTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.PositionTextBox.Name = "PositionTextBox"
-        Me.PositionTextBox.Size = New System.Drawing.Size(171, 22)
+        Me.PositionTextBox.Size = New System.Drawing.Size(129, 20)
         Me.PositionTextBox.TabIndex = 70
         '
         'Label16
         '
         Me.Label16.AutoSize = True
-        Me.Label16.Location = New System.Drawing.Point(633, 315)
+        Me.Label16.Location = New System.Drawing.Point(475, 256)
+        Me.Label16.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label16.Name = "Label16"
-        Me.Label16.Size = New System.Drawing.Size(71, 17)
+        Me.Label16.Size = New System.Drawing.Size(54, 13)
         Me.Label16.TabIndex = 69
         Me.Label16.Text = "* Position:"
         '
         'SAIDMaskedTextBox
         '
         Me.SAIDMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_SA_ID_No", True))
-        Me.SAIDMaskedTextBox.Location = New System.Drawing.Point(295, 215)
-        Me.SAIDMaskedTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SAIDMaskedTextBox.Location = New System.Drawing.Point(221, 175)
+        Me.SAIDMaskedTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.SAIDMaskedTextBox.Mask = "0000000000000"
         Me.SAIDMaskedTextBox.Name = "SAIDMaskedTextBox"
-        Me.SAIDMaskedTextBox.Size = New System.Drawing.Size(117, 22)
+        Me.SAIDMaskedTextBox.Size = New System.Drawing.Size(89, 20)
         Me.SAIDMaskedTextBox.TabIndex = 68
         Me.SAIDMaskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label15
         '
         Me.Label15.AutoSize = True
-        Me.Label15.Location = New System.Drawing.Point(37, 219)
+        Me.Label15.Location = New System.Drawing.Point(28, 178)
+        Me.Label15.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(123, 17)
+        Me.Label15.Size = New System.Drawing.Size(95, 13)
         Me.Label15.TabIndex = 67
         Me.Label15.Text = "* South African ID:"
         '
         'PostalCodeMaskedTextBox
         '
         Me.PostalCodeMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Postal_Code", True))
-        Me.PostalCodeMaskedTextBox.Location = New System.Drawing.Point(840, 258)
-        Me.PostalCodeMaskedTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.PostalCodeMaskedTextBox.Location = New System.Drawing.Point(630, 210)
+        Me.PostalCodeMaskedTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.PostalCodeMaskedTextBox.Mask = "0000"
         Me.PostalCodeMaskedTextBox.Name = "PostalCodeMaskedTextBox"
-        Me.PostalCodeMaskedTextBox.Size = New System.Drawing.Size(64, 22)
+        Me.PostalCodeMaskedTextBox.Size = New System.Drawing.Size(49, 20)
         Me.PostalCodeMaskedTextBox.TabIndex = 64
         Me.PostalCodeMaskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label14
         '
         Me.Label14.AutoSize = True
-        Me.Label14.Location = New System.Drawing.Point(635, 262)
+        Me.Label14.Location = New System.Drawing.Point(476, 213)
+        Me.Label14.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label14.Name = "Label14"
-        Me.Label14.Size = New System.Drawing.Size(97, 17)
+        Me.Label14.Size = New System.Drawing.Size(74, 13)
         Me.Label14.TabIndex = 63
         Me.Label14.Text = "* Postal Code:"
         '
         'CityTextBox
         '
         Me.CityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_City", True))
-        Me.CityTextBox.Location = New System.Drawing.Point(840, 161)
-        Me.CityTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CityTextBox.Location = New System.Drawing.Point(630, 131)
+        Me.CityTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.CityTextBox.Name = "CityTextBox"
-        Me.CityTextBox.Size = New System.Drawing.Size(171, 22)
+        Me.CityTextBox.Size = New System.Drawing.Size(129, 20)
         Me.CityTextBox.TabIndex = 62
         '
         'Label13
         '
         Me.Label13.AutoSize = True
-        Me.Label13.Location = New System.Drawing.Point(633, 165)
+        Me.Label13.Location = New System.Drawing.Point(475, 134)
+        Me.Label13.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(44, 17)
+        Me.Label13.Size = New System.Drawing.Size(34, 13)
         Me.Label13.TabIndex = 61
         Me.Label13.Text = "* City:"
         '
         'SuburbTextBox
         '
         Me.SuburbTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Suburb", True))
-        Me.SuburbTextBox.Location = New System.Drawing.Point(840, 116)
-        Me.SuburbTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SuburbTextBox.Location = New System.Drawing.Point(630, 94)
+        Me.SuburbTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.SuburbTextBox.Name = "SuburbTextBox"
-        Me.SuburbTextBox.Size = New System.Drawing.Size(171, 22)
+        Me.SuburbTextBox.Size = New System.Drawing.Size(129, 20)
         Me.SuburbTextBox.TabIndex = 60
         '
         'Label12
         '
         Me.Label12.AutoSize = True
-        Me.Label12.Location = New System.Drawing.Point(633, 119)
+        Me.Label12.Location = New System.Drawing.Point(475, 97)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(67, 17)
+        Me.Label12.Size = New System.Drawing.Size(51, 13)
         Me.Label12.TabIndex = 59
         Me.Label12.Text = "* Suburb:"
         '
         'ProvinceTextBox
         '
         Me.ProvinceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Province", True))
-        Me.ProvinceTextBox.Location = New System.Drawing.Point(840, 210)
-        Me.ProvinceTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ProvinceTextBox.Location = New System.Drawing.Point(630, 171)
+        Me.ProvinceTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.ProvinceTextBox.Name = "ProvinceTextBox"
-        Me.ProvinceTextBox.Size = New System.Drawing.Size(171, 22)
+        Me.ProvinceTextBox.Size = New System.Drawing.Size(129, 20)
         Me.ProvinceTextBox.TabIndex = 58
         '
         'Label11
         '
         Me.Label11.AutoSize = True
-        Me.Label11.Location = New System.Drawing.Point(633, 214)
+        Me.Label11.Location = New System.Drawing.Point(475, 174)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(76, 17)
+        Me.Label11.Size = New System.Drawing.Size(59, 13)
         Me.Label11.TabIndex = 57
         Me.Label11.Text = "* Province:"
         '
         'DOBDateTimePicker
         '
-        Me.DOBDateTimePicker.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DOBDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.EmployeeBindingSource, "Employee_DOB", True))
-        Me.DOBDateTimePicker.Location = New System.Drawing.Point(295, 162)
-        Me.DOBDateTimePicker.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DOBDateTimePicker.Location = New System.Drawing.Point(221, 132)
         Me.DOBDateTimePicker.Name = "DOBDateTimePicker"
-        Me.DOBDateTimePicker.Size = New System.Drawing.Size(265, 22)
+        Me.DOBDateTimePicker.Size = New System.Drawing.Size(200, 20)
         Me.DOBDateTimePicker.TabIndex = 56
         '
         'StreetAddress2TextBox
         '
         Me.StreetAddress2TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Street_Addr_2", True))
-        Me.StreetAddress2TextBox.Location = New System.Drawing.Point(840, 64)
-        Me.StreetAddress2TextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.StreetAddress2TextBox.Location = New System.Drawing.Point(630, 52)
+        Me.StreetAddress2TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.StreetAddress2TextBox.Name = "StreetAddress2TextBox"
-        Me.StreetAddress2TextBox.Size = New System.Drawing.Size(171, 22)
+        Me.StreetAddress2TextBox.Size = New System.Drawing.Size(129, 20)
         Me.StreetAddress2TextBox.TabIndex = 55
         '
         'Label10
         '
         Me.Label10.AutoSize = True
-        Me.Label10.Location = New System.Drawing.Point(633, 68)
+        Me.Label10.Location = New System.Drawing.Point(475, 55)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(185, 17)
+        Me.Label10.Size = New System.Drawing.Size(136, 13)
         Me.Label10.TabIndex = 54
         Me.Label10.Text = "Street Address 2 (Optional):"
         '
         'StreetAddress1TextBox
         '
         Me.StreetAddress1TextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Street_Addr_1", True))
-        Me.StreetAddress1TextBox.Location = New System.Drawing.Point(840, 15)
-        Me.StreetAddress1TextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.StreetAddress1TextBox.Location = New System.Drawing.Point(630, 12)
+        Me.StreetAddress1TextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.StreetAddress1TextBox.Name = "StreetAddress1TextBox"
-        Me.StreetAddress1TextBox.Size = New System.Drawing.Size(171, 22)
+        Me.StreetAddress1TextBox.Size = New System.Drawing.Size(129, 20)
         Me.StreetAddress1TextBox.TabIndex = 53
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(633, 18)
+        Me.Label9.Location = New System.Drawing.Point(475, 15)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(127, 17)
+        Me.Label9.Size = New System.Drawing.Size(95, 13)
         Me.Label9.TabIndex = 52
         Me.Label9.Text = "* Street Address 1:"
         '
         'EmailTextBox
         '
         Me.EmailTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Email", True))
-        Me.EmailTextBox.Location = New System.Drawing.Point(295, 407)
-        Me.EmailTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.EmailTextBox.Location = New System.Drawing.Point(221, 331)
+        Me.EmailTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.EmailTextBox.Name = "EmailTextBox"
-        Me.EmailTextBox.Size = New System.Drawing.Size(207, 22)
+        Me.EmailTextBox.Size = New System.Drawing.Size(156, 20)
         Me.EmailTextBox.TabIndex = 49
         '
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Location = New System.Drawing.Point(40, 416)
+        Me.Label8.Location = New System.Drawing.Point(30, 338)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(55, 17)
+        Me.Label8.Size = New System.Drawing.Size(42, 13)
         Me.Label8.TabIndex = 48
         Me.Label8.Text = "* Email:"
         '
         'AltContactNumberMaskedTextBox
         '
         Me.AltContactNumberMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Alt_Phone_No", True))
-        Me.AltContactNumberMaskedTextBox.Location = New System.Drawing.Point(295, 364)
-        Me.AltContactNumberMaskedTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.AltContactNumberMaskedTextBox.Location = New System.Drawing.Point(221, 296)
+        Me.AltContactNumberMaskedTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.AltContactNumberMaskedTextBox.Mask = "(000)0000000"
         Me.AltContactNumberMaskedTextBox.Name = "AltContactNumberMaskedTextBox"
-        Me.AltContactNumberMaskedTextBox.Size = New System.Drawing.Size(117, 22)
+        Me.AltContactNumberMaskedTextBox.Size = New System.Drawing.Size(89, 20)
         Me.AltContactNumberMaskedTextBox.TabIndex = 47
         Me.AltContactNumberMaskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label7
         '
         Me.Label7.AutoSize = True
-        Me.Label7.Location = New System.Drawing.Point(40, 368)
+        Me.Label7.Location = New System.Drawing.Point(30, 299)
+        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(242, 17)
+        Me.Label7.Size = New System.Drawing.Size(180, 13)
         Me.Label7.TabIndex = 46
         Me.Label7.Text = "Alternate Contact Number (Optional):"
         '
         'ContactNumberMaskedTextBox
         '
         Me.ContactNumberMaskedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_Phone_No", True))
-        Me.ContactNumberMaskedTextBox.Location = New System.Drawing.Point(295, 316)
-        Me.ContactNumberMaskedTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ContactNumberMaskedTextBox.Location = New System.Drawing.Point(221, 257)
+        Me.ContactNumberMaskedTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.ContactNumberMaskedTextBox.Mask = "(000)0000000"
         Me.ContactNumberMaskedTextBox.Name = "ContactNumberMaskedTextBox"
-        Me.ContactNumberMaskedTextBox.Size = New System.Drawing.Size(117, 22)
+        Me.ContactNumberMaskedTextBox.Size = New System.Drawing.Size(89, 20)
         Me.ContactNumberMaskedTextBox.TabIndex = 45
         Me.ContactNumberMaskedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label6
         '
         Me.Label6.AutoSize = True
-        Me.Label6.Location = New System.Drawing.Point(40, 320)
+        Me.Label6.Location = New System.Drawing.Point(30, 260)
+        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(123, 17)
+        Me.Label6.Size = New System.Drawing.Size(94, 13)
         Me.Label6.TabIndex = 43
         Me.Label6.Text = "* Contact Number:"
         '
         'Label5
         '
         Me.Label5.AutoSize = True
-        Me.Label5.Location = New System.Drawing.Point(37, 268)
+        Me.Label5.Location = New System.Drawing.Point(28, 218)
+        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(69, 17)
+        Me.Label5.Size = New System.Drawing.Size(52, 13)
         Me.Label5.TabIndex = 42
         Me.Label5.Text = "* Gender:"
         '
         'SNameTextBox
         '
         Me.SNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_SName", True))
-        Me.SNameTextBox.Location = New System.Drawing.Point(295, 117)
-        Me.SNameTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SNameTextBox.Location = New System.Drawing.Point(221, 95)
+        Me.SNameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.SNameTextBox.Name = "SNameTextBox"
-        Me.SNameTextBox.Size = New System.Drawing.Size(175, 22)
+        Me.SNameTextBox.Size = New System.Drawing.Size(132, 20)
         Me.SNameTextBox.TabIndex = 41
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(40, 121)
+        Me.Label3.Location = New System.Drawing.Point(30, 98)
+        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(78, 17)
+        Me.Label3.Size = New System.Drawing.Size(59, 13)
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "* Surname:"
         '
         'FNameTextBox
         '
         Me.FNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.EmployeeBindingSource, "Employee_FName", True))
-        Me.FNameTextBox.Location = New System.Drawing.Point(295, 70)
-        Me.FNameTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.FNameTextBox.Location = New System.Drawing.Point(221, 57)
+        Me.FNameTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.FNameTextBox.Name = "FNameTextBox"
-        Me.FNameTextBox.Size = New System.Drawing.Size(175, 22)
+        Me.FNameTextBox.Size = New System.Drawing.Size(132, 20)
         Me.FNameTextBox.TabIndex = 39
         '
         'Label4
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(40, 171)
+        Me.Label4.Location = New System.Drawing.Point(30, 139)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(107, 17)
+        Me.Label4.Size = New System.Drawing.Size(81, 13)
         Me.Label4.TabIndex = 26
         Me.Label4.Text = "* Date Of Birth: "
         '
@@ -709,9 +695,10 @@ Partial Class EmployeeManager
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(37, 31)
+        Me.Label2.Location = New System.Drawing.Point(28, 25)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(100, 17)
+        Me.Label2.Size = New System.Drawing.Size(77, 13)
         Me.Label2.TabIndex = 24
         Me.Label2.Text = "* Employee ID:"
         '
@@ -719,9 +706,10 @@ Partial Class EmployeeManager
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(39, 78)
+        Me.Label1.Location = New System.Drawing.Point(29, 63)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(89, 17)
+        Me.Label1.Size = New System.Drawing.Size(67, 13)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "* First Name:"
         '
@@ -732,11 +720,11 @@ Partial Class EmployeeManager
         Me.OptionsGroupBox1.Controls.Add(Me.CreateButton)
         Me.OptionsGroupBox1.Controls.Add(Me.UpdateButton)
         Me.OptionsGroupBox1.Controls.Add(Me.ArchiveButton)
-        Me.OptionsGroupBox1.Location = New System.Drawing.Point(15, 649)
-        Me.OptionsGroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.OptionsGroupBox1.Location = New System.Drawing.Point(11, 527)
+        Me.OptionsGroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.OptionsGroupBox1.Name = "OptionsGroupBox1"
-        Me.OptionsGroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.OptionsGroupBox1.Size = New System.Drawing.Size(1079, 73)
+        Me.OptionsGroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.OptionsGroupBox1.Size = New System.Drawing.Size(809, 59)
         Me.OptionsGroupBox1.TabIndex = 66
         Me.OptionsGroupBox1.TabStop = False
         Me.OptionsGroupBox1.Text = "OPTIONS"
@@ -744,16 +732,15 @@ Partial Class EmployeeManager
         'ButtonRefresh
         '
         Me.ButtonRefresh.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ButtonRefresh.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ButtonRefresh.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.ButtonRefresh.FlatAppearance.BorderSize = 3
         Me.ButtonRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.ButtonRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.ButtonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonRefresh.Location = New System.Drawing.Point(852, 21)
-        Me.ButtonRefresh.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ButtonRefresh.Location = New System.Drawing.Point(619, 17)
+        Me.ButtonRefresh.Margin = New System.Windows.Forms.Padding(2)
         Me.ButtonRefresh.Name = "ButtonRefresh"
-        Me.ButtonRefresh.Size = New System.Drawing.Size(217, 41)
+        Me.ButtonRefresh.Size = New System.Drawing.Size(156, 33)
         Me.ButtonRefresh.TabIndex = 4
         Me.ButtonRefresh.Text = "REFRESH"
         Me.ButtonRefresh.UseVisualStyleBackColor = False
@@ -761,16 +748,15 @@ Partial Class EmployeeManager
         'CreateButton
         '
         Me.CreateButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.CreateButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CreateButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.CreateButton.FlatAppearance.BorderSize = 3
         Me.CreateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.CreateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.CreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CreateButton.Location = New System.Drawing.Point(566, 21)
-        Me.CreateButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.CreateButton.Location = New System.Drawing.Point(425, 17)
+        Me.CreateButton.Margin = New System.Windows.Forms.Padding(2)
         Me.CreateButton.Name = "CreateButton"
-        Me.CreateButton.Size = New System.Drawing.Size(217, 41)
+        Me.CreateButton.Size = New System.Drawing.Size(156, 33)
         Me.CreateButton.TabIndex = 3
         Me.CreateButton.Text = "CREATE NEW EMPLOYEE"
         Me.CreateButton.UseVisualStyleBackColor = False
@@ -778,16 +764,15 @@ Partial Class EmployeeManager
         'UpdateButton
         '
         Me.UpdateButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.UpdateButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.UpdateButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.UpdateButton.FlatAppearance.BorderSize = 3
         Me.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.UpdateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.UpdateButton.Location = New System.Drawing.Point(285, 21)
-        Me.UpdateButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.UpdateButton.Location = New System.Drawing.Point(221, 17)
+        Me.UpdateButton.Margin = New System.Windows.Forms.Padding(2)
         Me.UpdateButton.Name = "UpdateButton"
-        Me.UpdateButton.Size = New System.Drawing.Size(217, 41)
+        Me.UpdateButton.Size = New System.Drawing.Size(163, 33)
         Me.UpdateButton.TabIndex = 1
         Me.UpdateButton.Text = "UPDATE/SAVE  EMPLOYEE"
         Me.UpdateButton.UseVisualStyleBackColor = False
@@ -795,16 +780,15 @@ Partial Class EmployeeManager
         'ArchiveButton
         '
         Me.ArchiveButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ArchiveButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ArchiveButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.ArchiveButton.FlatAppearance.BorderSize = 3
         Me.ArchiveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.ArchiveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.ArchiveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ArchiveButton.Location = New System.Drawing.Point(6, 21)
-        Me.ArchiveButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ArchiveButton.Location = New System.Drawing.Point(30, 17)
+        Me.ArchiveButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ArchiveButton.Name = "ArchiveButton"
-        Me.ArchiveButton.Size = New System.Drawing.Size(217, 41)
+        Me.ArchiveButton.Size = New System.Drawing.Size(156, 33)
         Me.ArchiveButton.TabIndex = 2
         Me.ArchiveButton.Text = "ARCHIVE EMPLOYEE"
         Me.ArchiveButton.UseVisualStyleBackColor = False
@@ -829,27 +813,47 @@ Partial Class EmployeeManager
         'HelpBtn
         '
         Me.HelpBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.HelpBtn.Cursor = System.Windows.Forms.Cursors.Hand
         Me.HelpBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.HelpBtn.FlatAppearance.BorderSize = 3
         Me.HelpBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.HelpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.HelpBtn.Location = New System.Drawing.Point(501, 728)
-        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.HelpBtn.Location = New System.Drawing.Point(370, 591)
         Me.HelpBtn.Name = "HelpBtn"
-        Me.HelpBtn.Size = New System.Drawing.Size(105, 44)
+        Me.HelpBtn.Size = New System.Drawing.Size(79, 36)
         Me.HelpBtn.TabIndex = 133
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
         '
+        'Label22
+        '
+        Me.Label22.AutoSize = True
+        Me.Label22.BackColor = System.Drawing.Color.Transparent
+        Me.Label22.Location = New System.Drawing.Point(422, 8)
+        Me.Label22.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label22.Name = "Label22"
+        Me.Label22.Size = New System.Drawing.Size(76, 13)
+        Me.Label22.TabIndex = 101
+        Me.Label22.Text = "Search Criteria"
+        '
+        'Label23
+        '
+        Me.Label23.AutoSize = True
+        Me.Label23.BackColor = System.Drawing.Color.Transparent
+        Me.Label23.Location = New System.Drawing.Point(218, 8)
+        Me.Label23.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label23.Name = "Label23"
+        Me.Label23.Size = New System.Drawing.Size(129, 13)
+        Me.Label23.TabIndex = 103
+        Me.Label23.Text = "Enter text to be searched:"
+        '
         'EmployeeManager
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1111, 785)
+        Me.ClientSize = New System.Drawing.Size(833, 638)
         Me.Controls.Add(Me.HelpBtn)
         Me.Controls.Add(Me.OptionsGroupBox1)
         Me.Controls.Add(Me.NavigationGroupBox)
@@ -858,7 +862,6 @@ Partial Class EmployeeManager
         Me.Controls.Add(Me.DetailsGroupBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "EmployeeManager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Manager"

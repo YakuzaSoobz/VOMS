@@ -17,7 +17,7 @@ Public Class SignIn
             If (dt.Rows.Count > 0) Then
                 If (AccessCombo.SelectedIndex = 0) Then
 
-                    MessageBox.Show("Welcome, " & EmployeeIDTextbox.Text & "! You are logged in as a Manager.")
+                    MessageBox.Show("Welcome " & EmployeeIDTextbox.Text & " ! You are logged in as a Manager.")
                     ManagerStatus = True
                     EmployeeStatus = False
                     ManagerHomeMenu.Show()
@@ -26,7 +26,7 @@ Public Class SignIn
 
 
                 Else
-                    MessageBox.Show("Welcome, " & EmployeeIDTextbox.Text & "! You are logged in as an Employee.")
+                    MessageBox.Show("Welcome " & EmployeeIDTextbox.Text & " ! You are logged in as an Employee.")
 
                     EmployeeStatus = True
                     ManagerStatus = False
@@ -34,7 +34,7 @@ Public Class SignIn
                     Me.Hide()
                 End If
             Else
-                MessageBox.Show("Invalid details entered, please try again.")
+                MessageBox.Show("Invalid Details entered, please try again.")
 
 
             End If

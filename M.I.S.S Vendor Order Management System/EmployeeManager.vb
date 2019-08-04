@@ -34,9 +34,9 @@ Public Class EmployeeManager
         Try
             EmployeeBindingSource.MoveFirst()
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         Finally
 
             Try
@@ -44,7 +44,7 @@ Public Class EmployeeManager
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
             End Try
         End Try
 
@@ -60,17 +60,17 @@ Public Class EmployeeManager
         Try
             EmployeeBindingSource.MoveNext()
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
             Try
                 Me.EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
 
     End Sub
@@ -84,17 +84,17 @@ Public Class EmployeeManager
         Try
             EmployeeBindingSource.MovePrevious()
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
             Try
                 Me.EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -109,17 +109,17 @@ Public Class EmployeeManager
             EmployeeBindingSource.MoveLast()
 
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
             Try
                 Me.EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -149,7 +149,7 @@ Public Class EmployeeManager
             CreateButton.Enabled = True
             ArchiveButton.Enabled = False
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -166,16 +166,16 @@ Public Class EmployeeManager
         Catch ex As SqlException
             MsgBox("Cannot Update!", vbExclamation, "Network Error!")
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input")
+            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
 
         End Try
     End Sub
 
     Private Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
         Try
-            Dim ret As Integer = MsgBox("Enter new values then click the SAVE button!", vbYesNo, "Create new employee?")
+            Dim ret As Integer = MsgBox("Enter new values , then click the SAVE button!", vbYesNo, "Create new employee?")
 
             If ret = 6 Then 'if user clicks yes to update'
 
@@ -195,10 +195,10 @@ Public Class EmployeeManager
         Catch ex As SqlException
             MsgBox("Cannot Add!", vbExclamation, "Cannot Add!")
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
             Me.EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee) 'refreshes records'
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -225,9 +225,9 @@ Public Class EmployeeManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -276,7 +276,7 @@ Public Class EmployeeManager
     End Sub
 
     Private Sub HelpBtn_MouseHover(sender As Object, e As EventArgs) Handles HelpBtn.MouseHover
-        EmployeeManagerTip.SetToolTip(HelpBtn, "Click to view additional help")
+        EmployeeManagerTip.SetToolTip(HelpBtn, "Click to get help")
     End Sub
 
     Private Sub BackButton_MouseHover(sender As Object, e As EventArgs) Handles BackButton.MouseHover
