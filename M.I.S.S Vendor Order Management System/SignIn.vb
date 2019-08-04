@@ -10,7 +10,7 @@ Public Class SignIn
         Try
             EmployeeTableAdapter.FillBy(Group16DataSet.Employee, EmployeeIDTextbox.Text, PasswordTextBox.Text)
             Dim con As SqlConnection = New SqlConnection("Server=146.230.177.46\ist3;Initial Catalog=group16;User ID=group16; Password=78fgg")
-            Dim com As SqlCommand = New SqlCommand("SELECT * FROM Employee WHERE Employee_ID='" & EmployeeIDTextbox.Text & "' AND Employee_Password='" & PasswordTextBox.Text & "' AND Employee_Admin_Level='" & AccessCombo.SelectedItem & "'", con)
+            Dim com As SqlCommand = New SqlCommand("SELECT * FROM Employee WHERE Employee_Email='" & EmployeeIDTextbox.Text & "' AND Employee_Password='" & PasswordTextBox.Text & "' AND Employee_Admin_Level='" & AccessCombo.SelectedItem & "'", con)
             Dim sda As SqlDataAdapter = New SqlDataAdapter(com)
             Dim dt As DataTable = New DataTable()
             sda.Fill(dt)
