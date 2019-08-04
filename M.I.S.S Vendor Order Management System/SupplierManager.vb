@@ -24,16 +24,16 @@ Public Class SupplierManager
         Try
             SupplierBindingSource.MoveFirst()
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         Finally
             Try
                 Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier) 'refreshes records'
             Catch ex As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch ex As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         End Try
     End Sub
@@ -58,16 +58,16 @@ Public Class SupplierManager
         Try
             SupplierBindingSource.MoveNext()
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
             Try
                 Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -81,16 +81,16 @@ Public Class SupplierManager
         Try
             SupplierBindingSource.MovePrevious()
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
             Try
                 Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -106,16 +106,16 @@ Public Class SupplierManager
             SupplierBindingSource.MoveLast()
 
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
             Try
                 Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -152,7 +152,7 @@ Public Class SupplierManager
             CreateButton.Enabled = True
             ArchiveButton.Enabled = False
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -170,16 +170,16 @@ Public Class SupplierManager
         Catch ex As SqlException
             MsgBox("Cannot Update!", vbExclamation, "Network Error!")
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
 
         End Try
     End Sub
 
     Private Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
         Try
-            Dim ret As Integer = MsgBox("Enter new values , then click the SAVE button!", vbYesNo, "Create new supplier?")
+            Dim ret As Integer = MsgBox("Enter new values then click the SAVE button!", vbYesNo, "Create new supplier?")
 
             If ret = 6 Then 'if user clicks yes to update'
 
@@ -200,17 +200,17 @@ Public Class SupplierManager
         Catch ex As SqlException
             MsgBox("Cannot Add!", vbExclamation, "Cannot Add!")
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
 
             Try
                 Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -310,7 +310,7 @@ Public Class SupplierManager
     End Sub
 
     Private Sub HelpBtn_MouseHover(sender As Object, e As EventArgs) Handles HelpBtn.MouseHover
-        SupplierManagerTip.SetToolTip(HelpBtn, "Click to get help")
+        SupplierManagerTip.SetToolTip(HelpBtn, "Click to view additional help")
     End Sub
 
     Private Sub BackButton_MouseHover(sender As Object, e As EventArgs) Handles BackButton.MouseHover

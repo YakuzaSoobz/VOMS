@@ -26,9 +26,9 @@ Public Class CustomerQuoteLineItemManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
 
     End Sub
@@ -46,9 +46,9 @@ Public Class CustomerQuoteLineItemManager
             Catch ex As SqlException
                 MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
             Catch ex As EvaluateException
-                MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+                MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
             Catch ex As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
 
         End If
@@ -82,9 +82,9 @@ Public Class CustomerQuoteLineItemManager
             Catch ex As SqlException
                 MsgBox("Cannot delete!", vbExclamation, "Cannot delete!")
             Catch ex As NoNullAllowedException
-                MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+                MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
             Catch ex As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             Finally
                 SQLcon.Dispose()
                 Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
@@ -93,7 +93,7 @@ Public Class CustomerQuoteLineItemManager
 
         ElseIf (e.ColumnIndex = 9) Then 'edit line item
             Try
-                Dim ret As Integer = MsgBox("Edit line item details for Customer Quote?", vbYesNo)
+                Dim ret As Integer = MsgBox("Edit Line Item details for Customer Quote?", vbYesNo)
 
                 If ret = 6 Then
 
@@ -128,9 +128,9 @@ Public Class CustomerQuoteLineItemManager
             Catch ex As SqlException
                 MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
             Catch ex As EvaluateException
-                MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+                MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
             Catch ex As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
 
         End If
@@ -146,9 +146,9 @@ Public Class CustomerQuoteLineItemManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -156,19 +156,15 @@ Public Class CustomerQuoteLineItemManager
 
         Try
 
-            If ((CustomerQuoteLineItemDataGridView.RowCount > 0)) Then
+            CustomerQuoteManager.CustomerQuoteJoinCustomerTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustomerQuoteJoinCustomer)
+            CustomerQuoteManager.CustLineItemJoinProductsTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustLineItemJoinProducts)
 
-                CustomerQuoteManager.CustomerQuoteJoinCustomerTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustomerQuoteJoinCustomer)
-                CustomerQuoteManager.CustLineItemJoinProductsTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustLineItemJoinProducts)
-                Call CreateOrEditCustomerQuote.RefreshButton_Click(sender, e)
-                Me.Close()
 
-            Else
-                MsgBox("You need to add atleast one item to the quote first before leaving!", MsgBoxStyle.YesNo)
-            End If
+            Call CreateOrEditCustomerQuote.RefreshButton_Click(sender, e)
 
+            Me.Close()
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -192,9 +188,9 @@ Public Class CustomerQuoteLineItemManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot add!", vbExclamation, "Cannot add!")
         Catch ex As EvaluateException
-            MsgBox("Cannot add", vbExclamation, "Cannot add!")
+            MsgBox("Cannot add!", vbExclamation, "Cannot add!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
 
     End Sub

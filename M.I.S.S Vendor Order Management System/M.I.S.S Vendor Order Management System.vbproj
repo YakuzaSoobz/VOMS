@@ -80,10 +80,22 @@
     <Compile Include="CustomerInfoPopUp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmployeeHomeMenuRevised.Designer.vb">
+      <DependentUpon>EmployeeHomeMenuRevised.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeHomeMenuRevised.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EmployeeInfoPopUp.Designer.vb">
       <DependentUpon>EmployeeInfoPopUp.vb</DependentUpon>
     </Compile>
     <Compile Include="EmployeeInfoPopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ManagerHomeMenuRevised.Designer.vb">
+      <DependentUpon>ManagerHomeMenuRevised.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ManagerHomeMenuRevised.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ProductInfoPopUp.Designer.vb">
@@ -235,8 +247,14 @@
     <EmbeddedResource Include="CustomerInfoPopUp.resx">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeHomeMenuRevised.resx">
+      <DependentUpon>EmployeeHomeMenuRevised.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EmployeeInfoPopUp.resx">
       <DependentUpon>EmployeeInfoPopUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ManagerHomeMenuRevised.resx">
+      <DependentUpon>ManagerHomeMenuRevised.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ProductInfoPopUp.resx">
       <DependentUpon>ProductInfoPopUp.vb</DependentUpon>

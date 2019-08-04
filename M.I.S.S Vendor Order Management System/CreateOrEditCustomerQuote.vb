@@ -4,7 +4,6 @@ Public Class CreateOrEditCustomerQuote
 
     Public CreateCustomerStatus As Boolean = False
     Public CustomerQuoteID As Integer
-    Public ActiveQuoteStatus As Boolean = False
     Private Sub CreateOrEditCustomerQuote_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
@@ -18,7 +17,7 @@ Public Class CreateOrEditCustomerQuote
                 UpdateQuoteButton.Text = "UPDATE QUOTE"
                 Me.Text = "Edit Customer Quote"
                 NotificationLabel.Visible = False
-
+                CustomerQuoteID = Integer.Parse(CustomerQuoteIDTextBox.Text)
 
             ElseIf (CustomerQuoteManager.EditStatus = False) And (CustomerQuoteManager.CreateStatus = True) Then 'create quote
 
@@ -37,7 +36,7 @@ Public Class CreateOrEditCustomerQuote
                 CustLineItemJoinProductDataGridView.Visible = False
                 EditLineItemsButton.Enabled = False
                 TotalPriceTextBox.Text = 0
-
+                CustomerQuoteID = Integer.Parse(CustomerQuoteIDTextBox.Text)
 
             End If
         Catch exe As SqlException
@@ -68,30 +67,12 @@ Public Class CreateOrEditCustomerQuote
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
-
-        If (ActiveQuoteStatus = False) Then
-            Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
-            If answer = MsgBoxResult.Yes Then
-                CustomerQuoteManager.Show()
-                Me.Close()
-            End If
-        ElseIf (ActiveQuoteStatus = True) Then 'save button has been clicked
-            If ((CustLineItemJoinProductDataGridView.RowCount > 0)) Then
-
-                Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost", MsgBoxStyle.YesNo)
-                If answer = MsgBoxResult.Yes Then
-                    CustomerQuoteManager.Show()
-                    Me.Close()
-                End If
-
-            ElseIf ((CustLineItemJoinProductDataGridView.RowCount < 1)) Then
-                MsgBox("You need to add atleast one item to the quote first before leaving!", MsgBoxStyle.YesNo)
-            End If
+        Dim answer As MsgBoxResult = MsgBox("Are you sure you want to leave this page? All unsaved changes will be lost.", MsgBoxStyle.YesNo)
+        If answer = MsgBoxResult.Yes Then
+            CustomerQuoteManager.Show()
+            Call CustomerQuoteManager.RefreshButton_Click(sender, e)
+            Me.Close()
         End If
-
-        Call CustomerQuoteManager.RefreshButton_Click(sender, e)
-
-
     End Sub
 
     Public Sub UpdateQuoteButton_Click(sender As Object, e As EventArgs) Handles UpdateQuoteButton.Click
@@ -100,29 +81,29 @@ Public Class CreateOrEditCustomerQuote
 
                 Try
                     getTotal()
-                    Dim ret As Integer = MsgBox("Confirm changes to Customer Quote " & CustomerQuoteID & " ?", vbYesNo)
+                    Dim ret As Integer = MsgBox("Confirm changes to Customer Quote " & CustomerQuoteIDTextBox.Text & " ?", vbYesNo)
                     If ret = 6 Then 'if user clicks yes to update'
 
-                        If (QuoteAcceptanceStatusComboBox.SelectedItem = "N") Then 'if date is empTy then make it 1111/11/11
+                        If (DateAcceptedTextBox.Text = "") Then 'if date is empTy then make it 1111/11/11
                             DateAcceptedTextBox.Text = "1111/11/11"
                         End If
 
                         CustomerQuoteBindingSource.EndEdit()
                         Customer_QuoteTableAdapter.Update(Me.Group16DataSet.Customer_Quote)
 
-                        If (QuoteAcceptanceStatusComboBox.SelectedItem = "N") Then 'if date is 1111/11/1111 then make it null
+                        If (DateAcceptedTextBox.Text = "1111/11/11") Then 'if date is 1111/11/1111 then make it null
                             DateAcceptedTextBox.Text = ""
                             CustomerQuoteBindingSource.EndEdit()
-                            Customer_QuoteTableAdapter.UpdateDateAcceptedNULLQuery(CustomerQuoteID)
+                            Customer_QuoteTableAdapter.UpdateDateAcceptedNULLQuery(Integer.Parse(CustomerQuoteIDTextBox.Text))
                             MsgBox("Update successful!")
                         End If
                     End If
                 Catch ex As SqlException
                     MsgBox("Cannot Update!", vbExclamation, "Cannot Update!")
                 Catch ex As NoNullAllowedException
-                    MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
+                    MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input")
                 Catch ex As Exception
-                    MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                    MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
                 Finally
                     CustomerQuoteManager.CustomerQuoteJoinCustomerTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustomerQuoteJoinCustomer)
                     CustomerQuoteManager.CustLineItemJoinProductsTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustLineItemJoinProducts)
@@ -131,13 +112,13 @@ Public Class CreateOrEditCustomerQuote
                 'CREATE CODE
             ElseIf (CustomerQuoteManager.EditStatus = False) And (CustomerQuoteManager.CreateStatus = True) Then 'create quote
                 Try
-                    Dim ret As Integer = MsgBox("Add new Customer Quote too the database?", vbYesNo)
+                    Dim ret As Integer = MsgBox("Add new Customer Quote to database?", vbYesNo)
                     If ret = 6 Then 'if user clicks yes to update'
 
                         EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee)
                         CustomerTableAdapter.Fill(Me.Group16DataSet.Customer)
 
-                        If (QuoteAcceptanceStatusComboBox.SelectedItem = "N") Then 'if date is empTy then make it 1111/11/11
+                        If (DateAcceptedTextBox.Text = "") Then 'if date is empTy then make it 1111/11/11
                             DateAcceptedTextBox.Text = "1111/11/11"
                         End If
 
@@ -154,12 +135,12 @@ Public Class CreateOrEditCustomerQuote
                         Me.Customer_QuoteTableAdapter.Fill(Me.Group16DataSet.Customer_Quote)
                         Me.CustomerQuoteBindingSource.MoveLast()
 
-                        If (QuoteAcceptanceStatusComboBox.SelectedItem = "N") Then 'if date is 1111/11/1111 then make it null
+                        If (DateAcceptedTextBox.Text = "1111/11/11") Then 'if date is 1111/11/1111 then make it null
                             DateAcceptedTextBox.Text = ""
 
                             CustomerQuoteBindingSource.EndEdit()
-                            Customer_QuoteTableAdapter.UpdateDateAcceptedNULLQuery(CustomerQuoteID)
-                            MsgBox("Customer Quote " & CustomerQuoteIDTextBox.Text & " was successfully added to the database!")
+                            Customer_QuoteTableAdapter.UpdateDateAcceptedNULLQuery(Integer.Parse(CustomerQuoteIDTextBox.Text))
+                            MsgBox("Customer Quote " & CustomerQuoteIDTextBox.Text & " was successfully added to database!")
                         End If
 
                         QuoteDetailsGroupBox.Enabled = False
@@ -168,7 +149,6 @@ Public Class CreateOrEditCustomerQuote
                         TotalPriceTextBox.Enabled = True
                         EditLineItemsButton.Enabled = True
                         NotificationLabel.Visible = False
-                        ActiveQuoteStatus = True
                         CustLineItemJoinProductDataGridView.Visible = True
                         CustLineItemJoinProductDataGridView.Enabled = True
 
@@ -176,9 +156,9 @@ Public Class CreateOrEditCustomerQuote
                 Catch ex As SqlException
                     MsgBox("Cannot save Customer Quote to database!", vbExclamation, "Network Error!")
                 Catch ex As NoNullAllowedException
-                    MsgBox("Incorrect input!Follow correct format and fill all required fields!", vbExclamation, "Incorrect Input")
+                    MsgBox("Incorrect input! Follow correct format and fill all required fields!", vbExclamation, "Incorrect Input")
                 Catch ex As Exception
-                    MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                    MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
                 Finally
                     SupplierQuoteManager.SupplierQuoteJoinSupplierTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SupplierQuoteJoinSupplier)
                     SupplierQuoteManager.SuppLineItemJoinProductTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SuppLineItemJoinProduct)
@@ -213,7 +193,7 @@ Public Class CreateOrEditCustomerQuote
                     SQLcomm = New SqlCommand(Query, SQLcon)
                     READER = SQLcomm.ExecuteReader
                     SQLcon.Close()
-                    MsgBox("Delete was successful!")
+                    MsgBox("Delete successful!")
 
                     CustomerQuoteManager.Show()
                     Me.Close()
@@ -221,9 +201,9 @@ Public Class CreateOrEditCustomerQuote
             Catch ex As SqlException
                 MsgBox("Cannot delete!", vbExclamation, "Cannot delete!")
             Catch ex As NoNullAllowedException
-                MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+                MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
             Catch ex As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             Finally
                 SQLcon.Dispose()
                 CustomerQuoteManager.CustomerQuoteJoinCustomerTableAdapter.Fill(CustomerQuoteManager.Group16DataSet.CustomerQuoteJoinCustomer)
@@ -235,22 +215,31 @@ Public Class CreateOrEditCustomerQuote
     Private Sub EditLineItemsButton_Click(sender As Object, e As EventArgs) Handles EditLineItemsButton.Click
         Try
             CustomerQuoteLineItemManager.Show()
-            CustomerQuoteLineItemManager.CustomerQuoteLineItemBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteID & "'"
-            CustomerQuoteLineItemManager.Text = "Customer Quote Line Item Manager: Reference ID: " & CustomerQuoteID
-            CustomerQuoteLineItemManager.CustomerQuoteReferenceID = CustomerQuoteID
+            CustomerQuoteLineItemManager.CustomerQuoteLineItemBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteIDTextBox.Text & "'"
+            CustomerQuoteLineItemManager.Text = "Customer Quote Line Item Manager: Reference ID: " & CustomerQuoteIDTextBox.Text
+            CustomerQuoteLineItemManager.CustomerQuoteReferenceID = Integer.Parse(CustomerQuoteIDTextBox.Text)
         Catch ex As SqlException
-            MsgBox("Oops... Page failed too load correctly!", vbExclamation, "Error!")
+            MsgBox("Oops... Page failed to load correctly!", vbExclamation, "Error!")
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
     Public Function getTotal() As Decimal 'gets total of quote
-        Dim sum As Decimal = Customer_Quote_Line_ItemTableAdapter.TotalCustQuotePriceQuery(CustomerQuoteID)
+        Dim sum As Decimal = 0
         Try
-            TotalPriceTextBox.Text = Customer_Quote_Line_ItemTableAdapter.TotalCustQuotePriceQuery(CustomerQuoteID)
+            For i As Integer = 0 To Me.Group16DataSet.CustLineItemJoinProducts.Rows.Count - 1
+
+                If ((Me.Group16DataSet.CustLineItemJoinProducts.Rows(i)("Cust_Quote_Reference_ID")) = CustomerQuoteManager.CustomerQuoteReferenceID) Then
+
+                    sum = sum + Decimal.Parse((Me.Group16DataSet.CustLineItemJoinProducts.Rows(i)("Cust_Line_Item_Sale_incl_VAT")) * (Me.Group16DataSet.CustLineItemJoinProducts.Rows(i)("Cust_Line_Item_Quantity")))
+
+                End If
+            Next
+
+            TotalPriceTextBox.Text = sum
         Catch ex As SqlException
             MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
         Catch ex As NoNullAllowedException
@@ -275,10 +264,24 @@ Public Class CreateOrEditCustomerQuote
         Catch ex As NoNullAllowedException
             MsgBox("Cannot compute Total Price!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
 
 
+    End Sub
+
+    Private Sub CaclulateTotalButton_Click(sender As Object, e As EventArgs) Handles CaclulateTotalButton.Click
+
+        Try
+            Me.getTotal()
+            Customer_QuoteTableAdapter.TotalPriceUpdateQuery(getTotal, Integer.Parse(CustomerQuoteIDTextBox.Text))
+        Catch ex As SqlException
+            MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
+        Catch ex As NoNullAllowedException
+            MsgBox("Cannot compute Total Price!", vbExclamation, "Incorrect Input!")
+        Catch ex As Exception
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+        End Try
     End Sub
 
     Private Sub CustomerInfoButton_MouseHover(sender As Object, e As EventArgs) Handles CustomerInfoButton.MouseHover
@@ -301,30 +304,16 @@ Public Class CreateOrEditCustomerQuote
         CreateOrEditCustomerQuoteTip.SetToolTip(DeleteQuoteButton, "Click to delete customer quote")
     End Sub
 
+    Private Sub CaclulateTotalButton_MouseHover(sender As Object, e As EventArgs) Handles CaclulateTotalButton.MouseHover
+        CreateOrEditCustomerQuoteTip.SetToolTip(CaclulateTotalButton, "Click to calculate total amount")
+    End Sub
+
     Private Sub EditLineItemsButton_MouseHover(sender As Object, e As EventArgs) Handles EditLineItemsButton.MouseHover
         CreateOrEditCustomerQuoteTip.SetToolTip(EditLineItemsButton, "Click to edit items in a line")
     End Sub
 
     Private Sub BackButton_MouseHover(sender As Object, e As EventArgs) Handles BackButton.MouseHover
         CreateOrEditCustomerQuoteTip.SetToolTip(BackButton, "Click to leave form")
-    End Sub
-
-    Private Sub CustomerInfoButton_Click(sender As Object, e As EventArgs) Handles CustomerInfoButton.Click
-
-        Try
-            CustomerInfoPopUp.Show()
-            CustomerInfoPopUp.CustomerBindingSource.Filter = "Customer_ID = '" & CustomerIDComboBox.Text & "'"
-            CustomerInfoPopUp.Text = "Employee Information: " & CustomerIDComboBox.Text
-
-        Catch ex As SqlException
-            MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
-        Catch ex As NoNullAllowedException
-            MsgBox("Cannot compute Total Price!", vbExclamation, "Incorrect Input!")
-        Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
-        End Try
-
-        CustomerInfoPopUp.Show()
     End Sub
 
     Public Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
@@ -338,7 +327,11 @@ Public Class CreateOrEditCustomerQuote
         Catch ex As NoNullAllowedException
             MsgBox("Cannot compute Total Price!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
+    End Sub
+
+    Private Sub CustomerInfoButton_Click(sender As Object, e As EventArgs) Handles CustomerInfoButton.Click
+        CustomerInfoPopUp.Show()
     End Sub
 End Class

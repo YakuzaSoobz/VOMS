@@ -27,7 +27,7 @@ Public Class CustomerQuoteManager
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -55,7 +55,7 @@ Public Class CustomerQuoteManager
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -74,7 +74,7 @@ Public Class CustomerQuoteManager
         Catch ex As EvaluateException
             MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -96,7 +96,7 @@ Public Class CustomerQuoteManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
@@ -127,9 +127,9 @@ Public Class CustomerQuoteManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
 
     End Sub
@@ -151,7 +151,6 @@ Public Class CustomerQuoteManager
 
             CreateOrEditCustomerQuote.Show()
             CreateOrEditCustomerQuote.Text = "Customer Quote ReferenceID : " & NewCustomerQuoteReferenceID
-            CreateOrEditCustomerQuote.CustomerQuoteID = NewCustomerQuoteReferenceID
 
             Me.Hide()
         Catch exe As SqlException
@@ -173,7 +172,6 @@ Public Class CustomerQuoteManager
                 CreateOrEditCustomerQuote.CustLineItemJoinProductsBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteReferenceID & "'"
 
                 CreateOrEditCustomerQuote.Text = "Customer Quote Editor: Reference ID = " & CustomerQuoteReferenceID
-                CreateOrEditCustomerQuote.CustomerQuoteID = CustomerQuoteReferenceID
 
                 Me.Hide()
             Else
@@ -183,7 +181,7 @@ Public Class CustomerQuoteManager
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -205,7 +203,7 @@ Public Class CustomerQuoteManager
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -239,7 +237,7 @@ Public Class CustomerQuoteManager
     End Sub
 
     Private Sub HelpBtn_MouseHover(sender As Object, e As EventArgs) Handles HelpBtn.MouseHover
-        CustomerQuoteManagerTip.SetToolTip(HelpBtn, "Click to get help")
+        CustomerQuoteManagerTip.SetToolTip(HelpBtn, "Click to view additional help")
     End Sub
 
     Private Sub BackButton_MouseHover(sender As Object, e As EventArgs) Handles BackButton.MouseHover
