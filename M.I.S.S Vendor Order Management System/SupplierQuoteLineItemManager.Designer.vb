@@ -72,11 +72,11 @@ Partial Class SupplierQuoteLineItemManager
         Me.GroupBox1.Controls.Add(Me.SearchTextBox)
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Controls.Add(Me.SupplierQuoteLineItemDataGridView)
-        Me.GroupBox1.Location = New System.Drawing.Point(15, 14)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox1.Location = New System.Drawing.Point(11, 11)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox1.Size = New System.Drawing.Size(1144, 662)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Size = New System.Drawing.Size(858, 538)
         Me.GroupBox1.TabIndex = 22
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "SUPPLIER QUOTE LINE ITEMS"
@@ -84,16 +84,15 @@ Partial Class SupplierQuoteLineItemManager
         'Button1
         '
         Me.Button1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.Button1.FlatAppearance.BorderSize = 3
         Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.Button1.Location = New System.Drawing.Point(888, 601)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.Button1.Location = New System.Drawing.Point(666, 488)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(2)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(168, 54)
+        Me.Button1.Size = New System.Drawing.Size(126, 44)
         Me.Button1.TabIndex = 107
         Me.Button1.Text = "CREATE PRODUCT"
         Me.Button1.UseVisualStyleBackColor = False
@@ -102,35 +101,35 @@ Partial Class SupplierQuoteLineItemManager
         '
         Me.Label4.AutoSize = True
         Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(427, 598)
+        Me.Label4.Location = New System.Drawing.Point(320, 486)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(236, 17)
+        Me.Label4.Size = New System.Drawing.Size(177, 13)
         Me.Label4.TabIndex = 106
         Me.Label4.Text = "Enter product name to be searched:"
         '
         'ClearButton
         '
         Me.ClearButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClearButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ClearButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.ClearButton.FlatAppearance.BorderSize = 3
         Me.ClearButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.ClearButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ClearButton.Location = New System.Drawing.Point(695, 607)
-        Me.ClearButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.ClearButton.Location = New System.Drawing.Point(521, 493)
+        Me.ClearButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ClearButton.Name = "ClearButton"
-        Me.ClearButton.Size = New System.Drawing.Size(140, 43)
+        Me.ClearButton.Size = New System.Drawing.Size(105, 35)
         Me.ClearButton.TabIndex = 104
         Me.ClearButton.Text = "CLEAR TEXT"
         Me.ClearButton.UseVisualStyleBackColor = False
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(391, 617)
-        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SearchTextBox.Location = New System.Drawing.Point(293, 501)
+        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(297, 22)
+        Me.SearchTextBox.Size = New System.Drawing.Size(224, 20)
         Me.SearchTextBox.TabIndex = 102
         '
         'GroupBox4
@@ -138,11 +137,11 @@ Partial Class SupplierQuoteLineItemManager
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox4.Controls.Add(Me.ProductDataGridView)
-        Me.GroupBox4.Location = New System.Drawing.Point(24, 342)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox4.Location = New System.Drawing.Point(18, 278)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.GroupBox4.Size = New System.Drawing.Size(1089, 244)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Size = New System.Drawing.Size(817, 198)
         Me.GroupBox4.TabIndex = 55
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "ALL PRODUCTS"
@@ -157,11 +156,10 @@ Partial Class SupplierQuoteLineItemManager
         Me.ProductDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductIDDataGridViewTextBoxColumn1, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductBrandDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.ProductActiveStatusDataGridViewTextBoxColumn, Me.AddLineItem})
         Me.ProductDataGridView.DataSource = Me.ProductBindingSource
         Me.ProductDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ProductDataGridView.Location = New System.Drawing.Point(3, 17)
-        Me.ProductDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ProductDataGridView.Location = New System.Drawing.Point(2, 15)
         Me.ProductDataGridView.Name = "ProductDataGridView"
         Me.ProductDataGridView.ReadOnly = True
-        Me.ProductDataGridView.Size = New System.Drawing.Size(1083, 225)
+        Me.ProductDataGridView.Size = New System.Drawing.Size(813, 181)
         Me.ProductDataGridView.TabIndex = 0
         '
         'ProductIDDataGridViewTextBoxColumn1
@@ -245,14 +243,14 @@ Partial Class SupplierQuoteLineItemManager
         Me.SupplierQuoteLineItemDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.SupplierQuoteLineItemDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SuppQuoteReferenceIDDataGridViewTextBoxColumn, Me.ProductIDDataGridViewTextBoxColumn, Me.SuppLineItemCostPriceDataGridViewTextBoxColumn, Me.SuppLineItemQuantityDataGridViewTextBoxColumn, Me.RemoveLineItem, Me.Edit})
         Me.SupplierQuoteLineItemDataGridView.DataSource = Me.SupplierQuoteLineItemBindingSource
-        Me.SupplierQuoteLineItemDataGridView.Location = New System.Drawing.Point(5, 21)
-        Me.SupplierQuoteLineItemDataGridView.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.SupplierQuoteLineItemDataGridView.Location = New System.Drawing.Point(4, 17)
+        Me.SupplierQuoteLineItemDataGridView.Margin = New System.Windows.Forms.Padding(2)
         Me.SupplierQuoteLineItemDataGridView.Name = "SupplierQuoteLineItemDataGridView"
         Me.SupplierQuoteLineItemDataGridView.ReadOnly = True
         Me.SupplierQuoteLineItemDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
         Me.SupplierQuoteLineItemDataGridView.RowTemplate.Height = 24
         Me.SupplierQuoteLineItemDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.SupplierQuoteLineItemDataGridView.Size = New System.Drawing.Size(1133, 316)
+        Me.SupplierQuoteLineItemDataGridView.Size = New System.Drawing.Size(850, 257)
         Me.SupplierQuoteLineItemDataGridView.TabIndex = 0
         '
         'SuppQuoteReferenceIDDataGridViewTextBoxColumn
@@ -342,32 +340,30 @@ Partial Class SupplierQuoteLineItemManager
         'BackButton
         '
         Me.BackButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BackButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BackButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
         Me.BackButton.FlatAppearance.BorderSize = 3
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Location = New System.Drawing.Point(1068, 681)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.BackButton.Location = New System.Drawing.Point(801, 553)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(85, 44)
+        Me.BackButton.Size = New System.Drawing.Size(64, 36)
         Me.BackButton.TabIndex = 75
         Me.BackButton.Text = "BACK"
         Me.BackButton.UseVisualStyleBackColor = False
         '
         'SupplierQuoteLineItemManager
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(1173, 738)
+        Me.ClientSize = New System.Drawing.Size(880, 600)
         Me.Controls.Add(Me.BackButton)
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "SupplierQuoteLineItemManager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Supplier Quote Line Item Manager"

@@ -17,9 +17,9 @@ Public Class SupplierQuoteLineItemManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -50,22 +50,30 @@ Public Class SupplierQuoteLineItemManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot add!", vbExclamation, "Cannot add!")
         Catch ex As EvaluateException
-            MsgBox("Cannot add!", vbExclamation, "Cannot add!")
+            MsgBox("Cannot add", vbExclamation, "Cannot add!")
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
 
         Try
-            SupplierQuoteManager.SupplierQuoteJoinSupplierTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SupplierQuoteJoinSupplier)
-            SupplierQuoteManager.SuppLineItemJoinProductTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SuppLineItemJoinProduct)
-            Call CreateOrEditSupplierQuote.RefreshButton_Click(sender, e)
 
-            Me.Close()
+            If ((SupplierQuoteLineItemDataGridView.RowCount > 0)) Then
+
+                SupplierQuoteManager.SupplierQuoteJoinSupplierTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SupplierQuoteJoinSupplier)
+                SupplierQuoteManager.SuppLineItemJoinProductTableAdapter.Fill(SupplierQuoteManager.Group16DataSet.SuppLineItemJoinProduct)
+                Call CreateOrEditSupplierQuote.RefreshButton_Click(sender, e)
+
+                Me.Close()
+
+            Else
+                MsgBox("You need to add at least one item to the quote first before leaving!", MsgBoxStyle.YesNo)
+            End If
+
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -76,9 +84,9 @@ Public Class SupplierQuoteLineItemManager
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
-            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -95,9 +103,9 @@ Public Class SupplierQuoteLineItemManager
             Catch ex As SqlException
                 MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
             Catch ex As EvaluateException
-                MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
+                MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
             Catch ex As Exception
-                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
             End Try
 
         End If
@@ -129,9 +137,9 @@ Public Class SupplierQuoteLineItemManager
             Catch ex As SqlException
                 MsgBox("Cannot delete!", vbExclamation, "Cannot delete!")
             Catch ex As NoNullAllowedException
-                MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
+                MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
             Catch ex As Exception
-                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
             Finally
                 SQLcon.Dispose()
                 Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
@@ -140,7 +148,7 @@ Public Class SupplierQuoteLineItemManager
 
         ElseIf (e.ColumnIndex = 5) Then 'edit line item
             Try
-                Dim ret As Integer = MsgBox("Edit Line Item details for Supplier Quote?", vbYesNo)
+                Dim ret As Integer = MsgBox("Edit line item details for Supplier Quote?", vbYesNo)
 
                 If ret = 6 Then 'if user clicks yes to add item'
 
@@ -162,9 +170,9 @@ Public Class SupplierQuoteLineItemManager
             Catch ex As SyntaxErrorException
                 MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
             Catch ex As EvaluateException
-                MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
+                MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
             Catch ex As Exception
-                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
             End Try
 
         End If
@@ -201,7 +209,7 @@ Public Class SupplierQuoteLineItemManager
         Catch ex As NoNullAllowedException
             MsgBox("Cannot compute Total Price!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
 
         Return sum
