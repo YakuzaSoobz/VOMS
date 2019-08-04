@@ -156,24 +156,113 @@ Public Class SupplierManager
         End Try
     End Sub
 
+    Public Function ValidateEmail(ByVal strCheck As String) As Boolean
+        Try
+            Dim vEmailAddress As New System.Net.Mail.MailAddress(strCheck)
+        Catch ex As Exception
+            Return False
+        End Try
+        Return True
+    End Function
+
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
         Try
-            Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
+            If (CompanyNameTextBox.Text = Nothing) Then
+                MsgBox("Company Name field cannot be left blank!", vbOK)
+                CompanyNameTextBox.ResetText()
+            ElseIf (RepFNameTextBox.Text = Nothing) Then
+                MsgBox("Rep First Name field cannot be left blank!", vbOK)
+                RepFNameTextBox.ResetText()
+            ElseIf (RepSNameTextBox.Text = Nothing) Then
+                MsgBox("Rep Surname field cannot be left blank!", vbOK)
+                RepSNameTextBox.ResetText()
+            ElseIf (ContactNoMaskedTextBox.Text = "(   )") Then
+                MsgBox("Contact Number field cannot be left blank!", vbOK)
+                ContactNoMaskedTextBox.ResetText()
+            ElseIf (RepContactNumberMaskedTextBox.Text = "(   )") Then
+                MsgBox("Rep Contact Number field cannot be left blank!", vbOK)
+                RepContactNumberMaskedTextBox.ResetText()
+            ElseIf (SupplierEmailTextBox.Text = Nothing) Then
+                MsgBox("Supplier Email field cannot be left blank!", vbOK)
+                SupplierEmailTextBox.ResetText()
+            ElseIf (RepEmailTextBox.Text = Nothing) Then
+                MsgBox("Rep Email field cannot be left blank!", vbOK)
+                RepEmailTextBox.ResetText()
+            ElseIf (PasswordTextBox.Text = Nothing) Then
+                MsgBox("Password field cannot be left blank!", vbOK)
+                PasswordTextBox.ResetText()
+            ElseIf (StreetAddress1TextBox.Text = Nothing) Then
+                MsgBox("Street Address 1 field cannot be left blank!", vbOK)
+                StreetAddress1TextBox.ResetText()
+            ElseIf (SuburbTextBox.Text = Nothing) Then
+                MsgBox("Suburb field cannot be left blank!", vbOK)
+                SuburbTextBox.ResetText()
+            ElseIf (CityTextBox.Text = Nothing) Then
+                MsgBox("City field cannot be left blank!", vbOK)
+                CityTextBox.ResetText()
+            ElseIf (ProvinceTextBox.Text = Nothing) Then
+                MsgBox("Province field cannot be left blank!", vbOK)
+                ProvinceTextBox.ResetText()
+            ElseIf (PostalCodeMaskedTextBox.Text.Contains(" ")) Then
+                MsgBox("Postal Code field cannot be left blank!", vbOK)
+                PostalCodeMaskedTextBox.ResetText()
+            ElseIf (ActiveStatusComboBox.Text = Nothing) Then
+                MsgBox("Active Status field cannot be left blank!", vbOK)
+                ActiveStatusComboBox.ResetText()
 
-            If ret = 6 Then 'if user clicks yes to update'
-                SupplierBindingSource.EndEdit()
-                SupplierTableAdapter.Update(Group16DataSet)
-                MsgBox("Update successful!")
-                Call ButtonRefresh_Click(sender, e)
+                'Above is a full check for blanks , contact num code is tweaked abit for masking'
 
+            ElseIf Not (ValidateEmail(SupplierEmailTextBox.Text)) Then
+                MsgBox("Supplier Email format is invalid! , Follow this format eg.starplatinum@example.com", vbOK)
+                SupplierEmailTextBox.ResetText() 'Email validator which calls function'
+            ElseIf Not (ValidateEmail(RepEmailTextBox.Text)) Then
+                MsgBox("Rep Email format is invalid! , Follow this format eg.starplatinum@example.com", vbOK)
+                RepEmailTextBox.ResetText() 'Email validator which calls function'
+            ElseIf (PasswordTextBox.Text.Length > 10 Or PasswordTextBox.Text.Length < 0) Then
+                MsgBox("Password length invalid!", vbOK)
+                PasswordTextBox.ResetText() 'Password length checker'
+            ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
+                MsgBox("Active Status field must be either T or F!", vbOK)
+                ActiveStatusComboBox.ResetText() 'Active Status checker'
+
+
+            Else
+                CompanyNameTextBox.Text = CompanyNameTextBox.Text.Trim
+                RepFNameTextBox.Text = RepFNameTextBox.Text.Trim
+                RepSNameTextBox.Text = RepSNameTextBox.Text.Trim
+                ContactNoMaskedTextBox.Text = ContactNoMaskedTextBox.Text.Trim
+                RepContactNumberMaskedTextBox.Text = RepContactNumberMaskedTextBox.Text.Trim
+                SupplierEmailTextBox.Text = SupplierEmailTextBox.Text.Trim
+                RepEmailTextBox.Text = RepEmailTextBox.Text.Trim
+                PasswordTextBox.Text = PasswordTextBox.Text.Trim
+                StreetAddress1TextBox.Text = StreetAddress1TextBox.Text.Trim
+                SuburbTextBox.Text = SuburbTextBox.Text.Trim
+                CityTextBox.Text = CityTextBox.Text.Trim
+
+                'Removes white spaces before and after certain fields to avoid invalids'
+                Try
+                    Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
+
+                    If ret = 6 Then 'if user clicks yes to update'
+                        SupplierBindingSource.EndEdit()
+                        SupplierTableAdapter.Update(Group16DataSet)
+                        MsgBox("Update successful!")
+                        Call ButtonRefresh_Click(sender, e)
+
+                    End If
+                Catch ex As SqlException
+                    MsgBox("Cannot Update!", vbExclamation, "Network Error!")
+                Catch ex As NoNullAllowedException
+                    MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
+                Catch ex As Exception
+                    MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+
+                End Try
             End If
-        Catch ex As SqlException
-            MsgBox("Cannot Update!", vbExclamation, "Network Error!")
-        Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
+        Catch ex As FormatException
+        MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
-
+        MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
@@ -315,5 +404,113 @@ Public Class SupplierManager
 
     Private Sub BackButton_MouseHover(sender As Object, e As EventArgs) Handles BackButton.MouseHover
         SupplierManagerTip.SetToolTip(BackButton, "Click to go back")
+    End Sub
+
+    Private Sub CompanyNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles CompanyNameTextBox.TextChanged
+        If (CompanyNameTextBox.Text = Nothing) Then
+            CompanyNameTextBox.BackColor = Color.MistyRose
+        Else
+            CompanyNameTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub RepFNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles RepFNameTextBox.TextChanged
+        If (RepFNameTextBox.Text = Nothing) Then
+            RepFNameTextBox.BackColor = Color.MistyRose
+        Else
+            RepFNameTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub RepSNameTextBox_TextChanged(sender As Object, e As EventArgs) Handles RepSNameTextBox.TextChanged
+        If (RepSNameTextBox.Text = Nothing) Then
+            RepSNameTextBox.BackColor = Color.MistyRose
+        Else
+            RepSNameTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub ContactNoMaskedTextBox_TextChanged(sender As Object, e As EventArgs) Handles ContactNoMaskedTextBox.TextChanged
+        If (ContactNoMaskedTextBox.Text = "(   )") Then
+            ContactNoMaskedTextBox.BackColor = Color.MistyRose
+        Else
+            ContactNoMaskedTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub SupplierEmailTextBox_TextChanged(sender As Object, e As EventArgs) Handles SupplierEmailTextBox.TextChanged
+        If (SupplierEmailTextBox.Text = Nothing) Then
+            SupplierEmailTextBox.BackColor = Color.MistyRose
+        Else
+            SupplierEmailTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub RepContactNumberMaskedTextBox_TextChanged(sender As Object, e As EventArgs) Handles RepContactNumberMaskedTextBox.TextChanged
+        If (RepContactNumberMaskedTextBox.Text = "(   )") Then
+            RepContactNumberMaskedTextBox.BackColor = Color.MistyRose
+        Else
+            RepContactNumberMaskedTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub RepEmailTextBox_TextChanged(sender As Object, e As EventArgs) Handles RepEmailTextBox.TextChanged
+        If (RepEmailTextBox.Text = Nothing) Then
+            RepEmailTextBox.BackColor = Color.MistyRose
+        ElseIf Not (ValidateEmail(RepEmailTextBox.Text)) Then
+            RepEmailTextBox.BackColor = Color.MistyRose
+        Else
+            RepEmailTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
+        If (PasswordTextBox.Text = Nothing) Then
+            PasswordTextBox.BackColor = Color.MistyRose
+        Else
+            PasswordTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub StreetAddress1TextBox_TextChanged(sender As Object, e As EventArgs) Handles StreetAddress1TextBox.TextChanged
+        If (StreetAddress1TextBox.Text = Nothing) Then
+            StreetAddress1TextBox.BackColor = Color.MistyRose
+        Else
+            StreetAddress1TextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub SuburbTextBox_TextChanged(sender As Object, e As EventArgs) Handles SuburbTextBox.TextChanged
+        If (SuburbTextBox.Text = Nothing) Then
+            SuburbTextBox.BackColor = Color.MistyRose
+        Else
+            SuburbTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub CityTextBox_TextChanged(sender As Object, e As EventArgs) Handles CityTextBox.TextChanged
+        If (CityTextBox.Text = Nothing) Then
+            CityTextBox.BackColor = Color.MistyRose
+        Else
+            CityTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub ProvinceTextBox_TextChanged(sender As Object, e As EventArgs) Handles ProvinceTextBox.TextChanged
+        If (ProvinceTextBox.Text = Nothing) Then
+            ProvinceTextBox.BackColor = Color.MistyRose
+        Else
+            ProvinceTextBox.BackColor = Color.White
+        End If
+    End Sub
+
+    Private Sub ActiveStatusComboBox_TextChanged(sender As Object, e As EventArgs) Handles ActiveStatusComboBox.TextChanged
+        If (ActiveStatusComboBox.Text = Nothing) Then
+            ActiveStatusComboBox.BackColor = Color.MistyRose
+        ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
+            ActiveStatusComboBox.BackColor = Color.MistyRose
+        Else
+            ActiveStatusComboBox.BackColor = Color.White
+        End If
     End Sub
 End Class
