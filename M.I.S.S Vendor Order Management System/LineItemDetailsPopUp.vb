@@ -20,7 +20,6 @@ Public Class LineItemDetailsPopUp
         If (CustomerQuoteLineItemManager.AddStatus = True) And (CustomerQuoteLineItemManager.UpdateStatus = False) Then
 
             Try
-
                 Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier)
                 SuppQuoteJoinSuppLineItemDataGridView.Visible = False
                 ProductID = CustomerQuoteLineItemManager.ProductID
@@ -118,6 +117,11 @@ Public Class LineItemDetailsPopUp
                 MsgBox("Only positive integers can be entered into the discount % field and not decimals!", vbOK, "Invalid entry")
                 DiscountComboBox.ResetText()
                 DiscountComboBox.BackColor = Color.MistyRose
+            ElseIf (SuppQuoteJoinSuppLineItemDataGridView.Visible = False) Then
+                MsgBox("Please select supplier first!", vbOK, "Cannot save!")
+            ElseIf (String.IsNullOrWhiteSpace(CostPriceTextBox.Text)) Then
+                MsgBox("Please select an item cost price!", vbOK, "Cannot save!")
+
             Else 'if everything is valid
 
                 Try

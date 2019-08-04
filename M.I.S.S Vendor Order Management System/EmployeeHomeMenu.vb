@@ -1,4 +1,5 @@
 ﻿Public Class EmployeeHomeMenu
+
     Private Sub CustomerQuoteManagerButton_Click(sender As Object, e As EventArgs) Handles CustomerQuoteManagerButton.Click
         CustomerQuoteManager.Show()
         Me.Hide()
