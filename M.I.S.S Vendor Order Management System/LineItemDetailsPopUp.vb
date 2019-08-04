@@ -1,4 +1,5 @@
-﻿Imports System.Data.SqlClient
+﻿Imports System.ComponentModel
+Imports System.Data.SqlClient
 
 Public Class LineItemDetailsPopUp
 
@@ -10,7 +11,7 @@ Public Class LineItemDetailsPopUp
     Dim SaleInclVat As Decimal
     Dim SaleExclVat As Decimal
     Dim Quantity As Integer
-    Dim VATPercentage As Decimal = 0.15
+    Shared VATPercentage As Decimal = 0.15
     Dim SetMarkupPercentage As Decimal = 20
 
     Private Sub LineItemDetailsPopUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -21,11 +22,12 @@ Public Class LineItemDetailsPopUp
             Try
 
                 Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier)
-                'Me.SuppQuoteJoinSuppLineItemTableAdapter.Fill(Me.Group16DataSet.SuppQuoteJoinSuppLineItem)
+                SuppQuoteJoinSuppLineItemDataGridView.Visible = False
                 ProductID = CustomerQuoteLineItemManager.ProductID
                 MarkupComboBox.SelectedItem = "20"
                 DiscountComboBox.Text = 0
                 QuantityComboBox.SelectedItem = "1"
+                VATTextBox.Text = Int(VATPercentage * 100)
 
             Catch ex As SqlException
                 MsgBox("Cannot load form!", vbExclamation, "Network Error!")
@@ -85,14 +87,14 @@ Public Class LineItemDetailsPopUp
 
                 'MARKUP------------------------------------------------------------------
             ElseIf String.IsNullOrWhiteSpace(MarkupComboBox.Text) Then ' is blank
-                MsgBox("The Markup field is blank!", vbOK, "Invalid entry")
+                MsgBox("The Markup % field is blank!", vbOK, "Invalid entry")
                 MarkupComboBox.BackColor = Color.MistyRose
             ElseIf Not (IsNumeric(MarkupComboBox.Text)) Then ' is not numeric
                 MsgBox("Only positive integers can be entered into the markup % field", vbOK, "Invalid entry")
                 MarkupComboBox.ResetText()
                 MarkupComboBox.BackColor = Color.MistyRose
-            ElseIf ((Integer.Parse(MarkupComboBox.Text) < 1) Or (Integer.Parse(MarkupComboBox.Text) > 1000)) Then 'is <1 and >1000
-                MsgBox("Enter a % markup between 1 and 1000!", vbOK, "Invalid entry")
+            ElseIf ((Integer.Parse(MarkupComboBox.Text) < 0) Or (Integer.Parse(MarkupComboBox.Text) > 1000)) Then 'is <0 and >1000
+                MsgBox("Enter a % markup between 0% and 1000% !", vbOK, "Invalid entry")
                 MarkupComboBox.ResetText()
                 MarkupComboBox.BackColor = Color.MistyRose
             ElseIf Not ((Decimal.Parse(MarkupComboBox.Text)) = (Int(Decimal.Parse(MarkupComboBox.Text)))) Then ' check if it's decimal
@@ -135,8 +137,8 @@ Public Class LineItemDetailsPopUp
                         SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))
                         SaleInclVat = SaleExclVat + (SaleExclVat * VATPercentage)
 
-                        SaleExclVATTextBox.Text = SaleExclVat
-                        SaleInclVATTextBox.Text = SaleInclVat
+                        SaleExclVATTextBox.Text = FormatCurrency(SaleExclVat)
+                        SaleInclVATTextBox.Text = FormatCurrency(SaleInclVat)
 
                         CustomerQuoteLineItemManager.Customer_Quote_Line_ItemTableAdapter.Insert(ProductID, CustomerQuoteLineItemManager.CustomerQuoteReferenceID, SupplierID, CostPrice, SaleInclVat, SaleExclVat, MarkupPercentage, DiscountPercentage, Quantity)
                         CustomerQuoteLineItemManager.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
@@ -166,14 +168,16 @@ Public Class LineItemDetailsPopUp
 
             SupplierIDTextBox.Text = SupplierDataGridView.CurrentRow.Cells(0).Value.ToString
             SuppQuoteJoinSuppLineItemTableAdapter.Fill(Group16DataSet.SuppQuoteJoinSuppLineItem)
-            SuppQuoteJoinSuppLineItemBindingSource.Filter = "Supplier_ID = '" & SupplierDataGridView.CurrentRow.Cells(0).Value.ToString & "' AND Product_ID = '" & ProductID & "'"
+            SuppQuoteJoinSuppLineItemDataGridView.Visible = True
+            SuppQuoteJoinSuppLineItemBindingSource.Sort = " Supp_Quote_Date_Recieved DESC"
+            SuppQuoteJoinSuppLineItemBindingSource.Filter = "Supplier_ID = '" & SupplierDataGridView.CurrentRow.Cells(0).Value.ToString & "' AND Product_ID = '" & ProductID & "'  "
 
         Catch ex As SqlException
             MsgBox("Cannot load form!", vbExclamation, "Network Error!")
         Catch ex As EvaluateException
             MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-            MsgBox("Select a SUPPLIER & then select a COST PRICE from Supplier Quotes, before proceeding to click SAVE!", vbInformation, "")
+            MsgBox("Select a COST PRICE for the item from a Supplier Quote. Most recent quotes are shown at the top!", vbInformation, "")
         End Try
 
     End Sub
@@ -239,7 +243,7 @@ Public Class LineItemDetailsPopUp
             ElseIf Not (IsNumeric(MarkupComboBox.Text)) Then ' is not numeric
 
                 MarkupComboBox.BackColor = Color.MistyRose
-            ElseIf ((Integer.Parse(MarkupComboBox.Text) < 1) Or (Integer.Parse(MarkupComboBox.Text) > 1000)) Then 'is <1 and >1000
+            ElseIf ((Integer.Parse(MarkupComboBox.Text) < 0) Or (Integer.Parse(MarkupComboBox.Text) > 1000)) Then 'is <0 and >1000
 
                 MarkupComboBox.BackColor = Color.MistyRose
             ElseIf Not ((Decimal.Parse(MarkupComboBox.Text)) = (Int(Decimal.Parse(MarkupComboBox.Text)))) Then ' check if it's decimal
@@ -283,5 +287,39 @@ Public Class LineItemDetailsPopUp
         Catch ex As FormatException
             MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
         End Try
+    End Sub
+
+    Private Sub VATButton_Click(sender As Object, e As EventArgs) Handles VATButton.Click
+
+        Try
+
+            If String.IsNullOrWhiteSpace(VATTextBox.Text) Then ' is blank
+
+                MsgBox("The % VAT is an integer only from 0% - 100%! It cannot be left blank", vbOK, "Unable to set new % VAT")
+                VATTextBox.Text = Int(VATPercentage * 100)
+            ElseIf Not (IsNumeric(VATTextBox.Text)) Then ' is not numeric
+
+                MsgBox("The % VAT is an integer only from 0% - 100%!", vbOK, "Unable to set new % VAT")
+                VATTextBox.Text = Int(VATPercentage * 100)
+            ElseIf ((Integer.Parse(VATTextBox.Text) < 0) Or (Integer.Parse(VATTextBox.Text) > 100)) Then ' is <0 and >1000
+
+                MsgBox("The % VAT is an integer only from 0% - 100%!", vbOK, "Unable to set new % VAT")
+                VATTextBox.Text = Int(VATPercentage * 100)
+            ElseIf Not ((Decimal.Parse(VATTextBox.Text)) = (Int(Decimal.Parse(VATTextBox.Text)))) Then ' check if it's decimal
+                MsgBox("The % VAT is an integer only from 0% - 100%!", vbOK, "Unable to set new % VAT")
+                VATTextBox.Text = Int(VATPercentage * 100)
+            Else 'if everything is valid
+                VATPercentage = Integer.Parse(VATTextBox.Text) / 100
+                MsgBox("The % VAT has been changed to" & Int(VATPercentage * 100) & "% !", vbOK, "% VAT changed!")
+                VATTextBox.Text = Int(VATPercentage * 100)
+            End If
+        Catch ex As SqlException
+            MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
+        Catch ex As EvaluateException
+            MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+        Catch ex As FormatException
+            MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+        End Try
+
     End Sub
 End Class
