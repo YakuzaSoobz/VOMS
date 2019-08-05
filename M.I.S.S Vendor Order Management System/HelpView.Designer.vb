@@ -48,7 +48,7 @@ Partial Class HelpView
         Me.TabControl1.Controls.Add(Me.TabPage4)
         Me.TabControl1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TabControl1.Location = New System.Drawing.Point(3, 1)
-        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(653, 633)
@@ -59,9 +59,9 @@ Partial Class HelpView
         Me.TabPage1.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.TabPage1.Controls.Add(Me.RichTextBox1)
         Me.TabPage1.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage1.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage1.Size = New System.Drawing.Size(645, 604)
         Me.TabPage1.TabIndex = 0
         Me.TabPage1.Text = "Customer Quote Manager"
@@ -71,7 +71,7 @@ Partial Class HelpView
         '
         Me.RichTextBox1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBox1.Location = New System.Drawing.Point(4, 4)
-        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RichTextBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.RichTextBox1.Name = "RichTextBox1"
         Me.RichTextBox1.Size = New System.Drawing.Size(637, 596)
         Me.RichTextBox1.TabIndex = 0
@@ -82,9 +82,9 @@ Partial Class HelpView
         Me.TabPage2.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.TabPage2.Controls.Add(Me.RichTextBox2)
         Me.TabPage2.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage2.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage2.Size = New System.Drawing.Size(645, 604)
         Me.TabPage2.TabIndex = 1
         Me.TabPage2.Text = "Supplier Quote Manager"
@@ -94,7 +94,7 @@ Partial Class HelpView
         '
         Me.RichTextBox2.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBox2.Location = New System.Drawing.Point(4, 4)
-        Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RichTextBox2.Margin = New System.Windows.Forms.Padding(4)
         Me.RichTextBox2.Name = "RichTextBox2"
         Me.RichTextBox2.Size = New System.Drawing.Size(637, 596)
         Me.RichTextBox2.TabIndex = 1
@@ -106,9 +106,9 @@ Partial Class HelpView
         Me.TabPage3.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.TabPage3.Controls.Add(Me.RichTextBox3)
         Me.TabPage3.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage3.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Name = "TabPage3"
-        Me.TabPage3.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage3.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage3.Size = New System.Drawing.Size(645, 604)
         Me.TabPage3.TabIndex = 2
         Me.TabPage3.Text = "General Manager"
@@ -118,7 +118,7 @@ Partial Class HelpView
         '
         Me.RichTextBox3.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBox3.Location = New System.Drawing.Point(4, 4)
-        Me.RichTextBox3.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RichTextBox3.Margin = New System.Windows.Forms.Padding(4)
         Me.RichTextBox3.Name = "RichTextBox3"
         Me.RichTextBox3.Size = New System.Drawing.Size(637, 596)
         Me.RichTextBox3.TabIndex = 1
@@ -129,9 +129,9 @@ Partial Class HelpView
         Me.TabPage4.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.TabPage4.Controls.Add(Me.RichTextBox4)
         Me.TabPage4.Location = New System.Drawing.Point(4, 25)
-        Me.TabPage4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage4.Margin = New System.Windows.Forms.Padding(4)
         Me.TabPage4.Name = "TabPage4"
-        Me.TabPage4.Padding = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.TabPage4.Padding = New System.Windows.Forms.Padding(4)
         Me.TabPage4.Size = New System.Drawing.Size(645, 604)
         Me.TabPage4.TabIndex = 3
         Me.TabPage4.Text = "What is the VOMS?"
@@ -141,7 +141,7 @@ Partial Class HelpView
         '
         Me.RichTextBox4.Dock = System.Windows.Forms.DockStyle.Fill
         Me.RichTextBox4.Location = New System.Drawing.Point(4, 4)
-        Me.RichTextBox4.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.RichTextBox4.Margin = New System.Windows.Forms.Padding(4)
         Me.RichTextBox4.Name = "RichTextBox4"
         Me.RichTextBox4.Size = New System.Drawing.Size(637, 596)
         Me.RichTextBox4.TabIndex = 2
@@ -159,7 +159,7 @@ Partial Class HelpView
         Me.Button4.Location = New System.Drawing.Point(540, 640)
         Me.Button4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.Button4.Name = "Button4"
-        Me.Button4.Size = New System.Drawing.Size(116, 53)
+        Me.Button4.Size = New System.Drawing.Size(108, 49)
         Me.Button4.TabIndex = 42
         Me.Button4.Text = "BACK"
         Me.Button4.UseVisualStyleBackColor = False
@@ -172,7 +172,7 @@ Partial Class HelpView
         Me.ClientSize = New System.Drawing.Size(659, 700)
         Me.Controls.Add(Me.Button4)
         Me.Controls.Add(Me.TabControl1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "HelpView"
         Me.Text = "M.I.S.S.V.O.M.S. Help Page"
         Me.TabControl1.ResumeLayout(False)

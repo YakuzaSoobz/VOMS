@@ -118,44 +118,39 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="RichTextBox1.Text" xml:space="preserve">
-    <value>The Customer Quote Manager allows users to view, edit, create and sort Customer Quotes 
-and invoices.
+    <value>The Customer Quote Manager allows users to view, edit, create and sort Customer Quotes  and invoices.
 
 This subsystem will allow employees to create a final quotation for a customer. 
-Users can enter product details, alter prices, add a discount as well as print 
-quotations or invoices
+Users can enter product details, alter prices, add a discount as well as print quotations or invoices
 
-Custome Quote Line Items prices are chosen from Supplier Quote prices.</value>
+Customer Quote Line Items prices are chosen from Supplier Quote prices.</value>
   </data>
   <data name="RichTextBox2.Text" xml:space="preserve">
-    <value>Users can view and manage quotations and invoices received from Supplier.
+    <value>This form allows users to view and manage quotations and invoices received from Suppliers.
 
-This subsystem will allow employees to to keep record of quoations/ invoices given by suppliers. 
-Users can enter
-product details, alter prices  as well as print  quotations.</value>
+This subsystem will allow users to keep record of quotions/invoices received from suppliers. 
+Users can enter product details, alter prices  as well as print  quotations.</value>
   </data>
   <data name="RichTextBox3.Text" xml:space="preserve">
     <value>Employee Manager
-Select this option to view current employees, employee access levels, update employee details, 
-and to add/delete employees from the Vendor Order Management System. (Only available to managers)
+The employee manager subsystem allows managers to view current employees, employee access levels, update employee details, and to add/delete employees from the Vendor Order Management System. (Only available to managers)
 
 Supplier Manager
-The supplier manager subsystem will allow employees to add suppliers to the Vendor Order
-Management System, as well as delete suppliers, view suppliers as well as update supplier
-details.
+The supplier manager subsystem will allow employees to add suppliers to the Vendor Order Management System, as well as delete suppliers, view suppliers as well as update supplier details.
 
 Customer Manager
-The customer manager subsystem will allow employees to add customers to the Vendor Order
-Management System, as well as delete customers, view customers as well as update customer
-details.
+The customer manager subsystem will allow employees to add customers to the Vendor Order Management System, as well as delete customers, view customers as well as update customer details.
 
 Product Manager
-The product manager subsystem will allow employees to add products to the Vendor Order
-Management System, as well as delete products, view products as well as update product
-details.</value>
+The product manager subsystem will allow employees to add products to the Vendor Order Management System, as well as delete products, view products as well as update product details.</value>
   </data>
   <data name="RichTextBox4.Text" xml:space="preserve">
-    <value>Throughout the Vendor Order Management System an array of Tooltips are laid out to make 
+    <value>The Vendor Order Management System is a bespoke software system developed by Normalisers42
+to service Mhlathuze Industrial Suppliers and Services cc.
+It serves as a medium through which employees and managers can create, view, update and archive
+a multitude of entries that are valuable to the function and growth of the company.
+
+Throughout the Vendor Order Management System an array of Tooltips are laid out to make 
 navigation simple and intuitive. Simply hover over a button or text box if you're unsure
 about how to navigate or what text to enter.
 For more information, you may click on the 'Help' button at any time and it will display 
