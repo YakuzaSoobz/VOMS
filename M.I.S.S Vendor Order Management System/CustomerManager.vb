@@ -131,9 +131,14 @@ Public Class CustomerManager
 
                 'Above is a full check for blanks , contact num code is tweaked abit for masking'
 
+                'check valid email
             ElseIf Not (ValidateEmail(EmailTextBox.Text)) Then
-                MsgBox("Email format is invalid! , Follow this format eg.starplatinum@example.com", vbOK)
+                MsgBox("Email format is invalid! , Follow this format eg.starplatinum@domain.com", vbOK)
                 EmailTextBox.ResetText() 'Email validator which calls function'
+            ElseIf (checkUniqueEmail(EmailTextBox.Text) = False) Then
+                MsgBox("This email already exists in the database! , try a different one!", vbOK)
+                EmailTextBox.ResetText() 'Email validator which calls function'
+
             ElseIf (PasswordTextBox.Text.Length > 10 Or PasswordTextBox.Text.Length < 0) Then
                 MsgBox("Password length invalid!", vbOK)
                 PasswordTextBox.ResetText() 'Password length checker'
@@ -178,6 +183,14 @@ Public Class CustomerManager
         End Try
     End Sub
 
+    Public Function checkUniqueEmail(ByVal EmailAddress)
+
+        If (EmployeeTableAdapter.GetUniqueEmailQuery(EmailAddress) > 0) Or (CustomerTableAdapter.CheckUniqueEmailQuery(EmailAddress) > 0) Or (SupplierTableAdapter.CheckUniqueSupplierEmailQuery(EmailAddress, EmailAddress) > 0) Then
+            Return False
+        Else
+            Return True
+        End If
+    End Function
 
     Private Sub ArchiveButton_Click(sender As Object, e As EventArgs) Handles ArchiveButton.Click
         ActiveStatusComboBox.SelectedItem = "F"

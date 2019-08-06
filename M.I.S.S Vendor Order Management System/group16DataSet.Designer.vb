@@ -9185,7 +9185,7 @@ Namespace group16DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Customer_ID, Cust_FName, Cust_SName, Cust_DOB, Cust_Phone_No, Cust_Alt_Pho"& _ 
@@ -9193,6 +9193,12 @@ Namespace group16DataSetTableAdapters
                 "uburb, Cust_City, Cust_Province, Cust_Postal_Code, Cust_Active_Status FROM dbo.C"& _ 
                 "ustomer"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        COUNT(*) AS Customer_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Customer"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Cu"& _ 
+                "st_Email = @CustomerEmailAddress)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Customer_ID"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@CustomerEmailAddress", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Cust_Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9635,6 +9641,37 @@ Namespace group16DataSetTableAdapters
                     ByVal Original_Cust_Postal_Code As Decimal,  _
                     ByVal Original_Cust_Active_Status As String) As Integer
             Return Me.Update(Cust_FName, Cust_SName, Cust_DOB, Cust_Phone_No, Cust_Alt_Phone_No, Cust_Email, Cust_Password, Cust_Street_Addr_1, Cust_Street_Addr_2, Cust_Suburb, Cust_City, Cust_Province, Cust_Postal_Code, Cust_Active_Status, Original_Customer_ID, Original_Cust_FName, Original_Cust_SName, Original_Cust_DOB, Original_Cust_Phone_No, Original_Cust_Alt_Phone_No, Original_Cust_Email, Original_Cust_Password, Original_Cust_Street_Addr_1, Original_Cust_Street_Addr_2, Original_Cust_Suburb, Original_Cust_City, Original_Cust_Province, Original_Cust_Postal_Code, Original_Cust_Active_Status, Original_Customer_ID)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function CheckUniqueEmailQuery(ByVal CustomerEmailAddress As String) As Global.System.Nullable(Of Integer)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (CustomerEmailAddress Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("CustomerEmailAddress")
+            Else
+                command.Parameters(0).Value = CType(CustomerEmailAddress,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return New Global.System.Nullable(Of Integer)()
+            Else
+                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+            End If
         End Function
     End Class
     
@@ -10923,7 +10960,7 @@ Namespace group16DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Employee_ID, Employee_FName, Employee_SName, Employee_DOB, Employee_Gender"& _ 
@@ -10944,6 +10981,12 @@ Namespace group16DataSetTableAdapters
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Employee_Password", Global.System.Data.SqlDbType.[Char], 10, Global.System.Data.ParameterDirection.Input, 0, 0, "Employee_Password", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Employee_Email", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Employee_Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        COUNT(*) AS Employee_Email"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Employee"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        "& _ 
+                "(Employee_Email = @EmployeeEmailAddress)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Employee_ID"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@EmployeeEmailAddress", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Employee_Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -11527,6 +11570,37 @@ Namespace group16DataSetTableAdapters
                     ByVal Original_Employee_Admin_Level As Integer,  _
                     ByVal Original_Employee_Active_Status As String) As Integer
             Return Me.Update(Employee_FName, Employee_SName, Employee_DOB, Employee_Gender, Employee_Phone_No, Employee_Alt_Phone_No, Employee_Email, Employee_Password, Employee_SA_ID_No, Employee_Street_Addr_1, Employee_Street_Addr_2, Employee_Suburb, Employee_City, Employee_Province, Employee_Postal_Code, Employee_Position, Employee_Admin_Level, Employee_Active_Status, Original_Employee_ID, Original_Employee_FName, Original_Employee_SName, Original_Employee_DOB, Original_Employee_Gender, Original_Employee_Phone_No, Original_Employee_Alt_Phone_No, Original_Employee_Email, Original_Employee_Password, Original_Employee_SA_ID_No, Original_Employee_Street_Addr_1, Original_Employee_Street_Addr_2, Original_Employee_Suburb, Original_Employee_City, Original_Employee_Province, Original_Employee_Postal_Code, Original_Employee_Position, Original_Employee_Admin_Level, Original_Employee_Active_Status, Original_Employee_ID)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function GetUniqueEmailQuery(ByVal EmployeeEmailAddress As String) As Object
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(2)
+            If (EmployeeEmailAddress Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("EmployeeEmailAddress")
+            Else
+                command.Parameters(0).Value = CType(EmployeeEmailAddress,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return Nothing
+            Else
+                Return CType(returnValue,Object)
+            End If
         End Function
     End Class
     
@@ -12231,7 +12305,7 @@ Namespace group16DataSetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT Supplier_ID, Supplier_Name, Supplier_Street_Addr_1, Supplier_Street_Addr_2"& _ 
@@ -12240,6 +12314,14 @@ Namespace group16DataSetTableAdapters
                 "_Rep_FName, Supplier_Rep_SName, Supplier_Rep_Email, Supplier_Rep_Phone_No, Suppl"& _ 
                 "ier_Rep_Alt_Phone_No, Supplier_Active_Status FROM dbo.Supplier"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        COUNT(*) AS Supplier_ID"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            Supplier"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (Su"& _ 
+                "pplier_Email = @SupplierEmailAddress) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (Supplier_Rep"& _ 
+                "_Email = @SupplierRepEmailAddress)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"GROUP BY Supplier_ID"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SupplierEmailAddress", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Supplier_Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@SupplierRepEmailAddress", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "Supplier_Rep_Email", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12809,6 +12891,42 @@ Namespace group16DataSetTableAdapters
                     ByVal Original_Supplier_Rep_Alt_Phone_No As String,  _
                     ByVal Original_Supplier_Active_Status As String) As Integer
             Return Me.Update(Supplier_Name, Supplier_Street_Addr_1, Supplier_Street_Addr_2, Supplier_Suburb, Supplier_City, Supplier_Province, Supplier_Postal_Code, Supplier_Phone_No, Supplier_Alt_Phone_No, Supplier_Email, Supplier_Password, Supplier_Rep_FName, Supplier_Rep_SName, Supplier_Rep_Email, Supplier_Rep_Phone_No, Supplier_Rep_Alt_Phone_No, Supplier_Active_Status, Original_Supplier_ID, Original_Supplier_Name, Original_Supplier_Street_Addr_1, Original_Supplier_Street_Addr_2, Original_Supplier_Suburb, Original_Supplier_City, Original_Supplier_Province, Original_Supplier_Postal_Code, Original_Supplier_Phone_No, Original_Supplier_Alt_Phone_No, Original_Supplier_Email, Original_Supplier_Password, Original_Supplier_Rep_FName, Original_Supplier_Rep_SName, Original_Supplier_Rep_Email, Original_Supplier_Rep_Phone_No, Original_Supplier_Rep_Alt_Phone_No, Original_Supplier_Active_Status, Original_Supplier_ID)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")>  _
+        Public Overloads Overridable Function CheckUniqueSupplierEmailQuery(ByVal SupplierEmailAddress As String, ByVal SupplierRepEmailAddress As String) As Global.System.Nullable(Of Integer)
+            Dim command As Global.System.Data.SqlClient.SqlCommand = Me.CommandCollection(1)
+            If (SupplierEmailAddress Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("SupplierEmailAddress")
+            Else
+                command.Parameters(0).Value = CType(SupplierEmailAddress,String)
+            End If
+            If (SupplierRepEmailAddress Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("SupplierRepEmailAddress")
+            Else
+                command.Parameters(1).Value = CType(SupplierRepEmailAddress,String)
+            End If
+            Dim previousConnectionState As Global.System.Data.ConnectionState = command.Connection.State
+            If ((command.Connection.State And Global.System.Data.ConnectionState.Open)  _
+                        <> Global.System.Data.ConnectionState.Open) Then
+                command.Connection.Open
+            End If
+            Dim returnValue As Object
+            Try 
+                returnValue = command.ExecuteScalar
+            Finally
+                If (previousConnectionState = Global.System.Data.ConnectionState.Closed) Then
+                    command.Connection.Close
+                End If
+            End Try
+            If ((returnValue Is Nothing)  _
+                        OrElse (returnValue.GetType Is GetType(Global.System.DBNull))) Then
+                Return New Global.System.Nullable(Of Integer)()
+            Else
+                Return New Global.System.Nullable(Of Integer)(CType(returnValue,Integer))
+            End If
         End Function
     End Class
     
