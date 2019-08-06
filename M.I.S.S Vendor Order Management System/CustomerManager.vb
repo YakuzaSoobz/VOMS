@@ -1,6 +1,9 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class CustomerManager
+
+    Dim InitialEmail As String = ""
+
     Private Sub LogOutButton_Click(sender As Object, e As EventArgs) Handles LogOutButton.Click
         Dim ret As Integer = MsgBox("Are you sure you want to sign out?", vbYesNo, "Sign Out?")
 
@@ -135,9 +138,9 @@ Public Class CustomerManager
             ElseIf Not (ValidateEmail(EmailTextBox.Text)) Then
                 MsgBox("Email format is invalid! , Follow this format eg.starplatinum@domain.com", vbOK)
                 EmailTextBox.ResetText() 'Email validator which calls function'
-            ElseIf (checkUniqueEmail(EmailTextBox.Text) = False) Then
+            ElseIf ((checkUniqueEmail(EmailTextBox.Text) = False) And Not (InitialEmail = EmailTextBox.Text)) Then
                 MsgBox("This email already exists in the database! , try a different one!", vbOK)
-                EmailTextBox.ResetText() 'Email validator which calls function'
+                EmailTextBox.Text = InitialEmail 'Email validator which calls function'
 
             ElseIf (PasswordTextBox.Text.Length > 10 Or PasswordTextBox.Text.Length < 0) Then
                 MsgBox("Password length invalid!", vbOK)
@@ -145,7 +148,6 @@ Public Class CustomerManager
             ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
                 MsgBox("Active Status field must be either T or F!", vbOK)
                 ActiveStatusComboBox.ResetText() 'Active Status checker'
-
 
             Else
                 FNameTextBox.Text = FNameTextBox.Text.Trim
@@ -198,6 +200,7 @@ Public Class CustomerManager
     End Sub
 
     Private Sub FirstButton_Click(sender As Object, e As EventArgs) Handles FirstButton.Click
+
         DetailsGroupBox.Enabled = True
         UpdateButton.Enabled = True
         ButtonRefresh.Enabled = True
@@ -207,6 +210,7 @@ Public Class CustomerManager
         PreviousButton.Enabled = True
         Try
             CustomerBindingSource.MoveFirst()
+
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
@@ -214,6 +218,7 @@ Public Class CustomerManager
         Finally
             Try
                 Me.CustomerTableAdapter.Fill(Me.Group16DataSet.Customer) 'refreshes records'
+                InitialEmail = EmailTextBox.Text
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
@@ -231,11 +236,13 @@ Public Class CustomerManager
 
         Try
             CustomerBindingSource.MoveNext()
+            InitialEmail = EmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
             Try
                 Me.CustomerTableAdapter.Fill(Me.Group16DataSet.Customer) 'refreshes records'
+
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
@@ -254,6 +261,7 @@ Public Class CustomerManager
 
         Try
             CustomerBindingSource.MovePrevious()
+            InitialEmail = EmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
@@ -279,7 +287,7 @@ Public Class CustomerManager
         PreviousButton.Enabled = True
         Try
             CustomerBindingSource.MoveLast()
-
+            InitialEmail = EmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
@@ -309,6 +317,7 @@ Public Class CustomerManager
             UpdateButton.Enabled = True
             ButtonRefresh.Enabled = True
             ArchiveButton.Enabled = True
+            InitialEmail = EmailTextBox.Text
         Catch ex As SqlException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException

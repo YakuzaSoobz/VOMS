@@ -2,6 +2,8 @@
 
 Public Class EmployeeManager
 
+    Dim InitialEmail As String = ""
+
     Private Sub LogOutButton_Click(sender As Object, e As EventArgs) Handles LogOutButton.Click
         Dim ret As Integer = MsgBox("Are you sure you want to sign out?", vbYesNo, "Sign Out?")
 
@@ -41,6 +43,7 @@ Public Class EmployeeManager
 
             Try
                 Me.EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee) 'refreshes records'
+                InitialEmail = EmailTextBox.Text
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
@@ -59,6 +62,7 @@ Public Class EmployeeManager
 
         Try
             EmployeeBindingSource.MoveNext()
+            InitialEmail = EmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
@@ -83,6 +87,7 @@ Public Class EmployeeManager
 
         Try
             EmployeeBindingSource.MovePrevious()
+            InitialEmail = EmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
@@ -107,7 +112,7 @@ Public Class EmployeeManager
         PreviousButton.Enabled = True
         Try
             EmployeeBindingSource.MoveLast()
-
+            InitialEmail = EmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
@@ -215,9 +220,9 @@ Public Class EmployeeManager
             ElseIf Not (ValidateEmail(EmailTextBox.Text)) Then
                 MsgBox("Email format is invalid! , Follow this format eg.starplatinum@domain.com", vbOK)
                 EmailTextBox.ResetText() 'Email validator which calls function'
-            ElseIf (checkUniqueEmail(EmailTextBox.Text) = False) Then
+            ElseIf ((checkUniqueEmail(EmailTextBox.Text) = False) And Not (InitialEmail = EmailTextBox.Text)) Then
                 MsgBox("This email already exists in the database! , try a different one!", vbOK)
-                EmailTextBox.ResetText() 'Email validator which calls function'
+                EmailTextBox.Text = InitialEmail 'Email validator which calls function'
 
             ElseIf (PasswordTextBox.Text.Length > 10 Or PasswordTextBox.Text.Length < 0) Then
                 MsgBox("Password length invalid!", vbOK)
@@ -329,6 +334,7 @@ Public Class EmployeeManager
             UpdateButton.Enabled = True
             ButtonRefresh.Enabled = True
             ArchiveButton.Enabled = True
+            InitialEmail = EmailTextBox.Text
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException
