@@ -23,6 +23,7 @@ Partial Class SupplierManager
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SupplierManager))
         Me.OptionsGroupBox = New System.Windows.Forms.GroupBox()
         Me.ArchiveButton = New System.Windows.Forms.Button()
         Me.ButtonRefresh = New System.Windows.Forms.Button()
@@ -199,19 +200,20 @@ Partial Class SupplierManager
         '
         'SearchButton
         '
-        Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SearchButton.BackColor = System.Drawing.Color.Transparent
+        Me.SearchButton.BackgroundImage = CType(resources.GetObject("SearchButton.BackgroundImage"), System.Drawing.Image)
+        Me.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.SearchButton.FlatAppearance.BorderSize = 3
+        Me.SearchButton.FlatAppearance.BorderSize = 0
         Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SearchButton.Location = New System.Drawing.Point(821, 26)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(135, 41)
+        Me.SearchButton.Size = New System.Drawing.Size(37, 33)
         Me.SearchButton.TabIndex = 92
-        Me.SearchButton.Text = "SEARCH"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'SearchComboBox
@@ -816,7 +818,7 @@ Partial Class SupplierManager
         Me.HelpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.HelpBtn.Location = New System.Drawing.Point(603, 655)
-        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.HelpBtn.Name = "HelpBtn"
         Me.HelpBtn.Size = New System.Drawing.Size(105, 44)
         Me.HelpBtn.TabIndex = 77
@@ -838,7 +840,7 @@ Partial Class SupplierManager
         Me.Controls.Add(Me.BackButton)
         Me.Controls.Add(Me.AdminLevelGroupBox)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "SupplierManager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Supplier Manager"

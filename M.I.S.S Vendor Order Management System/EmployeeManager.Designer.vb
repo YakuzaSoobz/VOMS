@@ -23,6 +23,7 @@ Partial Class EmployeeManager
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(EmployeeManager))
         Me.NavigationGroupBox = New System.Windows.Forms.GroupBox()
         Me.Label23 = New System.Windows.Forms.Label()
         Me.Label22 = New System.Windows.Forms.Label()
@@ -138,19 +139,20 @@ Partial Class EmployeeManager
         '
         'SearchButton
         '
-        Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SearchButton.BackColor = System.Drawing.Color.Transparent
+        Me.SearchButton.BackgroundImage = CType(resources.GetObject("SearchButton.BackgroundImage"), System.Drawing.Image)
+        Me.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.SearchButton.FlatAppearance.BorderSize = 3
+        Me.SearchButton.FlatAppearance.BorderSize = 0
         Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SearchButton.Location = New System.Drawing.Point(725, 21)
+        Me.SearchButton.Location = New System.Drawing.Point(714, 23)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(135, 41)
+        Me.SearchButton.Size = New System.Drawing.Size(37, 33)
         Me.SearchButton.TabIndex = 98
-        Me.SearchButton.Text = "SEARCH"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'SearchComboBox
@@ -560,7 +562,7 @@ Partial Class EmployeeManager
         Me.DOBDateTimePicker.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DOBDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.EmployeeBindingSource, "Employee_DOB", True))
         Me.DOBDateTimePicker.Location = New System.Drawing.Point(295, 162)
-        Me.DOBDateTimePicker.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DOBDateTimePicker.Margin = New System.Windows.Forms.Padding(4)
         Me.DOBDateTimePicker.Name = "DOBDateTimePicker"
         Me.DOBDateTimePicker.Size = New System.Drawing.Size(265, 22)
         Me.DOBDateTimePicker.TabIndex = 56
@@ -836,7 +838,7 @@ Partial Class EmployeeManager
         Me.HelpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.HelpBtn.Location = New System.Drawing.Point(501, 728)
-        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.HelpBtn.Name = "HelpBtn"
         Me.HelpBtn.Size = New System.Drawing.Size(105, 44)
         Me.HelpBtn.TabIndex = 133
@@ -858,7 +860,7 @@ Partial Class EmployeeManager
         Me.Controls.Add(Me.DetailsGroupBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "EmployeeManager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Manager"

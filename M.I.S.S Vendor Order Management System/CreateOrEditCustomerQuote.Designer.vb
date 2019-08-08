@@ -23,6 +23,7 @@ Partial Class CreateOrEditCustomerQuote
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CreateOrEditCustomerQuote))
         Me.BackButton = New System.Windows.Forms.Button()
         Me.QuoteDetailsGroupBox = New System.Windows.Forms.GroupBox()
         Me.OptionsGroupBox1 = New System.Windows.Forms.GroupBox()
@@ -242,36 +243,38 @@ Partial Class CreateOrEditCustomerQuote
         '
         'EmployeeInfoButton
         '
-        Me.EmployeeInfoButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.EmployeeInfoButton.BackColor = System.Drawing.Color.Transparent
+        Me.EmployeeInfoButton.BackgroundImage = CType(resources.GetObject("EmployeeInfoButton.BackgroundImage"), System.Drawing.Image)
+        Me.EmployeeInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.EmployeeInfoButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.EmployeeInfoButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.EmployeeInfoButton.FlatAppearance.BorderSize = 3
+        Me.EmployeeInfoButton.FlatAppearance.BorderSize = 0
         Me.EmployeeInfoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.EmployeeInfoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.EmployeeInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.EmployeeInfoButton.Location = New System.Drawing.Point(425, 162)
+        Me.EmployeeInfoButton.Location = New System.Drawing.Point(425, 170)
         Me.EmployeeInfoButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.EmployeeInfoButton.Name = "EmployeeInfoButton"
-        Me.EmployeeInfoButton.Size = New System.Drawing.Size(68, 36)
+        Me.EmployeeInfoButton.Size = New System.Drawing.Size(20, 20)
         Me.EmployeeInfoButton.TabIndex = 73
-        Me.EmployeeInfoButton.Text = "INFO"
         Me.EmployeeInfoButton.UseVisualStyleBackColor = False
         '
         'CustomerInfoButton
         '
-        Me.CustomerInfoButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.CustomerInfoButton.BackColor = System.Drawing.Color.Transparent
+        Me.CustomerInfoButton.BackgroundImage = CType(resources.GetObject("CustomerInfoButton.BackgroundImage"), System.Drawing.Image)
+        Me.CustomerInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.CustomerInfoButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.CustomerInfoButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.CustomerInfoButton.FlatAppearance.BorderSize = 3
+        Me.CustomerInfoButton.FlatAppearance.BorderSize = 0
         Me.CustomerInfoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.CustomerInfoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.CustomerInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CustomerInfoButton.Location = New System.Drawing.Point(425, 46)
+        Me.CustomerInfoButton.Location = New System.Drawing.Point(425, 53)
         Me.CustomerInfoButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CustomerInfoButton.Name = "CustomerInfoButton"
-        Me.CustomerInfoButton.Size = New System.Drawing.Size(68, 36)
+        Me.CustomerInfoButton.Size = New System.Drawing.Size(20, 20)
         Me.CustomerInfoButton.TabIndex = 72
-        Me.CustomerInfoButton.Text = "INFO"
         Me.CustomerInfoButton.UseVisualStyleBackColor = False
         '
         'QuoteAcceptanceStatusComboBox

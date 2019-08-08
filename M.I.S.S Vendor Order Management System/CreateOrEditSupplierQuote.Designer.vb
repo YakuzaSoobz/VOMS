@@ -23,6 +23,7 @@ Partial Class CreateOrEditSupplierQuote
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CreateOrEditSupplierQuote))
         Me.QuoteDetailsGroupBox = New System.Windows.Forms.GroupBox()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.DateAcceptedTextBox = New System.Windows.Forms.TextBox()
@@ -203,19 +204,20 @@ Partial Class CreateOrEditSupplierQuote
         '
         'SupplierInfoButton
         '
-        Me.SupplierInfoButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SupplierInfoButton.BackColor = System.Drawing.Color.Transparent
+        Me.SupplierInfoButton.BackgroundImage = CType(resources.GetObject("SupplierInfoButton.BackgroundImage"), System.Drawing.Image)
+        Me.SupplierInfoButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.SupplierInfoButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SupplierInfoButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.SupplierInfoButton.FlatAppearance.BorderSize = 3
+        Me.SupplierInfoButton.FlatAppearance.BorderSize = 0
         Me.SupplierInfoButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SupplierInfoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SupplierInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SupplierInfoButton.Location = New System.Drawing.Point(462, 27)
+        Me.SupplierInfoButton.Location = New System.Drawing.Point(460, 35)
         Me.SupplierInfoButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SupplierInfoButton.Name = "SupplierInfoButton"
-        Me.SupplierInfoButton.Size = New System.Drawing.Size(68, 36)
+        Me.SupplierInfoButton.Size = New System.Drawing.Size(20, 20)
         Me.SupplierInfoButton.TabIndex = 72
-        Me.SupplierInfoButton.Text = "INFO"
         Me.SupplierInfoButton.UseVisualStyleBackColor = False
         '
         'QuoteAcceptanceStatusComboBox
@@ -277,7 +279,7 @@ Partial Class CreateOrEditSupplierQuote
         Me.DateRecievedDateTimePicker.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DateRecievedDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.SupplierQuoteBindingSource, "Supp_Quote_Date_Recieved", True))
         Me.DateRecievedDateTimePicker.Location = New System.Drawing.Point(256, 180)
-        Me.DateRecievedDateTimePicker.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DateRecievedDateTimePicker.Margin = New System.Windows.Forms.Padding(4)
         Me.DateRecievedDateTimePicker.Name = "DateRecievedDateTimePicker"
         Me.DateRecievedDateTimePicker.Size = New System.Drawing.Size(264, 22)
         Me.DateRecievedDateTimePicker.TabIndex = 58
@@ -466,7 +468,7 @@ Partial Class CreateOrEditSupplierQuote
         Me.SuppLineItemJoinProductDataGridView.DataSource = Me.SuppLineItemJoinProductBindingSource
         Me.SuppLineItemJoinProductDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.SuppLineItemJoinProductDataGridView.Location = New System.Drawing.Point(3, 17)
-        Me.SuppLineItemJoinProductDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SuppLineItemJoinProductDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.SuppLineItemJoinProductDataGridView.Name = "SuppLineItemJoinProductDataGridView"
         Me.SuppLineItemJoinProductDataGridView.ReadOnly = True
         Me.SuppLineItemJoinProductDataGridView.Size = New System.Drawing.Size(1077, 489)
@@ -602,7 +604,7 @@ Partial Class CreateOrEditSupplierQuote
         Me.Controls.Add(Me.Label2)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "CreateOrEditSupplierQuote"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Create/Edit Supplier Quote"

@@ -23,6 +23,7 @@ Partial Class CustomerQuoteManager
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(CustomerQuoteManager))
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.EditButton = New System.Windows.Forms.Button()
         Me.ViewButton = New System.Windows.Forms.Button()
@@ -247,7 +248,7 @@ Partial Class CustomerQuoteManager
         Me.CustLineItemJoinProductDataGridView.DataSource = Me.CustLineItemJoinProductsBindingSource
         Me.CustLineItemJoinProductDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.CustLineItemJoinProductDataGridView.Location = New System.Drawing.Point(3, 17)
-        Me.CustLineItemJoinProductDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CustLineItemJoinProductDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.CustLineItemJoinProductDataGridView.Name = "CustLineItemJoinProductDataGridView"
         Me.CustLineItemJoinProductDataGridView.ReadOnly = True
         Me.CustLineItemJoinProductDataGridView.Size = New System.Drawing.Size(1518, 226)
@@ -586,19 +587,20 @@ Partial Class CustomerQuoteManager
         '
         'SearchButton
         '
-        Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SearchButton.BackColor = System.Drawing.Color.Transparent
+        Me.SearchButton.BackgroundImage = CType(resources.GetObject("SearchButton.BackgroundImage"), System.Drawing.Image)
+        Me.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.SearchButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.SearchButton.FlatAppearance.BorderSize = 3
+        Me.SearchButton.FlatAppearance.BorderSize = 0
         Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SearchButton.Location = New System.Drawing.Point(549, 34)
+        Me.SearchButton.Location = New System.Drawing.Point(549, 38)
         Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(133, 41)
+        Me.SearchButton.Size = New System.Drawing.Size(37, 33)
         Me.SearchButton.TabIndex = 99
-        Me.SearchButton.Text = "SEARCH"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'SearchTextBox
@@ -640,7 +642,7 @@ Partial Class CustomerQuoteManager
         Me.HelpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.HelpBtn.Location = New System.Drawing.Point(756, 816)
-        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.HelpBtn.Name = "HelpBtn"
         Me.HelpBtn.Size = New System.Drawing.Size(105, 44)
         Me.HelpBtn.TabIndex = 41
@@ -661,7 +663,7 @@ Partial Class CustomerQuoteManager
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.NavigationGroupBox)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "CustomerQuoteManager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Customer Quote Manager"

@@ -23,6 +23,7 @@ Partial Class SignIn
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SignIn))
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.AccessCombo = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -76,7 +77,7 @@ Partial Class SignIn
         Me.AccessCombo.FormattingEnabled = True
         Me.AccessCombo.Items.AddRange(New Object() {"2", "1"})
         Me.AccessCombo.Location = New System.Drawing.Point(92, 196)
-        Me.AccessCombo.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.AccessCombo.Margin = New System.Windows.Forms.Padding(4)
         Me.AccessCombo.Name = "AccessCombo"
         Me.AccessCombo.Size = New System.Drawing.Size(320, 24)
         Me.AccessCombo.TabIndex = 42
@@ -110,19 +111,20 @@ Partial Class SignIn
         '
         'ShowPasswordButton
         '
-        Me.ShowPasswordButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ShowPasswordButton.BackColor = System.Drawing.Color.Transparent
+        Me.ShowPasswordButton.BackgroundImage = CType(resources.GetObject("ShowPasswordButton.BackgroundImage"), System.Drawing.Image)
+        Me.ShowPasswordButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.ShowPasswordButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ShowPasswordButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.ShowPasswordButton.FlatAppearance.BorderSize = 3
+        Me.ShowPasswordButton.FlatAppearance.BorderSize = 0
         Me.ShowPasswordButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.ShowPasswordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.ShowPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ShowPasswordButton.Location = New System.Drawing.Point(428, 117)
+        Me.ShowPasswordButton.Location = New System.Drawing.Point(418, 124)
         Me.ShowPasswordButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ShowPasswordButton.Name = "ShowPasswordButton"
-        Me.ShowPasswordButton.Size = New System.Drawing.Size(75, 39)
+        Me.ShowPasswordButton.Size = New System.Drawing.Size(31, 26)
         Me.ShowPasswordButton.TabIndex = 22
-        Me.ShowPasswordButton.Text = "SHOW"
         Me.ShowPasswordButton.UseVisualStyleBackColor = False
         '
         'Label1
@@ -223,7 +225,7 @@ Partial Class SignIn
         Me.PictureBox1.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.M_I_S_S_Logo
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Location = New System.Drawing.Point(355, 70)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(137, 89)
         Me.PictureBox1.TabIndex = 38
@@ -246,7 +248,7 @@ Partial Class SignIn
         Me.Normalisers42PictureBox.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Normalisers42_Logo
         Me.Normalisers42PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.Normalisers42PictureBox.Location = New System.Drawing.Point(509, 492)
-        Me.Normalisers42PictureBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Normalisers42PictureBox.Margin = New System.Windows.Forms.Padding(4)
         Me.Normalisers42PictureBox.Name = "Normalisers42PictureBox"
         Me.Normalisers42PictureBox.Size = New System.Drawing.Size(67, 62)
         Me.Normalisers42PictureBox.TabIndex = 40
@@ -295,7 +297,7 @@ Partial Class SignIn
         Me.Controls.Add(Me.AboutButton)
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "SignIn"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "M.I.S.S Vendor Order Managment System"

@@ -174,6 +174,7 @@ Partial Class HelpView
         Me.Controls.Add(Me.TabControl1)
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "HelpView"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "M.I.S.S.V.O.M.S. Help Page"
         Me.TabControl1.ResumeLayout(False)
         Me.TabPage1.ResumeLayout(False)
