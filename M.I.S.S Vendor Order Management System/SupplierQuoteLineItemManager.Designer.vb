@@ -158,7 +158,7 @@ Partial Class SupplierQuoteLineItemManager
         Me.ProductDataGridView.DataSource = Me.ProductBindingSource
         Me.ProductDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ProductDataGridView.Location = New System.Drawing.Point(3, 17)
-        Me.ProductDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ProductDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.ProductDataGridView.Name = "ProductDataGridView"
         Me.ProductDataGridView.ReadOnly = True
         Me.ProductDataGridView.Size = New System.Drawing.Size(1083, 225)
@@ -360,6 +360,7 @@ Partial Class SupplierQuoteLineItemManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1173, 738)
@@ -367,7 +368,7 @@ Partial Class SupplierQuoteLineItemManager
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "SupplierQuoteLineItemManager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Supplier Quote Line Item Manager"

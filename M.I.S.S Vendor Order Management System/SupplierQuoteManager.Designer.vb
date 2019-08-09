@@ -671,6 +671,7 @@ Partial Class SupplierQuoteManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1560, 874)
@@ -681,7 +682,6 @@ Partial Class SupplierQuoteManager
         Me.Controls.Add(Me.GroupBox1)
         Me.Controls.Add(Me.NavigationGroupBox)
         Me.DoubleBuffered = True
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "SupplierQuoteManager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

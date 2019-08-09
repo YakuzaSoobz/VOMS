@@ -97,6 +97,7 @@ Partial Class EmployeeManager
         '
         'NavigationGroupBox
         '
+        Me.NavigationGroupBox.AutoSize = True
         Me.NavigationGroupBox.BackColor = System.Drawing.Color.Transparent
         Me.NavigationGroupBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.NavigationGroupBox.Controls.Add(Me.Label23)
@@ -112,7 +113,7 @@ Partial Class EmployeeManager
         Me.NavigationGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NavigationGroupBox.Name = "NavigationGroupBox"
         Me.NavigationGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
-        Me.NavigationGroupBox.Size = New System.Drawing.Size(1079, 140)
+        Me.NavigationGroupBox.Size = New System.Drawing.Size(1079, 144)
         Me.NavigationGroupBox.TabIndex = 19
         Me.NavigationGroupBox.TabStop = False
         Me.NavigationGroupBox.Text = "NAVIGATION"
@@ -873,6 +874,7 @@ Partial Class EmployeeManager
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OptionsGroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
     Friend WithEvents NavigationGroupBox As GroupBox

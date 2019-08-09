@@ -120,7 +120,7 @@ Partial Class LineItemDetailsPopUp
         'SaleExclVATTextBox
         '
         Me.SaleExclVATTextBox.Location = New System.Drawing.Point(531, 39)
-        Me.SaleExclVATTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SaleExclVATTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.SaleExclVATTextBox.Name = "SaleExclVATTextBox"
         Me.SaleExclVATTextBox.ReadOnly = True
         Me.SaleExclVATTextBox.Size = New System.Drawing.Size(143, 22)
@@ -139,7 +139,7 @@ Partial Class LineItemDetailsPopUp
         'SaleInclVATTextBox
         '
         Me.SaleInclVATTextBox.Location = New System.Drawing.Point(160, 39)
-        Me.SaleInclVATTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SaleInclVATTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.SaleInclVATTextBox.Name = "SaleInclVATTextBox"
         Me.SaleInclVATTextBox.ReadOnly = True
         Me.SaleInclVATTextBox.Size = New System.Drawing.Size(143, 22)
@@ -161,7 +161,7 @@ Partial Class LineItemDetailsPopUp
         Me.MarkupComboBox.FormattingEnabled = True
         Me.MarkupComboBox.Items.AddRange(New Object() {"10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70"})
         Me.MarkupComboBox.Location = New System.Drawing.Point(343, 258)
-        Me.MarkupComboBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.MarkupComboBox.Margin = New System.Windows.Forms.Padding(4)
         Me.MarkupComboBox.Name = "MarkupComboBox"
         Me.MarkupComboBox.Size = New System.Drawing.Size(160, 24)
         Me.MarkupComboBox.TabIndex = 89
@@ -182,7 +182,7 @@ Partial Class LineItemDetailsPopUp
         Me.DiscountComboBox.FormattingEnabled = True
         Me.DiscountComboBox.Items.AddRange(New Object() {"5", "10", "15", "20", "25", "30", "35", "40", "45", "50", "55", "60", "65", "70"})
         Me.DiscountComboBox.Location = New System.Drawing.Point(663, 258)
-        Me.DiscountComboBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DiscountComboBox.Margin = New System.Windows.Forms.Padding(4)
         Me.DiscountComboBox.Name = "DiscountComboBox"
         Me.DiscountComboBox.Size = New System.Drawing.Size(160, 24)
         Me.DiscountComboBox.TabIndex = 87
@@ -203,7 +203,7 @@ Partial Class LineItemDetailsPopUp
         Me.QuantityComboBox.FormattingEnabled = True
         Me.QuantityComboBox.Items.AddRange(New Object() {"1", "2", "3", "4", "5", "6", "7", "8", "9"})
         Me.QuantityComboBox.Location = New System.Drawing.Point(29, 258)
-        Me.QuantityComboBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.QuantityComboBox.Margin = New System.Windows.Forms.Padding(4)
         Me.QuantityComboBox.Name = "QuantityComboBox"
         Me.QuantityComboBox.Size = New System.Drawing.Size(160, 24)
         Me.QuantityComboBox.TabIndex = 85
@@ -243,7 +243,7 @@ Partial Class LineItemDetailsPopUp
         Me.SuppQuoteJoinSuppLineItemDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Product_ID, Me.SupplierIDDataGridViewTextBoxColumn1, Me.SuppLineItemCostPriceDataGridViewTextBoxColumn})
         Me.SuppQuoteJoinSuppLineItemDataGridView.DataSource = Me.SuppQuoteJoinSuppLineItemBindingSource
         Me.SuppQuoteJoinSuppLineItemDataGridView.Location = New System.Drawing.Point(8, 23)
-        Me.SuppQuoteJoinSuppLineItemDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SuppQuoteJoinSuppLineItemDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.SuppQuoteJoinSuppLineItemDataGridView.Name = "SuppQuoteJoinSuppLineItemDataGridView"
         Me.SuppQuoteJoinSuppLineItemDataGridView.ReadOnly = True
         Me.SuppQuoteJoinSuppLineItemDataGridView.Size = New System.Drawing.Size(403, 122)
@@ -286,7 +286,7 @@ Partial Class LineItemDetailsPopUp
         'CostPriceTextBox
         '
         Me.CostPriceTextBox.Location = New System.Drawing.Point(201, 151)
-        Me.CostPriceTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.CostPriceTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.CostPriceTextBox.Name = "CostPriceTextBox"
         Me.CostPriceTextBox.ReadOnly = True
         Me.CostPriceTextBox.Size = New System.Drawing.Size(127, 22)
@@ -327,7 +327,7 @@ Partial Class LineItemDetailsPopUp
         Me.SupplierDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.SupplierIDDataGridViewTextBoxColumn, Me.SupplierNameDataGridViewTextBoxColumn})
         Me.SupplierDataGridView.DataSource = Me.SupplierBindingSource
         Me.SupplierDataGridView.Location = New System.Drawing.Point(8, 23)
-        Me.SupplierDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SupplierDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.SupplierDataGridView.Name = "SupplierDataGridView"
         Me.SupplierDataGridView.ReadOnly = True
         Me.SupplierDataGridView.Size = New System.Drawing.Size(372, 122)
@@ -357,7 +357,7 @@ Partial Class LineItemDetailsPopUp
         'SupplierIDTextBox
         '
         Me.SupplierIDTextBox.Location = New System.Drawing.Point(207, 156)
-        Me.SupplierIDTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SupplierIDTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.SupplierIDTextBox.Name = "SupplierIDTextBox"
         Me.SupplierIDTextBox.ReadOnly = True
         Me.SupplierIDTextBox.Size = New System.Drawing.Size(60, 22)
@@ -422,6 +422,7 @@ Partial Class LineItemDetailsPopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(887, 569)
@@ -430,7 +431,7 @@ Partial Class LineItemDetailsPopUp
         Me.Controls.Add(Me.OptionsGroupBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "LineItemDetailsPopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Customer Line Item Details"

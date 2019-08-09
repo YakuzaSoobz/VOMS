@@ -126,10 +126,9 @@ Users can enter product details, alter prices, add a discount as well as print q
 Customer Quote Line Items prices are chosen from Supplier Quote prices.</value>
   </data>
   <data name="RichTextBox2.Text" xml:space="preserve">
-    <value>This form allows users to view and manage quotations and invoices received from Suppliers.
+    <value>The Supplier Quote Manager allows user to view, manage and keep record of quotations and invoices that were received from Suppliers.
 
-This subsystem will allow users to keep record of quotions/invoices received from suppliers. 
-Users can enter product details, alter prices  as well as print  quotations.</value>
+Users can enter product details, alter prices as well as print quotations. .</value>
   </data>
   <data name="RichTextBox3.Text" xml:space="preserve">
     <value>Employee Manager

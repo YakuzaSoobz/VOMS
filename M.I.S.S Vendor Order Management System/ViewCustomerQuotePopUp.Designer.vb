@@ -109,7 +109,7 @@ Partial Class ViewCustomerQuotePopUp
         Me.PictureBox1.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.M_I_S_S_Logo
         Me.PictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PictureBox1.Location = New System.Drawing.Point(548, 84)
-        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PictureBox1.Margin = New System.Windows.Forms.Padding(4)
         Me.PictureBox1.Name = "PictureBox1"
         Me.PictureBox1.Size = New System.Drawing.Size(203, 103)
         Me.PictureBox1.TabIndex = 20
@@ -343,7 +343,7 @@ Partial Class ViewCustomerQuotePopUp
         Me.DataGridView1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductIDDataGridViewTextBoxColumn, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductBrandDataGridViewTextBoxColumn, Me.CustLineItemDiscountPercentageDataGridViewTextBoxColumn, Me.CustLineItemSaleexclVATDataGridViewTextBoxColumn, Me.CustLineItemSaleinclVATDataGridViewTextBoxColumn, Me.CustLineItemQuantityDataGridViewTextBoxColumn, Me.SupplierNameDataGridViewTextBoxColumn})
         Me.DataGridView1.DataSource = Me.CustLineItemJoinProductsBindingSource
         Me.DataGridView1.Location = New System.Drawing.Point(19, 262)
-        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DataGridView1.Margin = New System.Windows.Forms.Padding(4)
         Me.DataGridView1.Name = "DataGridView1"
         Me.DataGridView1.Size = New System.Drawing.Size(755, 406)
         Me.DataGridView1.TabIndex = 1
@@ -413,7 +413,7 @@ Partial Class ViewCustomerQuotePopUp
         '
         Me.InvoiceRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.InvoiceRichTextBox.Location = New System.Drawing.Point(3, 17)
-        Me.InvoiceRichTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.InvoiceRichTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.InvoiceRichTextBox.Name = "InvoiceRichTextBox"
         Me.InvoiceRichTextBox.Size = New System.Drawing.Size(775, 687)
         Me.InvoiceRichTextBox.TabIndex = 0
@@ -454,7 +454,7 @@ Partial Class ViewCustomerQuotePopUp
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Location = New System.Drawing.Point(691, 737)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(4)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(105, 41)
         Me.BackButton.TabIndex = 52
@@ -473,6 +473,7 @@ Partial Class ViewCustomerQuotePopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(811, 791)
@@ -480,7 +481,7 @@ Partial Class ViewCustomerQuotePopUp
         Me.Controls.Add(Me.PrintQuoteButton)
         Me.Controls.Add(Me.NavigationGroupBox)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ViewCustomerQuotePopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "View Customer Quote"

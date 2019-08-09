@@ -77,7 +77,7 @@ Partial Class SortManagerPopUp
         '
         Me.ToDateTimePicker.Cursor = System.Windows.Forms.Cursors.Hand
         Me.ToDateTimePicker.Location = New System.Drawing.Point(599, 53)
-        Me.ToDateTimePicker.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ToDateTimePicker.Margin = New System.Windows.Forms.Padding(4)
         Me.ToDateTimePicker.Name = "ToDateTimePicker"
         Me.ToDateTimePicker.Size = New System.Drawing.Size(265, 22)
         Me.ToDateTimePicker.TabIndex = 56
@@ -86,7 +86,7 @@ Partial Class SortManagerPopUp
         '
         Me.FromDateTimePicker.Cursor = System.Windows.Forms.Cursors.Hand
         Me.FromDateTimePicker.Location = New System.Drawing.Point(21, 53)
-        Me.FromDateTimePicker.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.FromDateTimePicker.Margin = New System.Windows.Forms.Padding(4)
         Me.FromDateTimePicker.Name = "FromDateTimePicker"
         Me.FromDateTimePicker.Size = New System.Drawing.Size(265, 22)
         Me.FromDateTimePicker.TabIndex = 55
@@ -177,6 +177,7 @@ Partial Class SortManagerPopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(931, 292)
@@ -185,7 +186,7 @@ Partial Class SortManagerPopUp
         Me.Controls.Add(Me.BackButton)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "SortManagerPopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent
         Me.Text = "Sort Options"

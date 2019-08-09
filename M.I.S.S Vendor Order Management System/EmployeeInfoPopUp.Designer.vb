@@ -360,7 +360,7 @@ Partial Class EmployeeInfoPopUp
         Me.DOBDateTimePicker.Cursor = System.Windows.Forms.Cursors.Hand
         Me.DOBDateTimePicker.DataBindings.Add(New System.Windows.Forms.Binding("Value", Me.EmployeeBindingSource, "Employee_DOB", True))
         Me.DOBDateTimePicker.Location = New System.Drawing.Point(295, 162)
-        Me.DOBDateTimePicker.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DOBDateTimePicker.Margin = New System.Windows.Forms.Padding(4)
         Me.DOBDateTimePicker.Name = "DOBDateTimePicker"
         Me.DOBDateTimePicker.Size = New System.Drawing.Size(265, 22)
         Me.DOBDateTimePicker.TabIndex = 56
@@ -557,12 +557,13 @@ Partial Class EmployeeInfoPopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.ClientSize = New System.Drawing.Size(1109, 554)
         Me.Controls.Add(Me.BackButton)
         Me.Controls.Add(Me.DetailsGroupBox)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "EmployeeInfoPopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Info"
