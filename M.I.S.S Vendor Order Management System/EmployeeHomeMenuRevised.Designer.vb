@@ -215,19 +215,20 @@ Partial Class EmployeeHomeMenuRevised
         '
         'SignOutButton
         '
-        Me.SignOutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SignOutButton.BackColor = System.Drawing.Color.Transparent
+        Me.SignOutButton.BackgroundImage = CType(resources.GetObject("SignOutButton.BackgroundImage"), System.Drawing.Image)
+        Me.SignOutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.SignOutButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SignOutButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.SignOutButton.FlatAppearance.BorderSize = 3
+        Me.SignOutButton.FlatAppearance.BorderSize = 0
         Me.SignOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SignOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SignOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SignOutButton.Location = New System.Drawing.Point(662, 763)
+        Me.SignOutButton.Location = New System.Drawing.Point(702, 759)
         Me.SignOutButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SignOutButton.Name = "SignOutButton"
-        Me.SignOutButton.Size = New System.Drawing.Size(105, 44)
+        Me.SignOutButton.Size = New System.Drawing.Size(65, 48)
         Me.SignOutButton.TabIndex = 40
-        Me.SignOutButton.Text = "SIGN OUT"
         Me.SignOutButton.UseVisualStyleBackColor = False
         '
         'EmployeeHomeMenuRevised

@@ -385,19 +385,20 @@ Partial Class ProductManager
         '
         'BackButton
         '
-        Me.BackButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.BackButton.BackColor = System.Drawing.Color.Transparent
+        Me.BackButton.BackgroundImage = CType(resources.GetObject("BackButton.BackgroundImage"), System.Drawing.Image)
+        Me.BackButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.BackButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BackButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.BackButton.FlatAppearance.BorderSize = 3
+        Me.BackButton.FlatAppearance.BorderSize = 0
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Location = New System.Drawing.Point(1004, 690)
+        Me.BackButton.Location = New System.Drawing.Point(1027, 690)
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(85, 44)
+        Me.BackButton.Size = New System.Drawing.Size(65, 48)
         Me.BackButton.TabIndex = 73
-        Me.BackButton.Text = "BACK"
         Me.BackButton.UseVisualStyleBackColor = False
         '
         'DetailsGroupBox

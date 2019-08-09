@@ -49,6 +49,7 @@ Partial Class HelpView
         Me.TabControl1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.TabControl1.Location = New System.Drawing.Point(3, 1)
         Me.TabControl1.Margin = New System.Windows.Forms.Padding(4)
+        Me.TabControl1.Multiline = True
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(653, 633)
