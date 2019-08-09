@@ -24,6 +24,9 @@ Partial Class LineItemDetailsPopUp
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.QuoteDetailsGroupBox = New System.Windows.Forms.GroupBox()
+        Me.VATButton = New System.Windows.Forms.Button()
+        Me.VATTextBox = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
@@ -34,15 +37,13 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.SuppQuoteJoinSuppLineItemDataGridView = New System.Windows.Forms.DataGridView()
-        Me.SuppQuoteJoinSuppLineItemBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
+        Me.Supp_Quote_Reference_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Product_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.Supp_Quote_Date_Recieved = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CostPriceTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SupplierDataGridView = New System.Windows.Forms.DataGridView()
-        Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SupplierNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SupplierIDTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox3 = New System.Windows.Forms.GroupBox()
         Me.Label7 = New System.Windows.Forms.Label()
@@ -51,28 +52,27 @@ Partial Class LineItemDetailsPopUp
         Me.SaleInclVATTextBox = New System.Windows.Forms.TextBox()
         Me.OptionsGroupBox1 = New System.Windows.Forms.GroupBox()
         Me.SaveButton = New System.Windows.Forms.Button()
-        Me.SupplierTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SupplierTableAdapter()
-        Me.SuppQuoteJoinSuppLineItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SuppQuoteJoinSuppLineItemTableAdapter()
         Me.BackButton = New System.Windows.Forms.Button()
         Me.LineItemDetailsPopUpTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Supp_Quote_Reference_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Product_ID = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SuppLineItemCostPriceDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Supp_Quote_Date_Recieved = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label8 = New System.Windows.Forms.Label()
-        Me.VATTextBox = New System.Windows.Forms.TextBox()
-        Me.VATButton = New System.Windows.Forms.Button()
+        Me.SuppQuoteJoinSuppLineItemBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
+        Me.SupplierIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SupplierNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.SupplierTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SupplierTableAdapter()
+        Me.SuppQuoteJoinSuppLineItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SuppQuoteJoinSuppLineItemTableAdapter()
         Me.QuoteDetailsGroupBox.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.SuppQuoteJoinSuppLineItemDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SuppQuoteJoinSuppLineItemBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox1.SuspendLayout()
         CType(Me.SupplierDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.OptionsGroupBox1.SuspendLayout()
+        CType(Me.SuppQuoteJoinSuppLineItemBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'QuoteDetailsGroupBox
@@ -93,6 +93,41 @@ Partial Class LineItemDetailsPopUp
         Me.QuoteDetailsGroupBox.TabIndex = 69
         Me.QuoteDetailsGroupBox.TabStop = False
         Me.QuoteDetailsGroupBox.Text = "CUSTOMER QUOTE DETAILS"
+        '
+        'VATButton
+        '
+        Me.VATButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.VATButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.VATButton.FlatAppearance.BorderSize = 3
+        Me.VATButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.VATButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.VATButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.VATButton.Location = New System.Drawing.Point(328, 359)
+        Me.VATButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.VATButton.Name = "VATButton"
+        Me.VATButton.Size = New System.Drawing.Size(120, 29)
+        Me.VATButton.TabIndex = 94
+        Me.VATButton.Text = "SAVE NEW % VAT"
+        Me.VATButton.UseVisualStyleBackColor = False
+        '
+        'VATTextBox
+        '
+        Me.VATTextBox.Location = New System.Drawing.Point(274, 364)
+        Me.VATTextBox.Name = "VATTextBox"
+        Me.VATTextBox.Size = New System.Drawing.Size(49, 20)
+        Me.VATTextBox.TabIndex = 93
+        Me.VATTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.BackColor = System.Drawing.Color.Transparent
+        Me.Label8.Location = New System.Drawing.Point(221, 367)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(48, 13)
+        Me.Label8.TabIndex = 92
+        Me.Label8.Text = "- % VAT:"
         '
         'GroupBox4
         '
@@ -213,15 +248,27 @@ Partial Class LineItemDetailsPopUp
         Me.SuppQuoteJoinSuppLineItemDataGridView.Size = New System.Drawing.Size(449, 115)
         Me.SuppQuoteJoinSuppLineItemDataGridView.TabIndex = 0
         '
-        'SuppQuoteJoinSuppLineItemBindingSource
+        'Supp_Quote_Reference_ID
         '
-        Me.SuppQuoteJoinSuppLineItemBindingSource.DataMember = "SuppQuoteJoinSuppLineItem"
-        Me.SuppQuoteJoinSuppLineItemBindingSource.DataSource = Me.Group16DataSet
+        Me.Supp_Quote_Reference_ID.DataPropertyName = "Supp_Quote_Reference_ID"
+        Me.Supp_Quote_Reference_ID.HeaderText = "Supplier Quote ID"
+        Me.Supp_Quote_Reference_ID.Name = "Supp_Quote_Reference_ID"
+        Me.Supp_Quote_Reference_ID.ReadOnly = True
         '
-        'Group16DataSet
+        'Product_ID
         '
-        Me.Group16DataSet.DataSetName = "group16DataSet"
-        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        Me.Product_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.Product_ID.DataPropertyName = "Product_ID"
+        Me.Product_ID.HeaderText = "Product ID"
+        Me.Product_ID.Name = "Product_ID"
+        Me.Product_ID.ReadOnly = True
+        '
+        'Supp_Quote_Date_Recieved
+        '
+        Me.Supp_Quote_Date_Recieved.DataPropertyName = "Supp_Quote_Date_Recieved"
+        Me.Supp_Quote_Date_Recieved.HeaderText = "Date Recieved"
+        Me.Supp_Quote_Date_Recieved.Name = "Supp_Quote_Date_Recieved"
+        Me.Supp_Quote_Date_Recieved.ReadOnly = True
         '
         'CostPriceTextBox
         '
@@ -272,27 +319,6 @@ Partial Class LineItemDetailsPopUp
         Me.SupplierDataGridView.ReadOnly = True
         Me.SupplierDataGridView.Size = New System.Drawing.Size(599, 99)
         Me.SupplierDataGridView.TabIndex = 0
-        '
-        'SupplierIDDataGridViewTextBoxColumn
-        '
-        Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "Supplier_ID"
-        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "Supplier ID"
-        Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
-        Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
-        Me.SupplierIDDataGridViewTextBoxColumn.Width = 109
-        '
-        'SupplierNameDataGridViewTextBoxColumn
-        '
-        Me.SupplierNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.SupplierNameDataGridViewTextBoxColumn.DataPropertyName = "Supplier_Name"
-        Me.SupplierNameDataGridViewTextBoxColumn.HeaderText = "Supplier Name"
-        Me.SupplierNameDataGridViewTextBoxColumn.Name = "SupplierNameDataGridViewTextBoxColumn"
-        Me.SupplierNameDataGridViewTextBoxColumn.ReadOnly = True
-        '
-        'SupplierBindingSource
-        '
-        Me.SupplierBindingSource.DataMember = "Supplier"
-        Me.SupplierBindingSource.DataSource = Me.Group16DataSet
         '
         'SupplierIDTextBox
         '
@@ -388,14 +414,6 @@ Partial Class LineItemDetailsPopUp
         Me.SaveButton.Text = "SAVE"
         Me.SaveButton.UseVisualStyleBackColor = False
         '
-        'SupplierTableAdapter
-        '
-        Me.SupplierTableAdapter.ClearBeforeFill = True
-        '
-        'SuppQuoteJoinSuppLineItemTableAdapter
-        '
-        Me.SuppQuoteJoinSuppLineItemTableAdapter.ClearBeforeFill = True
-        '
         'BackButton
         '
         Me.BackButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -412,21 +430,6 @@ Partial Class LineItemDetailsPopUp
         Me.BackButton.Text = "BACK"
         Me.BackButton.UseVisualStyleBackColor = False
         '
-        'Supp_Quote_Reference_ID
-        '
-        Me.Supp_Quote_Reference_ID.DataPropertyName = "Supp_Quote_Reference_ID"
-        Me.Supp_Quote_Reference_ID.HeaderText = "Supplier Quote ID"
-        Me.Supp_Quote_Reference_ID.Name = "Supp_Quote_Reference_ID"
-        Me.Supp_Quote_Reference_ID.ReadOnly = True
-        '
-        'Product_ID
-        '
-        Me.Product_ID.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
-        Me.Product_ID.DataPropertyName = "Product_ID"
-        Me.Product_ID.HeaderText = "Product ID"
-        Me.Product_ID.Name = "Product_ID"
-        Me.Product_ID.ReadOnly = True
-        '
         'SuppLineItemCostPriceDataGridViewTextBoxColumn
         '
         Me.SuppLineItemCostPriceDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
@@ -435,47 +438,44 @@ Partial Class LineItemDetailsPopUp
         Me.SuppLineItemCostPriceDataGridViewTextBoxColumn.Name = "SuppLineItemCostPriceDataGridViewTextBoxColumn"
         Me.SuppLineItemCostPriceDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'Supp_Quote_Date_Recieved
+        'SuppQuoteJoinSuppLineItemBindingSource
         '
-        Me.Supp_Quote_Date_Recieved.DataPropertyName = "Supp_Quote_Date_Recieved"
-        Me.Supp_Quote_Date_Recieved.HeaderText = "Date Recieved"
-        Me.Supp_Quote_Date_Recieved.Name = "Supp_Quote_Date_Recieved"
-        Me.Supp_Quote_Date_Recieved.ReadOnly = True
+        Me.SuppQuoteJoinSuppLineItemBindingSource.DataMember = "SuppQuoteJoinSuppLineItem"
+        Me.SuppQuoteJoinSuppLineItemBindingSource.DataSource = Me.Group16DataSet
         '
-        'Label8
+        'Group16DataSet
         '
-        Me.Label8.AutoSize = True
-        Me.Label8.BackColor = System.Drawing.Color.Transparent
-        Me.Label8.Location = New System.Drawing.Point(221, 367)
-        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(48, 13)
-        Me.Label8.TabIndex = 92
-        Me.Label8.Text = "- % VAT:"
+        Me.Group16DataSet.DataSetName = "group16DataSet"
+        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'VATTextBox
+        'SupplierIDDataGridViewTextBoxColumn
         '
-        Me.VATTextBox.Location = New System.Drawing.Point(274, 364)
-        Me.VATTextBox.Name = "VATTextBox"
-        Me.VATTextBox.Size = New System.Drawing.Size(49, 20)
-        Me.VATTextBox.TabIndex = 93
-        Me.VATTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        Me.SupplierIDDataGridViewTextBoxColumn.DataPropertyName = "Supplier_ID"
+        Me.SupplierIDDataGridViewTextBoxColumn.HeaderText = "Supplier ID"
+        Me.SupplierIDDataGridViewTextBoxColumn.Name = "SupplierIDDataGridViewTextBoxColumn"
+        Me.SupplierIDDataGridViewTextBoxColumn.ReadOnly = True
+        Me.SupplierIDDataGridViewTextBoxColumn.Width = 109
         '
-        'VATButton
+        'SupplierNameDataGridViewTextBoxColumn
         '
-        Me.VATButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.VATButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.VATButton.FlatAppearance.BorderSize = 3
-        Me.VATButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.VATButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.VATButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.VATButton.Location = New System.Drawing.Point(328, 359)
-        Me.VATButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.VATButton.Name = "VATButton"
-        Me.VATButton.Size = New System.Drawing.Size(120, 29)
-        Me.VATButton.TabIndex = 94
-        Me.VATButton.Text = "SAVE NEW % VAT"
-        Me.VATButton.UseVisualStyleBackColor = False
+        Me.SupplierNameDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
+        Me.SupplierNameDataGridViewTextBoxColumn.DataPropertyName = "Supplier_Name"
+        Me.SupplierNameDataGridViewTextBoxColumn.HeaderText = "Supplier Name"
+        Me.SupplierNameDataGridViewTextBoxColumn.Name = "SupplierNameDataGridViewTextBoxColumn"
+        Me.SupplierNameDataGridViewTextBoxColumn.ReadOnly = True
+        '
+        'SupplierBindingSource
+        '
+        Me.SupplierBindingSource.DataMember = "Supplier"
+        Me.SupplierBindingSource.DataSource = Me.Group16DataSet
+        '
+        'SupplierTableAdapter
+        '
+        Me.SupplierTableAdapter.ClearBeforeFill = True
+        '
+        'SuppQuoteJoinSuppLineItemTableAdapter
+        '
+        Me.SuppQuoteJoinSuppLineItemTableAdapter.ClearBeforeFill = True
         '
         'LineItemDetailsPopUp
         '
@@ -500,15 +500,15 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox2.ResumeLayout(False)
         Me.GroupBox2.PerformLayout()
         CType(Me.SuppQuoteJoinSuppLineItemDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SuppQuoteJoinSuppLineItemBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         CType(Me.SupplierDataGridView, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.OptionsGroupBox1.ResumeLayout(False)
+        CType(Me.SuppQuoteJoinSuppLineItemBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

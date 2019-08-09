@@ -2,6 +2,8 @@
 
 Public Class EmployeeManager
 
+    Dim InitialEmail As String = ""
+
     Private Sub LogOutButton_Click(sender As Object, e As EventArgs) Handles LogOutButton.Click
         Dim ret As Integer = MsgBox("Are you sure you want to sign out?", vbYesNo, "Sign Out?")
 
@@ -41,6 +43,7 @@ Public Class EmployeeManager
 
             Try
                 Me.EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee) 'refreshes records'
+                InitialEmail = EmailTextBox.Text
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
@@ -59,6 +62,7 @@ Public Class EmployeeManager
 
         Try
             EmployeeBindingSource.MoveNext()
+            InitialEmail = EmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
@@ -83,6 +87,7 @@ Public Class EmployeeManager
 
         Try
             EmployeeBindingSource.MovePrevious()
+            InitialEmail = EmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
@@ -107,7 +112,7 @@ Public Class EmployeeManager
         PreviousButton.Enabled = True
         Try
             EmployeeBindingSource.MoveLast()
-
+            InitialEmail = EmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
 
@@ -209,13 +214,16 @@ Public Class EmployeeManager
             ElseIf (PositionTextBox.Text = Nothing) Then
                 MsgBox("Position cannot be left blank!", vbOK)
                 PositionTextBox.ResetText()
-
-
                 'Above is a full check for blanks , contact num code is tweaked abit for masking'
 
+                'check valid email
             ElseIf Not (ValidateEmail(EmailTextBox.Text)) Then
-                MsgBox("Email format is invalid! , Follow this format eg.starplatinum@example.com", vbOK)
+                MsgBox("Email format is invalid! , Follow this format eg.starplatinum@domain.com", vbOK)
                 EmailTextBox.ResetText() 'Email validator which calls function'
+            ElseIf ((checkUniqueEmail(EmailTextBox.Text) = False) And Not (InitialEmail = EmailTextBox.Text)) Then
+                MsgBox("This email already exists in the database! , try a different one!", vbOK)
+                EmailTextBox.Text = InitialEmail 'Email validator which calls function'
+
             ElseIf (PasswordTextBox.Text.Length > 10 Or PasswordTextBox.Text.Length < 0) Then
                 MsgBox("Password length invalid!", vbOK)
                 PasswordTextBox.ResetText() 'Password length checker'
@@ -243,29 +251,39 @@ Public Class EmployeeManager
 
                 'Removes white spaces before and after certain fields to avoid invalids'
                 Try
-            Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
+                    Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
 
-            If ret = 6 Then 'if user clicks yes to update'
-                EmployeeBindingSource.EndEdit()
-                EmployeeTableAdapter.Update(Group16DataSet)
-                MsgBox("Update successful!")
-                Call ButtonRefresh_Click(sender, e)
+                    If ret = 6 Then 'if user clicks yes to update'
+                        EmployeeBindingSource.EndEdit()
+                        EmployeeTableAdapter.Update(Group16DataSet)
+                        MsgBox("Update successful!")
+                        Call ButtonRefresh_Click(sender, e)
+                    End If
+                Catch ex As SqlException
+                    MsgBox("Cannot Update!", vbExclamation, "Network Error!")
+                Catch ex As NoNullAllowedException
+                    MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
+                Catch ex As Exception
+                    MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+
+                End Try
             End If
-        Catch ex As SqlException
-            MsgBox("Cannot Update!", vbExclamation, "Network Error!")
-        Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
+        Catch ex As FormatException
+            MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
-
-        End Try
-        End If
-        Catch ex As FormatException
-        MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
-        Catch ex As Exception
-        MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
+
+    Public Function checkUniqueEmail(ByVal EmailAddress)
+
+        If (EmployeeTableAdapter.GetUniqueEmailQuery(EmailAddress) > 0) Or (CustomerTableAdapter.CheckUniqueEmailQuery(EmailAddress) > 0) Or (SupplierTableAdapter.CheckUniqueSupplierEmailQuery(EmailAddress, EmailAddress) > 0) Then
+            Return False
+        Else
+            Return True
+        End If
+
+    End Function
 
     Private Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
         Try
@@ -316,6 +334,7 @@ Public Class EmployeeManager
             UpdateButton.Enabled = True
             ButtonRefresh.Enabled = True
             ArchiveButton.Enabled = True
+            InitialEmail = EmailTextBox.Text
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException

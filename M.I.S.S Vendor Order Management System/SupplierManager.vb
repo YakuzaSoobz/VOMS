@@ -1,6 +1,10 @@
 ﻿Imports System.Data.SqlClient
 
 Public Class SupplierManager
+
+    Dim InitialSupplierEmail As String = ""
+    Dim InitialRepEmail As String = ""
+
     Private Sub LogOutButton_Click(sender As Object, e As EventArgs) Handles LogOutButton.Click
         Dim ret As Integer = MsgBox("Are you sure you want to sign out?", vbYesNo, "Sign Out?")
 
@@ -30,6 +34,8 @@ Public Class SupplierManager
         Finally
             Try
                 Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier) 'refreshes records'
+                InitialSupplierEmail = SupplierEmailTextBox.Text
+                InitialRepEmail = RepEmailTextBox.Text
             Catch ex As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch ex As Exception
@@ -57,6 +63,8 @@ Public Class SupplierManager
 
         Try
             SupplierBindingSource.MoveNext()
+            InitialSupplierEmail = SupplierEmailTextBox.Text
+            InitialRepEmail = RepEmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
             Try
@@ -80,6 +88,8 @@ Public Class SupplierManager
 
         Try
             SupplierBindingSource.MovePrevious()
+            InitialSupplierEmail = SupplierEmailTextBox.Text
+            InitialRepEmail = RepEmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
             Try
@@ -104,7 +114,8 @@ Public Class SupplierManager
         PreviousButton.Enabled = True
         Try
             SupplierBindingSource.MoveLast()
-
+            InitialSupplierEmail = SupplierEmailTextBox.Text
+            InitialRepEmail = RepEmailTextBox.Text
         Catch ex As NoNullAllowedException
             MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
             Try
@@ -212,19 +223,28 @@ Public Class SupplierManager
 
                 'Above is a full check for blanks , contact num code is tweaked abit for masking'
 
+                'check supplier valid email
             ElseIf Not (ValidateEmail(SupplierEmailTextBox.Text)) Then
-                MsgBox("Supplier Email format is invalid! , Follow this format eg.starplatinum@example.com", vbOK)
+                MsgBox("Supplier Email format is invalid! , Follow this format eg.starplatinum@domain.com", vbOK)
                 SupplierEmailTextBox.ResetText() 'Email validator which calls function'
+            ElseIf ((checkUniqueEmail(SupplierEmailTextBox.Text) = False) And Not (InitialSupplierEmail = SupplierEmailTextBox.Text)) Then
+                MsgBox("This email already exists in the database! , try a different one!", vbOK)
+                SupplierEmailTextBox.Text = InitialSupplierEmail 'Email validator which calls function'
+
+                'check valid rep email
             ElseIf Not (ValidateEmail(RepEmailTextBox.Text)) Then
-                MsgBox("Rep Email format is invalid! , Follow this format eg.starplatinum@example.com", vbOK)
-                RepEmailTextBox.ResetText() 'Email validator which calls function'
+                MsgBox("The Representitive's Email format is invalid! , Follow this format eg.starplatinum@domain.com", vbOK)
+                SupplierEmailTextBox.ResetText() 'Email validator which calls function'
+            ElseIf ((checkUniqueEmail(RepEmailTextBox.Text) = False) And Not (InitialRepEmail = RepEmailTextBox.Text)) Then
+                MsgBox("This email already exists in the database! , try a different one!", vbOK)
+                RepEmailTextBox.Text = InitialRepEmail 'Email validator which calls function'
+
             ElseIf (PasswordTextBox.Text.Length > 10 Or PasswordTextBox.Text.Length < 0) Then
                 MsgBox("Password length invalid!", vbOK)
                 PasswordTextBox.ResetText() 'Password length checker'
             ElseIf Not (ActiveStatusComboBox.Text = "F" Or ActiveStatusComboBox.Text = "T") Then
                 MsgBox("Active Status field must be either T or F!", vbOK)
                 ActiveStatusComboBox.ResetText() 'Active Status checker'
-
 
             Else
                 CompanyNameTextBox.Text = CompanyNameTextBox.Text.Trim
@@ -260,11 +280,21 @@ Public Class SupplierManager
                 End Try
             End If
         Catch ex As FormatException
-        MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
+            MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
-        MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
+
+    Public Function checkUniqueEmail(ByVal EmailAddress)
+
+        If (EmployeeTableAdapter.GetUniqueEmailQuery(EmailAddress) > 0) Or (CustomerTableAdapter.CheckUniqueEmailQuery(EmailAddress) > 0) Or (SupplierTableAdapter.CheckUniqueSupplierEmailQuery(EmailAddress, EmailAddress) > 0) Then
+            Return False
+        Else
+            Return True
+        End If
+
+    End Function
 
     Private Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
         Try
@@ -326,6 +356,9 @@ Public Class SupplierManager
             UpdateButton.Enabled = True
             ButtonRefresh.Enabled = True
             ArchiveButton.Enabled = True
+
+            InitialSupplierEmail = SupplierEmailTextBox.Text
+            InitialRepEmail = RepEmailTextBox.Text
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException

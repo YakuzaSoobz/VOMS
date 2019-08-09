@@ -39,8 +39,6 @@ Partial Class EmployeeManager
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.EmployeeIDTextBox = New System.Windows.Forms.TextBox()
         Me.GenderComboBox = New System.Windows.Forms.ComboBox()
@@ -83,15 +81,19 @@ Partial Class EmployeeManager
         Me.CreateButton = New System.Windows.Forms.Button()
         Me.UpdateButton = New System.Windows.Forms.Button()
         Me.ArchiveButton = New System.Windows.Forms.Button()
-        Me.EmployeeTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.EmployeeTableAdapter()
-        Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.EmployeeManagerTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
+        Me.EmployeeTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.EmployeeTableAdapter()
+        Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
+        Me.CustomerTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustomerTableAdapter()
+        Me.SupplierTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SupplierTableAdapter()
         Me.NavigationGroupBox.SuspendLayout()
         Me.DetailsGroupBox.SuspendLayout()
+        Me.OptionsGroupBox1.SuspendLayout()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.OptionsGroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'NavigationGroupBox
@@ -352,16 +354,6 @@ Partial Class EmployeeManager
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.Size = New System.Drawing.Size(156, 20)
         Me.PasswordTextBox.TabIndex = 79
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Group16DataSet
-        '
-        'Group16DataSet
-        '
-        Me.Group16DataSet.DataSetName = "group16DataSet"
-        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label19
         '
@@ -815,6 +807,31 @@ Partial Class EmployeeManager
         Me.ArchiveButton.Text = "ARCHIVE EMPLOYEE"
         Me.ArchiveButton.UseVisualStyleBackColor = False
         '
+        'HelpBtn
+        '
+        Me.HelpBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.HelpBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.HelpBtn.FlatAppearance.BorderSize = 3
+        Me.HelpBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.HelpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.HelpBtn.Location = New System.Drawing.Point(370, 591)
+        Me.HelpBtn.Name = "HelpBtn"
+        Me.HelpBtn.Size = New System.Drawing.Size(79, 36)
+        Me.HelpBtn.TabIndex = 133
+        Me.HelpBtn.Text = "HELP"
+        Me.HelpBtn.UseVisualStyleBackColor = False
+        '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Group16DataSet
+        '
+        'Group16DataSet
+        '
+        Me.Group16DataSet.DataSetName = "group16DataSet"
+        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
         'EmployeeTableAdapter
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
@@ -832,20 +849,13 @@ Partial Class EmployeeManager
         Me.TableAdapterManager.SupplierTableAdapter = Nothing
         Me.TableAdapterManager.UpdateOrder = M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
-        'HelpBtn
+        'CustomerTableAdapter
         '
-        Me.HelpBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.HelpBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.HelpBtn.FlatAppearance.BorderSize = 3
-        Me.HelpBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.HelpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.HelpBtn.Location = New System.Drawing.Point(370, 591)
-        Me.HelpBtn.Name = "HelpBtn"
-        Me.HelpBtn.Size = New System.Drawing.Size(79, 36)
-        Me.HelpBtn.TabIndex = 133
-        Me.HelpBtn.Text = "HELP"
-        Me.HelpBtn.UseVisualStyleBackColor = False
+        Me.CustomerTableAdapter.ClearBeforeFill = True
+        '
+        'SupplierTableAdapter
+        '
+        Me.SupplierTableAdapter.ClearBeforeFill = True
         '
         'EmployeeManager
         '
@@ -869,9 +879,9 @@ Partial Class EmployeeManager
         Me.NavigationGroupBox.PerformLayout()
         Me.DetailsGroupBox.ResumeLayout(False)
         Me.DetailsGroupBox.PerformLayout()
+        Me.OptionsGroupBox1.ResumeLayout(False)
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.OptionsGroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
@@ -939,4 +949,6 @@ Partial Class EmployeeManager
     Friend WithEvents EmployeeManagerTip As ToolTip
     Friend WithEvents Label22 As Label
     Friend WithEvents Label23 As Label
+    Friend WithEvents CustomerTableAdapter As group16DataSetTableAdapters.CustomerTableAdapter
+    Friend WithEvents SupplierTableAdapter As group16DataSetTableAdapters.SupplierTableAdapter
 End Class

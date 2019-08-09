@@ -127,9 +127,9 @@ Partial Class SignIn
         Me.Label1.Location = New System.Drawing.Point(66, 32)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(70, 13)
+        Me.Label1.Size = New System.Drawing.Size(84, 13)
         Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Employee ID:"
+        Me.Label1.Text = "Employee Email:"
         '
         'EmployeeIDTextbox
         '

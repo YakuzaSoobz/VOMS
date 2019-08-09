@@ -1,6 +1,7 @@
 ﻿Imports System.ComponentModel
 Imports System.Data.SqlClient
 
+
 Public Class LineItemDetailsPopUp
 
     Dim ProductID As Integer
@@ -11,7 +12,7 @@ Public Class LineItemDetailsPopUp
     Dim SaleInclVat As Decimal
     Dim SaleExclVat As Decimal
     Dim Quantity As Integer
-    Shared VATPercentage As Decimal = 0.15
+    'Shared VATPercentage As Decimal = 0.14
     Dim SetMarkupPercentage As Decimal = 20
 
     Private Sub LineItemDetailsPopUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -26,7 +27,8 @@ Public Class LineItemDetailsPopUp
                 MarkupComboBox.SelectedItem = "20"
                 DiscountComboBox.Text = 0
                 QuantityComboBox.SelectedItem = "1"
-                VATTextBox.Text = Int(VATPercentage * 100)
+                'Int(VATPercentage * 100)
+                Me.VATTextBox.Text = My.Settings.MyVAT
 
             Catch ex As SqlException
                 MsgBox("Cannot load form!", vbExclamation, "Network Error!")
@@ -139,7 +141,7 @@ Public Class LineItemDetailsPopUp
                         Dim MarkupAmount As Decimal = (MarkupPercentage / 100) * CostPrice
                         Dim DiscountAmount As Decimal = (CostPrice + MarkupAmount) * (DiscountPercentage / 100)
                         SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))
-                        SaleInclVat = SaleExclVat + (SaleExclVat * VATPercentage)
+                        SaleInclVat = SaleExclVat + (SaleExclVat * (My.Settings.MyVAT / 100))
 
                         SaleExclVATTextBox.Text = FormatCurrency(SaleExclVat)
                         SaleInclVATTextBox.Text = FormatCurrency(SaleInclVat)
@@ -296,26 +298,24 @@ Public Class LineItemDetailsPopUp
     Private Sub VATButton_Click(sender As Object, e As EventArgs) Handles VATButton.Click
 
         Try
-
             If String.IsNullOrWhiteSpace(VATTextBox.Text) Then ' is blank
 
                 MsgBox("The % VAT is an integer only from 0% - 100%! It cannot be left blank", vbOK, "Unable to set new % VAT")
-                VATTextBox.Text = Int(VATPercentage * 100)
+                VATTextBox.Text = My.Settings.MyVAT
             ElseIf Not (IsNumeric(VATTextBox.Text)) Then ' is not numeric
 
                 MsgBox("The % VAT is an integer only from 0% - 100%!", vbOK, "Unable to set new % VAT")
-                VATTextBox.Text = Int(VATPercentage * 100)
-            ElseIf ((Integer.Parse(VATTextBox.Text) < 0) Or (Integer.Parse(VATTextBox.Text) > 100)) Then ' is <0 and >1000
+                VATTextBox.Text = My.Settings.MyVAT
+            ElseIf ((Decimal.Parse(VATTextBox.Text) < 0) Or (Decimal.Parse(VATTextBox.Text) > 100)) Then ' is <0 and >1000
 
                 MsgBox("The % VAT is an integer only from 0% - 100%!", vbOK, "Unable to set new % VAT")
-                VATTextBox.Text = Int(VATPercentage * 100)
-            ElseIf Not ((Decimal.Parse(VATTextBox.Text)) = (Int(Decimal.Parse(VATTextBox.Text)))) Then ' check if it's decimal
-                MsgBox("The % VAT is an integer only from 0% - 100%!", vbOK, "Unable to set new % VAT")
-                VATTextBox.Text = Int(VATPercentage * 100)
+                VATTextBox.Text = My.Settings.MyVAT
+
             Else 'if everything is valid
-                VATPercentage = Integer.Parse(VATTextBox.Text) / 100
-                MsgBox("The % VAT has been changed to" & Int(VATPercentage * 100) & "% !", vbOK, "% VAT changed!")
-                VATTextBox.Text = Int(VATPercentage * 100)
+                My.Settings.MyVAT = VATTextBox.Text
+                My.Settings.Save()
+                MsgBox("The % VAT has been changed to" & (My.Settings.MyVAT) & "% !", vbOK, "% VAT changed!")
+
             End If
         Catch ex As SqlException
             MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")

@@ -84,6 +84,8 @@ Partial Class SupplierManager
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.SupplierManagerTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.CustomerTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustomerTableAdapter()
+        Me.EmployeeTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.EmployeeTableAdapter()
         Me.OptionsGroupBox.SuspendLayout()
         Me.NavigationGroupBox.SuspendLayout()
         Me.AdminLevelGroupBox.SuspendLayout()
@@ -828,6 +830,14 @@ Partial Class SupplierManager
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
         '
+        'CustomerTableAdapter
+        '
+        Me.CustomerTableAdapter.ClearBeforeFill = True
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
         'SupplierManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -921,4 +931,6 @@ Partial Class SupplierManager
     Friend WithEvents Label4 As Label
     Friend WithEvents HelpBtn As Button
     Friend WithEvents SupplierManagerTip As ToolTip
+    Friend WithEvents CustomerTableAdapter As group16DataSetTableAdapters.CustomerTableAdapter
+    Friend WithEvents EmployeeTableAdapter As group16DataSetTableAdapters.EmployeeTableAdapter
 End Class

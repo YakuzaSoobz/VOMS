@@ -24,7 +24,6 @@ Public Class SignIn
 
                     Me.Hide()
 
-
                 Else
                     MessageBox.Show("Welcome " & EmployeeIDTextbox.Text & " ! You are logged in as an Employee.")
 
@@ -34,15 +33,12 @@ Public Class SignIn
                     Me.Hide()
                 End If
             Else
-                MessageBox.Show("Invalid Details entered, please try again.")
-
-
+                MsgBox("Invalid Details entered, please try again!", MsgBoxStyle.Exclamation)
             End If
         Catch ex As SqlException
             MessageBox.Show("Oops! Connection to the server has failed.")
         Catch ex As Exception
             MessageBox.Show("Oops! Something went wrong.")
-
         End Try
 
     End Sub
