@@ -13,5 +13,6 @@
         Me.Supplier_QuoteTableAdapter.Fill(Me.Group16DataSet.Supplier_Quote)
 
         totalSupplierCostPerSupplier1.SetDataSource(Group16DataSet)
+        'ignore'
     End Sub
 End Class

@@ -14,5 +14,6 @@
 
 
         totalSalesPerSuburb1.SetDataSource(Group16DataSet)
+        'ignore'
     End Sub
 End Class

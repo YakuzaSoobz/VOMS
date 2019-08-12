@@ -48,4 +48,9 @@
             ReportDesc.Text = "placeholder5"
         End If
     End Sub
+
+    Private Sub ReportMenu_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        'ignore'
+    End Sub
 End Class
