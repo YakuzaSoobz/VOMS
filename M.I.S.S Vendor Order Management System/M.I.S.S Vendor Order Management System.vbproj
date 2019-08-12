@@ -123,6 +123,12 @@
     <Compile Include="ProductInfoPopUp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="ReportMenu.Designer.vb">
+      <DependentUpon>ReportMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ReportMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TotalProductSales.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -134,6 +140,30 @@
     </Compile>
     <Compile Include="TotalProductSalesForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TotalSalesPerSuburb.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotalSalesPerSuburb.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TotalSalesPerSuburbForm.Designer.vb">
+      <DependentUpon>TotalSalesPerSuburbForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TotalSalesPerSuburbForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TotalSupplierCostPerSupplier.Designer.vb">
+      <DependentUpon>TotalSupplierCostPerSupplier.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TotalSupplierCostPerSupplier.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TotalSupplierCostPerSupplier1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotalSupplierCostPerSupplier.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="TotalValueOfSalesPerItemForSelectMonth.vb">
       <AutoGen>True</AutoGen>
@@ -310,12 +340,29 @@
     <EmbeddedResource Include="ProductInfoPopUp.resx">
       <DependentUpon>ProductInfoPopUp.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReportMenu.resx">
+      <DependentUpon>ReportMenu.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TotalProductSales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TotalProductSales.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TotalProductSalesForm.resx">
       <DependentUpon>TotalProductSalesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalSalesPerSuburb.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TotalSalesPerSuburb.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalSalesPerSuburbForm.resx">
+      <DependentUpon>TotalSalesPerSuburbForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalSupplierCostPerSupplier.resx">
+      <DependentUpon>TotalSupplierCostPerSupplier.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalSupplierCostPerSupplier.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TotalSupplierCostPerSupplier1.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="TotalValueOfSalesPerItemForSelectMonth.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
