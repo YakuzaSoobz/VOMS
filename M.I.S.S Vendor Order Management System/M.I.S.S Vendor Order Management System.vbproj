@@ -81,6 +81,7 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+
     <Compile Include="AmountOfProductsSoldMonthlyPastYear.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -99,6 +100,20 @@
       <DependentUpon>AmountOfProductsSoldPerEmployeeLast12MonthsClass.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+
+    <Compile Include="AcceptanceTimeReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AcceptanceTimeReport.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AcceptanceTimeReportForm.Designer.vb">
+      <DependentUpon>AcceptanceTimeReportForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AcceptanceTimeReportForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+
     <Compile Include="CustomerInfoPopUp.Designer.vb">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
     </Compile>
@@ -111,16 +126,53 @@
     <Compile Include="EmployeeInfoPopUp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="EmployeeSalesPerProduct.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EmployeeSalesPerProduct.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="EmployeeSalesPerProductForm.Designer.vb">
+      <DependentUpon>EmployeeSalesPerProductForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="EmployeeSalesPerProductForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="ProductInfoPopUp.Designer.vb">
       <DependentUpon>ProductInfoPopUp.vb</DependentUpon>
     </Compile>
     <Compile Include="ProductInfoPopUp.vb">
       <SubType>Form</SubType>
     </Compile>
+
     <Compile Include="ProductSoldPerMonthReportForm.Designer.vb">
       <DependentUpon>ProductSoldPerMonthReportForm.vb</DependentUpon>
     </Compile>
     <Compile Include="ProductSoldPerMonthReportForm.vb">
+
+    <Compile Include="TotalProductSales.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotalProductSales.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TotalProductSalesForm.Designer.vb">
+      <DependentUpon>TotalProductSalesForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TotalProductSalesForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TotalValueOfSalesPerItemForSelectMonth.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TotalValueOfSalesPerItemForSelectMonth.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="TotalValueOfSalesPerItemForSelectMonthForm.Designer.vb">
+      <DependentUpon>TotalValueOfSalesPerItemForSelectMonthForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="TotalValueOfSalesPerItemForSelectMonthForm.vb">
+
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewCustomerQuotePopUp.Designer.vb">
@@ -263,6 +315,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+
     <EmbeddedResource Include="AmountOfProductsSoldMonthlyPastYear.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AmountOfProductsSoldMonthlyPastYear.vb</LastGenOutput>
@@ -273,6 +326,14 @@
     <EmbeddedResource Include="AmountOfProductsSoldPerEmployeeLast12MonthsClass.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AmountOfProductsSoldPerEmployeeLast12MonthsClass.vb</LastGenOutput>
+
+    <EmbeddedResource Include="AcceptanceTimeReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AcceptanceTimeReport.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AcceptanceTimeReportForm.resx">
+      <DependentUpon>AcceptanceTimeReportForm.vb</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerInfoPopUp.resx">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
@@ -280,11 +341,34 @@
     <EmbeddedResource Include="EmployeeInfoPopUp.resx">
       <DependentUpon>EmployeeInfoPopUp.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSalesPerProduct.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>EmployeeSalesPerProduct.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EmployeeSalesPerProductForm.resx">
+      <DependentUpon>EmployeeSalesPerProductForm.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="ProductInfoPopUp.resx">
       <DependentUpon>ProductInfoPopUp.vb</DependentUpon>
     </EmbeddedResource>
+
     <EmbeddedResource Include="ProductSoldPerMonthReportForm.resx">
       <DependentUpon>ProductSoldPerMonthReportForm.vb</DependentUpon>
+
+    <EmbeddedResource Include="TotalProductSales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TotalProductSales.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalProductSalesForm.resx">
+      <DependentUpon>TotalProductSalesForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalValueOfSalesPerItemForSelectMonth.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TotalValueOfSalesPerItemForSelectMonth.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TotalValueOfSalesPerItemForSelectMonthForm.resx">
+      <DependentUpon>TotalValueOfSalesPerItemForSelectMonthForm.vb</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCustomerQuotePopUp.resx">
       <DependentUpon>ViewCustomerQuotePopUp.vb</DependentUpon>
