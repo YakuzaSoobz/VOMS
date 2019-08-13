@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<OBJECT type="text/site properties">
+	<param name="ImageType" value="Folder">
+</OBJECT>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="WhatIsVOMSHelp">
+		<param name="Local" value="VOMS\M.I.S.S Vendor Order Management System\HelpSystem\WhatIsVomsHelp.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="GeneralManagerHelp">
+		<param name="Local" value="VOMS\M.I.S.S Vendor Order Management System\HelpSystem\GeneralManagerHelp.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="CustomerQuoteManager">
+		<param name="Local" value="VOMS\M.I.S.S Vendor Order Management System\HelpSystem\CustomerQuoteManagerHelp.html">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="SupplierQuoteManagerHelp">
+		<param name="Local" value="VOMS\M.I.S.S Vendor Order Management System\HelpSystem\SupplierQuoteManagerHelp.html">
+		</OBJECT>
+</UL>
+</BODY></HTML>

@@ -230,10 +230,10 @@ Public Class CustomerManager
 
         Try
             If (SignIn.ManagerStatus = True) And (SignIn.EmployeeStatus = False) And (CreateOrEditCustomerQuote.CreateCustomerStatus = False) Then
-                ManagerHomeMenu.Show()
+                ManagerHomeMenuRevised.Show()
                 Me.Close()
             ElseIf (SignIn.ManagerStatus = False) And (SignIn.EmployeeStatus = True) And (CreateOrEditCustomerQuote.CreateCustomerStatus = False) Then
-                EmployeeHomeMenu.Show()
+                EmployeeHomeMenuRevised.Show()
                 Me.Close()
             ElseIf (SignIn.ManagerStatus = False) And (SignIn.EmployeeStatus = False) And (CreateOrEditCustomerQuote.CreateCustomerStatus = True) Then
                 CreateOrEditCustomerQuote.CreateCustomerStatus = False
@@ -250,7 +250,8 @@ Public Class CustomerManager
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        HelpView.Show()
+        'HelpView.Show()
+        Help.ShowHelp(Me, HelpProvider1.HelpNamespace)
     End Sub
 
 

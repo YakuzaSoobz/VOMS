@@ -285,10 +285,10 @@ Public Class EmployeeManager
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
         If (SignIn.ManagerStatus = True) And (SignIn.EmployeeStatus = False) And (CreateOrEditCustomerQuote.CreateCustomerStatus = False) Then
-            ManagerHomeMenu.Show()
+            ManagerHomeMenuRevised.Show()
             Me.Close()
         ElseIf (SignIn.ManagerStatus = False) And (SignIn.EmployeeStatus = True) And (CreateOrEditCustomerQuote.CreateCustomerStatus = False) Then
-            EmployeeHomeMenu.Show()
+            EmployeeHomeMenuRevised.Show()
             Me.Close()
         End If
     End Sub

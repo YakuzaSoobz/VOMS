@@ -355,6 +355,12 @@
   <ItemGroup>
     <None Include="Resources\Normalisers42 Logo.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="HelpSystem\CustomerQuoteManagerHelp.html" />
+    <Content Include="HelpSystem\GeneralManagerHelp.html" />
+    <Content Include="HelpSystem\SupplierQuoteManagerHelp.html" />
+    <Content Include="HelpSystem\WhatIsVomsHelp.html" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

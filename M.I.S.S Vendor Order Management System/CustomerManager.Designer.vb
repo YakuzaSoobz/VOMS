@@ -79,6 +79,8 @@ Partial Class CustomerManager
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.CustomerManagerTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.HelpProvider2 = New System.Windows.Forms.HelpProvider()
         Me.OptionsGroupBox1.SuspendLayout()
         Me.NavigationGroupBox.SuspendLayout()
         Me.DetailsGroupBox.SuspendLayout()
@@ -734,6 +736,14 @@ Partial Class CustomerManager
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
         '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS Help Files.chm"
+        '
+        'HelpProvider2
+        '
+        Me.HelpProvider2.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS Help Files.chm"
+        '
         'CustomerManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -819,4 +829,6 @@ Partial Class CustomerManager
     Friend WithEvents CustomerManagerTip As ToolTip
     Friend WithEvents Label15 As Label
     Friend WithEvents Label16 As Label
+    Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents HelpProvider2 As HelpProvider
 End Class

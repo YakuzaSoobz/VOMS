@@ -175,10 +175,10 @@ Public Class SupplierQuoteManager
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
         If (SignIn.ManagerStatus = True) And (SignIn.EmployeeStatus = False) And (CreateOrEditCustomerQuote.CreateCustomerStatus = False) Then
-            ManagerHomeMenu.Show()
+            ManagerHomeMenuRevised.Show()
             Me.Close()
         ElseIf (SignIn.ManagerStatus = False) And (SignIn.EmployeeStatus = True) And (CreateOrEditCustomerQuote.CreateCustomerStatus = False) Then
-            EmployeeHomeMenu.Show()
+            EmployeeHomeMenuRevised.Show()
             Me.Close()
         End If
     End Sub
@@ -211,7 +211,8 @@ Public Class SupplierQuoteManager
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        HelpView.Show()
+        'HelpView.Show()
+        Help.ShowHelp(Me, HelpProvider1.HelpNamespace)
     End Sub
 
     Private Sub SearchButton_MouseHover(sender As Object, e As EventArgs) Handles SearchButton.MouseHover

@@ -20,7 +20,7 @@ Public Class SignIn
                     MessageBox.Show("Welcome, " & EmployeeIDTextbox.Text & "! You are logged in as a Manager.")
                     ManagerStatus = True
                     EmployeeStatus = False
-                    ManagerHomeMenu.Show()
+                    ManagerHomeMenuRevised.Show()
 
                     Me.Hide()
 
@@ -30,7 +30,7 @@ Public Class SignIn
 
                     EmployeeStatus = True
                     ManagerStatus = False
-                    EmployeeHomeMenu.Show()
+                    EmployeeHomeMenuRevised.Show()
                     Me.Hide()
                 End If
             Else
@@ -67,5 +67,9 @@ Public Class SignIn
         Else
             PasswordTextBox.UseSystemPasswordChar = True
         End If
+    End Sub
+
+    Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
+        Help.ShowHelp(Me, HelpProvider1.HelpNamespace)
     End Sub
 End Class

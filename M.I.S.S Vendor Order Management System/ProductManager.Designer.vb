@@ -64,6 +64,7 @@ Partial Class ProductManager
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.ProductManagerTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.OptionsGroupBox1.SuspendLayout()
         Me.NavigationGroupBox.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -564,6 +565,10 @@ Partial Class ProductManager
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
         '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS Help Files.chm"
+        '
         'ProductManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -637,4 +642,5 @@ Partial Class ProductManager
     Friend WithEvents ProductBrandDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProductDescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProductActiveStatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

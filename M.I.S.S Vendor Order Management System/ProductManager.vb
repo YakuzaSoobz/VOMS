@@ -236,11 +236,11 @@ Public Class ProductManager
 
         Try
             If (SignIn.ManagerStatus = True) And (SignIn.EmployeeStatus = False) And (SupplierQuoteLineItemManager.CreateProductStatus = False) Then
-                ManagerHomeMenu.Show()
+                ManagerHomeMenuRevised.Show()
                 Me.Close()
 
             ElseIf (SignIn.ManagerStatus = False) And (SignIn.EmployeeStatus = True) And (CreateOrEditCustomerQuote.CreateCustomerStatus = False) Then
-                EmployeeHomeMenu.Show()
+                EmployeeHomeMenuRevised.Show()
                 Me.Close()
 
             ElseIf (SignIn.ManagerStatus = False) And (SignIn.EmployeeStatus = False) And (SupplierQuoteLineItemManager.CreateProductStatus = True) Then
@@ -258,7 +258,8 @@ Public Class ProductManager
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        HelpView.Show()
+        'HelpView.Show()
+        Help.ShowHelp(Me, HelpProvider1.HelpNamespace)
     End Sub
 
     Private Sub SearchButton_MouseHover(sender As Object, e As EventArgs) Handles SearchButton.MouseHover

@@ -76,6 +76,8 @@ Partial Class SupplierQuoteManager
         Me.SupplierQuoteJoinSupplierTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SupplierQuoteJoinSupplierTableAdapter()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.HelpProvider2 = New System.Windows.Forms.HelpProvider()
         Me.NavigationGroupBox.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -667,6 +669,10 @@ Partial Class SupplierQuoteManager
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
         '
+        'HelpProvider2
+        '
+        Me.HelpProvider2.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS Help Files.chm"
+        '
         'SupplierQuoteManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -759,4 +765,6 @@ Partial Class SupplierQuoteManager
     Friend WithEvents Label4 As Label
     Friend WithEvents HelpBtn As Button
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents HelpProvider2 As HelpProvider
 End Class
