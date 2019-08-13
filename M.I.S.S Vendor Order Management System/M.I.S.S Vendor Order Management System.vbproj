@@ -81,6 +81,26 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+
+    <Compile Include="AmountOfProductsSoldMonthlyPastYear.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmountOfProductsSoldMonthlyPastYear.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AmountOfProductsSoldPerEmployeeForLastYear.Designer.vb">
+      <DependentUpon>AmountOfProductsSoldPerEmployeeForLastYear.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AmountOfProductsSoldPerEmployeeForLastYear.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmountOfProductsSoldPerEmployeeLast12MonthsClass.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmountOfProductsSoldPerEmployeeLast12MonthsClass.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+
     <Compile Include="AcceptanceTimeReport.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -93,6 +113,7 @@
     <Compile Include="AcceptanceTimeReportForm.vb">
       <SubType>Form</SubType>
     </Compile>
+
     <Compile Include="CustomerInfoPopUp.Designer.vb">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
     </Compile>
@@ -123,6 +144,12 @@
     <Compile Include="ProductInfoPopUp.vb">
       <SubType>Form</SubType>
     </Compile>
+
+    <Compile Include="ProductSoldPerMonthReportForm.Designer.vb">
+      <DependentUpon>ProductSoldPerMonthReportForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSoldPerMonthReportForm.vb">
+
     <Compile Include="TotalProductSales.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -145,6 +172,7 @@
       <DependentUpon>TotalValueOfSalesPerItemForSelectMonthForm.vb</DependentUpon>
     </Compile>
     <Compile Include="TotalValueOfSalesPerItemForSelectMonthForm.vb">
+
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ViewCustomerQuotePopUp.Designer.vb">
@@ -287,12 +315,25 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+
+    <EmbeddedResource Include="AmountOfProductsSoldMonthlyPastYear.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AmountOfProductsSoldMonthlyPastYear.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmountOfProductsSoldPerEmployeeForLastYear.resx">
+      <DependentUpon>AmountOfProductsSoldPerEmployeeForLastYear.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmountOfProductsSoldPerEmployeeLast12MonthsClass.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AmountOfProductsSoldPerEmployeeLast12MonthsClass.vb</LastGenOutput>
+
     <EmbeddedResource Include="AcceptanceTimeReport.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AcceptanceTimeReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AcceptanceTimeReportForm.resx">
       <DependentUpon>AcceptanceTimeReportForm.vb</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerInfoPopUp.resx">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
@@ -310,6 +351,10 @@
     <EmbeddedResource Include="ProductInfoPopUp.resx">
       <DependentUpon>ProductInfoPopUp.vb</DependentUpon>
     </EmbeddedResource>
+
+    <EmbeddedResource Include="ProductSoldPerMonthReportForm.resx">
+      <DependentUpon>ProductSoldPerMonthReportForm.vb</DependentUpon>
+
     <EmbeddedResource Include="TotalProductSales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TotalProductSales.vb</LastGenOutput>
@@ -323,6 +368,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TotalValueOfSalesPerItemForSelectMonthForm.resx">
       <DependentUpon>TotalValueOfSalesPerItemForSelectMonthForm.vb</DependentUpon>
+
     </EmbeddedResource>
     <EmbeddedResource Include="ViewCustomerQuotePopUp.resx">
       <DependentUpon>ViewCustomerQuotePopUp.vb</DependentUpon>
