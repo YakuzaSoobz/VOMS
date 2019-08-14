@@ -93,6 +93,24 @@
     <Compile Include="AcceptanceTimeReportForm.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AmountOfProductSalesPerEmployeeLastYear.Designer.vb">
+      <DependentUpon>AmountOfProductSalesPerEmployeeLastYear.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AmountOfProductSalesPerEmployeeLastYear.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AmountOfProductsSoldPerEmployeeLastYearRPT.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmountOfProductsSoldPerEmployeeLastYearRPT.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="AmountOfProductsSoldPerMonthForLastYear.Designer.vb">
+      <DependentUpon>AmountOfProductsSoldPerMonthForLastYear.vb</DependentUpon>
+    </Compile>
+    <Compile Include="AmountOfProductsSoldPerMonthForLastYear.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="CustomerInfoPopUp.Designer.vb">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
     </Compile>
@@ -122,6 +140,12 @@
     </Compile>
     <Compile Include="ProductInfoPopUp.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuantityOfProductsSoldPerMonthForTheLastYear.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuantityOfProductsSoldPerMonthForTheLastYear.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportMenu.Designer.vb">
       <DependentUpon>ReportMenu.vb</DependentUpon>
@@ -324,6 +348,16 @@
     <EmbeddedResource Include="AcceptanceTimeReportForm.resx">
       <DependentUpon>AcceptanceTimeReportForm.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AmountOfProductSalesPerEmployeeLastYear.resx">
+      <DependentUpon>AmountOfProductSalesPerEmployeeLastYear.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmountOfProductsSoldPerEmployeeLastYearRPT.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AmountOfProductsSoldPerEmployeeLastYearRPT.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AmountOfProductsSoldPerMonthForLastYear.resx">
+      <DependentUpon>AmountOfProductsSoldPerMonthForLastYear.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="CustomerInfoPopUp.resx">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
     </EmbeddedResource>
@@ -339,6 +373,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="ProductInfoPopUp.resx">
       <DependentUpon>ProductInfoPopUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuantityOfProductsSoldPerMonthForTheLastYear.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QuantityOfProductsSoldPerMonthForTheLastYear.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportMenu.resx">
       <DependentUpon>ReportMenu.vb</DependentUpon>
