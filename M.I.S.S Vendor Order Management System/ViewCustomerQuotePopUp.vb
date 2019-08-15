@@ -23,6 +23,9 @@ Public Class ViewCustomerQuotePopUp
                 PrintQuoteButton.Text = "PRINT CUSTOMER INVOICE"
                 TypeLabel.Text = "Customer Invoice:"
             End If
+
+
+
         Catch exe As SqlException
             MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
         Catch exe As Exception

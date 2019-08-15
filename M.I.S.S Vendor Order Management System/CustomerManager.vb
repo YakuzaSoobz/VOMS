@@ -3,6 +3,7 @@
 Public Class CustomerManager
 
     Dim InitialEmail As String = ""
+    Dim CreateDefaultPassword = False
 
     Private Sub LogOutButton_Click(sender As Object, e As EventArgs) Handles LogOutButton.Click
         Dim ret As Integer = MsgBox("Are you sure you want to sign out?", vbYesNo, "Sign Out?")
@@ -50,6 +51,7 @@ Public Class CustomerManager
             ButtonRefresh.Enabled = False
             CreateButton.Enabled = True
             ArchiveButton.Enabled = False
+            CreateDefaultPassword = False
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
@@ -57,6 +59,8 @@ Public Class CustomerManager
 
     Private Sub CreateButton_Click(sender As Object, e As EventArgs) Handles CreateButton.Click
         Try
+
+
             Dim ret As Integer = MsgBox("Enter new values , then click the SAVE button!", vbYesNo, "Create new customer?")
 
             If ret = 6 Then 'if user clicks yes to update'
@@ -73,6 +77,7 @@ Public Class CustomerManager
                 Dim currentID As Integer = Integer.Parse(CustomerIDTextBox.Text)
                 CustomerBindingSource.AddNew()
                 CustomerIDTextBox.Text = currentID + 1
+                CreateDefaultPassword = True
             End If
         Catch ex As SqlException
             MsgBox("Cannot Add!", vbExclamation, "Cannot Add!")
@@ -95,6 +100,8 @@ Public Class CustomerManager
 
     Private Sub UpdateButton_Click(sender As Object, e As EventArgs) Handles UpdateButton.Click
         Try
+            CreateDefaultPassword = False
+
             If (FNameTextBox.Text = Nothing) Then
                 MsgBox("First Name field cannot be left blank!", vbOK)
                 FNameTextBox.ResetText()
@@ -485,5 +492,21 @@ Public Class CustomerManager
         Else
             ActiveStatusComboBox.BackColor = Color.White
         End If
+    End Sub
+
+    Private Sub DOBDateTimePicker_ValueChanged(sender As Object, e As EventArgs) Handles DOBDateTimePicker.ValueChanged
+        Try
+            If (CreateDefaultPassword = True) Then
+
+                Dim DefaultPassword As String
+                DefaultPassword = DOBDateTimePicker.Value.ToString("dd/MM/yyyy")
+                PasswordTextBox.Text = DefaultPassword
+                MsgBox(DefaultPassword)
+
+            End If
+                
+        Catch ex As Exception
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+        End Try
     End Sub
 End Class
