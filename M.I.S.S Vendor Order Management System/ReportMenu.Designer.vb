@@ -27,6 +27,7 @@ Partial Class ReportMenu
         Me.ReportComboBox = New System.Windows.Forms.ComboBox()
         Me.ReportDesc = New System.Windows.Forms.TextBox()
         Me.ViewReportButton = New System.Windows.Forms.Button()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.SuspendLayout()
         '
         'Label1
@@ -55,7 +56,7 @@ Partial Class ReportMenu
         '
         Me.ReportComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ReportComboBox.FormattingEnabled = True
-        Me.ReportComboBox.Items.AddRange(New Object() {"Acceptance Time Report", "Employee Sales per Product", "Total Product Sales", "Total Value of Sales per Item for Select Months", "Total Supplier Cost per Supplier", "Total Sales per Suburb"})
+        Me.ReportComboBox.Items.AddRange(New Object() {"Acceptance Time Report", "Employee Sales per Product", "Total Product Sales", "Total Value of Sales per Item for Select Months", "Total Supplier Cost per Supplier", "Total Sales per Suburb", "Amount of Products Sold per Employee Last Year", "Amount of Products Sold per Month for Last Year"})
         Me.ReportComboBox.Location = New System.Drawing.Point(59, 51)
         Me.ReportComboBox.Name = "ReportComboBox"
         Me.ReportComboBox.Size = New System.Drawing.Size(384, 21)
@@ -73,12 +74,22 @@ Partial Class ReportMenu
         'ViewReportButton
         '
         Me.ViewReportButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ViewReportButton.Location = New System.Drawing.Point(168, 289)
+        Me.ViewReportButton.Location = New System.Drawing.Point(176, 289)
         Me.ViewReportButton.Name = "ViewReportButton"
         Me.ViewReportButton.Size = New System.Drawing.Size(156, 41)
         Me.ViewReportButton.TabIndex = 4
         Me.ViewReportButton.Text = "View Report"
         Me.ViewReportButton.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.Location = New System.Drawing.Point(418, 296)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(76, 28)
+        Me.Button1.TabIndex = 5
+        Me.Button1.Text = "Back"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'ReportMenu
         '
@@ -86,12 +97,14 @@ Partial Class ReportMenu
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.ClientSize = New System.Drawing.Size(506, 342)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ViewReportButton)
         Me.Controls.Add(Me.ReportDesc)
         Me.Controls.Add(Me.ReportComboBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Name = "ReportMenu"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ReportMenu"
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -103,4 +116,5 @@ Partial Class ReportMenu
     Friend WithEvents ReportComboBox As ComboBox
     Friend WithEvents ReportDesc As TextBox
     Friend WithEvents ViewReportButton As Button
+    Friend WithEvents Button1 As Button
 End Class

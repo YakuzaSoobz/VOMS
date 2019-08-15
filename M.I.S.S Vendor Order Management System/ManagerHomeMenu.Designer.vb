@@ -38,6 +38,8 @@ Partial Class ManagerHomeMenu
         Me.ProductManagerButton = New System.Windows.Forms.Button()
         Me.CustomerManagerButton = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
         Me.MenuGroupBox.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -50,7 +52,7 @@ Partial Class ManagerHomeMenu
         Me.SignOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SignOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SignOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SignOutButton.Location = New System.Drawing.Point(441, 607)
+        Me.SignOutButton.Location = New System.Drawing.Point(441, 747)
         Me.SignOutButton.Margin = New System.Windows.Forms.Padding(2)
         Me.SignOutButton.Name = "SignOutButton"
         Me.SignOutButton.Size = New System.Drawing.Size(83, 36)
@@ -62,6 +64,8 @@ Partial Class ManagerHomeMenu
         '
         Me.MenuGroupBox.BackColor = System.Drawing.Color.Transparent
         Me.MenuGroupBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.MenuGroupBox.Controls.Add(Me.Label8)
+        Me.MenuGroupBox.Controls.Add(Me.Button1)
         Me.MenuGroupBox.Controls.Add(Me.Label7)
         Me.MenuGroupBox.Controls.Add(Me.Label6)
         Me.MenuGroupBox.Controls.Add(Me.Label5)
@@ -78,7 +82,7 @@ Partial Class ManagerHomeMenu
         Me.MenuGroupBox.Margin = New System.Windows.Forms.Padding(2)
         Me.MenuGroupBox.Name = "MenuGroupBox"
         Me.MenuGroupBox.Padding = New System.Windows.Forms.Padding(2)
-        Me.MenuGroupBox.Size = New System.Drawing.Size(498, 537)
+        Me.MenuGroupBox.Size = New System.Drawing.Size(498, 687)
         Me.MenuGroupBox.TabIndex = 43
         Me.MenuGroupBox.TabStop = False
         '
@@ -269,13 +273,33 @@ Partial Class ManagerHomeMenu
         Me.Label3.Text = "MANAGER HOME MENU"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(25, 525)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(445, 133)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "ReportMenuImage"
+        Me.Button1.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label8.Location = New System.Drawing.Point(186, 661)
+        Me.Label8.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(105, 18)
+        Me.Label8.TabIndex = 16
+        Me.Label8.Text = "Report Menu"
+        '
         'ManagerHomeMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(551, 665)
+        Me.ClientSize = New System.Drawing.Size(551, 794)
         Me.Controls.Add(Me.SignOutButton)
         Me.Controls.Add(Me.MenuGroupBox)
         Me.Controls.Add(Me.Label3)
@@ -305,4 +329,6 @@ Partial Class ManagerHomeMenu
     Friend WithEvents ProductManagerButton As Button
     Friend WithEvents CustomerManagerButton As Button
     Friend WithEvents Label3 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label8 As Label
 End Class
