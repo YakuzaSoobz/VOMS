@@ -32,6 +32,14 @@
 
             TotalSalesPerSuburbForm.Show()
         End If
+        If ReportComboBox.SelectedIndex = 6 Then
+
+            AmountOfProductSalesPerEmployeeLastYear.Show()
+        End If
+        If ReportComboBox.SelectedIndex = 7 Then
+
+            AmountOfProductsSoldPerMonthForLastYear.Show()
+        End If
     End Sub
 
     Private Sub ReportComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ReportComboBox.SelectedIndexChanged
@@ -53,5 +61,17 @@
         If ReportComboBox.SelectedIndex = 5 Then
             ReportDesc.Text = "placeholder5"
         End If
+        If ReportComboBox.SelectedIndex = 6 Then
+            ReportDesc.Text = "placeholder6"
+        End If
+        If ReportComboBox.SelectedIndex = 7 Then
+            ReportDesc.Text = "placeholder7"
+        End If
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Me.Close()
+        ManagerHomeMenu.Show()
+
     End Sub
 End Class
