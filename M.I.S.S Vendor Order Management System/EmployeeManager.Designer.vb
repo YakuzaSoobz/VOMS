@@ -39,6 +39,8 @@ Partial Class EmployeeManager
         Me.Label21 = New System.Windows.Forms.Label()
         Me.Label20 = New System.Windows.Forms.Label()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
         Me.Label19 = New System.Windows.Forms.Label()
         Me.EmployeeIDTextBox = New System.Windows.Forms.TextBox()
         Me.GenderComboBox = New System.Windows.Forms.ComboBox()
@@ -83,17 +85,15 @@ Partial Class EmployeeManager
         Me.ArchiveButton = New System.Windows.Forms.Button()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.EmployeeManagerTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
         Me.EmployeeTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.EmployeeTableAdapter()
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.CustomerTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustomerTableAdapter()
         Me.SupplierTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SupplierTableAdapter()
         Me.NavigationGroupBox.SuspendLayout()
         Me.DetailsGroupBox.SuspendLayout()
-        Me.OptionsGroupBox1.SuspendLayout()
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.OptionsGroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'NavigationGroupBox
@@ -352,8 +352,20 @@ Partial Class EmployeeManager
         Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.PasswordTextBox.MaxLength = 10
         Me.PasswordTextBox.Name = "PasswordTextBox"
+        Me.PasswordTextBox.ReadOnly = True
         Me.PasswordTextBox.Size = New System.Drawing.Size(156, 20)
         Me.PasswordTextBox.TabIndex = 79
+        Me.PasswordTextBox.UseSystemPasswordChar = True
+        '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Group16DataSet
+        '
+        'Group16DataSet
+        '
+        Me.Group16DataSet.DataSetName = "group16DataSet"
+        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label19
         '
@@ -822,16 +834,6 @@ Partial Class EmployeeManager
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
         '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Group16DataSet
-        '
-        'Group16DataSet
-        '
-        Me.Group16DataSet.DataSetName = "group16DataSet"
-        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'EmployeeTableAdapter
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
@@ -879,9 +881,9 @@ Partial Class EmployeeManager
         Me.NavigationGroupBox.PerformLayout()
         Me.DetailsGroupBox.ResumeLayout(False)
         Me.DetailsGroupBox.PerformLayout()
-        Me.OptionsGroupBox1.ResumeLayout(False)
         CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.OptionsGroupBox1.ResumeLayout(False)
         Me.ResumeLayout(False)
 
     End Sub
