@@ -273,6 +273,8 @@ Public Class ProductManager
                 SupplierQuoteLineItemManager.CreateProductStatus = False
                 SupplierQuoteLineItemManager.ProductTableAdapter.Fill(SupplierQuoteLineItemManager.Group16DataSet.Product)
                 Me.Close()
+            Else
+                Me.Close()
             End If
         Catch ex As SqlException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")

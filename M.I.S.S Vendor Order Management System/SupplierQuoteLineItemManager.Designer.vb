@@ -23,9 +23,9 @@ Partial Class SupplierQuoteLineItemManager
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -53,6 +53,7 @@ Partial Class SupplierQuoteLineItemManager
         Me.ProductTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.ProductTableAdapter()
         Me.BackButton = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
+        Me.RefreshButton = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.ProductDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,6 +67,7 @@ Partial Class SupplierQuoteLineItemManager
         '
         Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.GroupBox1.Controls.Add(Me.RefreshButton)
         Me.GroupBox1.Controls.Add(Me.Button1)
         Me.GroupBox1.Controls.Add(Me.Label4)
         Me.GroupBox1.Controls.Add(Me.ClearButton)
@@ -156,7 +158,7 @@ Partial Class SupplierQuoteLineItemManager
         Me.ProductDataGridView.DataSource = Me.ProductBindingSource
         Me.ProductDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
         Me.ProductDataGridView.Location = New System.Drawing.Point(3, 17)
-        Me.ProductDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ProductDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.ProductDataGridView.Name = "ProductDataGridView"
         Me.ProductDataGridView.ReadOnly = True
         Me.ProductDataGridView.Size = New System.Drawing.Size(1083, 225)
@@ -204,14 +206,14 @@ Partial Class SupplierQuoteLineItemManager
         '
         'AddLineItem
         '
-        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle1.NullValue = "ADD"
-        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.BlueViolet
-        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
-        Me.AddLineItem.DefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.NullValue = "ADD"
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.BlueViolet
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.Black
+        Me.AddLineItem.DefaultCellStyle = DataGridViewCellStyle7
         Me.AddLineItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddLineItem.HeaderText = "Add Item"
         Me.AddLineItem.Name = "AddLineItem"
@@ -289,14 +291,14 @@ Partial Class SupplierQuoteLineItemManager
         '
         'RemoveLineItem
         '
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.NullValue = "REMOVE"
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.Red
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
-        Me.RemoveLineItem.DefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.NullValue = "REMOVE"
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Red
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.Black
+        Me.RemoveLineItem.DefaultCellStyle = DataGridViewCellStyle8
         Me.RemoveLineItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RemoveLineItem.HeaderText = "Remove"
         Me.RemoveLineItem.Name = "RemoveLineItem"
@@ -307,14 +309,14 @@ Partial Class SupplierQuoteLineItemManager
         '
         'Edit
         '
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.NullValue = "EDIT"
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
-        Me.Edit.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(224, Byte), Integer), CType(CType(192, Byte), Integer))
+        DataGridViewCellStyle9.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle9.NullValue = "EDIT"
+        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.Black
+        Me.Edit.DefaultCellStyle = DataGridViewCellStyle9
         Me.Edit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Edit.HeaderText = "Edit"
         Me.Edit.Name = "Edit"
@@ -353,6 +355,22 @@ Partial Class SupplierQuoteLineItemManager
         Me.BackButton.Text = "BACK"
         Me.BackButton.UseVisualStyleBackColor = False
         '
+        'RefreshButton
+        '
+        Me.RefreshButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.RefreshButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.RefreshButton.FlatAppearance.BorderSize = 3
+        Me.RefreshButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.RefreshButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.RefreshButton.Location = New System.Drawing.Point(180, 598)
+        Me.RefreshButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.RefreshButton.Name = "RefreshButton"
+        Me.RefreshButton.Size = New System.Drawing.Size(156, 43)
+        Me.RefreshButton.TabIndex = 108
+        Me.RefreshButton.Text = "REFRESH"
+        Me.RefreshButton.UseVisualStyleBackColor = False
+        '
         'SupplierQuoteLineItemManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -364,7 +382,7 @@ Partial Class SupplierQuoteLineItemManager
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "SupplierQuoteLineItemManager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Supplier Quote Line Item Manager"
@@ -407,4 +425,5 @@ Partial Class SupplierQuoteLineItemManager
     Friend WithEvents ProductActiveStatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents AddLineItem As DataGridViewButtonColumn
     Friend WithEvents ToolTip1 As ToolTip
+    Friend WithEvents RefreshButton As Button
 End Class
