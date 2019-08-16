@@ -135,7 +135,7 @@ Public Class CustomerQuoteManager
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        Help.ShowHelp(Me, HelpProvider1.HelpNamespace)
+        Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
 
     End Sub
 

@@ -76,6 +76,7 @@ Partial Class SupplierQuoteManager
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.ToolTip1 = New System.Windows.Forms.ToolTip(Me.components)
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.HelpProvider2 = New System.Windows.Forms.HelpProvider()
         Me.NavigationGroupBox.SuspendLayout()
         Me.GroupBox5.SuspendLayout()
         Me.GroupBox3.SuspendLayout()
@@ -661,10 +662,15 @@ Partial Class SupplierQuoteManager
         '
         Me.HelpProvider1.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS\M.I.S.chm"
         '
+        'HelpProvider2
+        '
+        Me.HelpProvider2.HelpNamespace = "C:\Users\munis\Documents\GitHub Normalisers42\VOMS\VOMSHelpFinal.chm"
+        '
         'SupplierQuoteManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1560, 874)
@@ -754,4 +760,5 @@ Partial Class SupplierQuoteManager
     Friend WithEvents HelpBtn As Button
     Friend WithEvents ToolTip1 As ToolTip
     Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents HelpProvider2 As HelpProvider
 End Class

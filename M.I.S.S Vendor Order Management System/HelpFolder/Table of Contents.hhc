@@ -9,20 +9,20 @@
 </OBJECT>
 <UL>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="What is VOMS Help">
-		<param name="Local" value="..\HelpHTML\WhatIsVOMSHelp.html">
+		<param name="Name" value="What is VOMS?">
+		<param name="Local" value="M.I.S.S Vendor Order Management System\HelpFolder\WhatisVOMSHelpPage.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="General Manager Help">
-		<param name="Local" value="..\HelpHTML\GeneralManagerHelp.html">
+		<param name="Local" value="M.I.S.S Vendor Order Management System\HelpFolder\GeneralManagerHelpPage.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
 		<param name="Name" value="Customer Quote Manager Help">
-		<param name="Local" value="..\HelpHTML\CustomerQuoteManagerHelp.html">
+		<param name="Local" value="M.I.S.S Vendor Order Management System\HelpFolder\CustomerQuoteHelpPage.html">
 		</OBJECT>
 	<LI> <OBJECT type="text/sitemap">
-		<param name="Name" value="Supplier Quote Manager">
-		<param name="Local" value="..\HelpHTML\SupplierQuoteManagerHelp.html">
+		<param name="Name" value="Supplier Quote Manage Help">
+		<param name="Local" value="M.I.S.S Vendor Order Management System\HelpFolder\SupplierQuoteHelpPage.html">
 		</OBJECT>
 </UL>
 </BODY></HTML>

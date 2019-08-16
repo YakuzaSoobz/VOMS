@@ -509,14 +509,24 @@
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HelpHTML\CustomerQuoteManagerHelp.html" />
-    <Content Include="HelpHTML\GeneralManagerHelp.html" />
-    <Content Include="HelpHTML\SupplierQuoteManagerHelp.html" />
-    <Content Include="HelpHTML\WhatIsVOMSHelp.html" />
     <None Include="Resources\Sign out.png" />
     <None Include="Resources\purepng.com-eyeeyesorgans-of-the-visual-systemorganisms-visionoptical-systemlightfocuseslensclipart-1421526883251xkcin.png" />
     <None Include="Resources\info-sign.png" />
     <None Include="Resources\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="HelpFolder\CustomerQuoteHelpPage.html" />
+    <Content Include="HelpFolder\GeneralManagerHelpPage.html" />
+    <Content Include="HelpFolder\SupplierQuoteHelpPage.html" />
+    <Content Include="HelpFolder\WhatisVOMSHelpPage.html" />
+    <None Include="Pictures\1" />
+    <Content Include="Pictures\Employee Manager.JPG" />
+    <Content Include="Pictures\Supplier Manager.JPG" />
+    <Content Include="Pictures\Supplier Quote Manager.JPG" />
+    <Content Include="Resources\Customer Quote Manager.JPG" />
+    <Content Include="Resources\Employee Manager.JPG" />
+    <Content Include="Resources\Supplier Manager.JPG" />
+    <Content Include="Resources\Supplier Quote Manager.JPG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

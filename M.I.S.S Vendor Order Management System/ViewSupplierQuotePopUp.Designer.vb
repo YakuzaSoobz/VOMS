@@ -180,7 +180,7 @@ Partial Class ViewSupplierQuotePopUp
         Me.SuppLineItemJoinProductDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductIDDataGridViewTextBoxColumn, Me.DataGridViewTextBoxColumn1, Me.DataGridViewTextBoxColumn2, Me.DataGridViewTextBoxColumn3, Me.SuppLineItemCostPriceDataGridViewTextBoxColumn, Me.SuppLineItemQuantityDataGridViewTextBoxColumn})
         Me.SuppLineItemJoinProductDataGridView.DataSource = Me.SuppLineItemJoinProductBindingSource
         Me.SuppLineItemJoinProductDataGridView.Location = New System.Drawing.Point(41, 101)
-        Me.SuppLineItemJoinProductDataGridView.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.SuppLineItemJoinProductDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.SuppLineItemJoinProductDataGridView.Name = "SuppLineItemJoinProductDataGridView"
         Me.SuppLineItemJoinProductDataGridView.ReadOnly = True
         Me.SuppLineItemJoinProductDataGridView.Size = New System.Drawing.Size(651, 282)
@@ -298,7 +298,7 @@ Partial Class ViewSupplierQuotePopUp
         '
         Me.QuoteRichTextBox.Dock = System.Windows.Forms.DockStyle.Fill
         Me.QuoteRichTextBox.Location = New System.Drawing.Point(3, 17)
-        Me.QuoteRichTextBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.QuoteRichTextBox.Margin = New System.Windows.Forms.Padding(4)
         Me.QuoteRichTextBox.Name = "QuoteRichTextBox"
         Me.QuoteRichTextBox.Size = New System.Drawing.Size(722, 423)
         Me.QuoteRichTextBox.TabIndex = 0
@@ -370,6 +370,7 @@ Partial Class ViewSupplierQuotePopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(757, 562)
@@ -377,7 +378,7 @@ Partial Class ViewSupplierQuotePopUp
         Me.Controls.Add(Me.PrintQuoteButton)
         Me.Controls.Add(Me.NavigationGroupBox)
         Me.DoubleBuffered = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ViewSupplierQuotePopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "View Supplier Quote"

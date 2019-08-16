@@ -1,0 +1,23 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=VOMSHelpFinal.chm
+Contents file=M.I.S.S Vendor Order Management System\HelpFolder\Table of Contents.hhc
+Default Window=MISS VOMS Help
+Default topic=M.I.S.S Vendor Order Management System\HelpFolder\CustomerQuoteHelpPage.html
+Display compile progress=No
+Full-text search=Yes
+Index file=M.I.S.S Vendor Order Management System\HelpFolder\Index.hhk
+Language=0x1c09 English (South Africa)
+
+[WINDOWS]
+MISS VOMS Help=,"M.I.S.S Vendor Order Management System\HelpFolder\Table of Contents.hhc","M.I.S.S Vendor Order Management System\HelpFolder\Index.hhk","M.I.S.S Vendor Order Management System\HelpFolder\WhatisVOMSHelpPage.html","M.I.S.S Vendor Order Management System\HelpFolder\WhatisVOMSHelpPage.html",,,,,0x22520,,0x3846,[0,0,800,600],,,,,,,0
+
+
+[FILES]
+M.I.S.S Vendor Order Management System\HelpFolder\CustomerQuoteHelpPage.html
+M.I.S.S Vendor Order Management System\HelpFolder\GeneralManagerHelpPage.html
+M.I.S.S Vendor Order Management System\HelpFolder\SupplierQuoteHelpPage.html
+M.I.S.S Vendor Order Management System\HelpFolder\WhatisVOMSHelpPage.html
+
+[INFOTYPES]
+

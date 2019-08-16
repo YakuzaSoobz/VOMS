@@ -87,6 +87,7 @@ Partial Class SupplierManager
         Me.CustomerTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustomerTableAdapter()
         Me.EmployeeTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.EmployeeTableAdapter()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.HelpProvider2 = New System.Windows.Forms.HelpProvider()
         Me.OptionsGroupBox.SuspendLayout()
         Me.NavigationGroupBox.SuspendLayout()
         Me.AdminLevelGroupBox.SuspendLayout()
@@ -826,6 +827,10 @@ Partial Class SupplierManager
         '
         Me.HelpProvider1.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS\M.I.S.chm"
         '
+        'HelpProvider2
+        '
+        Me.HelpProvider2.HelpNamespace = "C:\Users\munis\Documents\GitHub Normalisers42\VOMS\VOMSHelpFinal.chm"
+        '
         'SupplierManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -923,4 +928,5 @@ Partial Class SupplierManager
     Friend WithEvents CustomerTableAdapter As group16DataSetTableAdapters.CustomerTableAdapter
     Friend WithEvents EmployeeTableAdapter As group16DataSetTableAdapters.EmployeeTableAdapter
     Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents HelpProvider2 As HelpProvider
 End Class

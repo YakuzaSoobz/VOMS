@@ -11,61 +11,69 @@
         If ReportComboBox.SelectedIndex = 0 Then
 
             AcceptanceTimeReportForm.Show()
+
         End If
         If ReportComboBox.SelectedIndex = 1 Then
 
             EmployeeSalesPerProductForm.Show()
+
         End If
         If ReportComboBox.SelectedIndex = 2 Then
 
             TotalProductSalesForm.Show()
+
         End If
         If ReportComboBox.SelectedIndex = 3 Then
 
             TotalValueOfSalesPerItemForSelectMonthForm.Show()
+
         End If
         If ReportComboBox.SelectedIndex = 4 Then
 
             TotalSupplierCostPerSupplierForm.Show()
+
         End If
         If ReportComboBox.SelectedIndex = 5 Then
 
             TotalSalesPerSuburbForm.Show()
+
         End If
         If ReportComboBox.SelectedIndex = 6 Then
 
             AmountOfProductSalesPerEmployeeLastYear.Show()
+
         End If
         If ReportComboBox.SelectedIndex = 7 Then
 
             AmountOfProductsSoldPerMonthForLastYear.Show()
+
         End If
     End Sub
 
     Private Sub ReportComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ReportComboBox.SelectedIndexChanged
         If ReportComboBox.SelectedIndex = 0 Then
-            ReportDesc.Text = "placeholder"
+            ReportDesc.Text = " How long it takes customers to accept a quote"
         End If
         If ReportComboBox.SelectedIndex = 1 Then
-            ReportDesc.Text = "placeholder1"
+            ReportDesc.Text = "How much employees have sold per product"
         End If
         If ReportComboBox.SelectedIndex = 2 Then
-            ReportDesc.Text = "placeholder2"
+            ReportDesc.Text = "Total Sales per product"
         End If
         If ReportComboBox.SelectedIndex = 3 Then
-            ReportDesc.Text = "placeholder3"
+            ReportDesc.Text = "Total sales per item for a select month"
         End If
         If ReportComboBox.SelectedIndex = 4 Then
-            ReportDesc.Text = "placeholder4"
+            ReportDesc.Text = "The total cost per supplier"
         End If
         If ReportComboBox.SelectedIndex = 5 Then
-            ReportDesc.Text = "placeholder5"
+            ReportDesc.Text = "The total sales amount per Suburb "
         End If
         If ReportComboBox.SelectedIndex = 6 Then
-            ReportDesc.Text = "placeholder6"
+            ReportDesc.Text = "Shows the products sold per employee for each month for the last year(12 months)"
         End If
         If ReportComboBox.SelectedIndex = 7 Then
-            ReportDesc.Text = "placeholder7"
+            ReportDesc.Text = "Shows the products sold for each month for the last year(12 months)"
         End If
     End Sub
 

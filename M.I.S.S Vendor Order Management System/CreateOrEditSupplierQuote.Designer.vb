@@ -68,6 +68,7 @@ Partial Class CreateOrEditSupplierQuote
         Me.CreateOrEditSupplierQuoteTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.Supplier_Quote_Line_ItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Supplier_Quote_Line_ItemTableAdapter()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
+        Me.HelpProvider2 = New System.Windows.Forms.HelpProvider()
         Me.QuoteDetailsGroupBox.SuspendLayout()
         CType(Me.SupplierQuoteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -570,10 +571,15 @@ Partial Class CreateOrEditSupplierQuote
         '
         Me.HelpProvider1.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS\M.I.S.chm"
         '
+        'HelpProvider2
+        '
+        Me.HelpProvider2.HelpNamespace = "C:\Users\munis\Documents\GitHub Normalisers42\VOMS\VOMSHelpFinal.chm"
+        '
         'CreateOrEditSupplierQuote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1680, 704)
@@ -653,4 +659,5 @@ Partial Class CreateOrEditSupplierQuote
     Friend WithEvents RefreshButton As Button
     Friend WithEvents Supplier_Quote_Line_ItemTableAdapter As group16DataSetTableAdapters.Supplier_Quote_Line_ItemTableAdapter
     Friend WithEvents HelpProvider1 As HelpProvider
+    Friend WithEvents HelpProvider2 As HelpProvider
 End Class
