@@ -314,4 +314,7 @@ Public Class CreateOrEditSupplierQuote
         End Try
     End Sub
 
+    Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
+        Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
+    End Sub
 End Class

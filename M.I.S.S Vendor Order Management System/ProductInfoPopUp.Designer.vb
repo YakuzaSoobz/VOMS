@@ -59,11 +59,11 @@ Partial Class ProductInfoPopUp
         Me.DetailsGroupBox.Controls.Add(Me.ProductNameTextBox)
         Me.DetailsGroupBox.Controls.Add(Me.Label2)
         Me.DetailsGroupBox.Controls.Add(Me.Label1)
-        Me.DetailsGroupBox.Location = New System.Drawing.Point(11, 11)
-        Me.DetailsGroupBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.DetailsGroupBox.Location = New System.Drawing.Point(15, 14)
+        Me.DetailsGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DetailsGroupBox.Name = "DetailsGroupBox"
-        Me.DetailsGroupBox.Padding = New System.Windows.Forms.Padding(2)
-        Me.DetailsGroupBox.Size = New System.Drawing.Size(800, 162)
+        Me.DetailsGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DetailsGroupBox.Size = New System.Drawing.Size(1067, 199)
         Me.DetailsGroupBox.TabIndex = 73
         Me.DetailsGroupBox.TabStop = False
         Me.DetailsGroupBox.Text = "PRODUCT DETAILS"
@@ -71,10 +71,10 @@ Partial Class ProductInfoPopUp
         'TextBox1
         '
         Me.TextBox1.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_Brand", True))
-        Me.TextBox1.Location = New System.Drawing.Point(517, 121)
-        Me.TextBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.TextBox1.Location = New System.Drawing.Point(689, 149)
+        Me.TextBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.TextBox1.Name = "TextBox1"
-        Me.TextBox1.Size = New System.Drawing.Size(76, 20)
+        Me.TextBox1.Size = New System.Drawing.Size(100, 22)
         Me.TextBox1.TabIndex = 79
         '
         'ProductBindingSource
@@ -90,89 +90,84 @@ Partial Class ProductInfoPopUp
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(608, 120)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(811, 148)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(122, 26)
+        Me.Label4.Size = New System.Drawing.Size(158, 34)
         Me.Label4.TabIndex = 78
         Me.Label4.Text = "- ""T"" for True = Active" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- ""F"" for False = Inactive"
         '
         'ProductIDTextBox
         '
         Me.ProductIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_ID", True))
-        Me.ProductIDTextBox.Location = New System.Drawing.Point(134, 22)
-        Me.ProductIDTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.ProductIDTextBox.Location = New System.Drawing.Point(179, 27)
+        Me.ProductIDTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ProductIDTextBox.Name = "ProductIDTextBox"
         Me.ProductIDTextBox.ReadOnly = True
-        Me.ProductIDTextBox.Size = New System.Drawing.Size(136, 20)
+        Me.ProductIDTextBox.Size = New System.Drawing.Size(180, 22)
         Me.ProductIDTextBox.TabIndex = 77
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(400, 120)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Location = New System.Drawing.Point(533, 148)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(73, 13)
+        Me.Label18.Size = New System.Drawing.Size(94, 17)
         Me.Label18.TabIndex = 73
         Me.Label18.Text = "Active Status:"
         '
         'ProductDescriptionTextBox
         '
         Me.ProductDescriptionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_Description", True))
-        Me.ProductDescriptionTextBox.Location = New System.Drawing.Point(517, 17)
-        Me.ProductDescriptionTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.ProductDescriptionTextBox.Location = New System.Drawing.Point(689, 21)
+        Me.ProductDescriptionTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ProductDescriptionTextBox.Multiline = True
         Me.ProductDescriptionTextBox.Name = "ProductDescriptionTextBox"
-        Me.ProductDescriptionTextBox.Size = New System.Drawing.Size(247, 91)
+        Me.ProductDescriptionTextBox.Size = New System.Drawing.Size(328, 111)
         Me.ProductDescriptionTextBox.TabIndex = 53
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(400, 20)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Location = New System.Drawing.Point(533, 25)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(103, 13)
+        Me.Label9.Size = New System.Drawing.Size(136, 17)
         Me.Label9.TabIndex = 52
         Me.Label9.Text = "Product Description:"
         '
         'BrandNameTextBox
         '
         Me.BrandNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_Brand", True))
-        Me.BrandNameTextBox.Location = New System.Drawing.Point(134, 130)
-        Me.BrandNameTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.BrandNameTextBox.Location = New System.Drawing.Point(179, 160)
+        Me.BrandNameTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BrandNameTextBox.Name = "BrandNameTextBox"
-        Me.BrandNameTextBox.Size = New System.Drawing.Size(216, 20)
+        Me.BrandNameTextBox.Size = New System.Drawing.Size(287, 22)
         Me.BrandNameTextBox.TabIndex = 41
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(30, 128)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(40, 158)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 13)
+        Me.Label3.Size = New System.Drawing.Size(91, 17)
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "Brand Name:"
         '
         'ProductNameTextBox
         '
         Me.ProductNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_Name", True))
-        Me.ProductNameTextBox.Location = New System.Drawing.Point(134, 77)
-        Me.ProductNameTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.ProductNameTextBox.Location = New System.Drawing.Point(179, 95)
+        Me.ProductNameTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ProductNameTextBox.Name = "ProductNameTextBox"
-        Me.ProductNameTextBox.Size = New System.Drawing.Size(216, 20)
+        Me.ProductNameTextBox.Size = New System.Drawing.Size(287, 22)
         Me.ProductNameTextBox.TabIndex = 39
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(28, 25)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(37, 31)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.Size = New System.Drawing.Size(78, 17)
         Me.Label2.TabIndex = 24
         Me.Label2.Text = "Product ID:"
         '
@@ -180,10 +175,9 @@ Partial Class ProductInfoPopUp
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(29, 78)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(39, 96)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 13)
+        Me.Label1.Size = New System.Drawing.Size(102, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Product Name:"
         '
@@ -195,10 +189,10 @@ Partial Class ProductInfoPopUp
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Location = New System.Drawing.Point(747, 177)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.BackButton.Location = New System.Drawing.Point(982, 225)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(64, 36)
+        Me.BackButton.Size = New System.Drawing.Size(105, 41)
         Me.BackButton.TabIndex = 74
         Me.BackButton.Text = "BACK"
         Me.BackButton.UseVisualStyleBackColor = False
@@ -209,15 +203,16 @@ Partial Class ProductInfoPopUp
         '
         'ProductInfoPopUp
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(824, 225)
+        Me.ClientSize = New System.Drawing.Size(1099, 277)
         Me.Controls.Add(Me.BackButton)
         Me.Controls.Add(Me.DetailsGroupBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "ProductInfoPopUp"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Product Info "

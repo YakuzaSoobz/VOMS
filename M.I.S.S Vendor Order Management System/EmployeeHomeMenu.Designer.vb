@@ -41,19 +41,20 @@ Partial Class EmployeeHomeMenu
         '
         'SignOutButton
         '
-        Me.SignOutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SignOutButton.BackColor = System.Drawing.Color.Transparent
+        Me.SignOutButton.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Sign_out
+        Me.SignOutButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.SignOutButton.Cursor = System.Windows.Forms.Cursors.Hand
         Me.SignOutButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.SignOutButton.FlatAppearance.BorderSize = 3
+        Me.SignOutButton.FlatAppearance.BorderSize = 0
         Me.SignOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SignOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SignOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SignOutButton.Location = New System.Drawing.Point(462, 603)
-        Me.SignOutButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.SignOutButton.Location = New System.Drawing.Point(654, 742)
+        Me.SignOutButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SignOutButton.Name = "SignOutButton"
-        Me.SignOutButton.Size = New System.Drawing.Size(79, 36)
+        Me.SignOutButton.Size = New System.Drawing.Size(70, 47)
         Me.SignOutButton.TabIndex = 43
-        Me.SignOutButton.Text = "SIGN OUT"
         Me.SignOutButton.UseVisualStyleBackColor = False
         '
         'MenuGroupBox
@@ -70,11 +71,11 @@ Partial Class EmployeeHomeMenu
         Me.MenuGroupBox.Controls.Add(Me.ProductManagerButton)
         Me.MenuGroupBox.Controls.Add(Me.CustomerManagerButton)
         Me.MenuGroupBox.Controls.Add(Me.SupplierManagerButton)
-        Me.MenuGroupBox.Location = New System.Drawing.Point(26, 50)
-        Me.MenuGroupBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.MenuGroupBox.Location = New System.Drawing.Point(35, 62)
+        Me.MenuGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.MenuGroupBox.Name = "MenuGroupBox"
-        Me.MenuGroupBox.Padding = New System.Windows.Forms.Padding(2)
-        Me.MenuGroupBox.Size = New System.Drawing.Size(498, 543)
+        Me.MenuGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.MenuGroupBox.Size = New System.Drawing.Size(664, 668)
         Me.MenuGroupBox.TabIndex = 42
         Me.MenuGroupBox.TabStop = False
         '
@@ -82,10 +83,9 @@ Partial Class EmployeeHomeMenu
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label4.Location = New System.Drawing.Point(135, 501)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(180, 617)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(141, 13)
+        Me.Label4.Size = New System.Drawing.Size(175, 17)
         Me.Label4.TabIndex = 18
         Me.Label4.Text = "CUSTOMER MANAGER"
         '
@@ -93,10 +93,9 @@ Partial Class EmployeeHomeMenu
         '
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(252, 339)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label5.Location = New System.Drawing.Point(336, 417)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(133, 13)
+        Me.Label5.Size = New System.Drawing.Size(164, 17)
         Me.Label5.TabIndex = 17
         Me.Label5.Text = "SUPPLIER MANAGER"
         '
@@ -104,10 +103,9 @@ Partial Class EmployeeHomeMenu
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(24, 339)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label6.Location = New System.Drawing.Point(32, 417)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(132, 13)
+        Me.Label6.Size = New System.Drawing.Size(164, 17)
         Me.Label6.TabIndex = 16
         Me.Label6.Text = "PRODUCT MANAGER"
         '
@@ -115,10 +113,9 @@ Partial Class EmployeeHomeMenu
         '
         Me.Label7.AutoSize = True
         Me.Label7.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label7.Location = New System.Drawing.Point(252, 175)
-        Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label7.Location = New System.Drawing.Point(336, 215)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(180, 13)
+        Me.Label7.Size = New System.Drawing.Size(224, 17)
         Me.Label7.TabIndex = 15
         Me.Label7.Text = "SUPPLIER QUOTE MANAGER"
         '
@@ -126,10 +123,9 @@ Partial Class EmployeeHomeMenu
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(24, 175)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(32, 215)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(188, 13)
+        Me.Label1.Size = New System.Drawing.Size(235, 17)
         Me.Label1.TabIndex = 10
         Me.Label1.Text = "CUSTOMER QUOTE MANAGER"
         '
@@ -144,10 +140,10 @@ Partial Class EmployeeHomeMenu
         Me.SupplierQuoteManagerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SupplierQuoteManagerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SupplierQuoteManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SupplierQuoteManagerButton.Location = New System.Drawing.Point(254, 43)
-        Me.SupplierQuoteManagerButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.SupplierQuoteManagerButton.Location = New System.Drawing.Point(339, 53)
+        Me.SupplierQuoteManagerButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SupplierQuoteManagerButton.Name = "SupplierQuoteManagerButton"
-        Me.SupplierQuoteManagerButton.Size = New System.Drawing.Size(217, 130)
+        Me.SupplierQuoteManagerButton.Size = New System.Drawing.Size(289, 160)
         Me.SupplierQuoteManagerButton.TabIndex = 7
         Me.SupplierQuoteManagerButton.UseVisualStyleBackColor = False
         '
@@ -162,10 +158,10 @@ Partial Class EmployeeHomeMenu
         Me.CustomerQuoteManagerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.CustomerQuoteManagerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.CustomerQuoteManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CustomerQuoteManagerButton.Location = New System.Drawing.Point(26, 43)
-        Me.CustomerQuoteManagerButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.CustomerQuoteManagerButton.Location = New System.Drawing.Point(35, 53)
+        Me.CustomerQuoteManagerButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CustomerQuoteManagerButton.Name = "CustomerQuoteManagerButton"
-        Me.CustomerQuoteManagerButton.Size = New System.Drawing.Size(217, 130)
+        Me.CustomerQuoteManagerButton.Size = New System.Drawing.Size(289, 160)
         Me.CustomerQuoteManagerButton.TabIndex = 3
         Me.CustomerQuoteManagerButton.UseVisualStyleBackColor = False
         '
@@ -180,10 +176,10 @@ Partial Class EmployeeHomeMenu
         Me.ProductManagerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.ProductManagerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.ProductManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ProductManagerButton.Location = New System.Drawing.Point(26, 207)
-        Me.ProductManagerButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.ProductManagerButton.Location = New System.Drawing.Point(35, 255)
+        Me.ProductManagerButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ProductManagerButton.Name = "ProductManagerButton"
-        Me.ProductManagerButton.Size = New System.Drawing.Size(217, 130)
+        Me.ProductManagerButton.Size = New System.Drawing.Size(289, 160)
         Me.ProductManagerButton.TabIndex = 4
         Me.ProductManagerButton.UseVisualStyleBackColor = False
         '
@@ -198,10 +194,10 @@ Partial Class EmployeeHomeMenu
         Me.CustomerManagerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.CustomerManagerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.CustomerManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CustomerManagerButton.Location = New System.Drawing.Point(138, 369)
-        Me.CustomerManagerButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.CustomerManagerButton.Location = New System.Drawing.Point(184, 454)
+        Me.CustomerManagerButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CustomerManagerButton.Name = "CustomerManagerButton"
-        Me.CustomerManagerButton.Size = New System.Drawing.Size(217, 130)
+        Me.CustomerManagerButton.Size = New System.Drawing.Size(289, 160)
         Me.CustomerManagerButton.TabIndex = 6
         Me.CustomerManagerButton.UseVisualStyleBackColor = False
         '
@@ -216,10 +212,10 @@ Partial Class EmployeeHomeMenu
         Me.SupplierManagerButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SupplierManagerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SupplierManagerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SupplierManagerButton.Location = New System.Drawing.Point(254, 207)
-        Me.SupplierManagerButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.SupplierManagerButton.Location = New System.Drawing.Point(339, 255)
+        Me.SupplierManagerButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SupplierManagerButton.Name = "SupplierManagerButton"
-        Me.SupplierManagerButton.Size = New System.Drawing.Size(217, 130)
+        Me.SupplierManagerButton.Size = New System.Drawing.Size(289, 160)
         Me.SupplierManagerButton.TabIndex = 5
         Me.SupplierManagerButton.UseVisualStyleBackColor = False
         '
@@ -228,25 +224,26 @@ Partial Class EmployeeHomeMenu
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
         Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 18.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(122, 19)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(163, 23)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(318, 29)
+        Me.Label3.Size = New System.Drawing.Size(390, 36)
         Me.Label3.TabIndex = 41
         Me.Label3.Text = "EMPLOYEE HOME MENU"
         Me.Label3.TextAlign = System.Drawing.ContentAlignment.TopCenter
         '
         'EmployeeHomeMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(552, 650)
+        Me.ClientSize = New System.Drawing.Size(736, 800)
         Me.Controls.Add(Me.SignOutButton)
         Me.Controls.Add(Me.MenuGroupBox)
         Me.Controls.Add(Me.Label3)
         Me.DoubleBuffered = True
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "EmployeeHomeMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Employee Home Menu"

@@ -216,7 +216,7 @@ Public Class SupplierQuoteManager
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        HelpView.Show()
+        Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
     End Sub
 
     Private Sub SearchButton_MouseHover(sender As Object, e As EventArgs) Handles SearchButton.MouseHover
