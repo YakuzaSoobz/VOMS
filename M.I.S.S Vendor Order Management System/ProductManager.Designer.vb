@@ -63,6 +63,7 @@ Partial Class ProductManager
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.ProductManagerTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.OptionsGroupBox1.SuspendLayout()
         Me.NavigationGroupBox.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -79,11 +80,11 @@ Partial Class ProductManager
         Me.OptionsGroupBox1.Controls.Add(Me.ButtonRefresh)
         Me.OptionsGroupBox1.Controls.Add(Me.CreateButton)
         Me.OptionsGroupBox1.Controls.Add(Me.UpdateButton)
-        Me.OptionsGroupBox1.Location = New System.Drawing.Point(17, 498)
-        Me.OptionsGroupBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.OptionsGroupBox1.Location = New System.Drawing.Point(23, 613)
+        Me.OptionsGroupBox1.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.OptionsGroupBox1.Name = "OptionsGroupBox1"
-        Me.OptionsGroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.OptionsGroupBox1.Size = New System.Drawing.Size(800, 59)
+        Me.OptionsGroupBox1.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.OptionsGroupBox1.Size = New System.Drawing.Size(1067, 73)
         Me.OptionsGroupBox1.TabIndex = 76
         Me.OptionsGroupBox1.TabStop = False
         Me.OptionsGroupBox1.Text = "OPTIONS"
@@ -96,10 +97,10 @@ Partial Class ProductManager
         Me.ArchiveButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.ArchiveButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.ArchiveButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ArchiveButton.Location = New System.Drawing.Point(29, 17)
-        Me.ArchiveButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.ArchiveButton.Location = New System.Drawing.Point(29, 21)
+        Me.ArchiveButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ArchiveButton.Name = "ArchiveButton"
-        Me.ArchiveButton.Size = New System.Drawing.Size(148, 33)
+        Me.ArchiveButton.Size = New System.Drawing.Size(217, 41)
         Me.ArchiveButton.TabIndex = 6
         Me.ArchiveButton.Text = "ARCHIVE PRODUCT"
         Me.ArchiveButton.UseVisualStyleBackColor = False
@@ -112,10 +113,10 @@ Partial Class ProductManager
         Me.ButtonRefresh.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.ButtonRefresh.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.ButtonRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ButtonRefresh.Location = New System.Drawing.Point(615, 17)
-        Me.ButtonRefresh.Margin = New System.Windows.Forms.Padding(2)
+        Me.ButtonRefresh.Location = New System.Drawing.Point(820, 21)
+        Me.ButtonRefresh.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ButtonRefresh.Name = "ButtonRefresh"
-        Me.ButtonRefresh.Size = New System.Drawing.Size(149, 33)
+        Me.ButtonRefresh.Size = New System.Drawing.Size(217, 41)
         Me.ButtonRefresh.TabIndex = 4
         Me.ButtonRefresh.Text = "REFRESH"
         Me.ButtonRefresh.UseVisualStyleBackColor = False
@@ -128,10 +129,10 @@ Partial Class ProductManager
         Me.CreateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.CreateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.CreateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.CreateButton.Location = New System.Drawing.Point(416, 17)
-        Me.CreateButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.CreateButton.Location = New System.Drawing.Point(555, 21)
+        Me.CreateButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.CreateButton.Name = "CreateButton"
-        Me.CreateButton.Size = New System.Drawing.Size(149, 33)
+        Me.CreateButton.Size = New System.Drawing.Size(217, 41)
         Me.CreateButton.TabIndex = 3
         Me.CreateButton.Text = "CREATE NEW PRODUCT"
         Me.CreateButton.UseVisualStyleBackColor = False
@@ -144,10 +145,10 @@ Partial Class ProductManager
         Me.UpdateButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.UpdateButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.UpdateButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.UpdateButton.Location = New System.Drawing.Point(222, 17)
-        Me.UpdateButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.UpdateButton.Location = New System.Drawing.Point(295, 21)
+        Me.UpdateButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.UpdateButton.Name = "UpdateButton"
-        Me.UpdateButton.Size = New System.Drawing.Size(163, 33)
+        Me.UpdateButton.Size = New System.Drawing.Size(217, 41)
         Me.UpdateButton.TabIndex = 1
         Me.UpdateButton.Text = "UPDATE/SAVE PRODUCT"
         Me.UpdateButton.UseVisualStyleBackColor = False
@@ -164,11 +165,11 @@ Partial Class ProductManager
         Me.NavigationGroupBox.Controls.Add(Me.LastButton)
         Me.NavigationGroupBox.Controls.Add(Me.PreviousButton)
         Me.NavigationGroupBox.Controls.Add(Me.FirstButton)
-        Me.NavigationGroupBox.Location = New System.Drawing.Point(17, 12)
-        Me.NavigationGroupBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.NavigationGroupBox.Location = New System.Drawing.Point(23, 15)
+        Me.NavigationGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NavigationGroupBox.Name = "NavigationGroupBox"
-        Me.NavigationGroupBox.Padding = New System.Windows.Forms.Padding(2)
-        Me.NavigationGroupBox.Size = New System.Drawing.Size(800, 316)
+        Me.NavigationGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.NavigationGroupBox.Size = New System.Drawing.Size(1067, 389)
         Me.NavigationGroupBox.TabIndex = 75
         Me.NavigationGroupBox.TabStop = False
         Me.NavigationGroupBox.Text = "NAVIGATION"
@@ -178,11 +179,11 @@ Partial Class ProductManager
         Me.GroupBox4.BackColor = System.Drawing.Color.Transparent
         Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox4.Controls.Add(Me.ProductDataGridView)
-        Me.GroupBox4.Location = New System.Drawing.Point(4, 103)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Location = New System.Drawing.Point(5, 127)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox4.Size = New System.Drawing.Size(792, 209)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.GroupBox4.Size = New System.Drawing.Size(1056, 257)
         Me.GroupBox4.TabIndex = 96
         Me.GroupBox4.TabStop = False
         Me.GroupBox4.Text = "ALL PRODUCTS"
@@ -197,10 +198,11 @@ Partial Class ProductManager
         Me.ProductDataGridView.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.ProductIDDataGridViewTextBoxColumn1, Me.ProductNameDataGridViewTextBoxColumn, Me.ProductBrandDataGridViewTextBoxColumn, Me.ProductDescriptionDataGridViewTextBoxColumn, Me.ProductActiveStatusDataGridViewTextBoxColumn})
         Me.ProductDataGridView.DataSource = Me.ProductBindingSource
         Me.ProductDataGridView.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.ProductDataGridView.Location = New System.Drawing.Point(2, 15)
+        Me.ProductDataGridView.Location = New System.Drawing.Point(3, 17)
+        Me.ProductDataGridView.Margin = New System.Windows.Forms.Padding(4)
         Me.ProductDataGridView.Name = "ProductDataGridView"
         Me.ProductDataGridView.ReadOnly = True
-        Me.ProductDataGridView.Size = New System.Drawing.Size(788, 192)
+        Me.ProductDataGridView.Size = New System.Drawing.Size(1050, 238)
         Me.ProductDataGridView.TabIndex = 0
         '
         'ProductIDDataGridViewTextBoxColumn1
@@ -255,18 +257,19 @@ Partial Class ProductManager
         '
         'SearchButton
         '
-        Me.SearchButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.SearchButton.BackColor = System.Drawing.Color.Transparent
+        Me.SearchButton.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.search
+        Me.SearchButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
         Me.SearchButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.SearchButton.FlatAppearance.BorderSize = 3
+        Me.SearchButton.FlatAppearance.BorderSize = 0
         Me.SearchButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SearchButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.SearchButton.Location = New System.Drawing.Point(537, 17)
-        Me.SearchButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.SearchButton.Location = New System.Drawing.Point(715, 24)
+        Me.SearchButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchButton.Name = "SearchButton"
-        Me.SearchButton.Size = New System.Drawing.Size(100, 33)
+        Me.SearchButton.Size = New System.Drawing.Size(41, 30)
         Me.SearchButton.TabIndex = 95
-        Me.SearchButton.Text = "SEARCH"
         Me.SearchButton.UseVisualStyleBackColor = False
         '
         'SearchComboBox
@@ -274,19 +277,19 @@ Partial Class ProductManager
         Me.SearchComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.SearchComboBox.FormattingEnabled = True
         Me.SearchComboBox.Items.AddRange(New Object() {"Product ID", "Product Name", "Product Brand"})
-        Me.SearchComboBox.Location = New System.Drawing.Point(389, 23)
-        Me.SearchComboBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.SearchComboBox.Location = New System.Drawing.Point(519, 28)
+        Me.SearchComboBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchComboBox.MaxDropDownItems = 100
         Me.SearchComboBox.Name = "SearchComboBox"
-        Me.SearchComboBox.Size = New System.Drawing.Size(144, 21)
+        Me.SearchComboBox.Size = New System.Drawing.Size(191, 24)
         Me.SearchComboBox.TabIndex = 94
         '
         'SearchTextBox
         '
-        Me.SearchTextBox.Location = New System.Drawing.Point(169, 24)
-        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.SearchTextBox.Location = New System.Drawing.Point(225, 30)
+        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(216, 20)
+        Me.SearchTextBox.Size = New System.Drawing.Size(287, 22)
         Me.SearchTextBox.TabIndex = 93
         '
         'NextButton
@@ -297,10 +300,10 @@ Partial Class ProductManager
         Me.NextButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.NextButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.NextButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.NextButton.Location = New System.Drawing.Point(296, 66)
-        Me.NextButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.NextButton.Location = New System.Drawing.Point(395, 81)
+        Me.NextButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.NextButton.Name = "NextButton"
-        Me.NextButton.Size = New System.Drawing.Size(101, 33)
+        Me.NextButton.Size = New System.Drawing.Size(135, 41)
         Me.NextButton.TabIndex = 35
         Me.NextButton.Text = "NEXT"
         Me.NextButton.UseVisualStyleBackColor = False
@@ -313,10 +316,10 @@ Partial Class ProductManager
         Me.LastButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.LastButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.LastButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.LastButton.Location = New System.Drawing.Point(536, 66)
-        Me.LastButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.LastButton.Location = New System.Drawing.Point(715, 81)
+        Me.LastButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.LastButton.Name = "LastButton"
-        Me.LastButton.Size = New System.Drawing.Size(101, 33)
+        Me.LastButton.Size = New System.Drawing.Size(135, 41)
         Me.LastButton.TabIndex = 37
         Me.LastButton.Text = "LAST"
         Me.LastButton.UseVisualStyleBackColor = False
@@ -329,10 +332,10 @@ Partial Class ProductManager
         Me.PreviousButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.PreviousButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.PreviousButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.PreviousButton.Location = New System.Drawing.Point(416, 66)
-        Me.PreviousButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.PreviousButton.Location = New System.Drawing.Point(555, 81)
+        Me.PreviousButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.PreviousButton.Name = "PreviousButton"
-        Me.PreviousButton.Size = New System.Drawing.Size(101, 33)
+        Me.PreviousButton.Size = New System.Drawing.Size(135, 41)
         Me.PreviousButton.TabIndex = 36
         Me.PreviousButton.Text = "PREVIOUS"
         Me.PreviousButton.UseVisualStyleBackColor = False
@@ -345,10 +348,10 @@ Partial Class ProductManager
         Me.FirstButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.FirstButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.FirstButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.FirstButton.Location = New System.Drawing.Point(169, 66)
-        Me.FirstButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.FirstButton.Location = New System.Drawing.Point(225, 81)
+        Me.FirstButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.FirstButton.Name = "FirstButton"
-        Me.FirstButton.Size = New System.Drawing.Size(101, 33)
+        Me.FirstButton.Size = New System.Drawing.Size(135, 41)
         Me.FirstButton.TabIndex = 34
         Me.FirstButton.Text = "FIRST"
         Me.FirstButton.UseVisualStyleBackColor = False
@@ -361,10 +364,10 @@ Partial Class ProductManager
         Me.LogOutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.LogOutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.LogOutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.LogOutButton.Location = New System.Drawing.Point(17, 561)
-        Me.LogOutButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.LogOutButton.Location = New System.Drawing.Point(23, 696)
+        Me.LogOutButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.LogOutButton.Name = "LogOutButton"
-        Me.LogOutButton.Size = New System.Drawing.Size(78, 36)
+        Me.LogOutButton.Size = New System.Drawing.Size(105, 41)
         Me.LogOutButton.TabIndex = 74
         Me.LogOutButton.Text = "LOG OUT"
         Me.LogOutButton.UseVisualStyleBackColor = False
@@ -377,10 +380,10 @@ Partial Class ProductManager
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Location = New System.Drawing.Point(753, 561)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.BackButton.Location = New System.Drawing.Point(987, 696)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
-        Me.BackButton.Size = New System.Drawing.Size(64, 36)
+        Me.BackButton.Size = New System.Drawing.Size(105, 41)
         Me.BackButton.TabIndex = 73
         Me.BackButton.Text = "BACK"
         Me.BackButton.UseVisualStyleBackColor = False
@@ -400,11 +403,11 @@ Partial Class ProductManager
         Me.DetailsGroupBox.Controls.Add(Me.ProductNameTextBox)
         Me.DetailsGroupBox.Controls.Add(Me.Label2)
         Me.DetailsGroupBox.Controls.Add(Me.Label1)
-        Me.DetailsGroupBox.Location = New System.Drawing.Point(17, 332)
-        Me.DetailsGroupBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.DetailsGroupBox.Location = New System.Drawing.Point(23, 409)
+        Me.DetailsGroupBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.DetailsGroupBox.Name = "DetailsGroupBox"
-        Me.DetailsGroupBox.Padding = New System.Windows.Forms.Padding(2)
-        Me.DetailsGroupBox.Size = New System.Drawing.Size(800, 162)
+        Me.DetailsGroupBox.Padding = New System.Windows.Forms.Padding(3, 2, 3, 2)
+        Me.DetailsGroupBox.Size = New System.Drawing.Size(1067, 199)
         Me.DetailsGroupBox.TabIndex = 72
         Me.DetailsGroupBox.TabStop = False
         Me.DetailsGroupBox.Text = "PRODUCT DETAILS"
@@ -414,97 +417,93 @@ Partial Class ProductManager
         Me.ActiveStatusComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_Active_Status", True))
         Me.ActiveStatusComboBox.FormattingEnabled = True
         Me.ActiveStatusComboBox.Items.AddRange(New Object() {"T", "F"})
-        Me.ActiveStatusComboBox.Location = New System.Drawing.Point(517, 120)
+        Me.ActiveStatusComboBox.Location = New System.Drawing.Point(689, 148)
+        Me.ActiveStatusComboBox.Margin = New System.Windows.Forms.Padding(4)
         Me.ActiveStatusComboBox.Name = "ActiveStatusComboBox"
-        Me.ActiveStatusComboBox.Size = New System.Drawing.Size(121, 21)
+        Me.ActiveStatusComboBox.Size = New System.Drawing.Size(160, 24)
         Me.ActiveStatusComboBox.TabIndex = 79
         '
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(642, 120)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Location = New System.Drawing.Point(856, 148)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(122, 26)
+        Me.Label4.Size = New System.Drawing.Size(158, 34)
         Me.Label4.TabIndex = 78
         Me.Label4.Text = "- ""T"" for True = Active" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "- ""F"" for False = Inactive"
         '
         'ProductIDTextBox
         '
         Me.ProductIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_ID", True))
-        Me.ProductIDTextBox.Location = New System.Drawing.Point(134, 22)
-        Me.ProductIDTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.ProductIDTextBox.Location = New System.Drawing.Point(179, 27)
+        Me.ProductIDTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ProductIDTextBox.Name = "ProductIDTextBox"
         Me.ProductIDTextBox.ReadOnly = True
-        Me.ProductIDTextBox.Size = New System.Drawing.Size(136, 20)
+        Me.ProductIDTextBox.Size = New System.Drawing.Size(180, 22)
         Me.ProductIDTextBox.TabIndex = 77
         '
         'Label18
         '
         Me.Label18.AutoSize = True
-        Me.Label18.Location = New System.Drawing.Point(400, 120)
-        Me.Label18.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label18.Location = New System.Drawing.Point(533, 148)
         Me.Label18.Name = "Label18"
-        Me.Label18.Size = New System.Drawing.Size(73, 13)
+        Me.Label18.Size = New System.Drawing.Size(94, 17)
         Me.Label18.TabIndex = 73
         Me.Label18.Text = "Active Status:"
         '
         'ProductDescriptionTextBox
         '
         Me.ProductDescriptionTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_Description", True))
-        Me.ProductDescriptionTextBox.Location = New System.Drawing.Point(517, 17)
-        Me.ProductDescriptionTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.ProductDescriptionTextBox.Location = New System.Drawing.Point(689, 21)
+        Me.ProductDescriptionTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ProductDescriptionTextBox.Multiline = True
         Me.ProductDescriptionTextBox.Name = "ProductDescriptionTextBox"
-        Me.ProductDescriptionTextBox.Size = New System.Drawing.Size(247, 91)
+        Me.ProductDescriptionTextBox.Size = New System.Drawing.Size(328, 111)
         Me.ProductDescriptionTextBox.TabIndex = 53
         '
         'Label9
         '
         Me.Label9.AutoSize = True
-        Me.Label9.Location = New System.Drawing.Point(400, 20)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label9.Location = New System.Drawing.Point(533, 25)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(103, 13)
+        Me.Label9.Size = New System.Drawing.Size(136, 17)
         Me.Label9.TabIndex = 52
         Me.Label9.Text = "Product Description:"
         '
         'BrandNameTextBox
         '
         Me.BrandNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_Brand", True))
-        Me.BrandNameTextBox.Location = New System.Drawing.Point(134, 130)
-        Me.BrandNameTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.BrandNameTextBox.Location = New System.Drawing.Point(179, 160)
+        Me.BrandNameTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BrandNameTextBox.Name = "BrandNameTextBox"
-        Me.BrandNameTextBox.Size = New System.Drawing.Size(216, 20)
+        Me.BrandNameTextBox.Size = New System.Drawing.Size(287, 22)
         Me.BrandNameTextBox.TabIndex = 41
         '
         'Label3
         '
         Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(30, 128)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label3.Location = New System.Drawing.Point(40, 158)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(69, 13)
+        Me.Label3.Size = New System.Drawing.Size(91, 17)
         Me.Label3.TabIndex = 40
         Me.Label3.Text = "Brand Name:"
         '
         'ProductNameTextBox
         '
         Me.ProductNameTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.ProductBindingSource, "Product_Name", True))
-        Me.ProductNameTextBox.Location = New System.Drawing.Point(134, 77)
-        Me.ProductNameTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.ProductNameTextBox.Location = New System.Drawing.Point(179, 95)
+        Me.ProductNameTextBox.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.ProductNameTextBox.Name = "ProductNameTextBox"
-        Me.ProductNameTextBox.Size = New System.Drawing.Size(216, 20)
+        Me.ProductNameTextBox.Size = New System.Drawing.Size(287, 22)
         Me.ProductNameTextBox.TabIndex = 39
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Location = New System.Drawing.Point(28, 25)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Location = New System.Drawing.Point(37, 31)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(61, 13)
+        Me.Label2.Size = New System.Drawing.Size(78, 17)
         Me.Label2.TabIndex = 24
         Me.Label2.Text = "Product ID:"
         '
@@ -512,10 +511,9 @@ Partial Class ProductManager
         '
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Location = New System.Drawing.Point(29, 78)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Location = New System.Drawing.Point(39, 96)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(78, 13)
+        Me.Label1.Size = New System.Drawing.Size(102, 17)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Product Name:"
         '
@@ -544,20 +542,25 @@ Partial Class ProductManager
         Me.HelpBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.HelpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.HelpBtn.Location = New System.Drawing.Point(375, 561)
+        Me.HelpBtn.Location = New System.Drawing.Point(500, 696)
+        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(4)
         Me.HelpBtn.Name = "HelpBtn"
-        Me.HelpBtn.Size = New System.Drawing.Size(79, 36)
+        Me.HelpBtn.Size = New System.Drawing.Size(105, 41)
         Me.HelpBtn.TabIndex = 135
         Me.HelpBtn.Text = "HELP"
         Me.HelpBtn.UseVisualStyleBackColor = False
         '
+        'HelpProvider1
+        '
+        Me.HelpProvider1.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS\M.I.S.chm"
+        '
         'ProductManager
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(828, 608)
+        Me.ClientSize = New System.Drawing.Size(1104, 748)
         Me.Controls.Add(Me.HelpBtn)
         Me.Controls.Add(Me.OptionsGroupBox1)
         Me.Controls.Add(Me.NavigationGroupBox)
@@ -566,6 +569,7 @@ Partial Class ProductManager
         Me.Controls.Add(Me.DetailsGroupBox)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.Name = "ProductManager"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Product Manager"
@@ -622,4 +626,5 @@ Partial Class ProductManager
     Friend WithEvents ProductBrandDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProductDescriptionDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ProductActiveStatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HelpProvider1 As HelpProvider
 End Class

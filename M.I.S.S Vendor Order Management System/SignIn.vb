@@ -64,4 +64,12 @@ Public Class SignIn
             PasswordTextBox.UseSystemPasswordChar = True
         End If
     End Sub
+
+    Private Sub AboutButton_Click(sender As Object, e As EventArgs) Handles AboutButton.Click
+        MessageBox.Show("Vendor Order Management System; developed by Normalisers42. Latest Refresh: (16/08/2019)")
+    End Sub
+
+    Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
+        Help.ShowHelp(Me, HelpProvider1.HelpNamespace)
+    End Sub
 End Class
