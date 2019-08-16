@@ -214,4 +214,18 @@ Public Class SupplierQuoteLineItemManager
 
         Return sum
     End Function
+
+    Private Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
+        Try
+            Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
+        Catch ex As SyntaxErrorException
+            MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
+        Catch ex As EvaluateException
+            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+        Catch ex As Exception
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+        End Try
+    End Sub
+
+
 End Class
