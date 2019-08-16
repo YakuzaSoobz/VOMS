@@ -515,11 +515,15 @@
     <None Include="Resources\search.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="HelpFolder\CustomerQuoteHelpPage.html" />
-    <Content Include="HelpFolder\GeneralManagerHelpPage.html" />
-    <Content Include="HelpFolder\SupplierQuoteHelpPage.html" />
-    <Content Include="HelpFolder\WhatisVOMSHelpPage.html" />
     <None Include="Pictures\1" />
+    <Content Include="HelpFolder\Customer Quote Help.html" />
+    <Content Include="HelpFolder\Customer Quote Manager.JPG" />
+    <Content Include="HelpFolder\Employee Manager.JPG" />
+    <Content Include="HelpFolder\General Manager Help.html" />
+    <Content Include="HelpFolder\Supplier Manager.JPG" />
+    <Content Include="HelpFolder\Supplier Quote Manager.html" />
+    <Content Include="HelpFolder\Supplier Quote Manager.JPG" />
+    <Content Include="HelpFolder\WhatIsVomsHelp.html" />
     <Content Include="Pictures\Employee Manager.JPG" />
     <Content Include="Pictures\Supplier Manager.JPG" />
     <Content Include="Pictures\Supplier Quote Manager.JPG" />
@@ -528,6 +532,7 @@
     <Content Include="Resources\Supplier Manager.JPG" />
     <Content Include="Resources\Supplier Quote Manager.JPG" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
