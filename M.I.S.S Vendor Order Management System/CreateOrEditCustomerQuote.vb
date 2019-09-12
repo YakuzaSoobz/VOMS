@@ -234,10 +234,10 @@ Public Class CreateOrEditCustomerQuote
 
     Private Sub EditLineItemsButton_Click(sender As Object, e As EventArgs) Handles EditLineItemsButton.Click
         Try
-            CustomerQuoteLineItemManager.Show()
-            CustomerQuoteLineItemManager.CustomerQuoteLineItemBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteID & "'"
-            CustomerQuoteLineItemManager.Text = "Customer Quote Line Item Manager: Reference ID: " & CustomerQuoteID
-            CustomerQuoteLineItemManager.CustomerQuoteReferenceID = CustomerQuoteID
+            CustomerQuoteItemManager.Show()
+            CustomerQuoteItemManager.CustLineItemJoinProductsBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteID & "'"
+            CustomerQuoteItemManager.Text = "Customer Quote Line Item Manager: Reference ID: " & CustomerQuoteID
+            CustomerQuoteItemManager.CustomerQuoteReferenceID = CustomerQuoteID
         Catch ex As SqlException
             MsgBox("Oops... Page failed too load correctly!", vbExclamation, "Error!")
         Catch ex As NoNullAllowedException
