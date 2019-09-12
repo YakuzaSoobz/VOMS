@@ -117,6 +117,12 @@
     <Compile Include="CustomerInfoPopUp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="CustomerQuoteItemManager.Designer.vb">
+      <DependentUpon>CustomerQuoteItemManager.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerQuoteItemManager.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="EmployeeInfoPopUp.Designer.vb">
       <DependentUpon>EmployeeInfoPopUp.vb</DependentUpon>
     </Compile>
@@ -360,6 +366,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerInfoPopUp.resx">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerQuoteItemManager.resx">
+      <DependentUpon>CustomerQuoteItemManager.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeInfoPopUp.resx">
       <DependentUpon>EmployeeInfoPopUp.vb</DependentUpon>

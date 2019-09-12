@@ -4,30 +4,43 @@ Imports System.Data.SqlClient
 
 Public Class LineItemDetailsPopUp
 
-    Dim ProductID As Integer
-    Dim SupplierID As Integer
-    Dim CostPrice As Decimal
+    Public ProductID As Integer
+    Public SupplierID As Integer
+    Public CostPrice As Decimal
     Dim MarkupPercentage As Decimal
     Dim DiscountPercentage As Decimal = 0
     Dim SaleInclVat As Decimal
     Dim SaleExclVat As Decimal
-    Dim Quantity As Integer
-    'Shared VATPercentage As Decimal = 0.14
+    Public Quantity As Integer
+
     Dim SetMarkupPercentage As Decimal = 20
 
     Private Sub LineItemDetailsPopUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
 
-        If (CustomerQuoteLineItemManager.AddStatus = True) And (CustomerQuoteLineItemManager.UpdateStatus = False) Then
+        If (CustomerQuoteItemManager.AddStatus = True) And (CustomerQuoteItemManager.UpdateStatus = False) Then
 
             Try
-                Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier)
-                SuppQuoteJoinSuppLineItemDataGridView.Visible = False
-                ProductID = CustomerQuoteLineItemManager.ProductID
+
+
+                ProductID = CustomerQuoteItemManager.ProductID
+                CostPrice = CustomerQuoteItemManager.CostPrice
+                SupplierID = CustomerQuoteItemManager.SupplierID
+                Quantity = CustomerQuoteItemManager.Quantity
+
+                BrandTextBox.Text = CustomerQuoteItemManager.ProductBrand
+                ProductNameTextBox.Text = CustomerQuoteItemManager.Product
+                ActiveStatusTextBox.Text = CustomerQuoteItemManager.ProductActiveStatus
+                SupplierIDTextBox.Text = CustomerQuoteItemManager.SupplierQuoteSupplierID
+                CostPriceTextBox.Text = CustomerQuoteItemManager.CostPrice
+                QuantityTextBox.Text = CustomerQuoteItemManager.Quantity
+
+
+
                 MarkupComboBox.SelectedItem = "20"
                 DiscountComboBox.Text = 0
-                QuantityComboBox.SelectedItem = "1"
-                'Int(VATPercentage * 100)
+                QuantityComboBox.Text = Quantity
+
                 Me.VATTextBox.Text = My.Settings.MyVAT
 
             Catch ex As SqlException
@@ -37,6 +50,33 @@ Public Class LineItemDetailsPopUp
             Catch ex As Exception
                 MsgBox("Oops something went wrong!", vbExclamation, "Error!")
             End Try
+
+        ElseIf (CustomerQuoteItemManager.AddStatus = False) And (CustomerQuoteItemManager.UpdateStatus = True) Then
+
+            Try
+
+                BrandTextBox.Text = CustomerQuoteItemManager.ProductBrand
+                ProductNameTextBox.Text = CustomerQuoteItemManager.Product
+                ActiveStatusTextBox.Text = CustomerQuoteItemManager.ProductActiveStatus
+
+                SupplierIDTextBox.Text = SupplierID
+                CostPriceTextBox.Text = CostPrice
+                QuantityTextBox.Text = Quantity
+
+                MarkupComboBox.SelectedItem = "20"
+                DiscountComboBox.Text = 0
+                QuantityComboBox.Text = Quantity
+
+                Me.VATTextBox.Text = My.Settings.MyVAT
+
+            Catch ex As SqlException
+                MsgBox("Cannot load form!", vbExclamation, "Network Error!")
+            Catch ex As EvaluateException
+                MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+            Catch ex As Exception
+                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            End Try
+
         End If
     End Sub
 
@@ -45,8 +85,8 @@ Public Class LineItemDetailsPopUp
         If answer = MsgBoxResult.Yes Then
             Try
 
-                CustomerQuoteLineItemManager.Customer_Quote_Line_ItemTableAdapter.Fill(CustomerQuoteLineItemManager.Group16DataSet.Customer_Quote_Line_Item)
-                CustomerQuoteLineItemManager.CustomerQuoteLineItemBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteLineItemManager.CustomerQuoteReferenceID & "'"
+                CustomerQuoteItemManager.CustLineItemJoinProductsTableAdapter.Fill(CustomerQuoteItemManager.Group16DataSet.CustLineItemJoinProducts)
+                CustomerQuoteItemManager.CustLineItemJoinProductsBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteItemManager.CustomerQuoteReferenceID & "'"
                 Me.Close()
 
             Catch ex As SqlException
@@ -119,46 +159,74 @@ Public Class LineItemDetailsPopUp
                 MsgBox("Only positive integers can be entered into the discount % field and not decimals!", vbOK, "Invalid entry")
                 DiscountComboBox.ResetText()
                 DiscountComboBox.BackColor = Color.MistyRose
-            ElseIf (SuppQuoteJoinSuppLineItemDataGridView.Visible = False) Then
-                MsgBox("Please select supplier first!", vbOK, "Cannot save!")
             ElseIf (String.IsNullOrWhiteSpace(CostPriceTextBox.Text)) Then
                 MsgBox("Please select an item cost price!", vbOK, "Cannot save!")
 
             Else 'if everything is valid
 
-                Try
-                    Dim ret As Integer = MsgBox("Save new Customer Line Item to Customer Quote " & CustomerQuoteLineItemManager.CustomerQuoteReferenceID & " ?", vbYesNo)
+                If (CustomerQuoteItemManager.AddStatus = True) And (CustomerQuoteItemManager.UpdateStatus = False) Then
+                    Try
+                        Dim ret As Integer = MsgBox("Add new Customer Line Item to Customer Quote " & CustomerQuoteLineItemManager.CustomerQuoteReferenceID & " ?", vbYesNo)
 
-                    If ret = 6 Then 'if user clicks yes to add item'
+                        If ret = 6 Then 'if user clicks yes to add item'
 
-                        SupplierID = Integer.Parse(SupplierIDTextBox.Text)
+                            SupplierID = Integer.Parse(SupplierIDTextBox.Text)
 
-                        CostPrice = Decimal.Parse(CostPriceTextBox.Text)
-                        MarkupPercentage = Decimal.Parse(MarkupComboBox.Text)
-                        DiscountPercentage = Decimal.Parse(DiscountComboBox.Text)
-                        Quantity = Integer.Parse(QuantityComboBox.Text)
+                            CostPrice = Decimal.Parse(CostPriceTextBox.Text)
+                            MarkupPercentage = Decimal.Parse(MarkupComboBox.Text)
+                            DiscountPercentage = Decimal.Parse(DiscountComboBox.Text)
+                            Quantity = Integer.Parse(QuantityComboBox.Text)
 
-                        Dim MarkupAmount As Decimal = (MarkupPercentage / 100) * CostPrice
-                        Dim DiscountAmount As Decimal = (CostPrice + MarkupAmount) * (DiscountPercentage / 100)
-                        SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))
-                        SaleInclVat = SaleExclVat + (SaleExclVat * (My.Settings.MyVAT / 100))
+                            Dim MarkupAmount As Decimal = (MarkupPercentage / 100) * CostPrice
+                            Dim DiscountAmount As Decimal = (CostPrice + MarkupAmount) * (DiscountPercentage / 100)
+                            SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))
+                            SaleInclVat = SaleExclVat + (SaleExclVat * (My.Settings.MyVAT / 100))
 
-                        SaleExclVATTextBox.Text = FormatCurrency(SaleExclVat)
-                        SaleInclVATTextBox.Text = FormatCurrency(SaleInclVat)
+                            SaleExclVATTextBox.Text = FormatCurrency(SaleExclVat)
+                            SaleInclVATTextBox.Text = FormatCurrency(SaleInclVat)
 
-                        CustomerQuoteLineItemManager.Customer_Quote_Line_ItemTableAdapter.Insert(ProductID, CustomerQuoteLineItemManager.CustomerQuoteReferenceID, SupplierID, CostPrice, SaleInclVat, SaleExclVat, MarkupPercentage, DiscountPercentage, Quantity)
-                        CustomerQuoteLineItemManager.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
-                        CustomerQuoteLineItemManager.Customer_Quote_Line_ItemTableAdapter.Fill(Me.Group16DataSet.Customer_Quote_Line_Item)
+                            Customer_Quote_Line_ItemTableAdapter.Insert(ProductID, CustomerQuoteItemManager.CustomerQuoteReferenceID, SupplierID, CostPrice, SaleInclVat, SaleExclVat, MarkupPercentage, DiscountPercentage, Quantity)
+                            CustomerQuoteItemManager.CustLineItemJoinProductsTableAdapter.Fill(Me.Group16DataSet.CustLineItemJoinProducts)
+                            CustomerQuoteItemManager.CustLineItemJoinProductsBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteItemManager.CustomerQuoteReferenceID & "'"
 
-                    End If
+                        End If
 
-                Catch ex As SqlException
-                    MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
-                Catch ex As EvaluateException
-                    MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
-                Catch ex As FormatException
-                    MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
-                End Try
+                    Catch ex As SqlException
+                        MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
+                    Catch ex As EvaluateException
+                        MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+                    Catch ex As FormatException
+                        MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
+                    End Try
+
+                ElseIf (CustomerQuoteItemManager.AddStatus = False) And (CustomerQuoteItemManager.UpdateStatus = True) Then
+                    Try
+                        Dim ret As Integer = MsgBox("Save changes to product details?", vbYesNo)
+
+                        If ret = 6 Then
+
+                            'calculations
+                            Dim MarkupAmount As Decimal = (MarkupPercentage / 100) * CostPrice
+                            Dim DiscountAmount As Decimal = (CostPrice + MarkupAmount) * (DiscountPercentage / 100)
+                            SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))
+                            SaleInclVat = SaleExclVat + (SaleExclVat * (My.Settings.MyVAT / 100))
+
+                            SaleExclVATTextBox.Text = FormatCurrency(SaleExclVat)
+                            SaleInclVATTextBox.Text = FormatCurrency(SaleInclVat)
+
+                            Customer_Quote_Line_ItemTableAdapter.UpdateCustLineItemQuery(CostPrice, SaleInclVat, SaleExclVat, MarkupPercentage, DiscountPercentage, Quantity, ProductID, CustomerQuoteItemManager.CustomerQuoteReferenceID, SupplierID)
+                            CustomerQuoteItemManager.CustLineItemJoinProductsTableAdapter.Fill(Me.Group16DataSet.CustLineItemJoinProducts)
+                            CustomerQuoteItemManager.CustLineItemJoinProductsBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteItemManager.CustomerQuoteReferenceID & "'"
+                        End If
+
+                    Catch ex As SqlException
+                        MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
+                    Catch ex As EvaluateException
+                        MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
+                    Catch ex As Exception
+                        MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                    End Try
+                End If
 
             End If
         Catch ex As FormatException
@@ -168,41 +236,8 @@ Public Class LineItemDetailsPopUp
 
     End Sub
 
-    Private Sub SupplierDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles SupplierDataGridView.CellClick
 
-        Try
 
-            SupplierIDTextBox.Text = SupplierDataGridView.CurrentRow.Cells(0).Value.ToString
-            SuppQuoteJoinSuppLineItemTableAdapter.Fill(Group16DataSet.SuppQuoteJoinSuppLineItem)
-            SuppQuoteJoinSuppLineItemDataGridView.Visible = True
-            SuppQuoteJoinSuppLineItemBindingSource.Sort = " Supp_Quote_Date_Recieved DESC"
-            SuppQuoteJoinSuppLineItemBindingSource.Filter = "Supplier_ID = '" & SupplierDataGridView.CurrentRow.Cells(0).Value.ToString & "' AND Product_ID = '" & ProductID & "'  "
-
-        Catch ex As SqlException
-            MsgBox("Cannot load form!", vbExclamation, "Network Error!")
-        Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
-        Catch ex As Exception
-            MsgBox("Select a COST PRICE for the item from a Supplier Quote. Most recent quotes are shown at the top!", vbInformation, "")
-        End Try
-
-    End Sub
-
-    Private Sub SuppQuoteJoinSuppLineItemDataGridView_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles SuppQuoteJoinSuppLineItemDataGridView.CellClick
-
-        Try
-
-            CostPriceTextBox.Text = SuppQuoteJoinSuppLineItemDataGridView.CurrentRow.Cells(2).Value.ToString
-
-        Catch ex As SqlException
-            MsgBox("Cannot load form!", vbExclamation, "Network Error!")
-        Catch ex As EvaluateException
-            MsgBox("Cannot be found", vbExclamation, "Incorrect Input!")
-        Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
-        End Try
-
-    End Sub
 
     Private Sub SaveButton_MouseHover(sender As Object, e As EventArgs) Handles SaveButton.MouseHover
         LineItemDetailsPopUpTip.SetToolTip(SaveButton, "Click to save line item to the quote")
@@ -326,4 +361,6 @@ Public Class LineItemDetailsPopUp
         End Try
 
     End Sub
+
+
 End Class
