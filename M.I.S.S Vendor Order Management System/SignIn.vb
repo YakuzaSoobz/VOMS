@@ -72,4 +72,12 @@ Public Class SignIn
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
         Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
     End Sub
+
+    Private Sub AccessCombo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AccessCombo.SelectedIndexChanged
+        If AccessCombo.SelectedItem = 1 Then
+            AccessLevelTextBox.Text = "Manager"
+        ElseIf AccessCombo.SelectedItem = 2 Then
+            AccessLevelTextBox.Text = "Employee"
+        End If
+    End Sub
 End Class

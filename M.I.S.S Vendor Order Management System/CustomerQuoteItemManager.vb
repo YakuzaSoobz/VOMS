@@ -125,6 +125,8 @@ Public Class CustomerQuoteItemManager
                     LineItemDetailsPopUp.SupplierID = Integer.Parse(CustQuoteLineItemDataGridView.CurrentRow.Cells(4).Value)
                     LineItemDetailsPopUp.Quantity = Integer.Parse(CustQuoteLineItemDataGridView.CurrentRow.Cells(9).Value)
                     LineItemDetailsPopUp.CostPrice = Decimal.Parse(CustQuoteLineItemDataGridView.CurrentRow.Cells(6).Value)
+                    LineItemDetailsPopUp.MarkupPercentage = Decimal.Parse(CustQuoteLineItemDataGridView.CurrentRow.Cells(7).Value)
+                    LineItemDetailsPopUp.DiscountPercentage = Decimal.Parse(CustQuoteLineItemDataGridView.CurrentRow.Cells(8).Value)
 
                     Product = CustQuoteLineItemDataGridView.CurrentRow.Cells(2).Value.ToString
                     ProductBrand = CustQuoteLineItemDataGridView.CurrentRow.Cells(3).Value.ToString

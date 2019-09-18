@@ -7,8 +7,8 @@ Public Class LineItemDetailsPopUp
     Public ProductID As Integer
     Public SupplierID As Integer
     Public CostPrice As Decimal
-    Dim MarkupPercentage As Decimal
-    Dim DiscountPercentage As Decimal = 0
+    Public MarkupPercentage As Decimal
+    Public DiscountPercentage As Decimal = 0
     Dim SaleInclVat As Decimal
     Dim SaleExclVat As Decimal
     Public Quantity As Integer
@@ -63,8 +63,8 @@ Public Class LineItemDetailsPopUp
                 CostPriceTextBox.Text = CostPrice
                 QuantityTextBox.Text = Quantity
 
-                MarkupComboBox.SelectedItem = "20"
-                DiscountComboBox.Text = 0
+                MarkupComboBox.Text = MarkupPercentage
+                DiscountComboBox.Text = DiscountPercentage
                 QuantityComboBox.Text = Quantity
 
                 Me.VATTextBox.Text = My.Settings.MyVAT
@@ -78,6 +78,13 @@ Public Class LineItemDetailsPopUp
             End Try
 
         End If
+
+        If (SignIn.EmployeeStatus = True And SignIn.ManagerStatus = False) Then
+            VATGroupBox.Visible = False
+        ElseIf (SignIn.EmployeeStatus = False And SignIn.ManagerStatus = True) Then
+            VATGroupBox.Visible = True
+        End If
+
     End Sub
 
     Private Sub BackButton_Click(sender As Object, e As EventArgs) Handles BackButton.Click
@@ -166,7 +173,7 @@ Public Class LineItemDetailsPopUp
 
                 If (CustomerQuoteItemManager.AddStatus = True) And (CustomerQuoteItemManager.UpdateStatus = False) Then
                     Try
-                        Dim ret As Integer = MsgBox("Add new Customer Line Item to Customer Quote " & CustomerQuoteLineItemManager.CustomerQuoteReferenceID & " ?", vbYesNo)
+                        Dim ret As Integer = MsgBox("Add new Customer Line Item to Customer Quote " & CustomerQuoteItemManager.CustomerQuoteReferenceID & " ?", vbYesNo)
 
                         If ret = 6 Then 'if user clicks yes to add item'
 
@@ -206,6 +213,13 @@ Public Class LineItemDetailsPopUp
                         If ret = 6 Then
 
                             'calculations
+                            SupplierID = Integer.Parse(SupplierIDTextBox.Text)
+
+                            CostPrice = Decimal.Parse(CostPriceTextBox.Text)
+                            MarkupPercentage = Decimal.Parse(MarkupComboBox.Text)
+                            DiscountPercentage = Decimal.Parse(DiscountComboBox.Text)
+                            Quantity = Integer.Parse(QuantityComboBox.Text)
+
                             Dim MarkupAmount As Decimal = (MarkupPercentage / 100) * CostPrice
                             Dim DiscountAmount As Decimal = (CostPrice + MarkupAmount) * (DiscountPercentage / 100)
                             SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))

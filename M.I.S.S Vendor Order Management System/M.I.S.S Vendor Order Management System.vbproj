@@ -159,6 +159,24 @@
     <Compile Include="ReportMenu.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SelectCustomerPopUp.Designer.vb">
+      <DependentUpon>SelectCustomerPopUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectCustomerPopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectEmployeePopUp.Designer.vb">
+      <DependentUpon>SelectEmployeePopUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectEmployeePopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SelectSupplierPopUp.Designer.vb">
+      <DependentUpon>SelectSupplierPopUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SelectSupplierPopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TotalProductSales.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -223,12 +241,6 @@
       <DependentUpon>CustomerManager.vb</DependentUpon>
     </Compile>
     <Compile Include="CustomerManager.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerQuoteLineItemManager.Designer.vb">
-      <DependentUpon>CustomerQuoteLineItemManager.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerQuoteLineItemManager.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="EmployeeHomeMenu.Designer.vb">
@@ -390,6 +402,15 @@
     <EmbeddedResource Include="ReportMenu.resx">
       <DependentUpon>ReportMenu.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SelectCustomerPopUp.resx">
+      <DependentUpon>SelectCustomerPopUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectEmployeePopUp.resx">
+      <DependentUpon>SelectEmployeePopUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SelectSupplierPopUp.resx">
+      <DependentUpon>SelectSupplierPopUp.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TotalProductSales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TotalProductSales.vb</LastGenOutput>
@@ -426,9 +447,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerManager.resx">
       <DependentUpon>CustomerManager.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerQuoteLineItemManager.resx">
-      <DependentUpon>CustomerQuoteLineItemManager.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="EmployeeHomeMenu.resx">
       <DependentUpon>EmployeeHomeMenu.vb</DependentUpon>
