@@ -4,6 +4,7 @@ Public Class CustomerQuoteManager
 
     Public CustomerQuoteReferenceID As Integer
     Public NewCustomerQuoteReferenceID As Integer
+
     Public EditStatus As Boolean
     Public CreateStatus As Boolean
     Public SortStatus As Boolean
@@ -171,6 +172,7 @@ Public Class CustomerQuoteManager
 
                 CreateOrEditCustomerQuote.CustomerQuoteBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteReferenceID & "'"
                 CreateOrEditCustomerQuote.CustLineItemJoinProductsBindingSource.Filter = "Cust_Quote_Reference_ID = '" & CustomerQuoteReferenceID & "'"
+
 
                 CreateOrEditCustomerQuote.Text = "Customer Quote Editor: Reference ID = " & CustomerQuoteReferenceID
                 CreateOrEditCustomerQuote.CustomerQuoteID = CustomerQuoteReferenceID

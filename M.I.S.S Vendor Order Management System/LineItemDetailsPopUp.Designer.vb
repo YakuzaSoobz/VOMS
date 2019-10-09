@@ -24,6 +24,7 @@ Partial Class LineItemDetailsPopUp
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.QuoteDetailsGroupBox = New System.Windows.Forms.GroupBox()
+        Me.VATGroupBox = New System.Windows.Forms.GroupBox()
         Me.VATButton = New System.Windows.Forms.Button()
         Me.VATTextBox = New System.Windows.Forms.TextBox()
         Me.Label8 = New System.Windows.Forms.Label()
@@ -35,10 +36,16 @@ Partial Class LineItemDetailsPopUp
         Me.DiscountComboBox = New System.Windows.Forms.ComboBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.GroupBox2 = New System.Windows.Forms.GroupBox()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.ProductNameTextBox = New System.Windows.Forms.TextBox()
+        Me.Label12 = New System.Windows.Forms.Label()
+        Me.QuantityTextBox = New System.Windows.Forms.TextBox()
         Me.SuppQuoteJoinSuppLineItemBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.ActiveStatusTextBox = New System.Windows.Forms.TextBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.BrandTextBox = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.ProductNameTextBox = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.SupplierIDTextBox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -55,15 +62,9 @@ Partial Class LineItemDetailsPopUp
         Me.LineItemDetailsPopUpTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.SupplierTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SupplierTableAdapter()
         Me.SuppQuoteJoinSuppLineItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SuppQuoteJoinSuppLineItemTableAdapter()
-        Me.Label10 = New System.Windows.Forms.Label()
-        Me.BrandTextBox = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
-        Me.ActiveStatusTextBox = New System.Windows.Forms.TextBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.QuantityTextBox = New System.Windows.Forms.TextBox()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Customer_Quote_Line_ItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Customer_Quote_Line_ItemTableAdapter()
         Me.QuoteDetailsGroupBox.SuspendLayout()
+        Me.VATGroupBox.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.SuppQuoteJoinSuppLineItemBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -71,14 +72,13 @@ Partial Class LineItemDetailsPopUp
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.OptionsGroupBox1.SuspendLayout()
-        Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
         'QuoteDetailsGroupBox
         '
         Me.QuoteDetailsGroupBox.BackColor = System.Drawing.Color.Transparent
         Me.QuoteDetailsGroupBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.QuoteDetailsGroupBox.Controls.Add(Me.GroupBox1)
+        Me.QuoteDetailsGroupBox.Controls.Add(Me.VATGroupBox)
         Me.QuoteDetailsGroupBox.Controls.Add(Me.GroupBox4)
         Me.QuoteDetailsGroupBox.Controls.Add(Me.GroupBox2)
         Me.QuoteDetailsGroupBox.Location = New System.Drawing.Point(11, 11)
@@ -89,6 +89,21 @@ Partial Class LineItemDetailsPopUp
         Me.QuoteDetailsGroupBox.TabIndex = 69
         Me.QuoteDetailsGroupBox.TabStop = False
         Me.QuoteDetailsGroupBox.Text = "CUSTOMER QUOTE DETAILS"
+        '
+        'VATGroupBox
+        '
+        Me.VATGroupBox.BackColor = System.Drawing.Color.Transparent
+        Me.VATGroupBox.Controls.Add(Me.VATButton)
+        Me.VATGroupBox.Controls.Add(Me.VATTextBox)
+        Me.VATGroupBox.Controls.Add(Me.Label8)
+        Me.VATGroupBox.Location = New System.Drawing.Point(23, 240)
+        Me.VATGroupBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.VATGroupBox.Name = "VATGroupBox"
+        Me.VATGroupBox.Padding = New System.Windows.Forms.Padding(2)
+        Me.VATGroupBox.Size = New System.Drawing.Size(390, 53)
+        Me.VATGroupBox.TabIndex = 92
+        Me.VATGroupBox.TabStop = False
+        Me.VATGroupBox.Text = "VAT SETTING"
         '
         'VATButton
         '
@@ -134,7 +149,7 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox4.Controls.Add(Me.MarkupComboBox)
         Me.GroupBox4.Controls.Add(Me.DiscountComboBox)
         Me.GroupBox4.Controls.Add(Me.Label4)
-        Me.GroupBox4.Location = New System.Drawing.Point(263, 36)
+        Me.GroupBox4.Location = New System.Drawing.Point(265, 31)
         Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox4.Name = "GroupBox4"
         Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
@@ -218,7 +233,7 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox2.Controls.Add(Me.SupplierIDTextBox)
         Me.GroupBox2.Controls.Add(Me.Label2)
         Me.GroupBox2.Controls.Add(Me.CostPriceTextBox)
-        Me.GroupBox2.Location = New System.Drawing.Point(21, 36)
+        Me.GroupBox2.Location = New System.Drawing.Point(23, 31)
         Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox2.Name = "GroupBox2"
         Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
@@ -226,6 +241,77 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox2.TabIndex = 84
         Me.GroupBox2.TabStop = False
         Me.GroupBox2.Text = "SUPPLIER ITEM DETAILS"
+        '
+        'Label12
+        '
+        Me.Label12.AutoSize = True
+        Me.Label12.BackColor = System.Drawing.Color.Transparent
+        Me.Label12.Location = New System.Drawing.Point(4, 175)
+        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label12.Name = "Label12"
+        Me.Label12.Size = New System.Drawing.Size(93, 13)
+        Me.Label12.TabIndex = 95
+        Me.Label12.Text = "- Quoted Quantity:"
+        '
+        'QuantityTextBox
+        '
+        Me.QuantityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SuppQuoteJoinSuppLineItemBindingSource, "Supp_Line_Item_Quantity", True))
+        Me.QuantityTextBox.Location = New System.Drawing.Point(98, 172)
+        Me.QuantityTextBox.Name = "QuantityTextBox"
+        Me.QuantityTextBox.ReadOnly = True
+        Me.QuantityTextBox.Size = New System.Drawing.Size(124, 20)
+        Me.QuantityTextBox.TabIndex = 94
+        Me.QuantityTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'SuppQuoteJoinSuppLineItemBindingSource
+        '
+        Me.SuppQuoteJoinSuppLineItemBindingSource.DataMember = "SuppQuoteJoinSuppLineItem"
+        Me.SuppQuoteJoinSuppLineItemBindingSource.DataSource = Me.Group16DataSet
+        '
+        'Group16DataSet
+        '
+        Me.Group16DataSet.DataSetName = "group16DataSet"
+        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.BackColor = System.Drawing.Color.Transparent
+        Me.Label11.Location = New System.Drawing.Point(5, 111)
+        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(79, 13)
+        Me.Label11.TabIndex = 93
+        Me.Label11.Text = "- Active Status:"
+        '
+        'ActiveStatusTextBox
+        '
+        Me.ActiveStatusTextBox.Location = New System.Drawing.Point(98, 108)
+        Me.ActiveStatusTextBox.Name = "ActiveStatusTextBox"
+        Me.ActiveStatusTextBox.ReadOnly = True
+        Me.ActiveStatusTextBox.Size = New System.Drawing.Size(124, 20)
+        Me.ActiveStatusTextBox.TabIndex = 92
+        Me.ActiveStatusTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'Label10
+        '
+        Me.Label10.AutoSize = True
+        Me.Label10.BackColor = System.Drawing.Color.Transparent
+        Me.Label10.Location = New System.Drawing.Point(5, 82)
+        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(44, 13)
+        Me.Label10.TabIndex = 91
+        Me.Label10.Text = "- Brand:"
+        '
+        'BrandTextBox
+        '
+        Me.BrandTextBox.Location = New System.Drawing.Point(98, 79)
+        Me.BrandTextBox.Name = "BrandTextBox"
+        Me.BrandTextBox.ReadOnly = True
+        Me.BrandTextBox.Size = New System.Drawing.Size(124, 20)
+        Me.BrandTextBox.TabIndex = 90
+        Me.BrandTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
         '
         'Label9
         '
@@ -246,16 +332,6 @@ Partial Class LineItemDetailsPopUp
         Me.ProductNameTextBox.Size = New System.Drawing.Size(124, 20)
         Me.ProductNameTextBox.TabIndex = 88
         Me.ProductNameTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'SuppQuoteJoinSuppLineItemBindingSource
-        '
-        Me.SuppQuoteJoinSuppLineItemBindingSource.DataMember = "SuppQuoteJoinSuppLineItem"
-        Me.SuppQuoteJoinSuppLineItemBindingSource.DataSource = Me.Group16DataSet
-        '
-        'Group16DataSet
-        '
-        Me.Group16DataSet.DataSetName = "group16DataSet"
-        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label1
         '
@@ -402,7 +478,7 @@ Partial Class LineItemDetailsPopUp
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(79, 33)
         Me.BackButton.TabIndex = 83
-        Me.BackButton.Text = "BACK"
+        Me.BackButton.Text = "CLOSE"
         Me.BackButton.UseVisualStyleBackColor = False
         '
         'SupplierTableAdapter
@@ -412,82 +488,6 @@ Partial Class LineItemDetailsPopUp
         'SuppQuoteJoinSuppLineItemTableAdapter
         '
         Me.SuppQuoteJoinSuppLineItemTableAdapter.ClearBeforeFill = True
-        '
-        'Label10
-        '
-        Me.Label10.AutoSize = True
-        Me.Label10.BackColor = System.Drawing.Color.Transparent
-        Me.Label10.Location = New System.Drawing.Point(5, 82)
-        Me.Label10.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label10.Name = "Label10"
-        Me.Label10.Size = New System.Drawing.Size(44, 13)
-        Me.Label10.TabIndex = 91
-        Me.Label10.Text = "- Brand:"
-        '
-        'BrandTextBox
-        '
-        Me.BrandTextBox.Location = New System.Drawing.Point(98, 79)
-        Me.BrandTextBox.Name = "BrandTextBox"
-        Me.BrandTextBox.ReadOnly = True
-        Me.BrandTextBox.Size = New System.Drawing.Size(124, 20)
-        Me.BrandTextBox.TabIndex = 90
-        Me.BrandTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.BackColor = System.Drawing.Color.Transparent
-        Me.Label11.Location = New System.Drawing.Point(5, 111)
-        Me.Label11.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(79, 13)
-        Me.Label11.TabIndex = 93
-        Me.Label11.Text = "- Active Status:"
-        '
-        'ActiveStatusTextBox
-        '
-        Me.ActiveStatusTextBox.Location = New System.Drawing.Point(98, 108)
-        Me.ActiveStatusTextBox.Name = "ActiveStatusTextBox"
-        Me.ActiveStatusTextBox.ReadOnly = True
-        Me.ActiveStatusTextBox.Size = New System.Drawing.Size(124, 20)
-        Me.ActiveStatusTextBox.TabIndex = 92
-        Me.ActiveStatusTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.BackColor = System.Drawing.Color.Transparent
-        Me.Label12.Location = New System.Drawing.Point(4, 175)
-        Me.Label12.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(93, 13)
-        Me.Label12.TabIndex = 95
-        Me.Label12.Text = "- Quoted Quantity:"
-        '
-        'QuantityTextBox
-        '
-        Me.QuantityTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.SuppQuoteJoinSuppLineItemBindingSource, "Supp_Line_Item_Quantity", True))
-        Me.QuantityTextBox.Location = New System.Drawing.Point(98, 172)
-        Me.QuantityTextBox.Name = "QuantityTextBox"
-        Me.QuantityTextBox.ReadOnly = True
-        Me.QuantityTextBox.Size = New System.Drawing.Size(124, 20)
-        Me.QuantityTextBox.TabIndex = 94
-        Me.QuantityTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.BackColor = System.Drawing.Color.Transparent
-        Me.GroupBox1.Controls.Add(Me.VATButton)
-        Me.GroupBox1.Controls.Add(Me.VATTextBox)
-        Me.GroupBox1.Controls.Add(Me.Label8)
-        Me.GroupBox1.Location = New System.Drawing.Point(21, 245)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
-        Me.GroupBox1.Size = New System.Drawing.Size(390, 53)
-        Me.GroupBox1.TabIndex = 92
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "VAT SETTING"
         '
         'Customer_Quote_Line_ItemTableAdapter
         '
@@ -510,6 +510,8 @@ Partial Class LineItemDetailsPopUp
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Customer Line Item Details"
         Me.QuoteDetailsGroupBox.ResumeLayout(False)
+        Me.VATGroupBox.ResumeLayout(False)
+        Me.VATGroupBox.PerformLayout()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -520,8 +522,6 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.OptionsGroupBox1.ResumeLayout(False)
-        Me.GroupBox1.ResumeLayout(False)
-        Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
 
     End Sub
@@ -558,7 +558,7 @@ Partial Class LineItemDetailsPopUp
     Friend WithEvents SupplierIDTextBox As TextBox
     Friend WithEvents Label9 As Label
     Friend WithEvents ProductNameTextBox As TextBox
-    Friend WithEvents GroupBox1 As GroupBox
+    Friend WithEvents VATGroupBox As GroupBox
     Friend WithEvents Label12 As Label
     Friend WithEvents QuantityTextBox As TextBox
     Friend WithEvents Label11 As Label

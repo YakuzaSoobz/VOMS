@@ -12,10 +12,6 @@ Public Class CreateOrEditSupplierQuote
         Me.Hide()
     End Sub
 
-    Private Sub SupplierInfoButton_Click(sender As Object, e As EventArgs)
-        SupplierInfoPopUp.Show()
-        Me.Hide()
-    End Sub
 
     Private Sub CreateOrEditSupplierQuote_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Try
@@ -244,11 +240,6 @@ Public Class CreateOrEditSupplierQuote
         End If
     End Sub
 
-    Private Sub SupplierInfoButton_Click_1(sender As Object, e As EventArgs) Handles SupplierInfoButton.Click
-        SupplierInfoPopUp.Show()
-        SupplierInfoPopUp.SupplierBindingSource.Filter = "Supplier_ID = '" & SupplierIDComboBox.Text & "'"
-        SupplierInfoPopUp.Text = "Supplier Information: " & SupplierIDComboBox.SelectedText
-    End Sub
 
     Private Sub CreateSupplierButton_Click_1(sender As Object, e As EventArgs) Handles CreateSupplierButton.Click
         CreateSupplierStatus = True
@@ -270,9 +261,7 @@ Public Class CreateOrEditSupplierQuote
         Return sum
     End Function
 
-    Private Sub SupplierInfoButton_MouseHover(sender As Object, e As EventArgs) Handles SupplierInfoButton.MouseHover
-        CreateOrEditSupplierQuoteTip.SetToolTip(SupplierInfoButton, "Click to view information on supplier")
-    End Sub
+
 
     Private Sub CreateSupplierButton_MouseHover(sender As Object, e As EventArgs) Handles CreateSupplierButton.MouseHover
         CreateOrEditSupplierQuoteTip.SetToolTip(CreateSupplierButton, "Click to create supplier quote")
@@ -316,5 +305,20 @@ Public Class CreateOrEditSupplierQuote
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
         Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
+    End Sub
+
+    Private Sub SupplierInfoButton_MouseHover(sender As Object, e As EventArgs) Handles SupplierInfoButton.MouseHover
+        CreateOrEditSupplierQuoteTip.SetToolTip(SupplierInfoButton, "Click to select a supplier")
+    End Sub
+
+    Private Sub SupplierInfoButton_Click(sender As Object, e As EventArgs) Handles SupplierInfoButton.Click
+
+        Try
+            SelectSupplierPopUp.Show()
+        Catch ex As SqlException
+            MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
+        Catch ex As Exception
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+        End Try
     End Sub
 End Class

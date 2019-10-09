@@ -5,6 +5,9 @@ Public Class CreateOrEditCustomerQuote
     Public CreateCustomerStatus As Boolean = False
     Public CustomerQuoteID As Integer
     Public ActiveQuoteStatus As Boolean = False
+
+
+
     Private Sub CreateOrEditCustomerQuote_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Try
@@ -266,14 +269,10 @@ Public Class CreateOrEditCustomerQuote
 
 
         Try
-            EmployeeInfoPopUp.Show()
-            EmployeeInfoPopUp.EmployeeBindingSource.Filter = "Employee_ID = '" & EmployeeIDComboBox.Text & "'"
-            EmployeeInfoPopUp.Text = "Employee Information: " & EmployeeIDComboBox.Text
+            SelectEmployeePopUp.Show()
 
         Catch ex As SqlException
             MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
-        Catch ex As NoNullAllowedException
-            MsgBox("Cannot compute Total Price!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
@@ -312,19 +311,18 @@ Public Class CreateOrEditCustomerQuote
     Private Sub CustomerInfoButton_Click(sender As Object, e As EventArgs) Handles CustomerInfoButton.Click
 
         Try
-            CustomerInfoPopUp.Show()
-            CustomerInfoPopUp.CustomerBindingSource.Filter = "Customer_ID = '" & CustomerIDComboBox.Text & "'"
-            CustomerInfoPopUp.Text = "Employee Information: " & CustomerIDComboBox.Text
+            'CustomerInfoPopUp.Show()
+            'CustomerInfoPopUp.CustomerBindingSource.Filter = "Customer_ID = '" & CustomerIDComboBox.Text & "'"
+            'CustomerInfoPopUp.Text = "Employee Information: " & CustomerIDComboBox.Text
+
+            SelectCustomerPopUp.Show()
 
         Catch ex As SqlException
             MsgBox("Error, cannot connect to network!", vbExclamation, "Error!")
-        Catch ex As NoNullAllowedException
-            MsgBox("Cannot compute Total Price!", vbExclamation, "Incorrect Input!")
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
 
-        CustomerInfoPopUp.Show()
     End Sub
 
     Public Sub RefreshButton_Click(sender As Object, e As EventArgs) Handles RefreshButton.Click
