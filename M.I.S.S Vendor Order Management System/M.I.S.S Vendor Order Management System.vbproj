@@ -177,6 +177,12 @@
     <Compile Include="SelectSupplierPopUp.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="SuppLineItemsDetailsPopUp.Designer.vb">
+      <DependentUpon>SuppLineItemsDetailsPopUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SuppLineItemsDetailsPopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="TotalProductSales.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -224,6 +230,11 @@
     </Compile>
     <Compile Include="TotalValueOfSalesPerItemForSelectMonthForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VATDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VATDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ViewCustomerQuotePopUp.Designer.vb">
       <DependentUpon>ViewCustomerQuotePopUp.vb</DependentUpon>
@@ -411,6 +422,9 @@
     <EmbeddedResource Include="SelectSupplierPopUp.resx">
       <DependentUpon>SelectSupplierPopUp.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="SuppLineItemsDetailsPopUp.resx">
+      <DependentUpon>SuppLineItemsDetailsPopUp.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="TotalProductSales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>TotalProductSales.vb</LastGenOutput>
@@ -522,6 +536,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="VATDataSet.xsc">
+      <DependentUpon>VATDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VATDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VATDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VATDataSet.xss">
+      <DependentUpon>VATDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Background1.png" />
