@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class LineItemDetailsPopUp
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class LineItemDetailsPopUp
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.QuoteDetailsGroupBox = New System.Windows.Forms.GroupBox()
@@ -63,6 +63,9 @@ Partial Class LineItemDetailsPopUp
         Me.SupplierTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SupplierTableAdapter()
         Me.SuppQuoteJoinSuppLineItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SuppQuoteJoinSuppLineItemTableAdapter()
         Me.Customer_Quote_Line_ItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Customer_Quote_Line_ItemTableAdapter()
+        Me.VATDataSet = New M.I.S.S_Vendor_Order_Management_System.VATDataSet()
+        Me.VATBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VATTableAdapter = New M.I.S.S_Vendor_Order_Management_System.VATDataSetTableAdapters.VATTableAdapter()
         Me.QuoteDetailsGroupBox.SuspendLayout()
         Me.VATGroupBox.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
@@ -72,6 +75,8 @@ Partial Class LineItemDetailsPopUp
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.OptionsGroupBox1.SuspendLayout()
+        CType(Me.VATDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VATBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'QuoteDetailsGroupBox
@@ -123,6 +128,7 @@ Partial Class LineItemDetailsPopUp
         '
         'VATTextBox
         '
+        Me.VATTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.VATBindingSource, "VATPercentage", True))
         Me.VATTextBox.Location = New System.Drawing.Point(133, 22)
         Me.VATTextBox.Name = "VATTextBox"
         Me.VATTextBox.Size = New System.Drawing.Size(49, 20)
@@ -493,6 +499,20 @@ Partial Class LineItemDetailsPopUp
         '
         Me.Customer_Quote_Line_ItemTableAdapter.ClearBeforeFill = True
         '
+        'VATDataSet
+        '
+        Me.VATDataSet.DataSetName = "VATDataSet"
+        Me.VATDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'VATBindingSource
+        '
+        Me.VATBindingSource.DataMember = "VAT"
+        Me.VATBindingSource.DataSource = Me.VATDataSet
+        '
+        'VATTableAdapter
+        '
+        Me.VATTableAdapter.ClearBeforeFill = True
+        '
         'LineItemDetailsPopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -522,6 +542,8 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.OptionsGroupBox1.ResumeLayout(False)
+        CType(Me.VATDataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VATBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub
@@ -566,4 +588,7 @@ Partial Class LineItemDetailsPopUp
     Friend WithEvents Label10 As Label
     Friend WithEvents BrandTextBox As TextBox
     Friend WithEvents Customer_Quote_Line_ItemTableAdapter As group16DataSetTableAdapters.Customer_Quote_Line_ItemTableAdapter
+    Friend WithEvents VATDataSet As VATDataSet
+    Friend WithEvents VATBindingSource As BindingSource
+    Friend WithEvents VATTableAdapter As VATDataSetTableAdapters.VATTableAdapter
 End Class

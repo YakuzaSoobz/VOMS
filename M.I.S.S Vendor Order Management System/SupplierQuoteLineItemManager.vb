@@ -4,9 +4,15 @@ Public Class SupplierQuoteLineItemManager
 
     Public SupplierQuoteReferenceID As Integer
     Public CreateProductStatus = False
-    Dim ProductID As Integer
-    Dim CostPrice As Decimal
-    Dim Quantity As Integer
+    Public ProductID As Integer
+    Public CostPrice As Decimal
+    Public Quantity As Integer
+    Public CurrentCostPrice As Decimal
+    Public CurrentQuantity As Integer
+
+    Public AddStatus As Boolean = False
+    Public UpdateStatus As Boolean = False
+
 
     Private Sub SupplierQuoteLineItemManager_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
@@ -32,21 +38,41 @@ Public Class SupplierQuoteLineItemManager
 
             If (e.ColumnIndex = 5) Then 'add product to quote
 
+
+
                 Dim ret As Integer = MsgBox("Add product to Supplier Quote?", vbYesNo)
 
                 If ret = 6 Then 'if user clicks yes to add item'
 
-                    ProductID = Integer.Parse(ProductDataGridView.CurrentRow.Cells(0).Value)
-                    CostPrice = Decimal.Parse(InputBox("Enter item cost price:", vbOKOnly, "0"))
-                    Quantity = Integer.Parse(InputBox("Enter item quantity:", vbOKOnly, "1"))
+                    AddStatus = True
+                    UpdateStatus = False
 
-                    Supplier_Quote_Line_ItemTableAdapter.Insert(SupplierQuoteReferenceID, ProductID, CostPrice, Quantity)
-                    Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
-                    Me.Supplier_Quote_Line_ItemTableAdapter.Fill(Me.Group16DataSet.Supplier_Quote_Line_Item)
+                    ProductID = Integer.Parse(ProductDataGridView.CurrentRow.Cells(0).Value)
+
+                    SuppLineItemsDetailsPopUp.Show()
+
                     Call ClearButton_Click(sender, e)
                 End If
 
             End If
+        Catch ex As SyntaxErrorException
+            MsgBox("Cannot add!", vbExclamation, "Cannot add!")
+        Catch ex As EvaluateException
+            MsgBox("Cannot add", vbExclamation, "Cannot add!")
+        Catch ex As Exception
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+        End Try
+    End Sub
+
+    Public Sub Add()
+        Try
+
+
+            Supplier_Quote_Line_ItemTableAdapter.Insert(SupplierQuoteReferenceID, ProductID, CostPrice, Quantity)
+            Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
+            Me.Supplier_Quote_Line_ItemTableAdapter.Fill(Me.Group16DataSet.Supplier_Quote_Line_Item)
+            MsgBox("Added new Supplier Line Item to Supplier Quote " & SupplierQuoteReferenceID & " !", vbInformation)
+
         Catch ex As SyntaxErrorException
             MsgBox("Cannot add!", vbExclamation, "Cannot add!")
         Catch ex As EvaluateException
@@ -152,17 +178,18 @@ Public Class SupplierQuoteLineItemManager
 
                 If ret = 6 Then 'if user clicks yes to add item'
 
+                    AddStatus = False
+                    UpdateStatus = True
+
                     ProductID = Integer.Parse(SupplierQuoteLineItemDataGridView.CurrentRow.Cells(1).Value)
                     SupplierQuoteReferenceID = Integer.Parse(SupplierQuoteLineItemDataGridView.CurrentRow.Cells(0).Value)
-                    Dim CurrentCostPrice = Decimal.Parse(SupplierQuoteLineItemDataGridView.CurrentRow.Cells(2).Value)
-                    Dim CurrentQuantity = Integer.Parse(SupplierQuoteLineItemDataGridView.CurrentRow.Cells(3).Value)
 
-                    CostPrice = Decimal.Parse(InputBox("Enter item cost price:", vbOKOnly, CurrentCostPrice))
-                    Quantity = Integer.Parse(InputBox("Enter item quantity:", vbOKOnly, CurrentQuantity))
+                    CurrentCostPrice = Decimal.Parse(SupplierQuoteLineItemDataGridView.CurrentRow.Cells(2).Value)
+                    CurrentQuantity = Integer.Parse(SupplierQuoteLineItemDataGridView.CurrentRow.Cells(3).Value)
 
-                    Supplier_Quote_Line_ItemTableAdapter.UpdateSuppLineItemQuery(Quantity, CostPrice, SupplierQuoteReferenceID, ProductID)
-                    Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
-                    Me.Supplier_Quote_Line_ItemTableAdapter.Fill(Me.Group16DataSet.Supplier_Quote_Line_Item)
+                    SuppLineItemsDetailsPopUp.Show()
+
+
                     Call ClearButton_Click(sender, e)
                 End If
 
@@ -176,6 +203,25 @@ Public Class SupplierQuoteLineItemManager
             End Try
 
         End If
+
+    End Sub
+
+    Public Sub UpdateItem()
+
+        Try
+
+            Supplier_Quote_Line_ItemTableAdapter.UpdateSuppLineItemQuery(Quantity, CostPrice, SupplierQuoteReferenceID, ProductID)
+            Me.ProductTableAdapter.Fill(Me.Group16DataSet.Product)
+            Me.Supplier_Quote_Line_ItemTableAdapter.Fill(Me.Group16DataSet.Supplier_Quote_Line_Item)
+            MsgBox("Updated Supplier Line Item !", vbInformation)
+
+        Catch ex As SyntaxErrorException
+            MsgBox("Cannot add!", vbExclamation, "Cannot add!")
+        Catch ex As EvaluateException
+            MsgBox("Cannot add", vbExclamation, "Cannot add!")
+        Catch ex As Exception
+            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+        End Try
 
     End Sub
 
