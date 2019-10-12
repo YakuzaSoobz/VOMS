@@ -2,8 +2,8 @@
 
 Public Class SignIn
 
-    Public ManagerStatus As Boolean = False
-    Public EmployeeStatus As Boolean = False
+    Public ManagerStatus As Boolean
+    Public EmployeeStatus As Boolean
 
     Private Sub SignInButton_Click(sender As Object, e As EventArgs) Handles SignInButton.Click
 
@@ -44,34 +44,16 @@ Public Class SignIn
     End Sub
 
     Private Sub EmployeeBindingNavigatorSaveItem_Click(sender As Object, e As EventArgs)
-
-
-        Try
-            Me.Validate()
-            Me.EmployeeBindingSource.EndEdit()
-            Me.TableAdapterManager.UpdateAll(Me.Group16DataSet)
-
-        Catch ex As SqlException
-            MessageBox.Show("Oops! Connection to the server has failed.")
-        Catch ex As Exception
-            MessageBox.Show("Oops! Something went wrong.")
-        End Try
+        Me.Validate()
+        Me.EmployeeBindingSource.EndEdit()
+        Me.TableAdapterManager.UpdateAll(Me.Group16DataSet)
 
     End Sub
 
     Private Sub SignIn_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'Group16DataSet.Employee' table. You can move, or remove it, as needed.
-
-
-        Try
-            Me.EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee)
-            PasswordTextBox.UseSystemPasswordChar = True
-
-        Catch ex As SqlException
-            MessageBox.Show("Oops! Connection to the server has failed.")
-        Catch ex As Exception
-            MessageBox.Show("Oops! Something went wrong.")
-        End Try
+        Me.EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee)
+        PasswordTextBox.UseSystemPasswordChar = True
     End Sub
 
     Private Sub ShowPasswordButton_Click(sender As Object, e As EventArgs) Handles ShowPasswordButton.Click
@@ -83,7 +65,7 @@ Public Class SignIn
         End If
     End Sub
 
-    Private Sub AboutButton_Click(sender As Object, e As EventArgs)
+    Private Sub AboutButton_Click(sender As Object, e As EventArgs) Handles AboutButton.Click
         MessageBox.Show("Vendor Order Management System; developed by Normalisers42. Latest Refresh: (16/08/2019)")
     End Sub
 
@@ -93,9 +75,9 @@ Public Class SignIn
 
     Private Sub AccessCombo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AccessCombo.SelectedIndexChanged
         If AccessCombo.SelectedItem = 1 Then
-            AccessLevelTextBox.Text = "Employee"
-        ElseIf AccessCombo.SelectedItem = 2 Then
             AccessLevelTextBox.Text = "Manager"
+        ElseIf AccessCombo.SelectedItem = 2 Then
+            AccessLevelTextBox.Text = "Employee"
         End If
     End Sub
 End Class

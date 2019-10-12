@@ -18,7 +18,7 @@ Imports System
 Imports System.ComponentModel
 
 
-Public Class TotalSupplierCostPerSupplier
+Public Class CustomerIncomeReport
     Inherits ReportClass
     
     Public Sub New()
@@ -27,7 +27,7 @@ Public Class TotalSupplierCostPerSupplier
     
     Public Overrides Property ResourceName() As String
         Get
-            Return "TotalSupplierCostPerSupplier.rpt"
+            Return "CustomerIncomeReport.rpt"
         End Get
         Set
             'Do nothing
@@ -45,7 +45,7 @@ Public Class TotalSupplierCostPerSupplier
     
     Public Overrides Property FullResourceName() As String
         Get
-            Return "M.I.S.S_Vendor_Order_Management_System.TotalSupplierCostPerSupplier.rpt"
+            Return "M.I.S.S_Vendor_Order_Management_System.CustomerIncomeReport.rpt"
         End Get
         Set
             'Do nothing
@@ -110,7 +110,7 @@ Public Class TotalSupplierCostPerSupplier
     
     <Browsable(false),  _
      DesignerSerializationVisibilityAttribute(System.ComponentModel.DesignerSerializationVisibility.Hidden)>  _
-    Public ReadOnly Property Parameter_DateTime() As CrystalDecisions.[Shared].IParameterField
+    Public ReadOnly Property Parameter_Dates() As CrystalDecisions.[Shared].IParameterField
         Get
             Return Me.DataDefinition.ParameterFields(0)
         End Get
@@ -118,7 +118,7 @@ Public Class TotalSupplierCostPerSupplier
 End Class
 
 <System.Drawing.ToolboxBitmapAttribute(GetType(CrystalDecisions.[Shared].ExportOptions), "report.bmp")>  _
-Public Class CachedTotalSupplierCostPerSupplier
+Public Class CachedCustomerIncomeReport
     Inherits Component
     Implements ICachedReport
     
@@ -160,7 +160,7 @@ Public Class CachedTotalSupplierCostPerSupplier
     End Property
     
     Public Overridable Function CreateReport() As CrystalDecisions.CrystalReports.Engine.ReportDocument Implements CrystalDecisions.ReportSource.ICachedReport.CreateReport
-        Dim rpt As TotalSupplierCostPerSupplier = New TotalSupplierCostPerSupplier()
+        Dim rpt As CustomerIncomeReport = New CustomerIncomeReport()
         rpt.Site = Me.Site
         Return rpt
     End Function
