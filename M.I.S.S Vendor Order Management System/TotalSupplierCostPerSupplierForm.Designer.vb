@@ -27,8 +27,8 @@ Partial Class TotalSupplierCostPerSupplierForm
         Me.Supplier_QuoteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Supplier_QuoteTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Supplier_QuoteTableAdapter()
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
-        Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.SupplierTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SupplierTableAdapter()
+        Me.SupplierBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.totalSupplierCostPerSupplier1 = New M.I.S.S_Vendor_Order_Management_System.TotalSupplierCostPerSupplier()
         Me.CrystalReportViewer1 = New CrystalDecisions.Windows.Forms.CrystalReportViewer()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -63,14 +63,14 @@ Partial Class TotalSupplierCostPerSupplierForm
         Me.TableAdapterManager.SupplierTableAdapter = Me.SupplierTableAdapter
         Me.TableAdapterManager.UpdateOrder = M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete
         '
+        'SupplierTableAdapter
+        '
+        Me.SupplierTableAdapter.ClearBeforeFill = True
+        '
         'SupplierBindingSource
         '
         Me.SupplierBindingSource.DataMember = "Supplier"
         Me.SupplierBindingSource.DataSource = Me.Group16DataSet
-        '
-        'SupplierTableAdapter
-        '
-        Me.SupplierTableAdapter.ClearBeforeFill = True
         '
         'CrystalReportViewer1
         '
@@ -81,14 +81,14 @@ Partial Class TotalSupplierCostPerSupplierForm
         Me.CrystalReportViewer1.Location = New System.Drawing.Point(0, 0)
         Me.CrystalReportViewer1.Name = "CrystalReportViewer1"
         Me.CrystalReportViewer1.ReportSource = Me.totalSupplierCostPerSupplier1
-        Me.CrystalReportViewer1.Size = New System.Drawing.Size(726, 674)
+        Me.CrystalReportViewer1.Size = New System.Drawing.Size(1069, 674)
         Me.CrystalReportViewer1.TabIndex = 0
         '
         'TotalSupplierCostPerSupplierForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(726, 674)
+        Me.ClientSize = New System.Drawing.Size(1069, 674)
         Me.Controls.Add(Me.CrystalReportViewer1)
         Me.Name = "TotalSupplierCostPerSupplierForm"
         Me.Text = "TotalSupplierCostPerSupplierForm"
