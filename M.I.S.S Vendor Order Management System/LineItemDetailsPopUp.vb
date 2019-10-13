@@ -12,16 +12,17 @@ Public Class LineItemDetailsPopUp
     Dim SaleInclVat As Decimal
     Dim SaleExclVat As Decimal
     Public Quantity As Integer
+    Dim VATPercentage As Decimal
 
     Dim SetMarkupPercentage As Decimal = 20
 
     Private Sub LineItemDetailsPopUp_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-
+        'TODO: This line of code loads data into the 'VATDataSet.VAT' table. You can move, or remove it, as needed.
 
         If (CustomerQuoteItemManager.AddStatus = True) And (CustomerQuoteItemManager.UpdateStatus = False) Then
 
             Try
-
+                Me.VATTableAdapter.Fill(Me.VATDataSet.VAT)
 
                 ProductID = CustomerQuoteItemManager.ProductID
                 CostPrice = CustomerQuoteItemManager.CostPrice
@@ -41,7 +42,8 @@ Public Class LineItemDetailsPopUp
                 DiscountComboBox.Text = 0
                 QuantityComboBox.Text = Quantity
 
-                Me.VATTextBox.Text = My.Settings.MyVAT
+                VATPercentage = Convert.ToDecimal(VATTextBox.Text)
+
 
             Catch ex As SqlException
                 MsgBox("Cannot load form!", vbExclamation, "Network Error!")
@@ -54,6 +56,7 @@ Public Class LineItemDetailsPopUp
         ElseIf (CustomerQuoteItemManager.AddStatus = False) And (CustomerQuoteItemManager.UpdateStatus = True) Then
 
             Try
+                Me.VATTableAdapter.Fill(Me.VATDataSet.VAT)
 
                 BrandTextBox.Text = CustomerQuoteItemManager.ProductBrand
                 ProductNameTextBox.Text = CustomerQuoteItemManager.Product
@@ -67,7 +70,8 @@ Public Class LineItemDetailsPopUp
                 DiscountComboBox.Text = DiscountPercentage
                 QuantityComboBox.Text = Quantity
 
-                Me.VATTextBox.Text = My.Settings.MyVAT
+                VATPercentage = Convert.ToDecimal(VATTextBox.Text)
+
 
             Catch ex As SqlException
                 MsgBox("Cannot load form!", vbExclamation, "Network Error!")
@@ -187,7 +191,7 @@ Public Class LineItemDetailsPopUp
                             Dim MarkupAmount As Decimal = (MarkupPercentage / 100) * CostPrice
                             Dim DiscountAmount As Decimal = (CostPrice + MarkupAmount) * (DiscountPercentage / 100)
                             SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))
-                            SaleInclVat = SaleExclVat + (SaleExclVat * (My.Settings.MyVAT / 100))
+                            SaleInclVat = SaleExclVat + (SaleExclVat * (VATPercentage / 100))
 
                             SaleExclVATTextBox.Text = FormatCurrency(SaleExclVat)
                             SaleInclVATTextBox.Text = FormatCurrency(SaleInclVat)
@@ -223,7 +227,7 @@ Public Class LineItemDetailsPopUp
                             Dim MarkupAmount As Decimal = (MarkupPercentage / 100) * CostPrice
                             Dim DiscountAmount As Decimal = (CostPrice + MarkupAmount) * (DiscountPercentage / 100)
                             SaleExclVat = ((CostPrice + MarkupAmount) - (DiscountAmount))
-                            SaleInclVat = SaleExclVat + (SaleExclVat * (My.Settings.MyVAT / 100))
+                            SaleInclVat = SaleExclVat + (SaleExclVat * (VATPercentage / 100))
 
                             SaleExclVATTextBox.Text = FormatCurrency(SaleExclVat)
                             SaleInclVATTextBox.Text = FormatCurrency(SaleInclVat)
@@ -349,22 +353,27 @@ Public Class LineItemDetailsPopUp
         Try
             If String.IsNullOrWhiteSpace(VATTextBox.Text) Then ' is blank
 
-                MsgBox("The % VAT is an integer only from 0% - 100%! It cannot be left blank", vbOK, "Unable to set new % VAT")
-                VATTextBox.Text = My.Settings.MyVAT
+                MsgBox("The % VAT is a decimal only from 0% - 100%! It cannot be left blank", vbOK, "Unable to set new % VAT")
+                VATTextBox.Text = VATPercentage
             ElseIf Not (IsNumeric(VATTextBox.Text)) Then ' is not numeric
 
-                MsgBox("The % VAT is an integer only from 0% - 100%!", vbOK, "Unable to set new % VAT")
-                VATTextBox.Text = My.Settings.MyVAT
+                MsgBox("The % VAT is a decimal only from 0% - 100%!", vbOK, "Unable to set new % VAT")
+                VATTextBox.Text = VATPercentage
             ElseIf ((Decimal.Parse(VATTextBox.Text) < 0) Or (Decimal.Parse(VATTextBox.Text) > 100)) Then ' is <0 and >1000
 
-                MsgBox("The % VAT is an integer only from 0% - 100%!", vbOK, "Unable to set new % VAT")
-                VATTextBox.Text = My.Settings.MyVAT
+                MsgBox("The % VAT is a decimal only from 0% - 100%!", vbOK, "Unable to set new % VAT")
+                VATTextBox.Text = VATPercentage
 
             Else 'if everything is valid
-                My.Settings.MyVAT = VATTextBox.Text
-                My.Settings.Save()
-                MsgBox("The % VAT has been changed to" & (My.Settings.MyVAT) & "% !", vbOK, "% VAT changed!")
 
+                Dim ret As Integer = MsgBox("Confirm change to VAT %?", vbYesNo)
+
+                If ret = 6 Then 'if user clicks yes to update'
+                    VATPercentage = VATTextBox.Text
+                    VATBindingSource.EndEdit()
+                    VATTableAdapter.Update(VATDataSet)
+                    MsgBox("The % VAT has been changed to" & (VATPercentage) & "% !", vbOK, "% VAT changed!")
+                End If
             End If
         Catch ex As SqlException
             MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
@@ -376,5 +385,13 @@ Public Class LineItemDetailsPopUp
 
     End Sub
 
+    Private Sub VATTextBox_TextChanged(sender As Object, e As EventArgs) Handles VATTextBox.TextChanged
+        Dim result As Decimal = 0.0
+        If Decimal.TryParse(VATTextBox.Text, result) Then
+            VATTextBox.BackColor = Color.White
+        Else
 
+            VATTextBox.BackColor = Color.MistyRose
+        End If
+    End Sub
 End Class

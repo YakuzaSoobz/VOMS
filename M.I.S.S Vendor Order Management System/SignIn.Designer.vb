@@ -24,6 +24,7 @@ Partial Class SignIn
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.AccessLevelTextBox = New System.Windows.Forms.TextBox()
         Me.AccessCombo = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.SignInButton = New System.Windows.Forms.Button()
@@ -32,7 +33,6 @@ Partial Class SignIn
         Me.EmployeeIDTextbox = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.PasswordTextBox = New System.Windows.Forms.TextBox()
-        Me.AboutButton = New System.Windows.Forms.Button()
         Me.HelpBtn = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -45,7 +45,6 @@ Partial Class SignIn
         Me.TableAdapterManager = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.TableAdapterManager()
         Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
         Me.HelpProvider2 = New System.Windows.Forms.HelpProvider()
-        Me.AccessLevelTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Normalisers42PictureBox, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -66,13 +65,20 @@ Partial Class SignIn
         Me.GroupBox1.Controls.Add(Me.Label2)
         Me.GroupBox1.Controls.Add(Me.PasswordTextBox)
         Me.GroupBox1.Location = New System.Drawing.Point(102, 155)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
         Me.GroupBox1.Size = New System.Drawing.Size(432, 240)
         Me.GroupBox1.TabIndex = 33
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "EMPLOYEE SIGN IN"
+        '
+        'AccessLevelTextBox
+        '
+        Me.AccessLevelTextBox.Location = New System.Drawing.Point(149, 157)
+        Me.AccessLevelTextBox.Name = "AccessLevelTextBox"
+        Me.AccessLevelTextBox.Size = New System.Drawing.Size(179, 20)
+        Me.AccessLevelTextBox.TabIndex = 43
         '
         'AccessCombo
         '
@@ -102,7 +108,7 @@ Partial Class SignIn
         Me.SignInButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.SignInButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.SignInButton.Location = New System.Drawing.Point(203, 183)
-        Me.SignInButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SignInButton.Margin = New System.Windows.Forms.Padding(2)
         Me.SignInButton.Name = "SignInButton"
         Me.SignInButton.Size = New System.Drawing.Size(64, 34)
         Me.SignInButton.TabIndex = 32
@@ -120,7 +126,7 @@ Partial Class SignIn
         Me.ShowPasswordButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.ShowPasswordButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ShowPasswordButton.Location = New System.Drawing.Point(332, 97)
-        Me.ShowPasswordButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ShowPasswordButton.Margin = New System.Windows.Forms.Padding(2)
         Me.ShowPasswordButton.Name = "ShowPasswordButton"
         Me.ShowPasswordButton.Size = New System.Drawing.Size(31, 24)
         Me.ShowPasswordButton.TabIndex = 22
@@ -139,7 +145,7 @@ Partial Class SignIn
         'EmployeeIDTextbox
         '
         Me.EmployeeIDTextbox.Location = New System.Drawing.Point(87, 45)
-        Me.EmployeeIDTextbox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EmployeeIDTextbox.Margin = New System.Windows.Forms.Padding(2)
         Me.EmployeeIDTextbox.Name = "EmployeeIDTextbox"
         Me.EmployeeIDTextbox.Size = New System.Drawing.Size(241, 20)
         Me.EmployeeIDTextbox.TabIndex = 21
@@ -157,27 +163,11 @@ Partial Class SignIn
         'PasswordTextBox
         '
         Me.PasswordTextBox.Location = New System.Drawing.Point(87, 100)
-        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.PasswordTextBox.Margin = New System.Windows.Forms.Padding(2)
         Me.PasswordTextBox.MaxLength = 10
         Me.PasswordTextBox.Name = "PasswordTextBox"
         Me.PasswordTextBox.Size = New System.Drawing.Size(241, 20)
         Me.PasswordTextBox.TabIndex = 20
-        '
-        'AboutButton
-        '
-        Me.AboutButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.AboutButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.AboutButton.FlatAppearance.BorderSize = 3
-        Me.AboutButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.AboutButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.AboutButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.AboutButton.Location = New System.Drawing.Point(9, 431)
-        Me.AboutButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
-        Me.AboutButton.Name = "AboutButton"
-        Me.AboutButton.Size = New System.Drawing.Size(79, 33)
-        Me.AboutButton.TabIndex = 34
-        Me.AboutButton.Text = "ABOUT"
-        Me.AboutButton.UseVisualStyleBackColor = False
         '
         'HelpBtn
         '
@@ -187,8 +177,8 @@ Partial Class SignIn
         Me.HelpBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.HelpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.HelpBtn.Location = New System.Drawing.Point(555, 431)
-        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.HelpBtn.Location = New System.Drawing.Point(553, 429)
+        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(2)
         Me.HelpBtn.Name = "HelpBtn"
         Me.HelpBtn.Size = New System.Drawing.Size(79, 33)
         Me.HelpBtn.TabIndex = 35
@@ -236,7 +226,7 @@ Partial Class SignIn
         Me.Label5.AutoSize = True
         Me.Label5.BackColor = System.Drawing.Color.Transparent
         Me.Label5.Font = New System.Drawing.Font("Microsoft Tai Le", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label5.Location = New System.Drawing.Point(174, 428)
+        Me.Label5.Location = New System.Drawing.Point(191, 429)
         Me.Label5.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label5.Name = "Label5"
         Me.Label5.Size = New System.Drawing.Size(201, 19)
@@ -248,7 +238,7 @@ Partial Class SignIn
         '
         Me.Normalisers42PictureBox.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Normalisers42_Logo
         Me.Normalisers42PictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Normalisers42PictureBox.Location = New System.Drawing.Point(380, 411)
+        Me.Normalisers42PictureBox.Location = New System.Drawing.Point(397, 412)
         Me.Normalisers42PictureBox.Name = "Normalisers42PictureBox"
         Me.Normalisers42PictureBox.Size = New System.Drawing.Size(50, 50)
         Me.Normalisers42PictureBox.TabIndex = 40
@@ -289,13 +279,6 @@ Partial Class SignIn
         '
         Me.HelpProvider2.HelpNamespace = "C:\Users\munis\Documents\GitHub Normalisers42\VOMS\VOMSHelpFinal.chm"
         '
-        'AccessLevelTextBox
-        '
-        Me.AccessLevelTextBox.Location = New System.Drawing.Point(149, 157)
-        Me.AccessLevelTextBox.Name = "AccessLevelTextBox"
-        Me.AccessLevelTextBox.Size = New System.Drawing.Size(179, 20)
-        Me.AccessLevelTextBox.TabIndex = 43
-        '
         'SignIn
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -310,7 +293,6 @@ Partial Class SignIn
         Me.Controls.Add(Me.Label4)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.HelpBtn)
-        Me.Controls.Add(Me.AboutButton)
         Me.Controls.Add(Me.GroupBox1)
         Me.DoubleBuffered = True
         Me.Name = "SignIn"
@@ -334,7 +316,6 @@ Partial Class SignIn
     Friend WithEvents EmployeeIDTextbox As TextBox
     Friend WithEvents Label2 As Label
     Friend WithEvents PasswordTextBox As TextBox
-    Friend WithEvents AboutButton As Button
     Friend WithEvents HelpBtn As Button
     Friend WithEvents Label3 As Label
     Friend WithEvents Label4 As Label

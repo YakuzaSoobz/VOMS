@@ -111,18 +111,6 @@
     <Compile Include="AmountOfProductsSoldPerMonthForLastYear.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CustomerIncomeForm.Designer.vb">
-      <DependentUpon>CustomerIncomeForm.vb</DependentUpon>
-    </Compile>
-    <Compile Include="CustomerIncomeForm.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="CustomerIncomeReport.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>CustomerIncomeReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="CustomerInfoPopUp.Designer.vb">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
     </Compile>
@@ -165,18 +153,6 @@
       <DependentUpon>QuantityOfProductsSoldPerMonthForTheLastYear.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="QuotationsPerMonth.Designer.vb">
-      <DependentUpon>QuotationsPerMonth.vb</DependentUpon>
-    </Compile>
-    <Compile Include="QuotationsPerMonth.vb">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="QuotationsPerMonthReport.vb">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>QuotationsPerMonthReport.rpt</DependentUpon>
-      <SubType>Component</SubType>
-    </Compile>
     <Compile Include="ReportMenu.Designer.vb">
       <DependentUpon>ReportMenu.vb</DependentUpon>
     </Compile>
@@ -199,6 +175,12 @@
       <DependentUpon>SelectSupplierPopUp.vb</DependentUpon>
     </Compile>
     <Compile Include="SelectSupplierPopUp.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SuppLineItemsDetailsPopUp.Designer.vb">
+      <DependentUpon>SuppLineItemsDetailsPopUp.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SuppLineItemsDetailsPopUp.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="TotalProductSales.vb">
@@ -248,6 +230,11 @@
     </Compile>
     <Compile Include="TotalValueOfSalesPerItemForSelectMonthForm.vb">
       <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="VATDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>VATDataSet.xsd</DependentUpon>
     </Compile>
     <Compile Include="ViewCustomerQuotePopUp.Designer.vb">
       <DependentUpon>ViewCustomerQuotePopUp.vb</DependentUpon>
@@ -400,13 +387,6 @@
     <EmbeddedResource Include="AmountOfProductsSoldPerMonthForLastYear.resx">
       <DependentUpon>AmountOfProductsSoldPerMonthForLastYear.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="CustomerIncomeForm.resx">
-      <DependentUpon>CustomerIncomeForm.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="CustomerIncomeReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>CustomerIncomeReport.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="CustomerInfoPopUp.resx">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
     </EmbeddedResource>
@@ -430,13 +410,6 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuantityOfProductsSoldPerMonthForTheLastYear.vb</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="QuotationsPerMonth.resx">
-      <DependentUpon>QuotationsPerMonth.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="QuotationsPerMonthReport.rpt">
-      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
-      <LastGenOutput>QuotationsPerMonthReport.vb</LastGenOutput>
-    </EmbeddedResource>
     <EmbeddedResource Include="ReportMenu.resx">
       <DependentUpon>ReportMenu.vb</DependentUpon>
     </EmbeddedResource>
@@ -448,6 +421,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="SelectSupplierPopUp.resx">
       <DependentUpon>SelectSupplierPopUp.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuppLineItemsDetailsPopUp.resx">
+      <DependentUpon>SuppLineItemsDetailsPopUp.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="TotalProductSales.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -560,6 +536,17 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <None Include="VATDataSet.xsc">
+      <DependentUpon>VATDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="VATDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>VATDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="VATDataSet.xss">
+      <DependentUpon>VATDataSet.xsd</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\Background1.png" />
