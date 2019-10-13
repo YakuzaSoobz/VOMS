@@ -16,7 +16,7 @@ Public Class CustomerQuoteItemManager
     Public SaleInclVat As Decimal
     Public SaleExclVat As Decimal
     Public Quantity As Integer
-    Public VATPercentage As Decimal = 0.15
+    'Public VATPercentadfdfge As Decimal = 0.15
     Public SetMarkupPercentage As Decimal = 20
 
     Public AddStatus = False
