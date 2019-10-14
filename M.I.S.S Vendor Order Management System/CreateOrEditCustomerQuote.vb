@@ -137,9 +137,6 @@ Public Class CreateOrEditCustomerQuote
                     Dim ret As Integer = MsgBox("Add new Customer Quote too the database?", vbYesNo)
                     If ret = 6 Then 'if user clicks yes to update'
 
-                        EmployeeTableAdapter.Fill(Me.Group16DataSet.Employee)
-                        CustomerTableAdapter.Fill(Me.Group16DataSet.Customer)
-
                         If (QuoteAcceptanceStatusComboBox.SelectedItem = "N") Then 'if date is empTy then make it 1111/11/11
                             DateAcceptedTextBox.Text = "1111/11/11"
                         End If
@@ -338,5 +335,10 @@ Public Class CreateOrEditCustomerQuote
         Catch ex As Exception
             MsgBox("Oops something went wrong!", vbExclamation, "Error!")
         End Try
+    End Sub
+
+    Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
+        Dim helpFilePath = IO.Path.Combine(My.Application.Info.DirectoryPath, "M.I.S.chm")
+        Help.ShowHelp(Me, helpFilePath)
     End Sub
 End Class

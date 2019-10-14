@@ -328,7 +328,7 @@ Partial Class ViewSupplierQuotePopUp
         Me.BackButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.BackButton.Location = New System.Drawing.Point(640, 510)
+        Me.BackButton.Location = New System.Drawing.Point(640, 475)
         Me.BackButton.Margin = New System.Windows.Forms.Padding(3, 2, 3, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(105, 41)
@@ -370,10 +370,11 @@ Partial Class ViewSupplierQuotePopUp
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(757, 562)
+        Me.ClientSize = New System.Drawing.Size(757, 533)
         Me.Controls.Add(Me.BackButton)
         Me.Controls.Add(Me.PrintQuoteButton)
         Me.Controls.Add(Me.NavigationGroupBox)

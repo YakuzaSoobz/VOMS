@@ -343,7 +343,7 @@ Public Class CustomerManager
             ElseIf (SignIn.ManagerStatus = False) And (SignIn.EmployeeStatus = True) And (CreateOrEditCustomerQuote.CreateCustomerStatus = False) Then
                 EmployeeHomeMenu.Show()
                 Me.Close()
-            ElseIf (SignIn.ManagerStatus = False) And (SignIn.EmployeeStatus = False) And (CreateOrEditCustomerQuote.CreateCustomerStatus = True) Then
+            ElseIf (CreateOrEditCustomerQuote.CreateCustomerStatus = True) Then
                 CreateOrEditCustomerQuote.CreateCustomerStatus = False
                 CreateOrEditCustomerQuote.CustomerTableAdapter.Fill(CreateOrEditCustomerQuote.Group16DataSet.Customer)
                 Me.Close()
@@ -358,7 +358,8 @@ Public Class CustomerManager
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
+        Dim helpFilePath = IO.Path.Combine(My.Application.Info.DirectoryPath, "M.I.S.chm")
+        Help.ShowHelp(Me, helpFilePath)
     End Sub
 
 

@@ -99,6 +99,12 @@
     <Compile Include="AmountOfProductSalesPerEmployeeLastYear.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="AmountOfProductsSoldPerEmployeeLastYearClass.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>AmountOfProductsSoldPerEmployeeLastYearClass.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="AmountOfProductsSoldPerEmployeeLastYearRPT.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -109,6 +115,18 @@
       <DependentUpon>AmountOfProductsSoldPerMonthForLastYear.vb</DependentUpon>
     </Compile>
     <Compile Include="AmountOfProductsSoldPerMonthForLastYear.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CustomerIncome.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CustomerIncome.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="CustomerIncomeForm.Designer.vb">
+      <DependentUpon>CustomerIncomeForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="CustomerIncomeForm.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="CustomerInfoPopUp.Designer.vb">
@@ -151,6 +169,18 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>QuantityOfProductsSoldPerMonthForTheLastYear.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="QuotationsPerMonthForm.Designer.vb">
+      <DependentUpon>QuotationsPerMonthForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="QuotationsPerMonthForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="QuotationsPerrMonthReport.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>QuotationsPerrMonthReport.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportMenu.Designer.vb">
@@ -380,12 +410,23 @@
     <EmbeddedResource Include="AmountOfProductSalesPerEmployeeLastYear.resx">
       <DependentUpon>AmountOfProductSalesPerEmployeeLastYear.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="AmountOfProductsSoldPerEmployeeLastYearClass.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>AmountOfProductsSoldPerEmployeeLastYearClass.vb</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="AmountOfProductsSoldPerEmployeeLastYearRPT.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>AmountOfProductsSoldPerEmployeeLastYearRPT.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="AmountOfProductsSoldPerMonthForLastYear.resx">
       <DependentUpon>AmountOfProductsSoldPerMonthForLastYear.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerIncome.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CustomerIncome.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CustomerIncomeForm.resx">
+      <DependentUpon>CustomerIncomeForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CustomerInfoPopUp.resx">
       <DependentUpon>CustomerInfoPopUp.vb</DependentUpon>
@@ -409,6 +450,13 @@
     <EmbeddedResource Include="QuantityOfProductsSoldPerMonthForTheLastYear.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>QuantityOfProductsSoldPerMonthForTheLastYear.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotationsPerMonthForm.resx">
+      <DependentUpon>QuotationsPerMonthForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="QuotationsPerrMonthReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>QuotationsPerrMonthReport.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="ReportMenu.resx">
       <DependentUpon>ReportMenu.vb</DependentUpon>
@@ -526,6 +574,12 @@
     <None Include="group16DataSet.xss">
       <DependentUpon>group16DataSet.xsd</DependentUpon>
     </None>
+    <Content Include="HelpSystemFolder\M.I.S.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="M.I.S.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -536,6 +590,9 @@
       <LastGenOutput>Settings.Designer.vb</LastGenOutput>
     </None>
     <None Include="App.config" />
+    <Content Include="Resources\M.I.S.chm">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <None Include="VATDataSet.xsc">
       <DependentUpon>VATDataSet.xsd</DependentUpon>
     </None>
@@ -568,14 +625,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Pictures\1" />
-    <Content Include="HelpFolder\Customer Quote Help.html" />
-    <Content Include="HelpFolder\Customer Quote Manager.JPG" />
-    <Content Include="HelpFolder\Employee Manager.JPG" />
-    <Content Include="HelpFolder\General Manager Help.html" />
-    <Content Include="HelpFolder\Supplier Manager.JPG" />
-    <Content Include="HelpFolder\Supplier Quote Manager.html" />
-    <Content Include="HelpFolder\Supplier Quote Manager.JPG" />
-    <Content Include="HelpFolder\WhatIsVomsHelp.html" />
+    <Content Include="HelpSystemFolder\CustomerManager.htm" />
+    <Content Include="HelpSystemFolder\CustomerQuoteManager.htm" />
+    <Content Include="HelpSystemFolder\ReportMenu.htm" />
+    <Content Include="HelpSystemFolder\VOMSMenuLogin.htm" />
     <Content Include="Pictures\Employee Manager.JPG" />
     <Content Include="Pictures\Supplier Manager.JPG" />
     <Content Include="Pictures\Supplier Quote Manager.JPG" />

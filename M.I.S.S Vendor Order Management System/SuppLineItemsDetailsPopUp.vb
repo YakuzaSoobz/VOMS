@@ -224,4 +224,6 @@ Public Class SuppLineItemsDetailsPopUp
             MsgBox("Cannot add item. Please use correct format to fill fields", vbExclamation, "Incorrect Input!")
         End Try
     End Sub
+
+
 End Class

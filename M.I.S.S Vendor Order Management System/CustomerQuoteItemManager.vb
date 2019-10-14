@@ -27,7 +27,9 @@ Public Class CustomerQuoteItemManager
 
         Try
             Me.CustLineItemJoinProductsTableAdapter.Fill(Me.Group16DataSet.CustLineItemJoinProducts)
+
             Me.SupplierQuoteJoinSupplierTableAdapter.Fill(Me.Group16DataSet.SupplierQuoteJoinSupplier)
+            'SupplierQuoteJoinSupplierBindingSource.Filter = "Cust_Quote_Date_Issued >= '2010-04-01'"
         Catch ex As SyntaxErrorException
             MsgBox("Cannot be found!", vbExclamation, "Incorrect Input!")
         Catch ex As EvaluateException

@@ -48,6 +48,18 @@
             AmountOfProductsSoldPerMonthForLastYear.Show()
 
         End If
+
+        If ReportComboBox.SelectedIndex = 8 Then
+
+            CustomerIncomeForm.Show()
+
+        End If
+
+        If ReportComboBox.SelectedIndex = 9 Then
+
+            QuotationsPerMonthForm.Show()
+
+        End If
     End Sub
 
     Private Sub ReportComboBox_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ReportComboBox.SelectedIndexChanged
@@ -74,6 +86,14 @@
         End If
         If ReportComboBox.SelectedIndex = 7 Then
             ReportDesc.Text = "Shows the products sold for each month for the last year(12 months)"
+        End If
+
+        If ReportComboBox.SelectedIndex = 8 Then
+            ReportDesc.Text = "Total of Customer Quotes per Customer for a selcted period of time"
+        End If
+
+        If ReportComboBox.SelectedIndex = 9 Then
+            ReportDesc.Text = "Number of quotations per month for select time period as well as the amount for each quotation"
         End If
     End Sub
 

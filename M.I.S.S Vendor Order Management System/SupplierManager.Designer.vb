@@ -86,8 +86,7 @@ Partial Class SupplierManager
         Me.SupplierManagerTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.CustomerTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustomerTableAdapter()
         Me.EmployeeTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.EmployeeTableAdapter()
-        Me.HelpProvider1 = New System.Windows.Forms.HelpProvider()
-        Me.HelpProvider2 = New System.Windows.Forms.HelpProvider()
+        Me.HP1 = New System.Windows.Forms.HelpProvider()
         Me.OptionsGroupBox.SuspendLayout()
         Me.NavigationGroupBox.SuspendLayout()
         Me.AdminLevelGroupBox.SuspendLayout()
@@ -823,18 +822,15 @@ Partial Class SupplierManager
         '
         Me.EmployeeTableAdapter.ClearBeforeFill = True
         '
-        'HelpProvider1
+        'HP1
         '
-        Me.HelpProvider1.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS\M.I.S.chm"
-        '
-        'HelpProvider2
-        '
-        Me.HelpProvider2.HelpNamespace = "C:\Users\munis\Documents\GitHub Normalisers42\VOMS\VOMSHelpFinal.chm"
+        Me.HP1.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS\M.I.S.chm"
         '
         'SupplierManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -927,6 +923,5 @@ Partial Class SupplierManager
     Friend WithEvents SupplierManagerTip As ToolTip
     Friend WithEvents CustomerTableAdapter As group16DataSetTableAdapters.CustomerTableAdapter
     Friend WithEvents EmployeeTableAdapter As group16DataSetTableAdapters.EmployeeTableAdapter
-    Friend WithEvents HelpProvider1 As HelpProvider
-    Friend WithEvents HelpProvider2 As HelpProvider
+    Friend WithEvents HP1 As HelpProvider
 End Class

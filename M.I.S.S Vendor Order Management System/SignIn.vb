@@ -88,7 +88,8 @@ Public Class SignIn
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
+        Dim helpFilePath = IO.Path.Combine(My.Application.Info.DirectoryPath, "M.I.S.chm")
+        Help.ShowHelp(Me, helpFilePath)
     End Sub
 
     Private Sub AccessCombo_SelectedIndexChanged(sender As Object, e As EventArgs) Handles AccessCombo.SelectedIndexChanged
@@ -97,5 +98,9 @@ Public Class SignIn
         ElseIf AccessCombo.SelectedItem = 2 Then
             AccessLevelTextBox.Text = "Manager"
         End If
+    End Sub
+
+    Private Sub AccessLevelTextBox_TextChanged(sender As Object, e As EventArgs) Handles AccessLevelTextBox.TextChanged
+
     End Sub
 End Class

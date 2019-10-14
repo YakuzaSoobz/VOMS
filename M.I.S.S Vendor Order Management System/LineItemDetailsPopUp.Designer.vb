@@ -27,6 +27,8 @@ Partial Class LineItemDetailsPopUp
         Me.VATGroupBox = New System.Windows.Forms.GroupBox()
         Me.VATButton = New System.Windows.Forms.Button()
         Me.VATTextBox = New System.Windows.Forms.TextBox()
+        Me.VATBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.VATDataSet = New M.I.S.S_Vendor_Order_Management_System.VATDataSet()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.Label3 = New System.Windows.Forms.Label()
@@ -63,11 +65,11 @@ Partial Class LineItemDetailsPopUp
         Me.SupplierTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SupplierTableAdapter()
         Me.SuppQuoteJoinSuppLineItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.SuppQuoteJoinSuppLineItemTableAdapter()
         Me.Customer_Quote_Line_ItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Customer_Quote_Line_ItemTableAdapter()
-        Me.VATDataSet = New M.I.S.S_Vendor_Order_Management_System.VATDataSet()
-        Me.VATBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.VATTableAdapter = New M.I.S.S_Vendor_Order_Management_System.VATDataSetTableAdapters.VATTableAdapter()
         Me.QuoteDetailsGroupBox.SuspendLayout()
         Me.VATGroupBox.SuspendLayout()
+        CType(Me.VATBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.VATDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.GroupBox2.SuspendLayout()
         CType(Me.SuppQuoteJoinSuppLineItemBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -75,8 +77,6 @@ Partial Class LineItemDetailsPopUp
         CType(Me.SupplierBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox3.SuspendLayout()
         Me.OptionsGroupBox1.SuspendLayout()
-        CType(Me.VATDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.VATBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'QuoteDetailsGroupBox
@@ -134,6 +134,16 @@ Partial Class LineItemDetailsPopUp
         Me.VATTextBox.Size = New System.Drawing.Size(49, 20)
         Me.VATTextBox.TabIndex = 93
         Me.VATTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
+        '
+        'VATBindingSource
+        '
+        Me.VATBindingSource.DataMember = "VAT"
+        Me.VATBindingSource.DataSource = Me.VATDataSet
+        '
+        'VATDataSet
+        '
+        Me.VATDataSet.DataSetName = "VATDataSet"
+        Me.VATDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'Label8
         '
@@ -409,9 +419,9 @@ Partial Class LineItemDetailsPopUp
         Me.Label7.Location = New System.Drawing.Point(25, 20)
         Me.Label7.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(83, 13)
+        Me.Label7.Size = New System.Drawing.Size(124, 13)
         Me.Label7.TabIndex = 89
-        Me.Label7.Text = "- Sale excl VAT:"
+        Me.Label7.Text = "- Sale excl VAT per Item:"
         '
         'SaleExclVATTextBox
         '
@@ -429,9 +439,9 @@ Partial Class LineItemDetailsPopUp
         Me.Label6.Location = New System.Drawing.Point(27, 68)
         Me.Label6.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(81, 13)
+        Me.Label6.Size = New System.Drawing.Size(122, 13)
         Me.Label6.TabIndex = 87
-        Me.Label6.Text = "- Sale Incl VAT:"
+        Me.Label6.Text = "- Sale Incl VAT per Item:"
         '
         'SaleInclVATTextBox
         '
@@ -499,16 +509,6 @@ Partial Class LineItemDetailsPopUp
         '
         Me.Customer_Quote_Line_ItemTableAdapter.ClearBeforeFill = True
         '
-        'VATDataSet
-        '
-        Me.VATDataSet.DataSetName = "VATDataSet"
-        Me.VATDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'VATBindingSource
-        '
-        Me.VATBindingSource.DataMember = "VAT"
-        Me.VATBindingSource.DataSource = Me.VATDataSet
-        '
         'VATTableAdapter
         '
         Me.VATTableAdapter.ClearBeforeFill = True
@@ -532,6 +532,8 @@ Partial Class LineItemDetailsPopUp
         Me.QuoteDetailsGroupBox.ResumeLayout(False)
         Me.VATGroupBox.ResumeLayout(False)
         Me.VATGroupBox.PerformLayout()
+        CType(Me.VATBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.VATDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.GroupBox2.ResumeLayout(False)
@@ -542,8 +544,6 @@ Partial Class LineItemDetailsPopUp
         Me.GroupBox3.ResumeLayout(False)
         Me.GroupBox3.PerformLayout()
         Me.OptionsGroupBox1.ResumeLayout(False)
-        CType(Me.VATDataSet, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.VATBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
 
     End Sub

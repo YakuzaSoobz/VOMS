@@ -199,9 +199,6 @@ Public Class SupplierManager
             ElseIf (RepEmailTextBox.Text = Nothing) Then
                 MsgBox("Rep Email field cannot be left blank!", vbOK)
                 RepEmailTextBox.ResetText()
-            ElseIf (PasswordTextBox.Text = Nothing) Then
-                MsgBox("Password field cannot be left blank!", vbOK)
-                PasswordTextBox.ResetText()
             ElseIf (StreetAddress1TextBox.Text = Nothing) Then
                 MsgBox("Street Address 1 field cannot be left blank!", vbOK)
                 StreetAddress1TextBox.ResetText()
@@ -319,22 +316,23 @@ Public Class SupplierManager
         Catch ex As SqlException
             MsgBox("Cannot Add!", vbExclamation, "Cannot Add!")
         Catch ex As NoNullAllowedException
-            MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input!")
+            MsgBox("Incorrect input! Follow correct format!", vbExclamation, "Incorrect Input!")
 
             Try
                 Me.SupplierTableAdapter.Fill(Me.Group16DataSet.Supplier) 'refreshes records'
             Catch exe As SqlException
                 MsgBox("Reconnect to network!", vbExclamation, "Reconnect to Network!")
             Catch exe As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
             End Try
         Catch ex As Exception
-            MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+            MsgBox("Oops, something went wrong!", vbExclamation, "Error!")
         End Try
     End Sub
 
     Private Sub ArchiveButton_Click(sender As Object, e As EventArgs) Handles ArchiveButton.Click
-
+        ActiveStatusComboBox.SelectedItem = "F"
+        Call UpdateButton_Click(sender, e)
 
     End Sub
 
@@ -388,7 +386,8 @@ Public Class SupplierManager
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
+        Dim helpFilePath = IO.Path.Combine(My.Application.Info.DirectoryPath, "M.I.S.chm")
+        Help.ShowHelp(Me, helpFilePath)
     End Sub
 
     Private Sub SearchButton_MouseHover(sender As Object, e As EventArgs) Handles SearchButton.MouseHover
@@ -498,11 +497,7 @@ Public Class SupplierManager
     End Sub
 
     Private Sub PasswordTextBox_TextChanged(sender As Object, e As EventArgs) Handles PasswordTextBox.TextChanged
-        If (PasswordTextBox.Text = Nothing) Then
-            PasswordTextBox.BackColor = Color.MistyRose
-        Else
-            PasswordTextBox.BackColor = Color.White
-        End If
+
     End Sub
 
     Private Sub StreetAddress1TextBox_TextChanged(sender As Object, e As EventArgs) Handles StreetAddress1TextBox.TextChanged

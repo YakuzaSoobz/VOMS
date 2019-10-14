@@ -25,9 +25,11 @@ Partial Class CreateOrEditCustomerQuote
         Me.components = New System.ComponentModel.Container()
         Me.BackButton = New System.Windows.Forms.Button()
         Me.QuoteDetailsGroupBox = New System.Windows.Forms.GroupBox()
-        Me.EmployeeSurnameTextBox = New System.Windows.Forms.TextBox()
-        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeeIDComboBox = New System.Windows.Forms.ComboBox()
+        Me.CustomerQuoteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Group16DataSet = New M.I.S.S_Vendor_Order_Management_System.group16DataSet()
+        Me.EmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.EmployeeSurnameTextBox = New System.Windows.Forms.TextBox()
         Me.EmployeeFirstNameTextBox = New System.Windows.Forms.TextBox()
         Me.CustomerSurnameTextBox = New System.Windows.Forms.TextBox()
         Me.CustomerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -36,7 +38,6 @@ Partial Class CreateOrEditCustomerQuote
         Me.UpdateQuoteButton = New System.Windows.Forms.Button()
         Me.DeleteQuoteButton = New System.Windows.Forms.Button()
         Me.DateAcceptedTextBox = New System.Windows.Forms.TextBox()
-        Me.CustomerQuoteBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.Label5 = New System.Windows.Forms.Label()
         Me.Label8 = New System.Windows.Forms.Label()
         Me.CreateCustomerButton = New System.Windows.Forms.Button()
@@ -60,6 +61,16 @@ Partial Class CreateOrEditCustomerQuote
         Me.EditLineItemsButton = New System.Windows.Forms.Button()
         Me.ItemsListGroupBox = New System.Windows.Forms.GroupBox()
         Me.CustLineItemJoinProductDataGridView = New System.Windows.Forms.DataGridView()
+        Me.CustLineItemJoinProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.Customer_QuoteTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Customer_QuoteTableAdapter()
+        Me.CustomerTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustomerTableAdapter()
+        Me.EmployeeTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.EmployeeTableAdapter()
+        Me.CustLineItemJoinProductsTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustLineItemJoinProductsTableAdapter()
+        Me.CreateOrEditCustomerQuoteTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.Customer_Quote_Line_ItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Customer_Quote_Line_ItemTableAdapter()
+        Me.FKCustomerQuoteEmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HelpBtn = New System.Windows.Forms.Button()
+        Me.HP1 = New System.Windows.Forms.HelpProvider()
         Me.ProductIDDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductBrandDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -70,21 +81,12 @@ Partial Class CreateOrEditCustomerQuote
         Me.CustLineItemSaleinclVATDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CustLineItemQuantityDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SupplierNameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CustLineItemJoinProductsBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.Customer_QuoteTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Customer_QuoteTableAdapter()
-        Me.CustomerTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustomerTableAdapter()
-        Me.EmployeeTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.EmployeeTableAdapter()
-        Me.CustLineItemJoinProductsTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.CustLineItemJoinProductsTableAdapter()
-        Me.CreateOrEditCustomerQuoteTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.Customer_Quote_Line_ItemTableAdapter = New M.I.S.S_Vendor_Order_Management_System.group16DataSetTableAdapters.Customer_Quote_Line_ItemTableAdapter()
-        Me.FKCustomerQuoteEmployeeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.EmployeeIDComboBox = New System.Windows.Forms.ComboBox()
         Me.QuoteDetailsGroupBox.SuspendLayout()
-        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.CustomerQuoteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.OptionsGroupBox1.SuspendLayout()
-        CType(Me.CustomerQuoteBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GroupBox4.SuspendLayout()
         Me.ItemGroupBox.SuspendLayout()
         Me.ItemsListGroupBox.SuspendLayout()
@@ -102,7 +104,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Location = New System.Drawing.Point(1169, 581)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(79, 33)
         Me.BackButton.TabIndex = 54
@@ -133,13 +135,42 @@ Partial Class CreateOrEditCustomerQuote
         Me.QuoteDetailsGroupBox.Controls.Add(Me.DateIssuedDateTimePicker)
         Me.QuoteDetailsGroupBox.Controls.Add(Me.Label7)
         Me.QuoteDetailsGroupBox.Location = New System.Drawing.Point(11, 43)
-        Me.QuoteDetailsGroupBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.QuoteDetailsGroupBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.QuoteDetailsGroupBox.Name = "QuoteDetailsGroupBox"
-        Me.QuoteDetailsGroupBox.Padding = New System.Windows.Forms.Padding(2)
+        Me.QuoteDetailsGroupBox.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.QuoteDetailsGroupBox.Size = New System.Drawing.Size(385, 465)
         Me.QuoteDetailsGroupBox.TabIndex = 68
         Me.QuoteDetailsGroupBox.TabStop = False
         Me.QuoteDetailsGroupBox.Text = "CUSTOMER QUOTE DETAILS"
+        '
+        'EmployeeIDComboBox
+        '
+        Me.EmployeeIDComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerQuoteBindingSource, "Employee_ID", True))
+        Me.EmployeeIDComboBox.DataSource = Me.EmployeeBindingSource
+        Me.EmployeeIDComboBox.DisplayMember = "Employee_ID"
+        Me.EmployeeIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.EmployeeIDComboBox.FormattingEnabled = True
+        Me.EmployeeIDComboBox.Location = New System.Drawing.Point(137, 142)
+        Me.EmployeeIDComboBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.EmployeeIDComboBox.MaxDropDownItems = 100
+        Me.EmployeeIDComboBox.Name = "EmployeeIDComboBox"
+        Me.EmployeeIDComboBox.Size = New System.Drawing.Size(35, 21)
+        Me.EmployeeIDComboBox.TabIndex = 89
+        '
+        'CustomerQuoteBindingSource
+        '
+        Me.CustomerQuoteBindingSource.DataMember = "Customer_Quote"
+        Me.CustomerQuoteBindingSource.DataSource = Me.Group16DataSet
+        '
+        'Group16DataSet
+        '
+        Me.Group16DataSet.DataSetName = "group16DataSet"
+        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'EmployeeBindingSource
+        '
+        Me.EmployeeBindingSource.DataMember = "Employee"
+        Me.EmployeeBindingSource.DataSource = Me.Group16DataSet
         '
         'EmployeeSurnameTextBox
         '
@@ -149,16 +180,6 @@ Partial Class CreateOrEditCustomerQuote
         Me.EmployeeSurnameTextBox.ReadOnly = True
         Me.EmployeeSurnameTextBox.Size = New System.Drawing.Size(88, 20)
         Me.EmployeeSurnameTextBox.TabIndex = 88
-        '
-        'EmployeeBindingSource
-        '
-        Me.EmployeeBindingSource.DataMember = "Employee"
-        Me.EmployeeBindingSource.DataSource = Me.Group16DataSet
-        '
-        'Group16DataSet
-        '
-        Me.Group16DataSet.DataSetName = "group16DataSet"
-        Me.Group16DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'EmployeeFirstNameTextBox
         '
@@ -198,9 +219,9 @@ Partial Class CreateOrEditCustomerQuote
         Me.OptionsGroupBox1.Controls.Add(Me.UpdateQuoteButton)
         Me.OptionsGroupBox1.Controls.Add(Me.DeleteQuoteButton)
         Me.OptionsGroupBox1.Location = New System.Drawing.Point(18, 359)
-        Me.OptionsGroupBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.OptionsGroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.OptionsGroupBox1.Name = "OptionsGroupBox1"
-        Me.OptionsGroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.OptionsGroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.OptionsGroupBox1.Size = New System.Drawing.Size(352, 78)
         Me.OptionsGroupBox1.TabIndex = 82
         Me.OptionsGroupBox1.TabStop = False
@@ -215,7 +236,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.UpdateQuoteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.UpdateQuoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.UpdateQuoteButton.Location = New System.Drawing.Point(32, 17)
-        Me.UpdateQuoteButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.UpdateQuoteButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.UpdateQuoteButton.Name = "UpdateQuoteButton"
         Me.UpdateQuoteButton.Size = New System.Drawing.Size(128, 50)
         Me.UpdateQuoteButton.TabIndex = 1
@@ -231,7 +252,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.DeleteQuoteButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.DeleteQuoteButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DeleteQuoteButton.Location = New System.Drawing.Point(194, 17)
-        Me.DeleteQuoteButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.DeleteQuoteButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DeleteQuoteButton.Name = "DeleteQuoteButton"
         Me.DeleteQuoteButton.Size = New System.Drawing.Size(128, 50)
         Me.DeleteQuoteButton.TabIndex = 2
@@ -243,17 +264,12 @@ Partial Class CreateOrEditCustomerQuote
         Me.DateAcceptedTextBox.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.DateAcceptedTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerQuoteBindingSource, "Cust_Quote_Date_Accepted", True))
         Me.DateAcceptedTextBox.Location = New System.Drawing.Point(248, 310)
-        Me.DateAcceptedTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.DateAcceptedTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.DateAcceptedTextBox.Name = "DateAcceptedTextBox"
         Me.DateAcceptedTextBox.ReadOnly = True
         Me.DateAcceptedTextBox.Size = New System.Drawing.Size(102, 20)
         Me.DateAcceptedTextBox.TabIndex = 80
         Me.DateAcceptedTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center
-        '
-        'CustomerQuoteBindingSource
-        '
-        Me.CustomerQuoteBindingSource.DataMember = "Customer_Quote"
-        Me.CustomerQuoteBindingSource.DataSource = Me.Group16DataSet
         '
         'Label5
         '
@@ -287,7 +303,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.CreateCustomerButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.CreateCustomerButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CreateCustomerButton.Location = New System.Drawing.Point(189, 67)
-        Me.CreateCustomerButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.CreateCustomerButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CreateCustomerButton.Name = "CreateCustomerButton"
         Me.CreateCustomerButton.Size = New System.Drawing.Size(146, 28)
         Me.CreateCustomerButton.TabIndex = 74
@@ -306,7 +322,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.EmployeeInfoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.EmployeeInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.EmployeeInfoButton.Location = New System.Drawing.Point(352, 139)
-        Me.EmployeeInfoButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.EmployeeInfoButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.EmployeeInfoButton.Name = "EmployeeInfoButton"
         Me.EmployeeInfoButton.Size = New System.Drawing.Size(31, 24)
         Me.EmployeeInfoButton.TabIndex = 73
@@ -324,7 +340,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.CustomerInfoButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.CustomerInfoButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.CustomerInfoButton.Location = New System.Drawing.Point(350, 39)
-        Me.CustomerInfoButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.CustomerInfoButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CustomerInfoButton.Name = "CustomerInfoButton"
         Me.CustomerInfoButton.Size = New System.Drawing.Size(31, 24)
         Me.CustomerInfoButton.TabIndex = 72
@@ -337,7 +353,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.QuoteAcceptanceStatusComboBox.FormattingEnabled = True
         Me.QuoteAcceptanceStatusComboBox.Items.AddRange(New Object() {"N", "Y"})
         Me.QuoteAcceptanceStatusComboBox.Location = New System.Drawing.Point(151, 283)
-        Me.QuoteAcceptanceStatusComboBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.QuoteAcceptanceStatusComboBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.QuoteAcceptanceStatusComboBox.MaxDropDownItems = 100
         Me.QuoteAcceptanceStatusComboBox.Name = "QuoteAcceptanceStatusComboBox"
         Me.QuoteAcceptanceStatusComboBox.Size = New System.Drawing.Size(46, 21)
@@ -373,7 +389,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.CustomerIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CustomerIDComboBox.FormattingEnabled = True
         Me.CustomerIDComboBox.Location = New System.Drawing.Point(135, 41)
-        Me.CustomerIDComboBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.CustomerIDComboBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CustomerIDComboBox.MaxDropDownItems = 100
         Me.CustomerIDComboBox.Name = "CustomerIDComboBox"
         Me.CustomerIDComboBox.Size = New System.Drawing.Size(35, 21)
@@ -417,9 +433,9 @@ Partial Class CreateOrEditCustomerQuote
         Me.GroupBox4.Controls.Add(Me.Label6)
         Me.GroupBox4.Controls.Add(Me.TotalPriceTextBox)
         Me.GroupBox4.Location = New System.Drawing.Point(11, 512)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox4.Size = New System.Drawing.Size(385, 58)
         Me.GroupBox4.TabIndex = 81
         Me.GroupBox4.TabStop = False
@@ -441,7 +457,7 @@ Partial Class CreateOrEditCustomerQuote
         '
         Me.TotalPriceTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerQuoteBindingSource, "Cust__Quote_Total_Price", True))
         Me.TotalPriceTextBox.Location = New System.Drawing.Point(104, 25)
-        Me.TotalPriceTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.TotalPriceTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.TotalPriceTextBox.Name = "TotalPriceTextBox"
         Me.TotalPriceTextBox.Size = New System.Drawing.Size(172, 20)
         Me.TotalPriceTextBox.TabIndex = 53
@@ -462,7 +478,7 @@ Partial Class CreateOrEditCustomerQuote
         '
         Me.CustomerQuoteIDTextBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerQuoteBindingSource, "Cust_Quote_Reference_ID", True))
         Me.CustomerQuoteIDTextBox.Location = New System.Drawing.Point(209, 19)
-        Me.CustomerQuoteIDTextBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.CustomerQuoteIDTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.CustomerQuoteIDTextBox.Name = "CustomerQuoteIDTextBox"
         Me.CustomerQuoteIDTextBox.ReadOnly = True
         Me.CustomerQuoteIDTextBox.Size = New System.Drawing.Size(78, 20)
@@ -478,9 +494,9 @@ Partial Class CreateOrEditCustomerQuote
         Me.ItemGroupBox.Controls.Add(Me.EditLineItemsButton)
         Me.ItemGroupBox.Controls.Add(Me.ItemsListGroupBox)
         Me.ItemGroupBox.Location = New System.Drawing.Point(400, 11)
-        Me.ItemGroupBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.ItemGroupBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ItemGroupBox.Name = "ItemGroupBox"
-        Me.ItemGroupBox.Padding = New System.Windows.Forms.Padding(2)
+        Me.ItemGroupBox.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ItemGroupBox.Size = New System.Drawing.Size(848, 559)
         Me.ItemGroupBox.TabIndex = 77
         Me.ItemGroupBox.TabStop = False
@@ -495,7 +511,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.RefreshButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.RefreshButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.RefreshButton.Location = New System.Drawing.Point(765, 483)
-        Me.RefreshButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.RefreshButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.RefreshButton.Name = "RefreshButton"
         Me.RefreshButton.Size = New System.Drawing.Size(79, 33)
         Me.RefreshButton.TabIndex = 80
@@ -524,7 +540,7 @@ Partial Class CreateOrEditCustomerQuote
         Me.EditLineItemsButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.EditLineItemsButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.EditLineItemsButton.Location = New System.Drawing.Point(305, 483)
-        Me.EditLineItemsButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.EditLineItemsButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.EditLineItemsButton.Name = "EditLineItemsButton"
         Me.EditLineItemsButton.Size = New System.Drawing.Size(302, 50)
         Me.EditLineItemsButton.TabIndex = 76
@@ -537,9 +553,9 @@ Partial Class CreateOrEditCustomerQuote
         Me.ItemsListGroupBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ItemsListGroupBox.Controls.Add(Me.CustLineItemJoinProductDataGridView)
         Me.ItemsListGroupBox.Location = New System.Drawing.Point(8, 17)
-        Me.ItemsListGroupBox.Margin = New System.Windows.Forms.Padding(2)
+        Me.ItemsListGroupBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ItemsListGroupBox.Name = "ItemsListGroupBox"
-        Me.ItemsListGroupBox.Padding = New System.Windows.Forms.Padding(2)
+        Me.ItemsListGroupBox.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.ItemsListGroupBox.Size = New System.Drawing.Size(836, 463)
         Me.ItemsListGroupBox.TabIndex = 54
         Me.ItemsListGroupBox.TabStop = False
@@ -560,6 +576,56 @@ Partial Class CreateOrEditCustomerQuote
         Me.CustLineItemJoinProductDataGridView.ReadOnly = True
         Me.CustLineItemJoinProductDataGridView.Size = New System.Drawing.Size(832, 446)
         Me.CustLineItemJoinProductDataGridView.TabIndex = 1
+        '
+        'CustLineItemJoinProductsBindingSource
+        '
+        Me.CustLineItemJoinProductsBindingSource.DataMember = "CustLineItemJoinProducts"
+        Me.CustLineItemJoinProductsBindingSource.DataSource = Me.Group16DataSet
+        '
+        'Customer_QuoteTableAdapter
+        '
+        Me.Customer_QuoteTableAdapter.ClearBeforeFill = True
+        '
+        'CustomerTableAdapter
+        '
+        Me.CustomerTableAdapter.ClearBeforeFill = True
+        '
+        'EmployeeTableAdapter
+        '
+        Me.EmployeeTableAdapter.ClearBeforeFill = True
+        '
+        'CustLineItemJoinProductsTableAdapter
+        '
+        Me.CustLineItemJoinProductsTableAdapter.ClearBeforeFill = True
+        '
+        'Customer_Quote_Line_ItemTableAdapter
+        '
+        Me.Customer_Quote_Line_ItemTableAdapter.ClearBeforeFill = True
+        '
+        'FKCustomerQuoteEmployeeBindingSource
+        '
+        Me.FKCustomerQuoteEmployeeBindingSource.DataMember = "FK_Customer_Quote_Employee"
+        Me.FKCustomerQuoteEmployeeBindingSource.DataSource = Me.EmployeeBindingSource
+        '
+        'HelpBtn
+        '
+        Me.HelpBtn.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.HelpBtn.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.HelpBtn.FlatAppearance.BorderSize = 3
+        Me.HelpBtn.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.HelpBtn.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.HelpBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.HelpBtn.Location = New System.Drawing.Point(11, 581)
+        Me.HelpBtn.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.HelpBtn.Name = "HelpBtn"
+        Me.HelpBtn.Size = New System.Drawing.Size(79, 33)
+        Me.HelpBtn.TabIndex = 82
+        Me.HelpBtn.Text = "HELP"
+        Me.HelpBtn.UseVisualStyleBackColor = False
+        '
+        'HP1
+        '
+        Me.HP1.HelpNamespace = "C:\Users\pravz\Desktop\GitFolder\VOMS\M.I.S.chm"
         '
         'ProductIDDataGridViewTextBoxColumn
         '
@@ -613,7 +679,7 @@ Partial Class CreateOrEditCustomerQuote
         '
         Me.CustLineItemSaleexclVATDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.CustLineItemSaleexclVATDataGridViewTextBoxColumn.DataPropertyName = "Cust_Line_Item_Sale_excl_VAT"
-        Me.CustLineItemSaleexclVATDataGridViewTextBoxColumn.HeaderText = "Sale excl VAT"
+        Me.CustLineItemSaleexclVATDataGridViewTextBoxColumn.HeaderText = "Sale excl VAT per Item"
         Me.CustLineItemSaleexclVATDataGridViewTextBoxColumn.Name = "CustLineItemSaleexclVATDataGridViewTextBoxColumn"
         Me.CustLineItemSaleexclVATDataGridViewTextBoxColumn.ReadOnly = True
         '
@@ -621,7 +687,7 @@ Partial Class CreateOrEditCustomerQuote
         '
         Me.CustLineItemSaleinclVATDataGridViewTextBoxColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill
         Me.CustLineItemSaleinclVATDataGridViewTextBoxColumn.DataPropertyName = "Cust_Line_Item_Sale_incl_VAT"
-        Me.CustLineItemSaleinclVATDataGridViewTextBoxColumn.HeaderText = "Sale incl VAT"
+        Me.CustLineItemSaleinclVATDataGridViewTextBoxColumn.HeaderText = "Sale incl VAT per Item"
         Me.CustLineItemSaleinclVATDataGridViewTextBoxColumn.Name = "CustLineItemSaleinclVATDataGridViewTextBoxColumn"
         Me.CustLineItemSaleinclVATDataGridViewTextBoxColumn.ReadOnly = True
         '
@@ -641,58 +707,16 @@ Partial Class CreateOrEditCustomerQuote
         Me.SupplierNameDataGridViewTextBoxColumn.Name = "SupplierNameDataGridViewTextBoxColumn"
         Me.SupplierNameDataGridViewTextBoxColumn.ReadOnly = True
         '
-        'CustLineItemJoinProductsBindingSource
-        '
-        Me.CustLineItemJoinProductsBindingSource.DataMember = "CustLineItemJoinProducts"
-        Me.CustLineItemJoinProductsBindingSource.DataSource = Me.Group16DataSet
-        '
-        'Customer_QuoteTableAdapter
-        '
-        Me.Customer_QuoteTableAdapter.ClearBeforeFill = True
-        '
-        'CustomerTableAdapter
-        '
-        Me.CustomerTableAdapter.ClearBeforeFill = True
-        '
-        'EmployeeTableAdapter
-        '
-        Me.EmployeeTableAdapter.ClearBeforeFill = True
-        '
-        'CustLineItemJoinProductsTableAdapter
-        '
-        Me.CustLineItemJoinProductsTableAdapter.ClearBeforeFill = True
-        '
-        'Customer_Quote_Line_ItemTableAdapter
-        '
-        Me.Customer_Quote_Line_ItemTableAdapter.ClearBeforeFill = True
-        '
-        'FKCustomerQuoteEmployeeBindingSource
-        '
-        Me.FKCustomerQuoteEmployeeBindingSource.DataMember = "FK_Customer_Quote_Employee"
-        Me.FKCustomerQuoteEmployeeBindingSource.DataSource = Me.EmployeeBindingSource
-        '
-        'EmployeeIDComboBox
-        '
-        Me.EmployeeIDComboBox.DataBindings.Add(New System.Windows.Forms.Binding("Text", Me.CustomerQuoteBindingSource, "Employee_ID", True))
-        Me.EmployeeIDComboBox.DataSource = Me.EmployeeBindingSource
-        Me.EmployeeIDComboBox.DisplayMember = "Employee_ID"
-        Me.EmployeeIDComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.EmployeeIDComboBox.FormattingEnabled = True
-        Me.EmployeeIDComboBox.Location = New System.Drawing.Point(137, 142)
-        Me.EmployeeIDComboBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.EmployeeIDComboBox.MaxDropDownItems = 100
-        Me.EmployeeIDComboBox.Name = "EmployeeIDComboBox"
-        Me.EmployeeIDComboBox.Size = New System.Drawing.Size(35, 21)
-        Me.EmployeeIDComboBox.TabIndex = 89
-        '
         'CreateOrEditCustomerQuote
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1259, 623)
+        Me.Controls.Add(Me.HelpBtn)
         Me.Controls.Add(Me.GroupBox4)
         Me.Controls.Add(Me.ItemGroupBox)
         Me.Controls.Add(Me.QuoteDetailsGroupBox)
@@ -705,11 +729,11 @@ Partial Class CreateOrEditCustomerQuote
         Me.Text = "Create/Edit Customer Quote"
         Me.QuoteDetailsGroupBox.ResumeLayout(False)
         Me.QuoteDetailsGroupBox.PerformLayout()
-        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.CustomerQuoteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Group16DataSet, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.EmployeeBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.CustomerBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.OptionsGroupBox1.ResumeLayout(False)
-        CType(Me.CustomerQuoteBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         Me.GroupBox4.ResumeLayout(False)
         Me.GroupBox4.PerformLayout()
         Me.ItemGroupBox.ResumeLayout(False)
@@ -758,16 +782,6 @@ Partial Class CreateOrEditCustomerQuote
     Friend WithEvents CustLineItemJoinProductsBindingSource As BindingSource
     Friend WithEvents CustLineItemJoinProductsTableAdapter As group16DataSetTableAdapters.CustLineItemJoinProductsTableAdapter
     Friend WithEvents CustLineItemJoinProductDataGridView As DataGridView
-    Friend WithEvents ProductIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ProductNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ProductBrandDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustLineItemCostPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustLineItemMarkupPercentageDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustLineItemDiscountPercentageDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustLineItemSaleexclVATDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustLineItemSaleinclVATDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CustLineItemQuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents SupplierNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CreateOrEditCustomerQuoteTip As ToolTip
     Friend WithEvents Customer_Quote_Line_ItemTableAdapter As group16DataSetTableAdapters.Customer_Quote_Line_ItemTableAdapter
     Friend WithEvents RefreshButton As Button
@@ -778,4 +792,16 @@ Partial Class CreateOrEditCustomerQuote
     Public WithEvents EmployeeFirstNameTextBox As TextBox
     Friend WithEvents FKCustomerQuoteEmployeeBindingSource As BindingSource
     Friend WithEvents EmployeeIDComboBox As ComboBox
+    Friend WithEvents HelpBtn As Button
+    Friend WithEvents HP1 As HelpProvider
+    Friend WithEvents ProductIDDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductBrandDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustLineItemCostPriceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustLineItemMarkupPercentageDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustLineItemDiscountPercentageDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustLineItemSaleexclVATDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustLineItemSaleinclVATDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CustLineItemQuantityDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents SupplierNameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

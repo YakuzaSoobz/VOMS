@@ -46,4 +46,8 @@
         Me.Hide()
         ReportMenu.Show()
     End Sub
+
+    Private Sub SignOutButton_MouseHover(sender As Object, e As EventArgs) Handles SignOutButton.MouseHover
+
+    End Sub
 End Class

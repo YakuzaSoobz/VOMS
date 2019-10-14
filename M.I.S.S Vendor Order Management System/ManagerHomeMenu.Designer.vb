@@ -90,22 +90,30 @@ Partial Class ManagerHomeMenu
         'Label8
         '
         Me.Label8.AutoSize = True
-        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label8.Location = New System.Drawing.Point(248, 814)
+        Me.Label8.Font = New System.Drawing.Font("Microsoft Sans Serif", 7.8!, System.Drawing.FontStyle.Bold)
+        Me.Label8.Location = New System.Drawing.Point(28, 814)
         Me.Label8.Name = "Label8"
-        Me.Label8.Size = New System.Drawing.Size(131, 24)
+        Me.Label8.Size = New System.Drawing.Size(121, 17)
         Me.Label8.TabIndex = 16
-        Me.Label8.Text = "Report Menu"
+        Me.Label8.Text = "REPORT MENU"
         '
         'Button1
         '
+        Me.Button1.BackColor = System.Drawing.Color.Turquoise
+        Me.Button1.BackgroundImage = CType(resources.GetObject("Button1.BackgroundImage"), System.Drawing.Image)
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
+        Me.Button1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.Button1.FlatAppearance.BorderSize = 3
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Location = New System.Drawing.Point(33, 646)
         Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(593, 164)
         Me.Button1.TabIndex = 15
-        Me.Button1.Text = "ReportMenuImage"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Button1.UseVisualStyleBackColor = False
         '
         'Label7
         '
@@ -291,6 +299,7 @@ Partial Class ManagerHomeMenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.AutoSize = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch

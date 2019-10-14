@@ -23,10 +23,13 @@ Partial Class CustomerQuoteItemManager
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.ClearButton = New System.Windows.Forms.Button()
+        Me.SearchTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox4 = New System.Windows.Forms.GroupBox()
         Me.SuppLineItemDataGridView = New System.Windows.Forms.DataGridView()
         Me.SuppQuoteReferenceIDDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -90,9 +93,6 @@ Partial Class CustomerQuoteItemManager
         Me.ProductDescriptionDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductActiveStatusDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SupplierNameDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.ClearButton = New System.Windows.Forms.Button()
-        Me.SearchTextBox = New System.Windows.Forms.TextBox()
         Me.GroupBox1.SuspendLayout()
         Me.GroupBox4.SuspendLayout()
         CType(Me.SuppLineItemDataGridView, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -116,13 +116,48 @@ Partial Class CustomerQuoteItemManager
         Me.GroupBox1.Controls.Add(Me.GroupBox4)
         Me.GroupBox1.Controls.Add(Me.SupplierQuoteDataGridView)
         Me.GroupBox1.Location = New System.Drawing.Point(98, 264)
-        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox1.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox1.Size = New System.Drawing.Size(1085, 409)
         Me.GroupBox1.TabIndex = 77
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = "ADD ITEMS FROM SUPPLIER QUOTES"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Location = New System.Drawing.Point(390, 18)
+        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(184, 13)
+        Me.Label4.TabIndex = 109
+        Me.Label4.Text = " Enter Supplier Name to be searched:"
+        '
+        'ClearButton
+        '
+        Me.ClearButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        Me.ClearButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
+        Me.ClearButton.FlatAppearance.BorderSize = 3
+        Me.ClearButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
+        Me.ClearButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
+        Me.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
+        Me.ClearButton.Location = New System.Drawing.Point(605, 27)
+        Me.ClearButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.ClearButton.Name = "ClearButton"
+        Me.ClearButton.Size = New System.Drawing.Size(96, 34)
+        Me.ClearButton.TabIndex = 108
+        Me.ClearButton.Text = "CLEAR TEXT"
+        Me.ClearButton.UseVisualStyleBackColor = False
+        '
+        'SearchTextBox
+        '
+        Me.SearchTextBox.Location = New System.Drawing.Point(371, 35)
+        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.SearchTextBox.Name = "SearchTextBox"
+        Me.SearchTextBox.Size = New System.Drawing.Size(215, 20)
+        Me.SearchTextBox.TabIndex = 107
         '
         'GroupBox4
         '
@@ -130,9 +165,9 @@ Partial Class CustomerQuoteItemManager
         Me.GroupBox4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox4.Controls.Add(Me.SuppLineItemDataGridView)
         Me.GroupBox4.Location = New System.Drawing.Point(75, 205)
-        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox4.Name = "GroupBox4"
-        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox4.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox4.Size = New System.Drawing.Size(948, 198)
         Me.GroupBox4.TabIndex = 55
         Me.GroupBox4.TabStop = False
@@ -213,14 +248,14 @@ Partial Class CustomerQuoteItemManager
         '
         'AddLineItem
         '
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle10.NullValue = "ADD"
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.BlueViolet
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
-        Me.AddLineItem.DefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle1.NullValue = "ADD"
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.BlueViolet
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.AddLineItem.DefaultCellStyle = DataGridViewCellStyle1
         Me.AddLineItem.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.AddLineItem.HeaderText = "Add Item"
         Me.AddLineItem.Name = "AddLineItem"
@@ -254,7 +289,7 @@ Partial Class CustomerQuoteItemManager
         Me.SupplierQuoteDataGridView.DataSource = Me.SupplierQuoteJoinSupplierBindingSource
         Me.SupplierQuoteDataGridView.GridColor = System.Drawing.SystemColors.ActiveCaption
         Me.SupplierQuoteDataGridView.Location = New System.Drawing.Point(4, 65)
-        Me.SupplierQuoteDataGridView.Margin = New System.Windows.Forms.Padding(2)
+        Me.SupplierQuoteDataGridView.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.SupplierQuoteDataGridView.Name = "SupplierQuoteDataGridView"
         Me.SupplierQuoteDataGridView.ReadOnly = True
         Me.SupplierQuoteDataGridView.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.AutoSizeToDisplayedHeaders
@@ -361,9 +396,9 @@ Partial Class CustomerQuoteItemManager
         Me.GroupBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.GroupBox2.Controls.Add(Me.CustQuoteLineItemDataGridView)
         Me.GroupBox2.Location = New System.Drawing.Point(11, 11)
-        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2)
+        Me.GroupBox2.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox2.Name = "GroupBox2"
-        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2)
+        Me.GroupBox2.Padding = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.GroupBox2.Size = New System.Drawing.Size(1259, 250)
         Me.GroupBox2.TabIndex = 108
         Me.GroupBox2.TabStop = False
@@ -405,7 +440,7 @@ Partial Class CustomerQuoteItemManager
         Me.BackButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.BackButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.BackButton.Location = New System.Drawing.Point(1192, 680)
-        Me.BackButton.Margin = New System.Windows.Forms.Padding(2)
+        Me.BackButton.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
         Me.BackButton.Name = "BackButton"
         Me.BackButton.Size = New System.Drawing.Size(76, 43)
         Me.BackButton.TabIndex = 109
@@ -492,14 +527,14 @@ Partial Class CustomerQuoteItemManager
         'Cust_Line_Item_Sale_incl_VAT
         '
         Me.Cust_Line_Item_Sale_incl_VAT.DataPropertyName = "Cust_Line_Item_Sale_incl_VAT"
-        Me.Cust_Line_Item_Sale_incl_VAT.HeaderText = "Sale incl VAT"
+        Me.Cust_Line_Item_Sale_incl_VAT.HeaderText = "Sale incl VAT per Item"
         Me.Cust_Line_Item_Sale_incl_VAT.Name = "Cust_Line_Item_Sale_incl_VAT"
         Me.Cust_Line_Item_Sale_incl_VAT.ReadOnly = True
         '
         'Cust_Line_Item_Sale_excl_VAT
         '
         Me.Cust_Line_Item_Sale_excl_VAT.DataPropertyName = "Cust_Line_Item_Sale_excl_VAT"
-        Me.Cust_Line_Item_Sale_excl_VAT.HeaderText = "Sale excl VAT"
+        Me.Cust_Line_Item_Sale_excl_VAT.HeaderText = "Sale excl VAT per Item"
         Me.Cust_Line_Item_Sale_excl_VAT.Name = "Cust_Line_Item_Sale_excl_VAT"
         Me.Cust_Line_Item_Sale_excl_VAT.ReadOnly = True
         '
@@ -513,14 +548,14 @@ Partial Class CustomerQuoteItemManager
         '
         'Edit_Item
         '
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle11.NullValue = "EDIT"
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.Black
-        Me.Edit_Item.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.NullValue = "EDIT"
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(0, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black
+        Me.Edit_Item.DefaultCellStyle = DataGridViewCellStyle2
         Me.Edit_Item.HeaderText = "Edit"
         Me.Edit_Item.Name = "Edit_Item"
         Me.Edit_Item.ReadOnly = True
@@ -529,14 +564,14 @@ Partial Class CustomerQuoteItemManager
         '
         'DataGridViewButtonColumn1
         '
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle12.NullValue = "REMOVE"
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Crimson
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.Black
-        Me.DataGridViewButtonColumn1.DefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(128, Byte), Integer), CType(CType(128, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.NullValue = "REMOVE"
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Crimson
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.Black
+        Me.DataGridViewButtonColumn1.DefaultCellStyle = DataGridViewCellStyle3
         Me.DataGridViewButtonColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.DataGridViewButtonColumn1.HeaderText = "Remove"
         Me.DataGridViewButtonColumn1.Name = "DataGridViewButtonColumn1"
@@ -644,45 +679,11 @@ Partial Class CustomerQuoteItemManager
         Me.SupplierNameDataGridViewTextBoxColumn1.Name = "SupplierNameDataGridViewTextBoxColumn1"
         Me.SupplierNameDataGridViewTextBoxColumn1.ReadOnly = True
         '
-        'Label4
-        '
-        Me.Label4.AutoSize = True
-        Me.Label4.BackColor = System.Drawing.Color.Transparent
-        Me.Label4.Location = New System.Drawing.Point(390, 18)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(184, 13)
-        Me.Label4.TabIndex = 109
-        Me.Label4.Text = " Enter Supplier Name to be searched:"
-        '
-        'ClearButton
-        '
-        Me.ClearButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.ClearButton.FlatAppearance.BorderColor = System.Drawing.Color.Black
-        Me.ClearButton.FlatAppearance.BorderSize = 3
-        Me.ClearButton.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Aqua
-        Me.ClearButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
-        Me.ClearButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
-        Me.ClearButton.Location = New System.Drawing.Point(605, 27)
-        Me.ClearButton.Margin = New System.Windows.Forms.Padding(2)
-        Me.ClearButton.Name = "ClearButton"
-        Me.ClearButton.Size = New System.Drawing.Size(96, 34)
-        Me.ClearButton.TabIndex = 108
-        Me.ClearButton.Text = "CLEAR TEXT"
-        Me.ClearButton.UseVisualStyleBackColor = False
-        '
-        'SearchTextBox
-        '
-        Me.SearchTextBox.Location = New System.Drawing.Point(371, 35)
-        Me.SearchTextBox.Margin = New System.Windows.Forms.Padding(2)
-        Me.SearchTextBox.Name = "SearchTextBox"
-        Me.SearchTextBox.Size = New System.Drawing.Size(215, 20)
-        Me.SearchTextBox.TabIndex = 107
-        '
         'CustomerQuoteItemManager
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.AutoScroll = True
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1282, 734)
@@ -745,6 +746,9 @@ Partial Class CustomerQuoteItemManager
     Friend WithEvents SuppQuoteAcceptanceStatusDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SuppQuoteDateAcceptanceDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BackButton As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents ClearButton As Button
+    Friend WithEvents SearchTextBox As TextBox
     Friend WithEvents Cust_Quote_Reference_ID As DataGridViewTextBoxColumn
     Friend WithEvents Product_ID As DataGridViewTextBoxColumn
     Friend WithEvents Product_Name As DataGridViewTextBoxColumn
@@ -774,7 +778,4 @@ Partial Class CustomerQuoteItemManager
     Friend WithEvents ProductDescriptionDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents ProductActiveStatusDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents SupplierNameDataGridViewTextBoxColumn1 As DataGridViewTextBoxColumn
-    Friend WithEvents Label4 As Label
-    Friend WithEvents ClearButton As Button
-    Friend WithEvents SearchTextBox As TextBox
 End Class

@@ -35,10 +35,9 @@ Partial Class ReportMenu
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(73, 34)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(55, 28)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(75, 25)
+        Me.Label1.Size = New System.Drawing.Size(62, 20)
         Me.Label1.TabIndex = 0
         Me.Label1.Text = "Report:"
         '
@@ -47,10 +46,9 @@ Partial Class ReportMenu
         Me.Label2.AutoSize = True
         Me.Label2.BackColor = System.Drawing.Color.Transparent
         Me.Label2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(73, 132)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(55, 107)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(177, 25)
+        Me.Label2.Size = New System.Drawing.Size(146, 20)
         Me.Label2.TabIndex = 1
         Me.Label2.Text = "Report Description:"
         '
@@ -58,21 +56,19 @@ Partial Class ReportMenu
         '
         Me.ReportComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.ReportComboBox.FormattingEnabled = True
-        Me.ReportComboBox.Items.AddRange(New Object() {"Acceptance Time Report", "Employee Sales per Product", "Total Product Sales", "Total Value of Sales per Item for Select Months", "Total Supplier Cost per Supplier", "Total Sales per Suburb", "Amount of Products Sold per Employee Last Year", "Amount of Products Sold per Month for Last Year"})
-        Me.ReportComboBox.Location = New System.Drawing.Point(79, 63)
-        Me.ReportComboBox.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ReportComboBox.Items.AddRange(New Object() {"Acceptance Time Report", "Employee Sales per Product", "Total Product Sales", "Total Value of Sales per Item for Select Months", "Total Supplier Cost per Supplier", "Total Sales per Suburb", "Amount of Products Sold per Employee Last Year", "Amount of Products Sold per Month for Last Year", "Customer Income", "Quotations Per Month"})
+        Me.ReportComboBox.Location = New System.Drawing.Point(59, 51)
         Me.ReportComboBox.Name = "ReportComboBox"
-        Me.ReportComboBox.Size = New System.Drawing.Size(511, 24)
+        Me.ReportComboBox.Size = New System.Drawing.Size(384, 21)
         Me.ReportComboBox.TabIndex = 2
         '
         'ReportDesc
         '
-        Me.ReportDesc.Location = New System.Drawing.Point(79, 160)
-        Me.ReportDesc.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ReportDesc.Location = New System.Drawing.Point(59, 130)
         Me.ReportDesc.Multiline = True
         Me.ReportDesc.Name = "ReportDesc"
         Me.ReportDesc.ReadOnly = True
-        Me.ReportDesc.Size = New System.Drawing.Size(511, 168)
+        Me.ReportDesc.Size = New System.Drawing.Size(384, 137)
         Me.ReportDesc.TabIndex = 3
         '
         'ViewReportButton
@@ -84,10 +80,9 @@ Partial Class ReportMenu
         Me.ViewReportButton.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.ViewReportButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ViewReportButton.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.ViewReportButton.Location = New System.Drawing.Point(234, 360)
-        Me.ViewReportButton.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.ViewReportButton.Location = New System.Drawing.Point(176, 292)
         Me.ViewReportButton.Name = "ViewReportButton"
-        Me.ViewReportButton.Size = New System.Drawing.Size(208, 50)
+        Me.ViewReportButton.Size = New System.Drawing.Size(156, 41)
         Me.ViewReportButton.TabIndex = 4
         Me.ViewReportButton.Text = "View Report"
         Me.ViewReportButton.UseVisualStyleBackColor = False
@@ -101,27 +96,25 @@ Partial Class ReportMenu
         Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Aqua
         Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.Location = New System.Drawing.Point(557, 367)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Location = New System.Drawing.Point(418, 298)
         Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(105, 41)
+        Me.Button1.Size = New System.Drawing.Size(79, 33)
         Me.Button1.TabIndex = 5
         Me.Button1.Text = "Back"
         Me.Button1.UseVisualStyleBackColor = False
         '
         'ReportMenu
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackgroundImage = Global.M.I.S.S_Vendor_Order_Management_System.My.Resources.Resources.Background1
-        Me.ClientSize = New System.Drawing.Size(675, 421)
+        Me.ClientSize = New System.Drawing.Size(506, 342)
         Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.ViewReportButton)
         Me.Controls.Add(Me.ReportDesc)
         Me.Controls.Add(Me.ReportComboBox)
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "ReportMenu"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "ReportMenu"

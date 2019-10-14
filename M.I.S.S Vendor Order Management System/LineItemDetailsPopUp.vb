@@ -394,4 +394,6 @@ Public Class LineItemDetailsPopUp
             VATTextBox.BackColor = Color.MistyRose
         End If
     End Sub
+
+
 End Class

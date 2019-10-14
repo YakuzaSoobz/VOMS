@@ -350,7 +350,8 @@ Public Class EmployeeManager
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
+        Dim helpFilePath = IO.Path.Combine(My.Application.Info.DirectoryPath, "M.I.S.chm")
+        Help.ShowHelp(Me, helpFilePath)
     End Sub
 
     Private Sub SearchButton_MouseHover(sender As Object, e As EventArgs) Handles SearchButton.MouseHover

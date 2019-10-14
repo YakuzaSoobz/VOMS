@@ -206,21 +206,22 @@ Public Class ProductManager
 
 
                 Try
-                Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
+                    Dim ret As Integer = MsgBox("Confirm changes?", vbYesNo)
 
-                If ret = 6 Then 'if user clicks yes to update'
-                    ProductBindingSource.EndEdit()
-                    ProductTableAdapter.Update(Group16DataSet)
-                    MsgBox("Update successful!")
-                    Call ButtonRefresh_Click(sender, e)
-                End If
-            Catch ex As SqlException
-                MsgBox("Cannot Update!", vbExclamation, "Network Error!")
-            Catch ex As NoNullAllowedException
-                MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
-            Catch ex As Exception
-                MsgBox("Oops something went wrong!", vbExclamation, "Error!")
-            End Try
+                    If ret = 6 Then 'if user clicks yes to update'
+                        ProductBindingSource.EndEdit()
+                        ProductTableAdapter.Update(Group16DataSet)
+                        MsgBox("Update successful!")
+                        CreateButton.Enabled = True
+                        Call ButtonRefresh_Click(sender, e)
+                    End If
+                Catch ex As SqlException
+                    MsgBox("Cannot Update!", vbExclamation, "Network Error!")
+                Catch ex As NoNullAllowedException
+                    MsgBox("Incorrect input!Follow correct format!", vbExclamation, "Incorrect Input")
+                Catch ex As Exception
+                    MsgBox("Oops something went wrong!", vbExclamation, "Error!")
+                End Try
             End If
         Catch ex As FormatException
             MsgBox("Cannot add item. Please use correct format to fill fields!", vbExclamation, "Incorrect Input!")
@@ -286,7 +287,8 @@ Public Class ProductManager
     End Sub
 
     Private Sub HelpBtn_Click(sender As Object, e As EventArgs) Handles HelpBtn.Click
-        Help.ShowHelp(Me, HelpProvider2.HelpNamespace)
+        Dim helpFilePath = IO.Path.Combine(My.Application.Info.DirectoryPath, "M.I.S.chm")
+        Help.ShowHelp(Me, helpFilePath)
     End Sub
 
     Private Sub SearchButton_MouseHover(sender As Object, e As EventArgs) Handles SearchButton.MouseHover

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="VOMS">
+		<param name="Name" value="Vendor Order Management System">
+		<param name="Local" value="VOMSMenuLogin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Vendor">
+		<param name="Name" value="Vendor Order Management System">
+		<param name="Local" value="VOMSMenuLogin.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Customer Quote">
+		<param name="Name" value="Customer Quote Manager Help">
+		<param name="Local" value="CustomerQuoteManager.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Quote">
+		<param name="Name" value="Customer Quote Manager Help">
+		<param name="Local" value="CustomerQuoteManager.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Quotations">
+		<param name="Name" value="Customer Quote Manager Help">
+		<param name="Local" value="CustomerQuoteManager.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Supplier Quote">
+		<param name="Name" value="Customer Quote Manager Help">
+		<param name="Local" value="CustomerQuoteManager.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Customer Manager">
+		<param name="Name" value="Customer Manager Help">
+		<param name="Local" value="CustomerManager.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Supplier Manager">
+		<param name="Name" value="Customer Manager Help">
+		<param name="Local" value="CustomerManager.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Product Manager">
+		<param name="Name" value="Customer Manager Help">
+		<param name="Local" value="CustomerManager.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Employee Manager">
+		<param name="Name" value="Customer Manager Help">
+		<param name="Local" value="CustomerManager.htm">
+		</OBJECT>
+	<LI> <OBJECT type="text/sitemap">
+		<param name="Name" value="Report">
+		<param name="Name" value="Report Menu">
+		<param name="Local" value="ReportMenu.htm">
+		</OBJECT>
+</UL>
+</BODY></HTML>
